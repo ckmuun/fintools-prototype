@@ -1,6 +1,6 @@
 package api
 
-// MultipleChoiceQuestion Tier Scale
+// McQuestion Tier Scale
 const (
 	BaselineQuestion = iota
 	AdvancedFinancialQuestion
@@ -16,6 +16,7 @@ const (
 	HighRisk
 )
 
+// McQuestion Scaling enum
 const (
 	Absolute = iota
 	Relative
@@ -34,11 +35,11 @@ const (
 
 // Time Effort Scale
 const (
-	PassiveTrading = iota
-	ActiveTrading
-	ActiveIntradayTrading
-	PartTimeEntrepreneurship
-	FullTimeEntrepreneurship
+	Passive = iota
+	Seldom
+	Occasional
+	PartTime
+	FullTime
 )
 
 // Intellectual Effort Scale
