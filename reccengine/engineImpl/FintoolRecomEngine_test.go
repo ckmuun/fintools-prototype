@@ -1,14 +1,13 @@
 package engineImpl
 
 import (
+	"github.com/magiconair/properties/assert"
 	"log"
 	"reccengine/api"
 	"testing"
 )
 
-var testQuestionnaire = createTestQuestionnaire()
-
-func createTestQuestionnaire() api.McQuestionnaire {
+func createTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
 	questions := make([]api.McQuestion, 1)
 
 	metadata := api.QuestionMetadata{
@@ -46,7 +45,7 @@ func createTestQuestionnaire() api.McQuestionnaire {
 
 	question := api.McQuestion{
 		AnswersToShow:     answers,
-		ChosenAnswerIndex: 0,
+		ChosenAnswerIndex: chosenAnswerIndex,
 	}
 	question.QuestionMetadata = metadata
 	questions[0] = question
@@ -57,15 +56,10 @@ func createTestQuestionnaire() api.McQuestionnaire {
 
 }
 
-func init() {
-
-}
-
-func TestGenerateStrategyRecommendations(t *testing.T) {
-
+func getTestStrategyComps() []api.StrategyComponent {
 	strategyComponents := make([]api.StrategyComponent, 4)
 
-	component := api.StrategyComponent{
+	bestComp := api.StrategyComponent{
 		Description: "Just be a billionaire",
 		ScoreReqs: api.ScoreContainer{
 			Flexibility:         10,
@@ -75,7 +69,7 @@ func TestGenerateStrategyRecommendations(t *testing.T) {
 			Risk:                10,
 		},
 	}
-	component1 := api.StrategyComponent{
+	mixedComp := api.StrategyComponent{
 		Description: "donate everything and live in a barrell",
 		ScoreReqs: api.ScoreContainer{
 			Flexibility:         2,
@@ -85,7 +79,7 @@ func TestGenerateStrategyRecommendations(t *testing.T) {
 			Risk:                6,
 		},
 	}
-	component3 := api.StrategyComponent{
+	worstComp := api.StrategyComponent{
 		Description: "collect social security",
 		ScoreReqs: api.ScoreContainer{
 			Flexibility:         1,
@@ -95,7 +89,7 @@ func TestGenerateStrategyRecommendations(t *testing.T) {
 			Risk:                1,
 		},
 	}
-	component2 := api.StrategyComponent{
+	mediocreComp := api.StrategyComponent{
 		Description: "Just be a at least a millionaire",
 		ScoreReqs: api.ScoreContainer{
 			Flexibility:         5,
@@ -105,16 +99,42 @@ func TestGenerateStrategyRecommendations(t *testing.T) {
 			Risk:                5,
 		},
 	}
-	strategyComponents[0] = component
-	strategyComponents[1] = component1
-	strategyComponents[2] = component2
-	strategyComponents[3] = component3
+	strategyComponents[0] = bestComp
+	strategyComponents[1] = mixedComp
+	strategyComponents[2] = mediocreComp
+	strategyComponents[3] = worstComp
+
+	return strategyComponents
+}
+
+func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
+
+	strategyComps := getTestStrategyComps()
 
 	recommender := RuleBasedFintoolRecommender{
-		strategyComponents: strategyComponents,
+		strategyComponents: strategyComps,
 	}
 
-	strategy := recommender.GenerateStrategyRecommendations(testQuestionnaire)
+	strategy := recommender.GenerateStrategyRecommendations(createTestQuestionnaire(0))
 
 	log.Print("strategy: ", strategy)
+	assert.Equal(t, strategy.Components[0], strategyComps[0])
+	assert.Equal(t, strategy.Components[1], strategyComps[2])
+	assert.Equal(t, strategy.Components[2], strategyComps[1])
+}
+
+func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
+
+	strategyComps := getTestStrategyComps()
+
+	recommender := RuleBasedFintoolRecommender{
+		strategyComponents: strategyComps,
+	}
+
+	strategy := recommender.GenerateStrategyRecommendations(createTestQuestionnaire(1))
+
+	log.Print("strategy: ", strategy)
+	assert.Equal(t, strategy.Components[0], strategyComps[3])
+	assert.Equal(t, strategy.Components[1], strategyComps[1])
+	assert.Equal(t, strategy.Components[2], strategyComps[2])
 }

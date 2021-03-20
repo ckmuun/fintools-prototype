@@ -25,7 +25,6 @@ type McAnswer struct {
 
 // A multiple choice question inside a questionnaire
 type McQuestion struct {
-	QuestionText      string `json:"question_text"`
 	QuestionMetadata  `json:"metadata"`
 	AnswersToShow     []McAnswer `json:"answers_to_show"`
 	ChosenAnswerIndex int        `json:"chosen_answer_index"`
@@ -37,12 +36,11 @@ type McQuestion struct {
 */
 func NewMcQuestion(questionText string, metadata QuestionMetadata, answersToShow []McAnswer) *McQuestion {
 	question := &McQuestion{
-		QuestionText: questionText,
-		// FIXME look up in the spec how we insert this 'composition variable'?
 		AnswersToShow:     answersToShow,
 		ChosenAnswerIndex: -1,
 	}
 
+	question.QuestionText = questionText
 	question.QuestionMetadata = metadata
 
 	return question
