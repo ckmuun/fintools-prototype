@@ -54,11 +54,11 @@ func addAnswerScoresForMcQuestionnaire(questionnaire api.McQuestionnaire) (score
 		log.Print("getting scores for question:  ", question.QuestionText)
 
 		answer := question.GetAnswer()
-		scores.ExecutionComplexity += answer.Scores.ExecutionComplexity
-		scores.Flexibility += answer.Scores.Flexibility
-		scores.Risk += answer.Scores.Risk
-		scores.Intellectual += answer.Scores.Intellectual
-		scores.Time += answer.Scores.Time
+		scores.ExecutionComplexity += answer.ExecutionComplexity
+		scores.Flexibility += answer.Flexibility
+		scores.Risk += answer.Risk
+		scores.Intellectual += answer.Intellectual
+		scores.Time += answer.Time
 
 	}
 

@@ -1,6 +1,7 @@
 package engineImpl
 
 import (
+	"encoding/json"
 	"github.com/magiconair/properties/assert"
 	"log"
 	"reccengine/api"
@@ -20,7 +21,7 @@ func createTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
 
 	goodAnswer := api.McAnswer{
 		AnswerText: "yes",
-		Scores: api.ScoreContainer{
+		ScoreContainer: api.ScoreContainer{
 			Flexibility:         10,
 			Time:                10,
 			Intellectual:        10,
@@ -30,7 +31,7 @@ func createTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
 	}
 	badAnswer := api.McAnswer{
 		AnswerText: "no",
-		Scores: api.ScoreContainer{
+		ScoreContainer: api.ScoreContainer{
 			Flexibility:         0,
 			Time:                0,
 			Intellectual:        0,
@@ -115,7 +116,14 @@ func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
 		strategyComponents: strategyComps,
 	}
 
-	strategy := recommender.GenerateStrategyRecommendations(createTestQuestionnaire(0))
+	questionnaire := createTestQuestionnaire(0)
+	jsonstruct, _ := json.Marshal(questionnaire)
+
+	println("#####################")
+	println(string(jsonstruct))
+	println("#####################")
+
+	strategy := recommender.GenerateStrategyRecommendations(questionnaire)
 
 	log.Print("strategy: ", strategy)
 	assert.Equal(t, strategy.Components[0], strategyComps[0])

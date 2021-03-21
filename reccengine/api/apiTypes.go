@@ -20,7 +20,7 @@ type QuestionMetadata struct {
 
 type McAnswer struct {
 	AnswerText string
-	Scores     ScoreContainer
+	ScoreContainer
 }
 
 // A multiple choice question inside a questionnaire
@@ -92,7 +92,8 @@ func (q *McQuestion) GetAnswerText() string {
 	A Multiple Choice Questionnaire
 */
 type McQuestionnaire struct {
-	Questions []McQuestion
+	Description string       `json:"description"`
+	Questions   []McQuestion `json:"questions"`
 }
 
 /*
