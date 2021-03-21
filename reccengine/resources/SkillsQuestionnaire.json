@@ -1,0 +1,117 @@
+{
+  "description": "Initial Financial Health and Situation",
+  "questions": [
+    {
+      "metadata": {
+        "question_text": "What is your employment type?",
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "unemployed",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "salaried",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 3,
+          "execution_complexity": 3,
+          "risk": 3
+        },
+        {
+          "AnswerText": "hourly rate",
+          "flexibility": 7,
+          "time": 0,
+          "intellectual": 3,
+          "execution_complexity": 3,
+          "risk": 5
+        },
+        {
+          "AnswerText": "self-employed contractor",
+          "flexibility": 7,
+          "time": 0,
+          "intellectual": 4,
+          "execution_complexity": 3,
+          "risk": 7
+        },
+        {
+          "AnswerText": "entrepreneur, less than 10 employees ",
+          "flexibility": 7,
+          "time": 0,
+          "intellectual": 4,
+          "execution_complexity": 3,
+          "risk": 7
+        },
+        {
+          "AnswerText": "entrepreneur, more than 10 employees ",
+          "flexibility": 7,
+          "time": 0,
+          "intellectual": 4,
+          "execution_complexity": 3,
+          "risk": 7
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "work schedule",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "full time",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 10
+        },
+        {
+          "AnswerText": "part time",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "self-employed -> no fix schedule",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "student -> no fix schedule",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "not working",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        }
+      ],
+      "chosen_answer_index": 0
+    }
+  ]
+}

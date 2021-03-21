@@ -1,0 +1,291 @@
+{
+  "description": "Initial Financial Health and Situation",
+  "questions": [
+    {
+      "metadata": {
+        "question_text": "What is your monthly household income after taxes?",
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "0-1000",
+          "flexibility": 1,
+          "time": 0,
+          "intellectual": 1,
+          "execution_complexity": 1,
+          "risk": 1
+        },
+        {
+          "AnswerText": "1000-2000",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 3,
+          "execution_complexity": 3,
+          "risk": 3
+        },
+        {
+          "AnswerText": "2000-4000",
+          "flexibility": 7,
+          "time": 0,
+          "intellectual": 3,
+          "execution_complexity": 3,
+          "risk": 5
+        },
+        {
+          "AnswerText": "4000+",
+          "flexibility": 7,
+          "time": 0,
+          "intellectual": 4,
+          "execution_complexity": 3,
+          "risk": 7
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you live in a home that that is yours? e.g. you own a house or apartment.",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "yes",
+          "flexibility": 5,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 1,
+          "risk": 7
+        },
+        {
+          "AnswerText": "no",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 1,
+          "risk": 3
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "question_text": "How much cash do you have in a checking account?",
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "0-1000",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "1000-3000",
+          "flexibility": 2,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 1,
+          "risk": 1
+        },
+        {
+          "AnswerText": "3000-10000",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 1,
+          "risk": 3
+        },
+        {
+          "AnswerText": "10000-50000",
+          "flexibility": 4,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 1,
+          "risk": 5
+        },
+        {
+          "AnswerText": "50000+",
+          "flexibility": 6,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 1,
+          "risk": 6
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "How many dependents do you have? e.g. people who rely on your income (children, spouses, parents or other relatives)",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "none",
+          "flexibility": 7,
+          "time": 5,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 5
+        },
+        {
+          "AnswerText": "1 Person",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 1,
+          "risk": 3
+        },
+        {
+          "AnswerText": "2-3 People",
+          "flexibility": 2,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 1,
+          "risk": 1
+        },
+        {
+          "AnswerText": "More than three people",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "What is your (approximate) net worth without the value of your primary residence, should you own it?",
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "indebted - 500",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "500 - 2000",
+          "flexibility": 1,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 1
+        },
+        {
+          "AnswerText": "2000 -10.000",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 3
+        },
+        {
+          "AnswerText": "10.000 - 50.000",
+          "flexibility": 5,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 5
+        },
+        {
+          "AnswerText": "50.000 - 100.000",
+          "flexibility": 7,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 7
+        },
+        {
+          "AnswerText": "100.000+",
+          "flexibility": 9,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 9
+        }
+      ],
+      "chosen_answer_index": 0
+    } ,  {
+      "metadata": {
+        "question_text": "What is your highest finished education?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "PhD or higher",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 8,
+          "execution_complexity": 7,
+          "risk": 3
+        },
+        {
+          "AnswerText": "Master's degree or, in Germany, 'Handwerksmeister'",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 7,
+          "execution_complexity": 7,
+          "risk": 3
+        },
+        {
+          "AnswerText": "Bachelor's degree or, in Germany, 'Geselle', 'Techniker' etc.",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 6,
+          "execution_complexity": 6,
+          "risk": 2
+        },
+        {
+          "AnswerText": "Apprenticeship, Trade School, 'Berufsausbildung' in Germany",
+          "flexibility": 3,
+          "time": 0,
+          "intellectual": 4,
+          "execution_complexity": 3,
+          "risk": 1
+        },
+        {
+          "AnswerText": "Secondary School or, in the U.S., High School diploma",
+          "flexibility": 2,
+          "time": 0,
+          "intellectual": 2,
+          "execution_complexity": 2,
+          "risk": 0
+        },
+        {
+          "AnswerText": "no school finished",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        }
+      ],
+      "chosen_answer_index": 0
+    }
+  ]
+}

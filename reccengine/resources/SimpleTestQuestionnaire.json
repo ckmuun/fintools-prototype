@@ -1,0 +1,33 @@
+{
+  "description": "Junk Questionnaire for testing only",
+  "questions": [
+    {
+      "metadata": {
+        "question_text": "Are you a billionaire?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "yes",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 10
+        },
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        }
+      ],
+      "chosen_answer_index": 0
+    }
+  ]
+}

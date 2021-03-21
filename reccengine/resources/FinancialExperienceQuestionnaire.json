@@ -1,0 +1,490 @@
+{
+  "description": "Questionnaire to assess the user's experience with the financial markets",
+  "questions": [
+    {
+      "metadata": {
+        "question_text": "Do or did you work as a stock exchange broker, daytrader, investment analyst or similar?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 5,
+          "time": 6,
+          "intellectual": 7,
+          "execution_complexity": 7,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 9
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you work a knowledge-intensive, continuous learning job? (researcher, engineer, statistician, etc.)",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you trade ETFs and / or mutual funds ?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you trade individual stocks?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you trade cryptocurrencies??",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    
+    {
+      "metadata": {
+        "question_text": "Do you trade commodities like gold or crude oil??",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you trade other alternative investments? ?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you trade futures, options or other derivatives?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you have a life insurance that invests in the stock market?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "Do you track your monthly expenses in written form?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "no",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "yes, less than five years",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        },
+        {
+          "AnswerText": "yes, for more than five years ",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 10,
+          "execution_complexity": 10,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    },
+    {
+      "metadata": {
+        "question_text": "How do you rate your previous investment experiences?",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "AnswerText": "not applicable",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "unhappy with previous investments",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
+        },
+        {
+          "AnswerText": "happy with previous investments",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "risk": 7
+        },
+        {
+          "AnswerText": "very happy with previous investments",
+          "flexibility": 0,
+          "time": 0,
+          "intellectual": 9,
+          "execution_complexity": 9,
+          "risk": 8
+        }
+      ],
+      "chosen_answer_index": 0
+    }
+  ]
+}
