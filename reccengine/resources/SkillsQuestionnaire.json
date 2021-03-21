@@ -72,16 +72,16 @@
       "answers_to_show": [
         {
           "AnswerText": "full time",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 10
+          "flexibility": 1,
+          "time": 0,
+          "intellectual": 0,
+          "execution_complexity": 0,
+          "risk": 0
         },
         {
           "AnswerText": "part time",
           "flexibility": 0,
-          "time": 0,
+          "time": 5,
           "intellectual": 0,
           "execution_complexity": 0,
           "risk": 0
@@ -89,7 +89,7 @@
         {
           "AnswerText": "self-employed -> no fix schedule",
           "flexibility": 0,
-          "time": 0,
+          "time": 3,
           "intellectual": 0,
           "execution_complexity": 0,
           "risk": 0
@@ -97,7 +97,7 @@
         {
           "AnswerText": "student -> no fix schedule",
           "flexibility": 0,
-          "time": 0,
+          "time": 3,
           "intellectual": 0,
           "execution_complexity": 0,
           "risk": 0
@@ -105,7 +105,7 @@
         {
           "AnswerText": "not working",
           "flexibility": 0,
-          "time": 0,
+          "time": 10,
           "intellectual": 0,
           "execution_complexity": 0,
           "risk": 0
