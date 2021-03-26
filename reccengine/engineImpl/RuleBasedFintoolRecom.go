@@ -1,6 +1,7 @@
 package engineImpl
 
 import (
+	"errors"
 	"github.com/emirpasic/gods/maps/treemap"
 	"github.com/rs/zerolog/log"
 	"reccengine/api"
@@ -14,26 +15,50 @@ type RuleBasedFintoolRecommender struct {
 }
 
 /*
+	Entrypoint method
+	returns GoodStrategy BadStrategy, Error
+*/
+func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(usr api.User) (api.Strategy, api.Strategy, error) {
 
- */
-func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(questionnaire api.McQuestionnaire) api.Strategy {
+	// Handling of unfinished questionnaires
+	if !usr.AllFinished() {
+		err := errors.New("can not generate strategies for user as questionnaires not finished: $usr.Id")
+		log.Err(err)
+		return api.Strategy{}, api.Strategy{}, err
+	}
 
-	ranking := r.getRankedStratComps(questionnaire)
+	ranking := r.getRankedStratComps(usr)
 
-	var comps [3]api.StrategyComponent
+	var goodComps [3]api.StrategyComponent
+	var badComps [3]api.StrategyComponent
 
+	/*
+		Here, the top three and the lowest three matching components are taken from the ranking and
+		inserted into strategy objects
+	*/
 	// This doesn't  really look like modern code
 	iter := ranking.Iterator()
 	_ = iter.First()
-	comps[0] = iter.Value().(api.StrategyComponent)
+	goodComps[0] = iter.Value().(api.StrategyComponent)
 	_ = iter.Next()
-	comps[1] = iter.Value().(api.StrategyComponent)
+	goodComps[1] = iter.Value().(api.StrategyComponent)
 	_ = iter.Next()
-	comps[2] = iter.Value().(api.StrategyComponent)
+	goodComps[2] = iter.Value().(api.StrategyComponent)
+
+	_ = iter.Last()
+	badComps[0] = iter.Value().(api.StrategyComponent)
+	_ = iter.Prev()
+	badComps[1] = iter.Value().(api.StrategyComponent)
+	_ = iter.Prev()
+	badComps[2] = iter.Value().(api.StrategyComponent)
 
 	return api.Strategy{
-		Components: comps,
-	}
+			Components: goodComps,
+		},
+		api.Strategy{
+			Components: badComps,
+		},
+		nil
 }
 
 /*
@@ -44,28 +69,7 @@ func (r *RuleBasedFintoolRecommender) SetStrategyComponents(components []api.Str
 	r.strategyComponents = components
 }
 
-/*
-	This simply adds the answer scores
-*/
-func addAnswerScoresForMcQuestionnaire(questionnaire api.McQuestionnaire) (scores api.ScoreContainer) {
-
-	for _, question := range questionnaire.Questions {
-
-		log.Print("getting scores for question:  ", question.QuestionText)
-
-		answer := question.GetAnswer()
-		scores.ExecutionComplexity += answer.ExecutionComplexity
-		scores.Flexibility += answer.Flexibility
-		scores.Risk += answer.Risk
-		scores.Intellectual += answer.Intellectual
-		scores.Time += answer.Time
-
-	}
-
-	return scores
-}
-
-func (r *RuleBasedFintoolRecommender) getRankedStratComps(questionnaire api.McQuestionnaire) *treemap.Map {
+func (r *RuleBasedFintoolRecommender) getRankedStratComps(usr api.User) *treemap.Map {
 
 	log.Print("Generating rating of strategy components by simple rules")
 	/*
@@ -75,22 +79,15 @@ func (r *RuleBasedFintoolRecommender) getRankedStratComps(questionnaire api.McQu
 		die komponenten haben einen statischen Wert, der sich aus ihrer Klassifizierung heraus ergibt.
 		es werden die drei kompoenten gewählt, die am nächsten am Wert des Nutzers sind.
 	*/
-	log.Print("generating scores")
-	scores := addAnswerScoresForMcQuestionnaire(questionnaire)
-	r.averageIzeQScores(questionnaire, scores)
+
+	scores, err := usr.CalcScores()
+
+	if err != nil {
+		log.Err(err)
+	}
 
 	log.Print("generating ranking")
-	return r.rankByAbsoluteDiff(scores)
-}
-
-func (r *RuleBasedFintoolRecommender) averageIzeQScores(questionnaire api.McQuestionnaire, scores api.ScoreContainer) {
-	log.Print("normalizing scores")
-	// average-ize scores with questionnaire length to
-	scores.ExecutionComplexity /= len(questionnaire.Questions)
-	scores.Risk /= len(questionnaire.Questions)
-	scores.Time /= len(questionnaire.Questions)
-	scores.Intellectual /= len(questionnaire.Questions)
-	scores.Flexibility /= len(questionnaire.Questions)
+	return r.rankByAbsoluteDiff(*scores)
 }
 
 /*
@@ -105,11 +102,12 @@ func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api
 	for index, component := range r.strategyComponents {
 		log.Print("calculating score for component: ", component)
 
-		a := component.ScoreReqs.Time - questionnaireScores.Time
-		b := component.ScoreReqs.Risk - questionnaireScores.Risk
-		c := component.ScoreReqs.Intellectual - questionnaireScores.Intellectual
-		d := component.ScoreReqs.Flexibility - questionnaireScores.Flexibility
-		e := component.ScoreReqs.ExecutionComplexity - questionnaireScores.ExecutionComplexity
+		diffs := questionnaireScores.Diff(component.ScoreContainer)
+
+		a := diffs.FinanceKnowledgeReq
+		b := diffs.IntellectualReq
+		c := diffs.FlexibilityReq
+		d := diffs.RiskTolerance
 
 		/*
 				Bei 10 AnswerScore und 10 Component Score muss hier 0 rauskommen
@@ -119,7 +117,7 @@ func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api
 		*/
 
 		// to be minimized
-		naiveScoreForStratComp := a + b + c + d + e
+		naiveScoreForStratComp := a + b + c + d
 
 		if naiveScoreForStratComp < 0 {
 			naiveScoreForStratComp *= -1
