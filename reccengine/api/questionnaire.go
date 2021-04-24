@@ -2,15 +2,41 @@ package api
 
 import "errors"
 
-type McAnswer struct {
+type McAnswerI interface {
+	GetAnswer()
+	GetValue() int
+}
+
+type PictureMcAnswer struct {
+	Picture []byte `json:"picture"`
+	Value   int
+}
+
+func (p *PictureMcAnswer) GetAnswer() []byte {
+	return p.Picture
+}
+
+func (p *PictureMcAnswer) GetValue() int {
+	return p.Value
+}
+
+type TextMcAnswer struct {
 	AnswerText string
 	Value      int
 }
 
+func (tmca *TextMcAnswer) GetAnswer() string {
+	return tmca.AnswerText
+}
+
+func (tmca *TextMcAnswer) GetValue() int {
+	return tmca.Value
+}
+
 // A multiple choice question inside a questionnaire
 type McQuestion struct {
-	AnswersToShow     []McAnswer `json:"answers_to_show"`
-	ChosenAnswerIndex int        `json:"chosen_answer_index"`
+	AnswersToShow     []TextMcAnswer `json:"answers_to_show"`
+	ChosenAnswerIndex int            `json:"chosen_answer_index"`
 }
 
 func (mcq *McQuestion) GetValueOfChosenAnswer() int {
@@ -25,7 +51,7 @@ func (mcq *McQuestion) GetValueOfChosenAnswer() int {
 	Create a new Multiple Choice McQuestion.
 	The index for the chose answer is set to -1 as an init value.
 */
-func NewMcQuestion(questionText string, answersToShow []McAnswer) *McQuestion {
+func NewMcQuestion(questionText string, answersToShow []TextMcAnswer) *McQuestion {
 	question := &McQuestion{
 		AnswersToShow:     answersToShow,
 		ChosenAnswerIndex: -1,
@@ -57,7 +83,7 @@ func (mcq *McQuestion) IsAnswered() bool {
 	@returns the full Answer object with Metadata and Scores
 	It is important to note that 'answer' is more than just a string, but instead a semantic object.
 */
-func (mcq *McQuestion) GetAnswer() *McAnswer {
+func (mcq *McQuestion) GetAnswer() *TextMcAnswer {
 	if mcq.IsAnswered() {
 		return &mcq.AnswersToShow[mcq.ChosenAnswerIndex]
 	}
