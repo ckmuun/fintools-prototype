@@ -1,62 +1,34 @@
 package api
 
-import "errors"
+import (
+	"errors"
+)
 
-type McAnswerI interface {
-	GetAnswer()
-	GetValue() int
+type Questionnaire interface {
+	Finished() bool
 }
 
-type PictureMcAnswer struct {
-	Picture []byte `json:"picture"`
-	Value   int
-}
-
-func (p *PictureMcAnswer) GetAnswer() []byte {
-	return p.Picture
-}
-
-func (p *PictureMcAnswer) GetValue() int {
-	return p.Value
-}
-
-type TextMcAnswer struct {
-	AnswerText string
-	Value      int
-}
-
-func (tmca *TextMcAnswer) GetAnswer() string {
-	return tmca.AnswerText
-}
-
-func (tmca *TextMcAnswer) GetValue() int {
-	return tmca.Value
+/*
+	A Multiple Choice Questionnaire
+*/
+type McQuestionnaire struct {
+	Description string       `json:"description"`
+	Category    string       `json:"category"`
+	Questions   []McQuestion `json:"questions"`
 }
 
 // A multiple choice question inside a questionnaire
 type McQuestion struct {
-	AnswersToShow     []TextMcAnswer `json:"answers_to_show"`
-	ChosenAnswerIndex int            `json:"chosen_answer_index"`
+	AnswersToShow     []McAnswerI `json:"answers_to_show"`
+	ChosenAnswerIndex int         `json:"chosen_answer_index"`
 }
 
 func (mcq *McQuestion) GetValueOfChosenAnswer() int {
 	// the var is instantiated with -1
 	if mcq.ChosenAnswerIndex >= 0 {
-		return mcq.AnswersToShow[mcq.ChosenAnswerIndex].Value
+		return mcq.AnswersToShow[mcq.ChosenAnswerIndex].GetValue()
 	}
 	return -1
-}
-
-/*
-	Create a new Multiple Choice McQuestion.
-	The index for the chose answer is set to -1 as an init value.
-*/
-func NewMcQuestion(questionText string, answersToShow []TextMcAnswer) *McQuestion {
-	question := &McQuestion{
-		AnswersToShow:     answersToShow,
-		ChosenAnswerIndex: -1,
-	}
-	return question
 }
 
 /*
@@ -83,7 +55,7 @@ func (mcq *McQuestion) IsAnswered() bool {
 	@returns the full Answer object with Metadata and Scores
 	It is important to note that 'answer' is more than just a string, but instead a semantic object.
 */
-func (mcq *McQuestion) GetAnswer() *TextMcAnswer {
+func (mcq *McQuestion) GetAnswer() *McAnswerI {
 	if mcq.IsAnswered() {
 		return &mcq.AnswersToShow[mcq.ChosenAnswerIndex]
 	}
@@ -96,22 +68,9 @@ func (mcq *McQuestion) GetAnswer() *TextMcAnswer {
 func (mcq *McQuestion) GetAnswerText() string {
 
 	if mcq.IsAnswered() {
-		return mcq.AnswersToShow[mcq.ChosenAnswerIndex].AnswerText
+		return mcq.AnswersToShow[mcq.ChosenAnswerIndex].GetAnswerTextual()
 	}
 	return "question not yet answered"
-}
-
-type Questionnaire interface {
-	Finished() bool
-}
-
-/*
-	A Multiple Choice Questionnaire
-*/
-type McQuestionnaire struct {
-	Description string       `json:"description"`
-	Category    string       `json:"category"`
-	Questions   []McQuestion `json:"questions"`
 }
 
 func (mc *McQuestionnaire) sumAnswers() (int, error) {
