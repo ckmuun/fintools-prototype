@@ -1,5 +1,6 @@
 {
   "description": "Questionnaire to assess the user's experience with the financial markets",
+  "category": "financial-exp",
   "questions": [
     {
       "metadata": {
