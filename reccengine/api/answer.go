@@ -1,6 +1,6 @@
 package api
 
-import "io/ioutil"
+import "encoding/base64"
 
 type McAnswerI interface {
 	GetAnswer()
@@ -9,11 +9,12 @@ type McAnswerI interface {
 }
 
 type PictureMcAnswer struct {
-	Picture  []byte `json:"picture"`
-	Filepath string `json:"filepath"`
-	Caption  string `json:"caption"`
-	Source   string `json:"source"`
-	Value    int
+	Shortname string `json:"shortname"`
+	Caption   string `json:"caption"`
+	Source    string `json:"source"`
+	Data      string `json:"data"`
+
+	Value int
 }
 
 func (p *PictureMcAnswer) GetAnswerTextual() string {
@@ -21,18 +22,12 @@ func (p *PictureMcAnswer) GetAnswerTextual() string {
 }
 
 func (p *PictureMcAnswer) GetAnswer() []byte {
-	if nil == p.Picture {
-		file, err := ioutil.ReadFile(p.Filepath)
+	bytes, err := base64.StdEncoding.DecodeString(p.Data)
 
-		if err != nil {
-			panic(err)
-		}
-		p.Picture = file
-
-		return file
+	if err == nil {
+		return bytes
 	}
-
-	return p.Picture
+	return nil
 }
 
 func (p *PictureMcAnswer) GetValue() int {
