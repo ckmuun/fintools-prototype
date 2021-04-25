@@ -1,6 +1,10 @@
 package server
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"log"
+	"reccengine/service"
+)
 
 func SetupRouter() *gin.Engine {
 
@@ -22,9 +26,28 @@ func setupUserRoutes(router *gin.Engine) *gin.Engine {
 
 func setupQuestionnaireRoutes(router *gin.Engine) *gin.Engine {
 
-	router.GET("/questionnaires/:kind", func(c *gin.Context) {
+	router.GET("/ping", pong)
 
-	})
-
+	router.GET("/questionnaires/:kind", getQst)
 	return router
+}
+
+func getQst(c *gin.Context) {
+	kind := c.Param("kind")
+	svc := service.GetQuestionnaireService()
+	log.Println("getting getQst", kind)
+
+	q := svc.QstMapping[kind]
+
+	if nil == q {
+		log.Println("the following questionnaire kind could not be found: " + kind)
+		c.JSON(404, "the following questionnaire kind could not be found: "+kind)
+		return
+	}
+	c.JSON(200, q)
+
+}
+
+func pong(c *gin.Context) {
+	c.JSON(200, "pong")
 }

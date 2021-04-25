@@ -6,6 +6,10 @@ import (
 	"reccengine/api"
 )
 
+func init() {
+
+}
+
 func loadPictureAnswers() []api.PictureMcAnswer {
 
 	var pictureMcAnswers []api.PictureMcAnswer

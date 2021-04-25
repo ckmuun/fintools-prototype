@@ -19,8 +19,8 @@ type McQuestionnaire struct {
 
 // A multiple choice question inside a questionnaire
 type McQuestion struct {
-	AnswersToShow     []McAnswerI `json:"answers_to_show"`
-	ChosenAnswerIndex int         `json:"chosen_answer_index"`
+	AnswersToShow     []TextMcAnswer `json:"answers_to_show"`
+	ChosenAnswerIndex int            `json:"chosen_answer_index"`
 }
 
 func (mcq *McQuestion) GetValueOfChosenAnswer() int {
@@ -55,7 +55,7 @@ func (mcq *McQuestion) IsAnswered() bool {
 	@returns the full Answer object with Metadata and Scores
 	It is important to note that 'answer' is more than just a string, but instead a semantic object.
 */
-func (mcq *McQuestion) GetAnswer() *McAnswerI {
+func (mcq *McQuestion) GetAnswer() *TextMcAnswer {
 	if mcq.IsAnswered() {
 		return &mcq.AnswersToShow[mcq.ChosenAnswerIndex]
 	}
@@ -68,7 +68,7 @@ func (mcq *McQuestion) GetAnswer() *McAnswerI {
 func (mcq *McQuestion) GetAnswerText() string {
 
 	if mcq.IsAnswered() {
-		return mcq.AnswersToShow[mcq.ChosenAnswerIndex].GetAnswerTextual()
+		return mcq.AnswersToShow[mcq.ChosenAnswerIndex].GetAnswer()
 	}
 	return "question not yet answered"
 }
