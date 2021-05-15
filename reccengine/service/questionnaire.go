@@ -2,6 +2,7 @@ package service
 
 import (
 	"encoding/json"
+	"github.com/emirpasic/gods/maps/hashmap"
 	"io/ioutil"
 	"log"
 	"reccengine/api"
@@ -37,7 +38,7 @@ type QuestionnaireSvcImpl struct {
 	FinancialExpQuestionnaire api.McQuestionnaire
 	SkillsQuestionnaire       api.McQuestionnaire
 	CogBiasQuestionnaire      api.McQuestionnaire
-	QstMapping                map[string]api.Questionnaire
+	QstMapping                *hashmap.Map
 	// Feedback questionnaire tODO add this here
 }
 
@@ -62,14 +63,15 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 		svc.SkillsQuestionnaire.Category,
 	}
 
-	qstMap := make(map[string]api.Questionnaire, len(names))
+	questionnaireMap := hashmap.New()
 
-	qstMap[svc.BasicQuestionnaire.Category] = &svc.BasicQuestionnaire
-	qstMap[svc.FinancialExpQuestionnaire.Category] = &svc.FinancialExpQuestionnaire
-	qstMap[svc.SkillsQuestionnaire.Category] = &svc.SkillsQuestionnaire
+	questionnaireMap.Put(svc.BasicQuestionnaire.Category, &svc.BasicQuestionnaire)
+	questionnaireMap.Put(svc.FinancialExpQuestionnaire.Category, &svc.FinancialExpQuestionnaire)
+	questionnaireMap.Put(svc.SkillsQuestionnaire.Category, &svc.SkillsQuestionnaire)
+	questionnaireMap.Put(svc.CogBiasQuestionnaire.Category, &svc.CogBiasQuestionnaire)
 
 	svc.QuestionnaireNames = names
-	svc.QstMapping = qstMap
+	svc.QstMapping = questionnaireMap
 	return svc
 }
 

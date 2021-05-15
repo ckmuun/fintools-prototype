@@ -13,6 +13,8 @@ func SetupRouter() *gin.Engine {
 	router := gin.Default()
 
 	// This will ensure that the angular files are served correctly
+	// It basically points GinGonic to the output of "ng build" command
+	// TODO currently this works kinda "automagic" figure out what the exact mechanism here is. Bc. .NoRoute is acutlly for 404s
 	router.NoRoute(func(c *gin.Context) {
 		dir, file := path.Split(c.Request.RequestURI)
 		ext := filepath.Ext(file)
@@ -23,6 +25,10 @@ func SetupRouter() *gin.Engine {
 		}
 	})
 
+	// setup dummy endpoint
+	router.GET("/api/ping", pong)
+
+	// setup functional endpoints
 	setupUserRoutes(router)
 	setupQuestionnaireRoutes(router)
 
@@ -30,7 +36,7 @@ func SetupRouter() *gin.Engine {
 }
 
 func setupUserRoutes(router *gin.Engine) *gin.Engine {
-	router.POST("/users/new", func(c *gin.Context) {
+	router.POST("/api/users/new", func(c *gin.Context) {
 		// todo add call to user creation service
 	})
 
@@ -39,10 +45,18 @@ func setupUserRoutes(router *gin.Engine) *gin.Engine {
 
 func setupQuestionnaireRoutes(router *gin.Engine) *gin.Engine {
 
-	router.GET("/ping", pong)
+	router.GET("/api/questionnaires/", getQuestionnaireList)
 
-	router.GET("/questionnaires/:kind", getQst)
+	router.GET("/api/questionnaires/:kind", getQst)
 	return router
+}
+
+func getQuestionnaireList(c *gin.Context) {
+
+	svc := service.GetQuestionnaireService()
+	list := svc.QstMapping.Keys()
+
+	c.JSON(200, list)
 }
 
 func getQst(c *gin.Context) {
@@ -50,9 +64,9 @@ func getQst(c *gin.Context) {
 	svc := service.GetQuestionnaireService()
 	log.Println("getting getQst", kind)
 
-	q := svc.QstMapping[kind]
+	q, found := svc.QstMapping.Get(kind)
 
-	if nil == q {
+	if nil == q || !found {
 		log.Println("the following questionnaire kind could not be found: " + kind)
 		c.JSON(404, "the following questionnaire kind could not be found: "+kind)
 		return
