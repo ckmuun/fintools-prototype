@@ -10,6 +10,7 @@ type Questionnaire interface {
 
 /*
 	A Multiple Choice Questionnaire
+	TODO check where the metadata field from the json went.
 */
 type McQuestionnaire struct {
 	Description string       `json:"description"`
