@@ -55,6 +55,7 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 		BasicQuestionnaire:        loadBasicQuestionnaire(),
 		FinancialExpQuestionnaire: loadFinancialExpQuestionnaire(),
 		SkillsQuestionnaire:       loadSkillsQuestionnaire(),
+		CogBiasQuestionnaire:      loadCogBiasQuestionnaire(),
 	}
 
 	names := []string{

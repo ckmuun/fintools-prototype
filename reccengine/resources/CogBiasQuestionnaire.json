@@ -1,9 +1,10 @@
 {
   "description": "Initial Financial Health and Situation",
+  "category": "cog-bias",
   "questions": [
     {
+      "question_text": "What is your monthly household income after taxes?",
       "metadata": {
-        "question_text": "What is your monthly household income after taxes?",
         "category": "baseline",
         "is_absolute_scale": true,
         "tier": 0,
@@ -46,8 +47,8 @@
       "chosen_answer_index": 0
     },
     {
+      "question_text": "Do you live in a home that that is yours? e.g. you own a house or apartment.",
       "metadata": {
-        "question_text": "Do you live in a home that that is yours? e.g. you own a house or apartment.",
         "category": "baseline",
         "is_absolute_scale": false,
         "tier": 0,
@@ -73,8 +74,8 @@
       ]
     },
     {
+      "question_text": "How much cash do you have in a checking account?",
       "metadata": {
-        "question_text": "How much cash do you have in a checking account?",
         "category": "baseline",
         "is_absolute_scale": true,
         "tier": 0,
@@ -125,8 +126,8 @@
       "chosen_answer_index": 0
     },
     {
+      "question_text": "How many dependents do you have? e.g. people who rely on your income (children, spouses, parents or other relatives)",
       "metadata": {
-        "question_text": "How many dependents do you have? e.g. people who rely on your income (children, spouses, parents or other relatives)",
         "category": "baseline",
         "is_absolute_scale": false,
         "tier": 0,
@@ -169,8 +170,8 @@
       "chosen_answer_index": 0
     },
     {
+      "question_text": "What is your (approximate) net worth without the value of your primary residence, should you own it?",
       "metadata": {
-        "question_text": "What is your (approximate) net worth without the value of your primary residence, should you own it?",
         "category": "baseline",
         "is_absolute_scale": true,
         "tier": 0,
@@ -229,8 +230,8 @@
       "chosen_answer_index": 0
     },
     {
+      "question_text": "What is your highest finished education?",
       "metadata": {
-        "question_text": "What is your highest finished education?",
         "category": "baseline",
         "is_absolute_scale": false,
         "tier": 0,

@@ -22,6 +22,12 @@ type McQuestionnaire struct {
 type McQuestion struct {
 	AnswersToShow     []TextMcAnswer `json:"answers_to_show"`
 	ChosenAnswerIndex int            `json:"chosen_answer_index"`
+	QuestionText      string         `json:"question_text"`
+	QuestionMetadata  `json:"metadata"`
+}
+
+type QuestionMetadata struct {
+	Category string `json:"category"`
 }
 
 func (mcq *McQuestion) GetValueOfChosenAnswer() int {
