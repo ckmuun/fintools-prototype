@@ -8,15 +8,15 @@ import {QuestionnaireService} from "../questionnaire.service";
 })
 export class EntrypointComponent implements OnInit {
 
-  questionnaires: string[];
+  qCategories: string[];
 
   constructor(private qSvc: QuestionnaireService) {
-    this.questionnaires = this.qSvc.getQuestionnaireList()
-
+    this.qCategories =  [];
   }
 
   ngOnInit(): void {
 
-  }
+    this.qCategories = this.qSvc.getQuestionnaireList()
 
+  }
 }

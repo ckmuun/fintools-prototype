@@ -20,8 +20,8 @@ export class QuestionnaireService {
     if (this.qCategories.length === 0) {
        this.getQuestionnaireListReq().subscribe(
         cat =>  {
-          this.qCategories.concat(cat)
-          console.log("categoies:" + this.qCategories)
+          this.qCategories = cat
+          console.log("categories:" + this.qCategories)
         }
       );
 

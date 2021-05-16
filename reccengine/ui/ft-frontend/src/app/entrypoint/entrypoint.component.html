@@ -1,2 +1,14 @@
 
-<button mat-button color="primary">Get Started!</button>
+
+
+<button mat-button color="primary">
+  <a routerLink="/get-started" routerLinkActive="true"></a>
+  Get Started!
+</button>
+<router-outlet></router-outlet>
+
+<p>Entrypoint</p>
+<p>Available questionnaires</p>
+<tr *ngFor="let category of qCategories">
+  <p>category:{{category}}</p>
+</tr>

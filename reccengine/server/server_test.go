@@ -58,20 +58,7 @@ func Test_setupQuestionnaireRoutes(t *testing.T) {
 	type args struct {
 		router *gin.Engine
 	}
-	tests := []struct {
-		name string
-		args args
-		want *gin.Engine
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := setupQuestionnaireRoutes(tt.args.router); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("setupQuestionnaireRoutes() = %v, want %v", got, tt.want)
-			}
-		})
-	}
+
 }
 
 func Test_setupUserRoutes(t *testing.T) {
