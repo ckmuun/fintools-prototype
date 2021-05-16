@@ -8,9 +8,26 @@ import (
 	"reccengine/service"
 )
 
+func CORSMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "DELETE, GET, OPTIONS, POST, PUT")
+
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+
+		c.Next()
+	}
+}
+
 func SetupRouter() *gin.Engine {
 
 	router := gin.Default()
+	//	router.Use(cors.Default())
+	router.Use(CORSMiddleware())
 
 	// This will ensure that the angular files are served correctly
 	// It basically points GinGonic to the output of "ng build" command
@@ -24,6 +41,21 @@ func SetupRouter() *gin.Engine {
 			c.File("./ui/ft-frontend/dist/ft-frontend/" + path.Join(dir, file))
 		}
 	})
+
+	/*
+		router.Use(cors.New(cors.Config{
+			AllowOrigins:     []string{"*"},
+			AllowMethods:     []string{"PUT", "PATCH", "GET", "OPTIONS", "POST", "*"},
+			AllowHeaders:     []string{"Origin"},
+			ExposeHeaders:    []string{"Content-Length"},
+			AllowCredentials: true,
+			AllowOriginFunc: func(origin string) bool {
+				return origin == "https://github.com"
+			},
+			MaxAge: 12 * time.Hour,
+		}))
+
+	*/
 
 	// setup dummy endpoint
 	router.GET("/api/ping", pong)
@@ -43,12 +75,16 @@ func setupUserRoutes(router *gin.Engine) *gin.Engine {
 	return router
 }
 
-func setupQuestionnaireRoutes(router *gin.Engine) *gin.Engine {
+func setupQuestionnaireRoutes(router *gin.Engine) {
 
-	router.GET("/api/questionnaires/", getQuestionnaireList)
-
+	router.POST("/api/questionnaires/:kind/answer")
+	router.GET("/api/questionnaires", getQuestionnaireList)
 	router.GET("/api/questionnaires/:kind", getQst)
-	return router
+
+}
+
+func postQuestionnaireAnswer(c *gin.Context) {
+
 }
 
 func getQuestionnaireList(c *gin.Context) {

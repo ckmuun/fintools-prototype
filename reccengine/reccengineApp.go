@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/viper"
 	"os"
@@ -18,6 +19,7 @@ func main() {
 		port = "8080"
 	}
 
+	router.Use(cors.Default())
 	_ = router.Run(":" + port)
 
 }
