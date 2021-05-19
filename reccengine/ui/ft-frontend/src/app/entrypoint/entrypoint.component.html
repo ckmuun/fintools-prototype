@@ -1,14 +1,14 @@
+<button mat-button color="primary" (click)="refresh()" [routerLink]="['../survey']">
 
+    <a routerLink="../survey"></a>
 
-
-<p>Entrypoint</p>
-<button mat-button color="primary" (click)="refresh()">
-  <a routerLink="/get-started" routerLinkActive="true"></a>
   Get Started!
 </button>
-<router-outlet></router-outlet>
 
 <p>Available questionnaires</p>
-<tr *ngFor="let category of this.qCategories">
-  <p>category:{{category}}</p>
-</tr>
+<ol *ngFor="let category of this.qCategories">
+  <li>
+    <p>category:{{category}}</p>
+  </li>
+</ol>
+
