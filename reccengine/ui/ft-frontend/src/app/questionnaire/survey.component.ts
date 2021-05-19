@@ -3,12 +3,12 @@ import {QuestionnaireService} from "../questionnaire.service";
 
 @Component({
   selector: 'app-questionnaire',
-  templateUrl: './questionnaire.component.html',
-  styleUrls: ['./questionnaire.component.css']
+  templateUrl: './survey.component.html',
+  styleUrls: ['./survey.component.css']
 })
-export class QuestionnaireComponent implements OnInit {
+export class SurveyComponent implements OnInit {
 
-  private qSvc: QuestionnaireService
+   qSvc: QuestionnaireService
 
 
   constructor(@Inject(QuestionnaireService) qSvc: QuestionnaireService) {
@@ -22,6 +22,7 @@ get qCategoryList () {
 }
 
 ngOnInit() {
+
 
   }
 }

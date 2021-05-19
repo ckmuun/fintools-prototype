@@ -35,27 +35,14 @@ func SetupRouter() *gin.Engine {
 	router.NoRoute(func(c *gin.Context) {
 		dir, file := path.Split(c.Request.RequestURI)
 		ext := filepath.Ext(file)
+
 		if file == "" || ext == "" {
 			c.File("./ui/ft-frontend/dist/ft-frontend/index.html")
 		} else {
-			c.File("./ui/ft-frontend/dist/ft-frontend/" + path.Join(dir, file))
+			c.File("./ui/ft-frontend/dist/ft-frontend" + path.Join(dir, file))
 		}
+
 	})
-
-	/*
-		router.Use(cors.New(cors.Config{
-			AllowOrigins:     []string{"*"},
-			AllowMethods:     []string{"PUT", "PATCH", "GET", "OPTIONS", "POST", "*"},
-			AllowHeaders:     []string{"Origin"},
-			ExposeHeaders:    []string{"Content-Length"},
-			AllowCredentials: true,
-			AllowOriginFunc: func(origin string) bool {
-				return origin == "https://github.com"
-			},
-			MaxAge: 12 * time.Hour,
-		}))
-
-	*/
 
 	// setup dummy endpoint
 	router.GET("/api/ping", pong)

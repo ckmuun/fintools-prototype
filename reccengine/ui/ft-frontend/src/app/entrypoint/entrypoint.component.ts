@@ -16,6 +16,12 @@ export class EntrypointComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log("init entrypoint component")
+    this.qCategories = this.qSvc.getQuestionnaireList()
+
+  }
+
+  refresh() {
     this.qCategories = this.qSvc.getQuestionnaireList()
 
   }
