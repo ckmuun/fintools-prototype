@@ -17,9 +17,6 @@ export class SurveyComponent implements OnInit {
 
 
 
-get qCategoryList () {
-    return this.qSvc.getQuestionnaireList();
-}
 
 ngOnInit() {
 

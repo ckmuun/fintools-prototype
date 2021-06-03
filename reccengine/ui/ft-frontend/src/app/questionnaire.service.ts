@@ -1,65 +1,54 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, ReplaySubject} from "rxjs";
+import {catchError, shareReplay} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionnaireService {
 
-  qCategories: string[];
-  questionnaires: mcQuestionnaire[]
 
+  private dataSubject = new ReplaySubject<McQuestionnaire>(1);
+
+  data$: Observable<McQuestionnaire> = this.dataSubject.asObservable();
 
   constructor(private httpClient: HttpClient) {
-
-    this.qCategories = []
-    this.questionnaires = []
-
   }
 
-  getQuestionnaireList(): string[] {
 
-    if (this.qCategories.length === 0) {
-      this.getQuestionnaireListReq().subscribe(
-        cat => {
-          this.qCategories = cat
-          console.log("categories:" + this.qCategories)
-        }
-      );
+  /*3
+    TODO implement caching service that dynamically returns an observalbe from either
+    the request output or the cached values, and caches the values upon request.
+   */
 
 
-    }
-
-    return this.qCategories
+  getQuestionnaires(): Observable<McQuestionnaire[]> {
+    return this.httpClient.get<McQuestionnaire[]>("http://localhost:8080/api/questionnaires/all")
   }
-
-  private getQuestionnaireListReq(): Observable<string[]> {
-    console.log("fetching questionnaire list")
+  getQuestionnaireList(): Observable<string[]> {
     return this.httpClient.get<string[]>("http://localhost:8080/api/questionnaires")
   }
 
-  getQuestionnaires(): mcQuestionnaire[] {
-    if (this.questionnaires.length !== 0) {
-      return this.questionnaires
-    }
-
-    console.log("fetching: "+ this.qCategories)
-
-    for (let q of this.qCategories) {
-      this.httpClient.get<mcQuestionnaire>("http://localhost:8080/api/questionnaires/" + q)
-        .subscribe(questionnaire => this.questionnaires.push(questionnaire))
-    }
-    console.log("got questionnaires: " + this.questionnaires)
-    return this.questionnaires;
+  /*
+  fetch() {
+    return this.httpClient.get<McQuestionnaire[]>("http://localhost:8080/api/questionnaires")
+      .subscribe(res => this.dataSubject.next(res))
   }
+
+   */
+
+
+
+
+
 }
 
-export class mcQuestionnaire {
+export class McQuestionnaire {
 
   constructor(category: string,
               description: string,
-              questions: mcQuestion[]) {
+              questions: McQuestion[]) {
 
     this.category = category;
     this.description = description;
@@ -68,11 +57,46 @@ export class mcQuestionnaire {
 
   category: string
   description: string
-  questions: mcQuestion[]
+  questions: McQuestion[]
 
 }
 
-export class mcQuestion {
+export class Metadata {
+  public category: string
 
 
+  constructor(category: string) {
+    this.category = category;
+  }
+}
+
+
+export class McQuestion {
+
+  public metadata: Metadata
+
+  public answers_to_Show: McAnswer[]
+  public question_text: string
+  public chosen_answer_ndex: number
+
+
+  constructor(metadata: Metadata, answersToShow: McAnswer[], questionText: string, chosenAnswerIndex: number) {
+    this.metadata = metadata;
+    this.answers_to_Show = answersToShow;
+    this.question_text = questionText;
+    this.chosen_answer_ndex = chosenAnswerIndex;
+  }
+
+
+}
+
+export class McAnswer {
+  public answer_text: string
+  public value: number
+
+
+  constructor(answerText: string, value: number) {
+    this.answer_text = answerText;
+    this.value = value;
+  }
 }

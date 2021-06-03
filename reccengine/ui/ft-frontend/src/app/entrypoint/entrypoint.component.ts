@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {QuestionnaireService} from "../questionnaire.service";
+import {McQuestionnaire, QuestionnaireService} from "../questionnaire.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-entrypoint',
@@ -8,19 +9,35 @@ import {QuestionnaireService} from "../questionnaire.service";
 })
 export class EntrypointComponent implements OnInit {
 
+  questionnaires: McQuestionnaire[]
+
   qCategories: string[];
 
   constructor(private qSvc: QuestionnaireService) {
     this.qCategories = [];
+    this.questionnaires = [];
   }
 
   ngOnInit(): void {
     console.log("init entrypoint component")
-    this.refresh();
+    this.qSvc.getQuestionnaires().subscribe(
+      q => {
+     //  console.log(JSON.stringify(q))
+        this.questionnaires = q
+      }
+    )
+
+    this.qSvc.getQuestionnaireList().subscribe(
+      categories => this.qCategories = categories
+    )
   }
 
-  refresh(): void {
-    this.qCategories = this.qSvc.getQuestionnaireList()
+  get questionnaires$() {
 
+    return this.qSvc.data$.subscribe(
+      questionnaires => questionnaires
+    )
   }
+
+
 }

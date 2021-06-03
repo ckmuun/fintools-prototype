@@ -1,6 +1,6 @@
-<button mat-button color="primary" (click)="refresh()" [routerLink]="['../survey']">
+<button mat-button color="primary" [routerLink]="['../survey']">
 
-    <a routerLink="../survey"></a>
+  <a routerLink="../survey"></a>
 
   Get Started!
 </button>
@@ -11,4 +11,24 @@
     <p>category:{{category}}</p>
   </li>
 </ol>
+
+<div>
+  <p>Questionnnaires</p>
+  <ol *ngFor="let questionnaire of this.questionnaires">
+    <li>
+      <h4>Questionnaire: {{questionnaire.category}}</h4>
+      <p>{{ questionnaire.description }}</p>
+
+      <ol *ngFor="let question of questionnaire.questions">
+        <li>
+          Question: {{ question.question_text}}
+          <ol *ngFor="let answer of question.answers_to_Show">
+            <li> Answer: {{ answer}}</li>
+          </ol>
+        </li>
+      </ol>
+
+    </li>
+  </ol>
+</div>
 
