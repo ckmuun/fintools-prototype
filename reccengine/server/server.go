@@ -67,6 +67,7 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 	router.POST("/api/questionnaires/:kind/answer")
 	router.GET("/api/questionnaires", getQuestionnaireList)
 	router.GET("/api/questionnaires/:kind", getQst)
+	router.GET("/api/questionnaires/all", getAll)
 
 }
 
@@ -80,6 +81,13 @@ func getQuestionnaireList(c *gin.Context) {
 	list := svc.QstMapping.Keys()
 
 	c.JSON(200, list)
+}
+
+func getAll(c *gin.Context) {
+	svc := service.GetQuestionnaireService()
+
+	all := svc.QstMapping.Values()
+	c.JSON(200, all)
 }
 
 func getQst(c *gin.Context) {
