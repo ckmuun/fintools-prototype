@@ -35,8 +35,8 @@ func (p *PictureMcAnswer) GetValue() int {
 }
 
 type TextMcAnswer struct {
-	AnswerText string
-	Value      int
+	AnswerText string `json:"answer_text"`
+	Value      int    `json:"value"`
 }
 
 func (tmca *TextMcAnswer) GetAnswer() string {
