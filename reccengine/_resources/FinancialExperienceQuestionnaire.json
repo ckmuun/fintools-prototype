@@ -12,7 +12,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -20,7 +20,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 5,
           "time": 6,
           "intellectual": 7,
@@ -28,7 +28,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 8,
@@ -36,7 +36,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -56,7 +56,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -64,7 +64,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -72,7 +72,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -80,7 +80,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -100,7 +100,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -108,7 +108,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -116,7 +116,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -124,7 +124,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -144,7 +144,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -152,7 +152,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -160,7 +160,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -168,7 +168,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -188,7 +188,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -196,7 +196,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -204,7 +204,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -212,7 +212,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -233,7 +233,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -241,7 +241,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -249,7 +249,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -257,7 +257,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -277,7 +277,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -285,7 +285,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -293,7 +293,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -301,7 +301,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -321,7 +321,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -329,7 +329,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -337,7 +337,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -345,7 +345,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -365,7 +365,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -373,7 +373,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -381,7 +381,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -389,7 +389,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -409,7 +409,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -417,7 +417,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "yes, less than two years",
+          "answer_text": "yes, less than two years",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -425,7 +425,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "yes, less than five years",
+          "answer_text": "yes, less than five years",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,
@@ -433,7 +433,7 @@
           "risk": 8
         },
         {
-          "AnswerText": "yes, for more than five years ",
+          "answer_text": "yes, for more than five years ",
           "flexibility": 0,
           "time": 0,
           "intellectual": 10,
@@ -453,7 +453,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "not applicable",
+          "answer_text": "not applicable",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -461,7 +461,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "unhappy with previous investments",
+          "answer_text": "unhappy with previous investments",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -469,7 +469,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "happy with previous investments",
+          "answer_text": "happy with previous investments",
           "flexibility": 10,
           "time": 10,
           "intellectual": 8,
@@ -477,7 +477,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "very happy with previous investments",
+          "answer_text": "very happy with previous investments",
           "flexibility": 0,
           "time": 0,
           "intellectual": 9,

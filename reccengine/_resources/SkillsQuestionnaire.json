@@ -12,7 +12,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "unemployed",
+          "answer_text": "unemployed",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -20,7 +20,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "salaried",
+          "answer_text": "salaried",
           "flexibility": 3,
           "time": 0,
           "intellectual": 3,
@@ -28,7 +28,7 @@
           "risk": 3
         },
         {
-          "AnswerText": "hourly rate",
+          "answer_text": "hourly rate",
           "flexibility": 7,
           "time": 0,
           "intellectual": 3,
@@ -36,7 +36,7 @@
           "risk": 5
         },
         {
-          "AnswerText": "self-employed contractor",
+          "answer_text": "self-employed contractor",
           "flexibility": 7,
           "time": 0,
           "intellectual": 4,
@@ -44,7 +44,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "entrepreneur, less than 10 employees ",
+          "answer_text": "entrepreneur, less than 10 employees ",
           "flexibility": 7,
           "time": 0,
           "intellectual": 4,
@@ -52,7 +52,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "entrepreneur, more than 10 employees ",
+          "answer_text": "entrepreneur, more than 10 employees ",
           "flexibility": 7,
           "time": 0,
           "intellectual": 4,
@@ -72,7 +72,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "full time",
+          "answer_text": "full time",
           "flexibility": 1,
           "time": 0,
           "intellectual": 0,
@@ -80,7 +80,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "part time",
+          "answer_text": "part time",
           "flexibility": 0,
           "time": 5,
           "intellectual": 0,
@@ -88,7 +88,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "self-employed -> no fix schedule",
+          "answer_text": "self-employed -> no fix schedule",
           "flexibility": 0,
           "time": 3,
           "intellectual": 0,
@@ -96,7 +96,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "student -> no fix schedule",
+          "answer_text": "student -> no fix schedule",
           "flexibility": 0,
           "time": 3,
           "intellectual": 0,
@@ -104,7 +104,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "not working",
+          "answer_text": "not working",
           "flexibility": 0,
           "time": 10,
           "intellectual": 0,

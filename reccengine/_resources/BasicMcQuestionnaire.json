@@ -1,6 +1,6 @@
 {
   "description": "Initial Financial Health and Situation",
-  "category": "cog-bias",
+  "category": "basic",
   "questions": [
     {
       "question_text": "What is your monthly household income after taxes?",
@@ -12,7 +12,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "0-1000",
+          "answer_text": "0-1000",
           "flexibility": 1,
           "time": 0,
           "intellectual": 1,
@@ -20,7 +20,7 @@
           "risk": 1
         },
         {
-          "AnswerText": "1000-2000",
+          "answer_text": "1000-2000",
           "flexibility": 3,
           "time": 0,
           "intellectual": 3,
@@ -28,7 +28,7 @@
           "risk": 3
         },
         {
-          "AnswerText": "2000-4000",
+          "answer_text": "2000-4000",
           "flexibility": 7,
           "time": 0,
           "intellectual": 3,
@@ -36,7 +36,7 @@
           "risk": 5
         },
         {
-          "AnswerText": "4000+",
+          "answer_text": "4000+",
           "flexibility": 7,
           "time": 0,
           "intellectual": 4,
@@ -56,7 +56,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "yes",
+          "answer_text": "yes",
           "flexibility": 5,
           "time": 0,
           "intellectual": 0,
@@ -64,7 +64,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "no",
+          "answer_text": "no",
           "flexibility": 3,
           "time": 0,
           "intellectual": 0,
@@ -83,7 +83,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "0-1000",
+          "answer_text": "0-1000",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -91,7 +91,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "1000-3000",
+          "answer_text": "1000-3000",
           "flexibility": 2,
           "time": 0,
           "intellectual": 0,
@@ -99,7 +99,7 @@
           "risk": 1
         },
         {
-          "AnswerText": "3000-10000",
+          "answer_text": "3000-10000",
           "flexibility": 3,
           "time": 0,
           "intellectual": 0,
@@ -107,7 +107,7 @@
           "risk": 3
         },
         {
-          "AnswerText": "10000-50000",
+          "answer_text": "10000-50000",
           "flexibility": 4,
           "time": 0,
           "intellectual": 0,
@@ -115,7 +115,7 @@
           "risk": 5
         },
         {
-          "AnswerText": "50000+",
+          "answer_text": "50000+",
           "flexibility": 6,
           "time": 0,
           "intellectual": 0,
@@ -135,7 +135,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "none",
+          "answer_text": "none",
           "flexibility": 7,
           "time": 5,
           "intellectual": 0,
@@ -143,7 +143,7 @@
           "risk": 5
         },
         {
-          "AnswerText": "1 Person",
+          "answer_text": "1 Person",
           "flexibility": 3,
           "time": 0,
           "intellectual": 0,
@@ -151,7 +151,7 @@
           "risk": 3
         },
         {
-          "AnswerText": "2-3 People",
+          "answer_text": "2-3 People",
           "flexibility": 2,
           "time": 0,
           "intellectual": 0,
@@ -159,7 +159,7 @@
           "risk": 1
         },
         {
-          "AnswerText": "More than three people",
+          "answer_text": "More than three people",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -179,7 +179,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "indebted - 500",
+          "answer_text": "indebted - 500",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -187,7 +187,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "500 - 2000",
+          "answer_text": "500 - 2000",
           "flexibility": 1,
           "time": 0,
           "intellectual": 0,
@@ -195,7 +195,7 @@
           "risk": 1
         },
         {
-          "AnswerText": "2000 -10.000",
+          "answer_text": "2000 -10.000",
           "flexibility": 3,
           "time": 0,
           "intellectual": 0,
@@ -203,7 +203,7 @@
           "risk": 3
         },
         {
-          "AnswerText": "10.000 - 50.000",
+          "answer_text": "10.000 - 50.000",
           "flexibility": 5,
           "time": 0,
           "intellectual": 0,
@@ -211,7 +211,7 @@
           "risk": 5
         },
         {
-          "AnswerText": "50.000 - 100.000",
+          "answer_text": "50.000 - 100.000",
           "flexibility": 7,
           "time": 0,
           "intellectual": 0,
@@ -219,7 +219,7 @@
           "risk": 7
         },
         {
-          "AnswerText": "100.000+",
+          "answer_text": "100.000+",
           "flexibility": 9,
           "time": 0,
           "intellectual": 0,
@@ -228,8 +228,7 @@
         }
       ],
       "chosen_answer_index": 0
-    },
-    {
+    } ,  {
       "question_text": "What is your highest finished education?",
       "metadata": {
         "category": "baseline",
@@ -239,7 +238,7 @@
       },
       "answers_to_show": [
         {
-          "AnswerText": "PhD or higher",
+          "answer_text": "PhD or higher",
           "flexibility": 3,
           "time": 0,
           "intellectual": 8,
@@ -247,7 +246,7 @@
           "risk": 3
         },
         {
-          "AnswerText": "Master's degree or, in Germany, 'Handwerksmeister'",
+          "answer_text": "Master's degree or, in Germany, 'Handwerksmeister'",
           "flexibility": 3,
           "time": 0,
           "intellectual": 7,
@@ -255,7 +254,7 @@
           "risk": 3
         },
         {
-          "AnswerText": "Bachelor's degree or, in Germany, 'Techniker' etc.",
+          "answer_text": "Bachelor's degree or, in Germany, 'Geselle', 'Techniker' etc.",
           "flexibility": 3,
           "time": 0,
           "intellectual": 6,
@@ -263,7 +262,7 @@
           "risk": 2
         },
         {
-          "AnswerText": "Apprenticeship, Trade School, 'Berufsausbildung' in Germany",
+          "answer_text": "Apprenticeship, Trade School, 'Berufsausbildung' in Germany",
           "flexibility": 3,
           "time": 0,
           "intellectual": 4,
@@ -271,7 +270,7 @@
           "risk": 1
         },
         {
-          "AnswerText": "Secondary School or, in the U.S., High School diploma",
+          "answer_text": "Secondary School or, in the U.S., High School diploma",
           "flexibility": 2,
           "time": 0,
           "intellectual": 2,
@@ -279,7 +278,7 @@
           "risk": 0
         },
         {
-          "AnswerText": "no school finished",
+          "answer_text": "no school finished",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
