@@ -22,7 +22,7 @@ export class EntrypointComponent implements OnInit {
     console.log("init entrypoint component")
     this.qSvc.getQuestionnaires().subscribe(
       q => {
-     //  console.log(JSON.stringify(q))
+        //  console.log(JSON.stringify(q))
         this.questionnaires = q
       }
     )
@@ -39,5 +39,11 @@ export class EntrypointComponent implements OnInit {
     )
   }
 
+  setAnswerIndex(questionnaireIndex: number, questionIndex: number, answerIndex: number) {
+
+    this.questionnaires[questionIndex]
+      .questions[questionIndex]
+      .chosen_answer_index = answerIndex
+  }
 
 }

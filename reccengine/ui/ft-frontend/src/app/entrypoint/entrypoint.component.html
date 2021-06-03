@@ -14,17 +14,25 @@
 
 <div>
   <p>Questionnnaires</p>
-  <ol *ngFor="let questionnaire of this.questionnaires">
-    <li>
+  <ol *ngFor="let questionnaire of this.questionnaires; index as i" >
+    <li >
       <h4>Questionnaire: {{questionnaire.category}}</h4>
       <p>{{ questionnaire.description }}</p>
 
-      <ol *ngFor="let question of questionnaire.questions">
-        <li>
+
+      <ol *ngFor="let question of questionnaire.questions; index as ii;">
+        <li >
+
           Question: {{ question.question_text}}
-          <ol *ngFor="let answer of question.answers_to_Show">
-            <li> Answer: {{ answer}}</li>
-          </ol>
+          <ul *ngFor="let answer of question.answers_to_show ;index as iii" >
+            <li> Answer {{iii}}: {{ answer.answer_text}}
+              <br/>
+              <button (click)="setAnswerIndex(i, ii, iii)">Select this answer</button>
+            </li>
+          </ul>
+
+          <span>Chosen Answer Index: {{question.chosen_answer_index}} </span>
+
         </li>
       </ol>
 

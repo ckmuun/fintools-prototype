@@ -77,14 +77,14 @@ export class McQuestion {
 
   public answers_to_show: McAnswer[]
   public question_text: string
-  public chosen_answer_ndex: number
+  public chosen_answer_index: number
 
 
   constructor(metadata: Metadata, answersToShow: McAnswer[], questionText: string, chosenAnswerIndex: number) {
     this.metadata = metadata;
     this.answers_to_show = answersToShow;
     this.question_text = questionText;
-    this.chosen_answer_ndex = chosenAnswerIndex;
+    this.chosen_answer_index = chosenAnswerIndex;
   }
 
 
