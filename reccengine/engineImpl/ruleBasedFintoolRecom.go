@@ -97,7 +97,7 @@ func (r *RuleBasedFintoolRecommender) getRankedStratComps(usr api.User) *treemap
 	// TODO implement a more sophisticated ranking algorithm here.
 */
 func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api.ScoreContainer) *treemap.Map {
-	someMap := treemap.NewWithIntComparator()
+	rankedStrategies := treemap.NewWithIntComparator()
 
 	for index, component := range r.strategyComponents {
 		log.Print("calculating score for component: ", component)
@@ -124,15 +124,14 @@ func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api
 		}
 
 		log.Print("naive score for component: ", naiveScoreForStratComp)
-		_, found := someMap.Get(naiveScoreForStratComp)
+		_, found := rankedStrategies.Get(naiveScoreForStratComp)
 
 		for found {
-
 			naiveScoreForStratComp += 1
-			_, found = someMap.Get(naiveScoreForStratComp)
+			_, found = rankedStrategies.Get(naiveScoreForStratComp)
 		}
-		someMap.Put(naiveScoreForStratComp, r.strategyComponents[index])
+		rankedStrategies.Put(naiveScoreForStratComp, r.strategyComponents[index])
 	}
 
-	return someMap
+	return rankedStrategies
 }
