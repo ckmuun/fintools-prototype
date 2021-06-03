@@ -81,7 +81,7 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 */
 func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := loadQuestionnaireFile("./resources/FinancialExperienceQuestionnaire.json")
+	file := loadQuestionnaireFile("./_resources/FinancialExperienceQuestionnaire.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -90,7 +90,7 @@ func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 
 func loadSkillsQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := loadQuestionnaireFile("./resources/SkillsQuestionnaire.json")
+	file := loadQuestionnaireFile("./_resources/SkillsQuestionnaire.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -99,7 +99,7 @@ func loadSkillsQuestionnaire() api.McQuestionnaire {
 
 func loadCogBiasQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := loadQuestionnaireFile("./resources/CogBiasQuestionnaire.json")
+	file := loadQuestionnaireFile("./_resources/CogBiasQuestionnaire.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -109,8 +109,7 @@ func loadCogBiasQuestionnaire() api.McQuestionnaire {
 func loadBasicQuestionnaire() api.McQuestionnaire {
 
 	var questionnaire = api.McQuestionnaire{}
-	//file := loadQuestionnaireFile("../resources/BasicMcQuestionnaire.json")
-	file := loadQuestionnaireFile("./resources/BasicMcQuestionnaire.json")
+	file := loadQuestionnaireFile("./_resources/BasicMcQuestionnaire.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
