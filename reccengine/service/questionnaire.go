@@ -62,6 +62,7 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 		svc.BasicQuestionnaire.Category,
 		svc.FinancialExpQuestionnaire.Category,
 		svc.SkillsQuestionnaire.Category,
+		svc.CogBiasQuestionnaire.Category,
 	}
 
 	questionnaireMap := hashmap.New()
