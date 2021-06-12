@@ -12,7 +12,7 @@
       },
       "answers_to_show": [
         {
-          "answer_text": "0-1000",
+          "answer_text": "0-1000 €",
           "flexibility": 1,
           "time": 0,
           "intellectual": 1,
@@ -20,7 +20,7 @@
           "risk": 1
         },
         {
-          "answer_text": "1000-2000",
+          "answer_text": "1000-2000 €",
           "flexibility": 3,
           "time": 0,
           "intellectual": 3,
@@ -28,7 +28,7 @@
           "risk": 3
         },
         {
-          "answer_text": "2000-4000",
+          "answer_text": "2000-4000 €",
           "flexibility": 7,
           "time": 0,
           "intellectual": 3,
@@ -36,7 +36,7 @@
           "risk": 5
         },
         {
-          "answer_text": "4000+",
+          "answer_text": "4000+ €",
           "flexibility": 7,
           "time": 0,
           "intellectual": 4,
@@ -84,7 +84,7 @@
       },
       "answers_to_show": [
         {
-          "answer_text": "0-1000",
+          "answer_text": "0-1000 €",
           "flexibility": 0,
           "time": 0,
           "intellectual": 0,
@@ -92,7 +92,7 @@
           "risk": 0
         },
         {
-          "answer_text": "1000-3000",
+          "answer_text": "1000-3000 €",
           "flexibility": 2,
           "time": 0,
           "intellectual": 0,
@@ -100,7 +100,7 @@
           "risk": 1
         },
         {
-          "answer_text": "3000-10000",
+          "answer_text": "3000-10000 €",
           "flexibility": 3,
           "time": 0,
           "intellectual": 0,
@@ -108,7 +108,7 @@
           "risk": 3
         },
         {
-          "answer_text": "10000-50000",
+          "answer_text": "10000-50000 €",
           "flexibility": 4,
           "time": 0,
           "intellectual": 0,
@@ -116,7 +116,7 @@
           "risk": 5
         },
         {
-          "answer_text": "50000+",
+          "answer_text": "50000+ €",
           "flexibility": 6,
           "time": 0,
           "intellectual": 0,
