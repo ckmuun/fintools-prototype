@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {McQuestionnaire, QuestionnaireService} from "../questionnaire.service";
-import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-entrypoint',
@@ -16,6 +15,16 @@ export class EntrypointComponent implements OnInit {
   constructor(private qSvc: QuestionnaireService) {
     this.qCategories = [];
     this.questionnaires = [];
+  }
+
+  getTitle(): string {
+    return "Questionnaires:"
+  }
+
+  getSelected(questionnaireIndex: number, questionIndex: number, answerIndex: number): boolean {
+    return this.questionnaires[questionIndex]
+      .questions[questionIndex]
+      .chosen_answer_index === answerIndex;
   }
 
   ngOnInit(): void {
@@ -40,6 +49,7 @@ export class EntrypointComponent implements OnInit {
   }
 
   setAnswerIndex(questionnaireIndex: number, questionIndex: number, answerIndex: number) {
+    console.log("setting chosen answer in questionnaire: " + questionnaireIndex + "\n question: " + questionIndex + "\n to answer at index: " + answerIndex)
 
     this.questionnaires[questionIndex]
       .questions[questionIndex]

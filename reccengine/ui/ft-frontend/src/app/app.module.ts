@@ -12,6 +12,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
+import {MatCard, MatCardModule} from "@angular/material/card";
 
 /*
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-  //  RouterModule.forRoot(routes),
+    MatCardModule,
+    //  RouterModule.forRoot(routes),
   ],
 
   exports: [RouterModule],
