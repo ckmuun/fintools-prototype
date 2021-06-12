@@ -18,6 +18,7 @@
     <mat-card-title [textContent]="getTitle()"></mat-card-title>
   </mat-card-header>
 
+  <!--List for Questionnaires -- index is i-->
   <ol *ngFor="let questionnaire of this.questionnaires; index as i">
     <mat-card>
       <mat-card-header>
@@ -26,6 +27,7 @@
       </mat-card-header>
 
 
+      <!-- list for questions in questionnaires, -- index is ii -->
       <ol *ngFor="let question of questionnaire.questions; index as ii;">
 
         <!--Display a question of the questionnaire-->
@@ -36,6 +38,7 @@
             <mat-card-title [textContent]="question.question_text"></mat-card-title>
           </mat-card-header>
 
+          <!-- List for answers in questions, index is iii-->
           <ul *ngFor="let answer of question.answers_to_show ;index as iii">
             <mat-card [style.background]="getSelected(i, ii, iii)?'yellow':'white'">
               <mat-card-header>

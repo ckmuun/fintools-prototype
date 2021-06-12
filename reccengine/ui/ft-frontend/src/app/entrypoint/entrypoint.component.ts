@@ -22,7 +22,7 @@ export class EntrypointComponent implements OnInit {
   }
 
   getSelected(questionnaireIndex: number, questionIndex: number, answerIndex: number): boolean {
-    return this.questionnaires[questionIndex]
+    return this.questionnaires[questionnaireIndex]
       .questions[questionIndex]
       .chosen_answer_index === answerIndex;
   }
@@ -51,7 +51,7 @@ export class EntrypointComponent implements OnInit {
   setAnswerIndex(questionnaireIndex: number, questionIndex: number, answerIndex: number) {
     console.log("setting chosen answer in questionnaire: " + questionnaireIndex + "\n question: " + questionIndex + "\n to answer at index: " + answerIndex)
 
-    this.questionnaires[questionIndex]
+    this.questionnaires[questionnaireIndex]
       .questions[questionIndex]
       .chosen_answer_index = answerIndex
   }
