@@ -44,7 +44,7 @@
           "risk": 9
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you work a knowledge-intensive, continuous learning job? (researcher, engineer, statistician, etc.)",
@@ -88,7 +88,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you trade ETFs and / or mutual funds ?",
@@ -132,7 +132,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you trade individual stocks?",
@@ -176,7 +176,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you trade cryptocurrencies?",
@@ -220,7 +220,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
 
     {
@@ -265,7 +265,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you trade other alternative investments? ?",
@@ -309,7 +309,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you trade futures, options or other derivatives?",
@@ -353,7 +353,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you have a life insurance that invests in the stock market?",
@@ -397,7 +397,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you track your monthly expenses in written form?",
@@ -441,7 +441,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "How do you rate your previous investment experiences?",
@@ -485,7 +485,7 @@
           "risk": 8
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     }
   ]
 }

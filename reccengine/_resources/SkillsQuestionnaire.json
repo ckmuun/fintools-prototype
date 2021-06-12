@@ -60,7 +60,7 @@
           "risk": 7
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "metadata": {
@@ -112,7 +112,7 @@
           "risk": 0
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     }
   ]
 }

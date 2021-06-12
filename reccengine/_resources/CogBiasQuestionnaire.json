@@ -44,7 +44,7 @@
           "risk": 7
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "Do you live in a home that that is yours? e.g. you own a house or apartment.",
@@ -123,7 +123,7 @@
           "risk": 6
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "How many dependents do you have? e.g. people who rely on your income (children, spouses, parents or other relatives)",
@@ -167,7 +167,7 @@
           "risk": 0
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "What is your (approximate) net worth without the value of your primary residence, should you own it?",
@@ -227,7 +227,7 @@
           "risk": 9
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     },
     {
       "question_text": "What is your highest finished education?",
@@ -287,7 +287,7 @@
           "risk": 0
         }
       ],
-      "chosen_answer_index": 0
+      "chosen_answer_index": -1
     }
   ]
 }
