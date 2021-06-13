@@ -66,10 +66,50 @@ func setupUserRoutes(router *gin.Engine) *gin.Engine {
 
 func setupQuestionnaireRoutes(router *gin.Engine) {
 
+	router.POST("/api/test", postExample)
 	router.POST("/api/questionnaires/submit", postFilledQuestionnaires)
+	router.POST("/api/questionnaires/submit/single", postSingleQuestionnaire)
 	router.GET("/api/questionnaires", getQuestionnaireList)
 	router.GET("/api/questionnaires/:kind", getQst)
 	router.GET("/api/questionnaires/all", getAll)
+
+}
+
+func postExample(c *gin.Context) {
+	var e Example
+
+	if err := c.ShouldBindJSON(&e); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	log.Println("value: ", e.Value)
+	c.JSON(200, uuid.New())
+}
+
+type Example struct {
+	Value string `json:"value"`
+}
+
+func postSingleQuestionnaire(c *gin.Context) {
+	var q api.McQuestionnaire
+	//jsonData, _ := ioutil.ReadAll(c.Request.Body)
+	//jsonString := string(jsonData)
+	//
+	//log.Println("jsonData", jsonData)
+	//log.Println("jsonString", jsonString)
+	//
+	////_ = json.NewDecoder(c.Request.Body).Decode(&q)
+	//
+	//_ = json.Unmarshal(jsonData, &q)
+
+	// if we do ioutil.ReadAll(c.REquest.Body), we get an EOF error
+	if err := c.ShouldBindJSON(&q); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	log.Println(q.Finished())
+	c.JSON(200, uuid.New())
 
 }
 
@@ -79,12 +119,17 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 func postFilledQuestionnaires(c *gin.Context) {
 
 	var q []api.McQuestionnaire
+	//
+	//jsonData, _ := ioutil.ReadAll(c.Request.Body)
+	//jsonString := string(jsonData)
+	//
+	//log.Println(jsonData)
+	//log.Println(jsonString)
 
 	if err := c.ShouldBindJSON(&q); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-
 	// TODO save the questionnaire here
 
 	c.JSON(200, uuid.New())

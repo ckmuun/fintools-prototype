@@ -1,6 +1,8 @@
 package _testUtils
 
-import "reccengine/api"
+import (
+	"reccengine/api"
+)
 
 func CreateTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
 	questions := make([]api.McQuestion, 1)
@@ -18,9 +20,15 @@ func CreateTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
 	answers[0] = goodAnswer
 	answers[1] = badAnswer
 
+	metadata := api.QuestionMetadata{
+		Category: "test-category",
+	}
+
 	question := api.McQuestion{
 		AnswersToShow:     answers,
 		ChosenAnswerIndex: chosenAnswerIndex,
+		QuestionText:      "Are all your financial needs satisfied already",
+		QuestionMetadata:  metadata,
 	}
 	questions[0] = question
 
