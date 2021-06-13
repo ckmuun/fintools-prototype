@@ -1,11 +1,13 @@
-package server
+package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 	"log"
+	"net/http"
 	"path"
 	"path/filepath"
-	"reccengine/service"
+	"reccengine/api"
 )
 
 func CORSMiddleware() gin.HandlerFunc {
@@ -64,27 +66,41 @@ func setupUserRoutes(router *gin.Engine) *gin.Engine {
 
 func setupQuestionnaireRoutes(router *gin.Engine) {
 
-	router.POST("/api/questionnaires/:kind/answer")
+	router.POST("/api/questionnaires/submit", postFilledQuestionnaires)
 	router.GET("/api/questionnaires", getQuestionnaireList)
 	router.GET("/api/questionnaires/:kind", getQst)
 	router.GET("/api/questionnaires/all", getAll)
 
 }
 
-func postQuestionnaireAnswer(c *gin.Context) {
+/*
+	POST filled questionnaires
+*/
+func postFilledQuestionnaires(c *gin.Context) {
+
+	var q []api.McQuestionnaire
+
+	if err := c.ShouldBindJSON(&q); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// TODO save the questionnaire here
+
+	c.JSON(200, uuid.New())
 
 }
 
 func getQuestionnaireList(c *gin.Context) {
 
-	svc := service.GetQuestionnaireService()
+	svc := GetQuestionnaireService()
 	list := svc.QstMapping.Keys()
 
 	c.JSON(200, list)
 }
 
 func getAll(c *gin.Context) {
-	svc := service.GetQuestionnaireService()
+	svc := GetQuestionnaireService()
 
 	all := svc.QstMapping.Values()
 	c.JSON(200, all)
@@ -92,7 +108,7 @@ func getAll(c *gin.Context) {
 
 func getQst(c *gin.Context) {
 	kind := c.Param("kind")
-	svc := service.GetQuestionnaireService()
+	svc := GetQuestionnaireService()
 	log.Println("getting getQst", kind)
 
 	q, found := svc.QstMapping.Get(kind)

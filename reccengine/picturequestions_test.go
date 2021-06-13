@@ -1,4 +1,4 @@
-package service
+package main
 
 import (
 	assert2 "github.com/stretchr/testify/assert"

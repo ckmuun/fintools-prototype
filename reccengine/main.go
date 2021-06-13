@@ -4,14 +4,13 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/viper"
 	"os"
-	"reccengine/server"
 )
 
 func main() {
 
 	log.Print("initializing Fintool Recommendation Engine Backend")
 
-	router := server.SetupRouter()
+	router := SetupRouter()
 
 	port, ok := os.LookupEnv("PORT")
 	if !ok {

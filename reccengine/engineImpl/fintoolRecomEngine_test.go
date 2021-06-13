@@ -9,7 +9,7 @@ import (
 	"testing"
 )
 
-func createTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
+func CreateTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
 	questions := make([]api.McQuestion, 1)
 
 	goodAnswer := api.TextMcAnswer{
@@ -35,11 +35,10 @@ func createTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
 		TODO add multiple questionnaires for testing, at least one for every category
 	*/
 	return api.McQuestionnaire{
-		Description: "",
-		Category:    "",
+		Description: "test description",
+		Category:    "test",
 		Questions:   questions,
 	}
-
 }
 
 func getTestStrategyComps() []api.StrategyComponent {
@@ -55,7 +54,7 @@ func getTestStrategyComps() []api.StrategyComponent {
 		},
 	}
 	mixedComp := api.StrategyComponent{
-		Description: "donate everything and live in a barrell",
+		Description: "donate everything and live in a barrel",
 		ScoreContainer: api.ScoreContainer{
 			RiskTolerance:       3,
 			FlexibilityReq:      3,
@@ -92,7 +91,7 @@ func getTestStrategyComps() []api.StrategyComponent {
 
 func generateTestUser(chosenAnswerIndex int) api.User {
 
-	questionnaire := createTestQuestionnaire(chosenAnswerIndex)
+	questionnaire := CreateTestQuestionnaire(chosenAnswerIndex)
 
 	var qst = make([]api.McQuestionnaire, 1)
 	qst[0] = questionnaire
