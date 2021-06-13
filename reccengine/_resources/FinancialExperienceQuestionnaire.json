@@ -13,35 +13,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 5,
-          "time": 6,
-          "intellectual": 7,
-          "execution_complexity": 7,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 9
+          "value": 9
         }
       ],
       "chosen_answer_index": -1
@@ -57,35 +41,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -101,35 +69,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -145,11 +97,7 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
@@ -157,23 +105,15 @@
           "time": 10,
           "intellectual": 8,
           "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -189,35 +129,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -234,35 +158,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -278,35 +186,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -322,35 +214,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -366,35 +242,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -410,35 +270,19 @@
       "answers_to_show": [
         {
           "answer_text": "no",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "yes, less than five years",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         },
         {
           "answer_text": "yes, for more than five years ",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 10,
-          "execution_complexity": 10,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
@@ -454,35 +298,19 @@
       "answers_to_show": [
         {
           "answer_text": "not applicable",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "unhappy with previous investments",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "happy with previous investments",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "very happy with previous investments",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 9,
-          "execution_complexity": 9,
-          "risk": 8
+          "value": 8
         }
       ],
       "chosen_answer_index": -1

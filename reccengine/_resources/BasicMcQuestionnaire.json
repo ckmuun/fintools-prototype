@@ -14,34 +14,18 @@
         {
           "answer_text": "0-1000 €",
           "flexibility": 1,
-          "time": 0,
-          "intellectual": 1,
-          "execution_complexity": 1,
-          "risk": 1
         },
         {
           "answer_text": "1000-2000 €",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 3,
-          "execution_complexity": 3,
-          "risk": 3
+          "value": 3
         },
         {
           "answer_text": "2000-4000 €",
-          "flexibility": 7,
-          "time": 0,
-          "intellectual": 3,
-          "execution_complexity": 3,
-          "risk": 5
+          "value": 5
         },
         {
           "answer_text": "4000+ €",
-          "flexibility": 7,
-          "time": 0,
-          "intellectual": 4,
-          "execution_complexity": 3,
-          "risk": 7
+          "value": 7
         }
       ],
       "chosen_answer_index": -1
@@ -57,19 +41,11 @@
       "answers_to_show": [
         {
           "answer_text": "yes",
-          "flexibility": 5,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 1,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "no",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 1,
-          "risk": 3
+          "value": 3
         }
       ],
       "chosen_answer_index": -1
@@ -85,43 +61,23 @@
       "answers_to_show": [
         {
           "answer_text": "0-1000 €",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "1000-3000 €",
-          "flexibility": 2,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 1,
-          "risk": 1
+          "value": 1
         },
         {
           "answer_text": "3000-10000 €",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 1,
-          "risk": 3
+          "value": 3
         },
         {
           "answer_text": "10000-50000 €",
-          "flexibility": 4,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 1,
-          "risk": 5
+          "value": 5
         },
         {
           "answer_text": "50000+ €",
-          "flexibility": 6,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 1,
-          "risk": 6
+          "value": 6
         }
       ],
       "chosen_answer_index": -1
@@ -137,35 +93,19 @@
       "answers_to_show": [
         {
           "answer_text": "none",
-          "flexibility": 7,
-          "time": 5,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 5
+          "value": 5
         },
         {
           "answer_text": "1 Person",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 1,
-          "risk": 3
+          "value": 3
         },
         {
           "answer_text": "2-3 People",
-          "flexibility": 2,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 1,
-          "risk": 1
+          "value": 1
         },
         {
           "answer_text": "More than three people",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         }
       ],
       "chosen_answer_index": -1
@@ -181,51 +121,27 @@
       "answers_to_show": [
         {
           "answer_text": "indebted - 500",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "500 - 2000",
-          "flexibility": 1,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 1
+          "value": 1
         },
         {
           "answer_text": "2000 -10.000",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 3
+          "value": 3
         },
         {
           "answer_text": "10.000 - 50.000",
-          "flexibility": 5,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 5
+          "value": 5
         },
         {
           "answer_text": "50.000 - 100.000",
-          "flexibility": 7,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "100.000+",
-          "flexibility": 9,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 9
+          "value": 9
         }
       ],
       "chosen_answer_index": -1
@@ -240,51 +156,27 @@
       "answers_to_show": [
         {
           "answer_text": "PhD or higher",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 8,
-          "execution_complexity": 7,
-          "risk": 3
+          "value": 3
         },
         {
           "answer_text": "Master's degree or, in Germany, 'Handwerksmeister'",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 7,
-          "execution_complexity": 7,
-          "risk": 3
+          "value": 3
         },
         {
           "answer_text": "Bachelor's degree or, in Germany, 'Geselle', 'Techniker' etc.",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 6,
-          "execution_complexity": 6,
-          "risk": 2
+          "value": 2
         },
         {
           "answer_text": "Apprenticeship, Trade School, 'Berufsausbildung' in Germany",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 4,
-          "execution_complexity": 3,
-          "risk": 1
+          "value": 1
         },
         {
           "answer_text": "Secondary School or, in the U.S., High School diploma",
-          "flexibility": 2,
-          "time": 0,
-          "intellectual": 2,
-          "execution_complexity": 2,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "no school finished",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         }
       ],
       "chosen_answer_index": -1

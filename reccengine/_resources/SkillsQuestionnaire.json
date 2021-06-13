@@ -13,51 +13,26 @@
       "answers_to_show": [
         {
           "answer_text": "unemployed",
-          "flexibility": 0,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
         },
         {
           "answer_text": "salaried",
-          "flexibility": 3,
-          "time": 0,
-          "intellectual": 3,
-          "execution_complexity": 3,
-          "risk": 3
+          "value": 3
         },
         {
           "answer_text": "hourly rate",
-          "flexibility": 7,
-          "time": 0,
-          "intellectual": 3,
-          "execution_complexity": 3,
-          "risk": 5
+          "value": 5
         },
         {
           "answer_text": "self-employed contractor",
-          "flexibility": 7,
-          "time": 0,
-          "intellectual": 4,
-          "execution_complexity": 3,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "entrepreneur, less than 10 employees ",
-          "flexibility": 7,
-          "time": 0,
-          "intellectual": 4,
-          "execution_complexity": 3,
-          "risk": 7
+          "value": 7
         },
         {
           "answer_text": "entrepreneur, more than 10 employees ",
-          "flexibility": 7,
-          "time": 0,
-          "intellectual": 4,
-          "execution_complexity": 3,
-          "risk": 7
+          "value": 7
         }
       ],
       "chosen_answer_index": -1
@@ -73,43 +48,23 @@
       "answers_to_show": [
         {
           "answer_text": "full time",
-          "flexibility": 1,
-          "time": 0,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "part time",
-          "flexibility": 0,
-          "time": 5,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "self-employed -> no fix schedule",
-          "flexibility": 0,
-          "time": 3,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "student -> no fix schedule",
-          "flexibility": 0,
-          "time": 3,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         },
         {
           "answer_text": "not working",
-          "flexibility": 0,
-          "time": 10,
-          "intellectual": 0,
-          "execution_complexity": 0,
-          "risk": 0
+          "value": 0
         }
       ],
       "chosen_answer_index": -1
