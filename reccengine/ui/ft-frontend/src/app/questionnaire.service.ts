@@ -16,32 +16,17 @@ export class QuestionnaireService {
   constructor(private httpClient: HttpClient) {
   }
 
-
-  /*3
-    TODO implement caching service that dynamically returns an observalbe from either
-    the request output or the cached values, and caches the values upon request.
-   */
-
+  postFilledQuestionnaires(questionnaires: McQuestionnaire[]): Observable<any> {
+    return this.httpClient.post("http://localhost:8080/api/questionnaires/", questionnaires)
+  }
 
   getQuestionnaires(): Observable<McQuestionnaire[]> {
     return this.httpClient.get<McQuestionnaire[]>("http://localhost:8080/api/questionnaires/all")
   }
+
   getQuestionnaireList(): Observable<string[]> {
     return this.httpClient.get<string[]>("http://localhost:8080/api/questionnaires")
   }
-
-  /*
-  fetch() {
-    return this.httpClient.get<McQuestionnaire[]>("http://localhost:8080/api/questionnaires")
-      .subscribe(res => this.dataSubject.next(res))
-  }
-
-   */
-
-
-
-
-
 }
 
 export class McQuestionnaire {

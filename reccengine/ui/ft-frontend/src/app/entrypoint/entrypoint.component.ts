@@ -41,6 +41,10 @@ export class EntrypointComponent implements OnInit {
     )
   }
 
+  submitQuestionnaires() {
+
+  }
+
   get questionnaires$() {
 
     return this.qSvc.data$.subscribe(

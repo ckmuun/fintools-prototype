@@ -20,7 +20,7 @@
 
   <!--List for Questionnaires -- index is i-->
   <ol *ngFor="let questionnaire of this.questionnaires; index as i">
-    <mat-card>
+    <mat-card style=margin-bottom:50px;border-color:blue>
       <mat-card-header>
         <mat-card-title>{{questionnaire.category}}</mat-card-title>
         <mat-card-subtitle>{{questionnaire.description}}</mat-card-subtitle>
@@ -31,7 +31,7 @@
       <ol *ngFor="let question of questionnaire.questions; index as ii;">
 
         <!--Display a question of the questionnaire-->
-        <mat-card>
+        <mat-card style=margin-bottom:20px>
 
           <!--The header containing the question text-->
           <mat-card-header>
@@ -40,20 +40,19 @@
 
           <!-- List for answers in questions, index is iii-->
           <ul *ngFor="let answer of question.answers_to_show ;index as iii">
-            <mat-card [style.background]="getSelected(i, ii, iii)?'yellow':'white'">
+            <mat-card [style.background]="getSelected(i, ii, iii)?'green':'white'">
               <mat-card-header>
+                <button mat-stroked-button color="primary" (click)="setAnswerIndex(i, ii, iii)">Select this answer</button>
                 <mat-card-title [textContent]="answer.answer_text"></mat-card-title>
               </mat-card-header>
-              <button mat-stroked-button color="primary" (click)="setAnswerIndex(i, ii, iii)">Select this answer
-              </button>
             </mat-card>
           </ul>
-          <span>Debug: Chosen Answer Index: {{question.chosen_answer_index}} </span>
-
+          <!--          <span>Debug: Chosen Answer Index: {{question.chosen_answer_index}} </span>-->
         </mat-card>
       </ol>
-
     </mat-card>
   </ol>
+
+  <button mat-raised-button (click)="">Submit Questionnaires</button>
 </mat-card>
 
