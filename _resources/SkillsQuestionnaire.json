@@ -1,0 +1,73 @@
+{
+  "description": "Initial Financial Health and Situation",
+  "category": "skills",
+  "questions": [
+    {
+      "metadata": {
+        "question_text": "What is your employment type?",
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "unemployed"
+        },
+        {
+          "answer_text": "salaried",
+          "value": 3
+        },
+        {
+          "answer_text": "hourly rate",
+          "value": 5
+        },
+        {
+          "answer_text": "self-employed contractor",
+          "value": 7
+        },
+        {
+          "answer_text": "entrepreneur, less than 10 employees ",
+          "value": 7
+        },
+        {
+          "answer_text": "entrepreneur, more than 10 employees ",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "metadata": {
+        "question_text": "work schedule",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "full time",
+          "value": 0
+        },
+        {
+          "answer_text": "part time",
+          "value": 0
+        },
+        {
+          "answer_text": "self-employed -> no fix schedule",
+          "value": 0
+        },
+        {
+          "answer_text": "student -> no fix schedule",
+          "value": 0
+        },
+        {
+          "answer_text": "not working",
+          "value": 0
+        }
+      ],
+      "chosen_answer_index": -1
+    }
+  ]
+}
