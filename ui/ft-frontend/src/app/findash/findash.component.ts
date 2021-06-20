@@ -27,7 +27,7 @@ export class FindashComponent implements OnInit {
   ];
 
 
-  // todo
+  // todo wire data here
   public barChartData: ChartData<'bar'> = {
     labels: [ '2006', '2007', '2008', '2009', '2010', '2011', '2012' ],
     datasets: [
