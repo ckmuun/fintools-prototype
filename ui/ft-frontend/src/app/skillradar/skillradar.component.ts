@@ -23,6 +23,7 @@ export class SkillradarComponent implements OnInit {
   };
   public radarChartLabels: string[] = [ 'Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running' ];
 
+  // TODO wire data from backend here
   public radarChartData: ChartData<'radar'> = {
     labels: this.radarChartLabels,
     datasets: [
