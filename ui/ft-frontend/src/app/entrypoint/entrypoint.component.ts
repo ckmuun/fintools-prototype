@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {McQuestionnaire, QuestionnaireService} from "../questionnaire.service";
+import {StrategyService} from "../strategy.service";
 
 @Component({
   selector: 'app-entrypoint',
@@ -8,11 +9,13 @@ import {McQuestionnaire, QuestionnaireService} from "../questionnaire.service";
 })
 export class EntrypointComponent implements OnInit {
 
-  questionnaires: McQuestionnaire[]
+  questionnaires: McQuestionnaire[];
+
+  showSubmitModal: boolean = false;
 
   qCategories: string[];
 
-  constructor(private qSvc: QuestionnaireService) {
+  constructor(private qSvc: QuestionnaireService, private stratSvc: StrategyService ) {
     this.qCategories = [];
     this.questionnaires = [];
   }
@@ -41,8 +44,20 @@ export class EntrypointComponent implements OnInit {
     )
   }
 
-  submitQuestionnaires() {
+  openSubmitModal() {
 
+    if(this.allQuestionnairesFilled()) {
+      this.showSubmitModal = true
+    } else {
+      // todo display some "not all questionnnaires filled warning"
+    }
+    // todo open submit modal here
+    return
+  }
+
+  uploadFilledQuestionnaires() {
+
+    return
   }
 
   get questionnaires$() {
@@ -58,6 +73,25 @@ export class EntrypointComponent implements OnInit {
     this.questionnaires[questionnaireIndex]
       .questions[questionIndex]
       .chosen_answer_index = answerIndex
+  }
+
+  allQuestionnairesFilled(): boolean {
+    if (this.questionnaires.length === 0) {
+      return false;
+    }
+
+    for (let i = 0; i < this.questionnaires.length; i++) {
+      let q = this.questionnaires[i];
+      for (let ii = 0; ii < q.questions.length; ii++) {
+        let qq = q.questions[ii];
+
+        // -1 is the default index set by backend
+        if (qq.chosen_answer_index === -1) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
 }

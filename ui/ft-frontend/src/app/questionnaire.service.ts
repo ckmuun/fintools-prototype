@@ -16,9 +16,7 @@ export class QuestionnaireService {
   constructor(private httpClient: HttpClient) {
   }
 
-  postFilledQuestionnaires(questionnaires: McQuestionnaire[]): Observable<any> {
-    return this.httpClient.post("http://localhost:8080/api/questionnaires/", questionnaires)
-  }
+
 
   getQuestionnaires(): Observable<McQuestionnaire[]> {
     return this.httpClient.get<McQuestionnaire[]>("http://localhost:8080/api/questionnaires/all")

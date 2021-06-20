@@ -17,6 +17,8 @@ import {FindashComponent} from "./findash/findash.component";
 import {ChartsModule} from "ng2-charts";
 import { BaseChartDirective } from "ng2-charts";
 import { SkillradarComponent } from './skillradar/skillradar.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import { StratcompareComponent } from './stratcompare/stratcompare.component';
 
 const routes: Routes = [
   {path: 'get-started', component: EntrypointComponent},
@@ -33,6 +35,7 @@ const routes: Routes = [
     McQuestionComponent,
     FindashComponent,
     SkillradarComponent,
+    StratcompareComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ const routes: Routes = [
     MatCardModule,
     RouterModule.forRoot(routes),
     ChartsModule,
+    MatGridListModule
   ],
 
   exports: [RouterModule],

@@ -13,7 +13,7 @@
       "answers_to_show": [
         {
           "answer_text": "0-1000 €",
-          "flexibility": 1
+          "value": 1
         },
         {
           "answer_text": "1000-2000 €",

@@ -4,6 +4,8 @@ import {ChartOptions, ChartType, ChartDataset, ChartData} from 'chart.js'
 import { BaseChartDirective} from "ng2-charts";
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 
+import {MatGridTile} from "@angular/material/grid-list";
+
 
 @Component({
   selector: 'app-findash',

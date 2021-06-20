@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {ChartConfiguration, ChartData, ChartType, RadarControllerChartOptions} from "chart.js";
+import {ChartConfiguration, ChartData, ChartType} from "chart.js";
 
 @Component({
-  selector: 'app-skillradar',
-  templateUrl: './skillradar.component.html',
-  styleUrls: ['./skillradar.component.css']
+  selector: 'app-stratcompare',
+  templateUrl: './stratcompare.component.html',
+  styleUrls: ['./stratcompare.component.css']
 })
-export class SkillradarComponent implements OnInit {
 
-
+/*
+    This component serves a comparison chart between the user's answers and a given strategy
+    in practice, these strategies are returned from the backend.
+ */
+export class StratcompareComponent implements OnInit {
 
 
   constructor() {
@@ -29,6 +32,7 @@ export class SkillradarComponent implements OnInit {
     labels: this.radarChartLabels,
     datasets: [
       { data: [ 65, 59, 10, 81, 15], label: 'Series A' },
+      { data: [ 28, 48, 40, 19, 60], label: 'Series B' }
     ]
   };
 

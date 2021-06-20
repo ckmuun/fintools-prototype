@@ -1,22 +1,16 @@
-<p>findash works!</p>
-
 <div>
   <div style="display: block">
 
-    <mat-card >
-      <mat-card-header>
-        <mat-card-title>Bar Chart</mat-card-title>
-        <mat-card-subtitle>an example...</mat-card-subtitle>
+    <mat-grid-list cols="2" rowHeight="2:1">
 
-      </mat-card-header>
-      <canvas style="height: 150px; width: 150px"
-              baseChart [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
-              [type]="barChartType">
+      <mat-grid-tile style="background-color: aqua;">
+        <app-skillradar></app-skillradar>
+      </mat-grid-tile>
+      <mat-grid-tile style="background-color: cornflowerblue">
+      <app-skillradar>radar</app-skillradar>
 
-        this is a baseChart
-
-      </canvas>
-    </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
 
   </div>
 </div>
