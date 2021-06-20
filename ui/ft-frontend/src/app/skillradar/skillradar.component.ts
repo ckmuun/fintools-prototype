@@ -31,6 +31,9 @@ export class SkillradarComponent implements OnInit {
     ]
   };
 
+  /*
+      TODO define proper colouring here
+   */
   public recolor(): void {
     this.radarChartData.datasets[0].backgroundColor = 'red'
     this.radarChartData.datasets[0].borderColor = 'blue'
