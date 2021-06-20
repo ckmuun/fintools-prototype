@@ -1,0 +1,23 @@
+<p>findash works!</p>
+
+<div>
+  <div style="display: block">
+
+    <mat-card >
+      <mat-card-header>
+        <mat-card-title>Bar Chart</mat-card-title>
+        <mat-card-subtitle>an example...</mat-card-subtitle>
+
+      </mat-card-header>
+      <canvas style="height: 150px; width: 150px"
+              baseChart [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
+              [type]="barChartType">
+
+        this is a baseChart
+
+      </canvas>
+    </mat-card>
+
+  </div>
+</div>
+
