@@ -24,7 +24,7 @@ const (
 	Categorical
 )
 
-// Flexibility Scale
+// TimeFlexibility Scale
 const (
 	Static = iota
 	MultiYearCommit
@@ -42,7 +42,7 @@ const (
 	FullTime
 )
 
-// Intellectual Effort Scale
+// CogBiasResistance Effort Scale
 const (
 	NoSkillReq = iota
 	InitialFlatSkillReq

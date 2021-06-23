@@ -9,6 +9,6 @@ import (
 */
 
 type FintoolRecommender interface {
-	GenerateStrategyRecommendations(user api.User) (api.Strategy, api.Strategy, error)
+	GenerateStrategyRecommendations(user api.User) (api.FintoolRecom, api.FintoolRecom, error)
 	SetStrategyComponents([]api.StrategyComponent)
 }

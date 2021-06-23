@@ -47,38 +47,38 @@ func getTestStrategyComps() []api.StrategyComponent {
 	bestComp := api.StrategyComponent{
 		Description: "Just be a billionaire",
 		ScoreContainer: api.ScoreContainer{
-			RiskTolerance:       10,
-			FlexibilityReq:      10,
-			IntellectualReq:     10,
-			FinanceKnowledgeReq: 10,
+			FinRiskTolerance:  10,
+			TimeFlexibility:   10,
+			CogBiasResistance: 10,
+			FinanceKnowledge:  10,
 		},
 	}
 	mixedComp := api.StrategyComponent{
 		Description: "donate everything and live in a barrel",
 		ScoreContainer: api.ScoreContainer{
-			RiskTolerance:       3,
-			FlexibilityReq:      3,
-			IntellectualReq:     3,
-			FinanceKnowledgeReq: 3,
+			FinRiskTolerance:  3,
+			TimeFlexibility:   3,
+			CogBiasResistance: 3,
+			FinanceKnowledge:  3,
 		},
 	}
 
 	worstComp := api.StrategyComponent{
 		Description: "collect social security",
 		ScoreContainer: api.ScoreContainer{
-			RiskTolerance:       1,
-			FlexibilityReq:      1,
-			IntellectualReq:     1,
-			FinanceKnowledgeReq: 1,
+			FinRiskTolerance:  1,
+			TimeFlexibility:   1,
+			CogBiasResistance: 1,
+			FinanceKnowledge:  1,
 		},
 	}
 	mediocreComp := api.StrategyComponent{
 		Description: "Just be a at least a millionaire",
 		ScoreContainer: api.ScoreContainer{
-			RiskTolerance:       7,
-			FlexibilityReq:      7,
-			IntellectualReq:     7,
-			FinanceKnowledgeReq: 7,
+			FinRiskTolerance:  7,
+			TimeFlexibility:   7,
+			CogBiasResistance: 7,
+			FinanceKnowledge:  7,
 		},
 	}
 	strategyComponents[0] = bestComp
@@ -126,9 +126,9 @@ func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
 	assert2.NotNil(t, goodStrategy, "")
 
 	log.Print("goodStrategy: ", goodStrategy)
-	assert.Equal(t, goodStrategy.Components[0], strategyComps[0])
-	assert.Equal(t, goodStrategy.Components[1], strategyComps[2])
-	assert.Equal(t, goodStrategy.Components[2], strategyComps[1])
+	assert.Equal(t, goodStrategy.RecommendedComponents[0], strategyComps[0])
+	assert.Equal(t, goodStrategy.RecommendedComponents[1], strategyComps[2])
+	assert.Equal(t, goodStrategy.RecommendedComponents[2], strategyComps[1])
 }
 
 func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
@@ -146,7 +146,7 @@ func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
 	assert2.NotNil(t, goodStrategy, "")
 
 	log.Print("strategy: ", goodStrategy)
-	assert.Equal(t, goodStrategy.Components[0], strategyComps[3])
-	assert.Equal(t, goodStrategy.Components[1], strategyComps[1])
-	assert.Equal(t, goodStrategy.Components[2], strategyComps[2])
+	assert.Equal(t, goodStrategy.RecommendedComponents[0], strategyComps[3])
+	assert.Equal(t, goodStrategy.RecommendedComponents[1], strategyComps[1])
+	assert.Equal(t, goodStrategy.RecommendedComponents[2], strategyComps[2])
 }

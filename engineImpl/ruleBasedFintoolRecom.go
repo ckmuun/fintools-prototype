@@ -18,13 +18,13 @@ type RuleBasedFintoolRecommender struct {
 	Entrypoint method
 	returns GoodStrategy BadStrategy, Error
 */
-func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(usr api.User) (api.Strategy, api.Strategy, error) {
+func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(usr api.User) (api.FintoolRecom, api.FintoolRecom, error) {
 
 	// Handling of unfinished questionnaires
 	if !usr.AllFinished() {
 		err := errors.New("can not generate strategies for user as questionnaires not finished: $usr.Id")
 		log.Err(err)
-		return api.Strategy{}, api.Strategy{}, err
+		return api.FintoolRecom{}, api.FintoolRecom{}, err
 	}
 
 	ranking := r.getRankedStratComps(usr)
@@ -52,11 +52,11 @@ func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(usr api.Us
 	_ = iter.Prev()
 	badComps[2] = iter.Value().(api.StrategyComponent)
 
-	return api.Strategy{
-			Components: goodComps,
+	return api.FintoolRecom{
+			RecommendedComponents: goodComps,
 		},
-		api.Strategy{
-			Components: badComps,
+		api.FintoolRecom{
+			RecommendedComponents: badComps,
 		},
 		nil
 }
@@ -104,10 +104,10 @@ func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api
 
 		diffs := questionnaireScores.Diff(component.ScoreContainer)
 
-		a := diffs.FinanceKnowledgeReq
-		b := diffs.IntellectualReq
-		c := diffs.FlexibilityReq
-		d := diffs.RiskTolerance
+		a := diffs.FinanceKnowledge
+		b := diffs.CogBiasResistance
+		c := diffs.TimeFlexibility
+		d := diffs.FinRiskTolerance
 
 		/*
 				Bei 10 AnswerScore und 10 Component Score muss hier 0 rauskommen

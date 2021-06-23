@@ -1,27 +1,28 @@
 package api
 
 type ScoreContainer struct {
-	RiskTolerance       int `json:"risk_tolerance_req"`
-	FlexibilityReq      int `json:"flexibility_req"`
-	IntellectualReq     int `json:"intellectual_req"`
-	FinanceKnowledgeReq int `json:"finance_knowledge_req "`
+	FinRiskTolerance  int `json:"fin_risk_tolerance"`
+	PsyRiskTolerance  int `json:"psy_risk_tolerance"`
+	TimeFlexibility   int `json:"time_flexibility"`
+	CogBiasResistance int `json:"cog_bias_resistance"`
+	FinanceKnowledge  int `json:"finance_knowledge"`
 }
 
 func (sc *ScoreContainer) AverageIze(divisor int) (averages ScoreContainer) {
 	return ScoreContainer{
-		RiskTolerance:       sc.RiskTolerance / divisor,
-		FlexibilityReq:      sc.FlexibilityReq / divisor,
-		IntellectualReq:     sc.IntellectualReq / divisor,
-		FinanceKnowledgeReq: sc.FinanceKnowledgeReq / divisor,
+		FinRiskTolerance:  sc.FinRiskTolerance / divisor,
+		TimeFlexibility:   sc.TimeFlexibility / divisor,
+		CogBiasResistance: sc.CogBiasResistance / divisor,
+		FinanceKnowledge:  sc.FinanceKnowledge / divisor,
 	}
 }
 
 func (sc *ScoreContainer) Diff(other ScoreContainer) (differences ScoreContainer) {
 
-	differences.RiskTolerance = absolute(sc.RiskTolerance - other.RiskTolerance)
-	differences.FlexibilityReq = absolute(sc.FlexibilityReq - other.FlexibilityReq)
-	differences.IntellectualReq = absolute(sc.IntellectualReq - other.IntellectualReq)
-	differences.FinanceKnowledgeReq = absolute(sc.FinanceKnowledgeReq - other.FinanceKnowledgeReq)
+	differences.FinRiskTolerance = absolute(sc.FinRiskTolerance - other.FinRiskTolerance)
+	differences.TimeFlexibility = absolute(sc.TimeFlexibility - other.TimeFlexibility)
+	differences.CogBiasResistance = absolute(sc.CogBiasResistance - other.CogBiasResistance)
+	differences.FinanceKnowledge = absolute(sc.FinanceKnowledge - other.FinanceKnowledge)
 
 	return differences
 }
