@@ -15,6 +15,8 @@ type StrategyComponent struct {
 
 /*
 	A personal finance strategy consisting of multiple indiivdual components
+	Note on the wildcard component: this is basically a somewhat randomized component, that is chosen
+	independently of the actual recommendation.
 */
 type FintoolRecom struct {
 	RecommendedComponents [3]StrategyComponent `json:"recommended_components"`

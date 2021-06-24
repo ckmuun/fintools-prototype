@@ -1,12 +1,13 @@
 package api
 
 import (
-	"errors"
 	"github.com/google/uuid"
 )
 
 /*
 	A user, e.g. someone answering the questionnaires.
+	TODO remodel this to be used in a later stage of the overall workflow
+
 */
 type User struct {
 	Id uuid.UUID `json:"id"`
@@ -18,6 +19,7 @@ type User struct {
 	BadStrategyRating  Questionnaire     `json:"bad_strategy_rating"`
 }
 
+/*
 func (u *User) CalcScores() (*ScoreContainer, error) {
 
 	if !u.AllFinished() {
@@ -56,3 +58,5 @@ func (u *User) AllFinished() bool {
 	}
 	return true
 }
+
+*/

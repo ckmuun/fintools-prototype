@@ -3,9 +3,9 @@ package main
 import (
 	"encoding/json"
 	"github.com/emirpasic/gods/maps/hashmap"
-	"io/ioutil"
 	"log"
 	"reccengine/api"
+	"reccengine/utils"
 	"sync"
 )
 
@@ -82,7 +82,7 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 */
 func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := loadQuestionnaireFile("./_resources/FinancialExperienceQuestionnaire.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialExperienceQuestionnaire.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -91,7 +91,7 @@ func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 
 func loadSkillsQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := loadQuestionnaireFile("./_resources/SkillsQuestionnaire.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/SkillsQuestionnaire.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -100,7 +100,7 @@ func loadSkillsQuestionnaire() api.McQuestionnaire {
 
 func loadCogBiasQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := loadQuestionnaireFile("./_resources/CogBiasQuestionnaire.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/CogBiasQuestionnaire.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -110,19 +110,9 @@ func loadCogBiasQuestionnaire() api.McQuestionnaire {
 func loadBasicQuestionnaire() api.McQuestionnaire {
 
 	var questionnaire = api.McQuestionnaire{}
-	file := loadQuestionnaireFile("./_resources/BasicMcQuestionnaire.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/BasicMcQuestionnaire.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
 	return questionnaire
-}
-
-func loadQuestionnaireFile(filename string) []byte {
-	file, err := ioutil.ReadFile(filename)
-
-	if err != nil {
-		panic("could not load questionnaire")
-	}
-
-	return file
 }

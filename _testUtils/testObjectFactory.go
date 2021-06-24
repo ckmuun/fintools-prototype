@@ -41,3 +41,60 @@ func CreateTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
 		Questions:   questions,
 	}
 }
+func GetTestStrategyComps() []api.StrategyComponent {
+	strategyComponents := make([]api.StrategyComponent, 4)
+
+	bestComp := api.StrategyComponent{
+		Description: "Just be a billionaire",
+		ScoreContainer: api.ScoreContainer{
+			FinRiskTolerance:  10,
+			TimeFlexibility:   10,
+			CogBiasResistance: 10,
+			FinanceKnowledge:  10,
+		},
+	}
+	mixedComp := api.StrategyComponent{
+		Description: "donate everything and live in a barrel",
+		ScoreContainer: api.ScoreContainer{
+			FinRiskTolerance:  3,
+			TimeFlexibility:   3,
+			CogBiasResistance: 3,
+			FinanceKnowledge:  3,
+		},
+	}
+
+	worstComp := api.StrategyComponent{
+		Description: "collect social security",
+		ScoreContainer: api.ScoreContainer{
+			FinRiskTolerance:  1,
+			TimeFlexibility:   1,
+			CogBiasResistance: 1,
+			FinanceKnowledge:  1,
+		},
+	}
+	mediocreComp := api.StrategyComponent{
+		Description: "Just be a at least a millionaire",
+		ScoreContainer: api.ScoreContainer{
+			FinRiskTolerance:  7,
+			TimeFlexibility:   7,
+			CogBiasResistance: 7,
+			FinanceKnowledge:  7,
+		},
+	}
+	strategyComponents[0] = bestComp
+	strategyComponents[1] = mixedComp
+	strategyComponents[2] = mediocreComp
+	strategyComponents[3] = worstComp
+
+	return strategyComponents
+}
+
+func GenerateTestUser(chosenAnswerIndex int) []api.McQuestionnaire {
+
+	questionnaire := CreateTestQuestionnaire(chosenAnswerIndex)
+
+	var qst = make([]api.McQuestionnaire, 1)
+	qst[0] = questionnaire
+
+	return qst
+}

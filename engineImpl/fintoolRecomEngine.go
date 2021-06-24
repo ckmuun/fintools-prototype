@@ -5,10 +5,10 @@ import (
 )
 
 /*
-	Financial Tools Recommendation are generated here
+	Financial Tools GoodRecommendation are generated here
 */
 
 type FintoolRecommender interface {
-	GenerateStrategyRecommendations(user api.User) (api.FintoolRecom, api.FintoolRecom, error)
+	GenerateStrategyRecommendations(questionnaires []api.McQuestionnaire) (api.FintoolRecom, api.FintoolRecom, api.ScoreContainer, error)
 	SetStrategyComponents([]api.StrategyComponent)
 }

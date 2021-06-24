@@ -1,7 +1,6 @@
 package engineImpl
 
 import (
-	"errors"
 	"github.com/emirpasic/gods/maps/treemap"
 	"github.com/rs/zerolog/log"
 	"reccengine/api"
@@ -18,16 +17,14 @@ type RuleBasedFintoolRecommender struct {
 	Entrypoint method
 	returns GoodStrategy BadStrategy, Error
 */
-func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(usr api.User) (api.FintoolRecom, api.FintoolRecom, error) {
+func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilledQuestionnaires []api.McQuestionnaire) (api.FintoolRecom, api.FintoolRecom, api.ScoreContainer, error) {
 
-	// Handling of unfinished questionnaires
-	if !usr.AllFinished() {
-		err := errors.New("can not generate strategies for user as questionnaires not finished: $usr.Id")
-		log.Err(err)
-		return api.FintoolRecom{}, api.FintoolRecom{}, err
+	scores, err := CalculateQuestionnaireScores(userFilledQuestionnaires)
+
+	if err != nil {
+		panic("error during questionnaires score calculation")
 	}
-
-	ranking := r.getRankedStratComps(usr)
+	ranking := r.rankByAbsoluteDiff(scores)
 
 	var goodComps [3]api.StrategyComponent
 	var badComps [3]api.StrategyComponent
@@ -58,6 +55,7 @@ func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(usr api.Us
 		api.FintoolRecom{
 			RecommendedComponents: badComps,
 		},
+		scores,
 		nil
 }
 
@@ -67,27 +65,6 @@ func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(usr api.Us
 func (r *RuleBasedFintoolRecommender) SetStrategyComponents(components []api.StrategyComponent) {
 
 	r.strategyComponents = components
-}
-
-func (r *RuleBasedFintoolRecommender) getRankedStratComps(usr api.User) *treemap.Map {
-
-	log.Print("Generating rating of strategy components by simple rules")
-	/*
-		For every answered question, increase the points that were 'get' for the respective sub-category.
-		identische metriken für fragen bzw. antworten und strategiekomponenten.
-		der nutzer erhält einen besimmten numerischen Wert auf seine Antworten,
-		die komponenten haben einen statischen Wert, der sich aus ihrer Klassifizierung heraus ergibt.
-		es werden die drei kompoenten gewählt, die am nächsten am Wert des Nutzers sind.
-	*/
-
-	scores, err := usr.CalcScores()
-
-	if err != nil {
-		log.Err(err)
-	}
-
-	log.Print("generating ranking")
-	return r.rankByAbsoluteDiff(*scores)
 }
 
 /*
@@ -108,6 +85,7 @@ func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api
 		b := diffs.CogBiasResistance
 		c := diffs.TimeFlexibility
 		d := diffs.FinRiskTolerance
+		e := diffs.PsyRiskTolerance
 
 		/*
 				Bei 10 AnswerScore und 10 Component Score muss hier 0 rauskommen
@@ -117,7 +95,7 @@ func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api
 		*/
 
 		// to be minimized
-		naiveScoreForStratComp := a + b + c + d
+		naiveScoreForStratComp := a + b + c + d + e
 
 		if naiveScoreForStratComp < 0 {
 			naiveScoreForStratComp *= -1

@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	log.Print("initializing Fintool Recommendation Engine Backend")
+	log.Print("initializing Fintool GoodRecommendation Engine Backend")
 
 	router := SetupRouter()
 
