@@ -82,7 +82,7 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 */
 func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialExperienceQuestionnaire.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialKnowledgeQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -91,7 +91,7 @@ func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 
 func loadSkillsQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/SkillsQuestionnaire.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/PsychologicalRiskToleranceQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -100,7 +100,7 @@ func loadSkillsQuestionnaire() api.McQuestionnaire {
 
 func loadCogBiasQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/CogBiasQuestionnaire.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/CogBiasResistanceQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -110,7 +110,7 @@ func loadCogBiasQuestionnaire() api.McQuestionnaire {
 func loadBasicQuestionnaire() api.McQuestionnaire {
 
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/BasicMcQuestionnaire.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialRiskToleranceQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)

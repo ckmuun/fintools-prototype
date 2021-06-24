@@ -11,15 +11,13 @@ import (
 
 func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
 
-	strategyComps := _testUtils.GetTestStrategyComps()
+	strategyComps := _testUtils.LoadRealStrategiesFromJson()
 
 	recommender := RuleBasedFintoolRecommender{
 		strategyComponents: strategyComps,
 	}
 
-	testQuestionnaire := _testUtils.CreateTestQuestionnaire(0)
-	testQArr := make([]api.McQuestionnaire, 1)
-	testQArr[0] = testQuestionnaire
+	testQArr := _testUtils.FillQuestionnairesFromJson()
 
 	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
 
@@ -45,9 +43,9 @@ func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
 	testQArr := make([]api.McQuestionnaire, 1)
 	testQArr[0] = testQuestionnaire
 
-	goodStrategy, badStrategy, _, error := recommender.GenerateStrategyRecommendations(testQArr)
+	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
 
-	assert2.Nil(t, error, "")
+	assert2.Nil(t, err, "")
 	assert2.NotNil(t, badStrategy, "")
 	assert2.NotNil(t, goodStrategy, "")
 

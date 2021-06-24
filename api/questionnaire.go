@@ -1,5 +1,7 @@
 package api
 
+import "errors"
+
 type Questionnaire interface {
 	Finished() bool
 }
@@ -77,6 +79,10 @@ func (mcq *McQuestion) GetAnswerText() string {
 }
 
 func (mc *McQuestionnaire) GetAnswersSum() (int, error) {
+
+	if !mc.Finished() {
+		return -1, errors.New("questionnaire not completed, can not extract answer score sum")
+	}
 
 	score := 0
 	for _, question := range mc.Questions {
