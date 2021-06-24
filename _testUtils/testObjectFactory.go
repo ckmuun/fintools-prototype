@@ -20,11 +20,18 @@ func FillQuestionnairesFromJson() []api.McQuestionnaire {
 
 	rawQuestionnaires := loadQuestionnairesFromJson()
 
-	for _, questionnaire := range rawQuestionnaires {
-		for _, question := range questionnaire.Questions {
-			question.SetAnswerIndex(0)
+	for i := range rawQuestionnaires {
+
+		for ii := range rawQuestionnaires[i].Questions {
+			rawQuestionnaires[i].Questions[ii].SetAnswerIndex(0)
 		}
 	}
+
+	//for _, questionnaire := range rawQuestionnaires {
+	//	for _, question := range questionnaire.Questions {
+	//		question.SetAnswerIndex(0)
+	//	}
+	//}
 
 	return rawQuestionnaires
 }
