@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ChartConfiguration, ChartData, ChartType} from "chart.js";
+import {radarchartLabels} from "../ftconstants";
+
 
 @Component({
   selector: 'app-stratcompare',
@@ -13,9 +15,16 @@ import {ChartConfiguration, ChartData, ChartType} from "chart.js";
  */
 export class StratcompareComponent implements OnInit {
 
+  answers: number[]
+  strategyScores: number[]
 
-  constructor() {
+  chartData: ChartData<'radar'>;
 
+  constructor(answers: number[], strategyScores: number[]) {
+    this.answers = answers;
+    this.strategyScores = strategyScores;
+
+    this.chartData = this.genData();
   }
 
   ngOnInit(): void {
@@ -26,32 +35,43 @@ export class StratcompareComponent implements OnInit {
   public radarChartOptions: ChartConfiguration['options'] = {
     responsive: true,
   };
-  public radarChartLabels: string[] = [ 'Time', 'Flexibility', 'Financial Experience', 'Financial Situation','Cognitive Bias\nResistance' ];
 
-  public radarChartData: ChartData<'radar'> = {
-    labels: this.radarChartLabels,
-    datasets: [
-      { data: [ 65, 59, 10, 81, 15], label: 'Series A' },
-      { data: [ 28, 48, 40, 19, 60], label: 'Series B' }
-    ]
-  };
+  /*
+    public radarChartData: ChartData<'radar'> = {
+      labels: radarchartLabels,
+      datasets: [
+        {data: [65, 59, 10, 81, 15], label: 'Series A'},
+        {data: [28, 48, 40, 19, 60], label: 'Series B'},
+      ]
+    };
+   */
+
+  public genData(): ChartData<'radar'> {
+    return {
+      labels: radarchartLabels,
+      datasets: [
+        {data: this.answers, label: 'User Answers'},
+        {data: this.strategyScores, label: 'Strategy Values'},
+      ]
+    }
+  }
 
   /*
       TODO define proper colouring here
    */
   public recolor(): void {
-    this.radarChartData.datasets[0].backgroundColor = '#507783'
-    this.radarChartData.datasets[0].borderColor = 'blue'
+    this.chartData.datasets[0].backgroundColor = '#507783'
+    this.chartData.datasets[0].borderColor = 'blue'
   }
 
   public radarChartType: ChartType = 'radar';
 
   // events
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
+  public chartClicked({event, active}: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
 
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
+  public chartHovered({event, active}: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
 }

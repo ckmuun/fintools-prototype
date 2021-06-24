@@ -20,18 +20,36 @@ export class StrategyService {
 }
 
 /*
-  The DTO that is returned from backend, it encapsulates a recommendation and an id
+    The DTO that is returned from backend, it encapsulates a recommendation and an id
  */
 export class FintoolRecomDto {
 
-  constructor(recommendation: FintoolRecom, id: string) {
+  constructor(recommendation: FintoolRecom,
+              id: string,
+              user_scores: ScoreContainer
+  ) {
 
-    this.recommendation = recommendation;
-    this.id = id;
+    this._recommendation = recommendation;
+    this._id = id;
+    this._user_scores = user_scores
   }
 
-  id: string
-  recommendation: FintoolRecom
+  private _id: string
+  private _recommendation: FintoolRecom
+  private _user_scores: ScoreContainer
+
+
+  get id(): string {
+    return this._id;
+  }
+
+  get recommendation(): FintoolRecom {
+    return this._recommendation;
+  }
+
+  get user_scores(): ScoreContainer {
+    return this._user_scores;
+  }
 }
 
 /*
@@ -65,19 +83,43 @@ export class StrategyComponent {
 }
  */
 export class ScoreContainer {
-  time_flexibility: number
-  fin_risk_tolerance: number
-  psy_risk_tolerance: number
-  finance_knowledge: number
-  cog_bias_resistance: number
+  private _time_flexibility: number
+  private _fin_risk_tolerance: number
+  private _psy_risk_tolerance: number
+  private _finance_knowledge: number
+  private _cog_bias_resistance: number
 
 
-  constructor(time_flexibility: number, fin_risk_tolerance: number, psy_risk_tolerance: number, finance_knowledge: number, cog_bias_resistance: number) {
-    this.time_flexibility = time_flexibility;
-    this.fin_risk_tolerance = fin_risk_tolerance;
-    this.psy_risk_tolerance = psy_risk_tolerance;
-    this.finance_knowledge = finance_knowledge;
-    this.cog_bias_resistance = cog_bias_resistance;
+  constructor(time_flexibility: number,
+              fin_risk_tolerance: number,
+              psy_risk_tolerance: number,
+              finance_knowledge: number,
+              cog_bias_resistance: number) {
+    this._time_flexibility = time_flexibility;
+    this._fin_risk_tolerance = fin_risk_tolerance;
+    this._psy_risk_tolerance = psy_risk_tolerance;
+    this._finance_knowledge = finance_knowledge;
+    this._cog_bias_resistance = cog_bias_resistance;
+  }
+
+  get time_flexibility(): number {
+    return this._time_flexibility;
+  }
+
+  get fin_risk_tolerance(): number {
+    return this._fin_risk_tolerance;
+  }
+
+  get psy_risk_tolerance(): number {
+    return this._psy_risk_tolerance;
+  }
+
+  get finance_knowledge(): number {
+    return this._finance_knowledge;
+  }
+
+  get cog_bias_resistance(): number {
+    return this._cog_bias_resistance;
   }
 }
 
