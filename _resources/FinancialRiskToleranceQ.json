@@ -1,6 +1,6 @@
 {
   "description": "Initial Financial Health and Situation",
-  "category": "basic",
+  "category": "Financial Risk Tolerance",
   "questions": [
     {
       "question_text": "What is your monthly household income after taxes?",

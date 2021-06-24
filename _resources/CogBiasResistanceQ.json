@@ -1,0 +1,166 @@
+{
+  "description": "Initial Financial Health and Situation",
+  "category": "Cognitive Bias Resistance",
+  "questions": [
+    {
+      "question_text": "How many people do think consistently earn money from daytrading?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Less than 1%",
+          "value": 1
+        },
+        {
+          "answer_text": "~10%",
+          "value": 3
+        },
+        {
+          "answer_text": "~35%",
+          "value": 5
+        },
+        {
+          "answer_text": "more than 60%",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Which of these would you prefer",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Winning 10€ at a probability of 100%",
+          "value": 1
+        },
+        {
+          "answer_text": "Winning 150€ at a probability of 10%",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Assume a stock loses 30% of its value over two weeks. You do not own the stock.\nWhich idea do you prefer?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Buy the stock now as it's cheap",
+          "value": 1
+        },
+        {
+          "answer_text": "Buy the stock when it regained half of the lost 30%",
+          "value": 7
+        },
+        {
+          "answer_text": "Don't buy the stock at all as it, apparently, was overvalued",
+          "value": 7
+        },
+        {
+          "answer_text": "Don't buy the stock now to wait until it further drops",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Assume a stock gained 10% over the last two weeks. You own the stock.\nWhich idea do you prefer?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Buy mroe of the stock now as it will probably rise further",
+          "value": 1
+        },
+        {
+          "answer_text": "Sell the stock to materialize your gains",
+          "value": 7
+        },
+        {
+          "answer_text": "Check tax considerations, then sell if appropriate",
+          "value": 7
+        },
+        {
+          "answer_text": "Research to find out why this raise occurred",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Assume you could do a risk-free investment with 3% yield p.a.. Which risky investment would you\nprefer over the risk-free one?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "None, I always prefer the riskless investment",
+          "value": 1
+        },
+        {
+          "answer_text": "6% yield at a 50% chance",
+          "value": 7
+        },
+        {
+          "answer_text": "12% yield at 25% chance",
+          "value": 7
+        },
+        {
+          "answer_text": "10% yield at 40% chance",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "What do you see in a stock market crash?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Opportunities",
+          "value": 1
+        },
+        {
+          "answer_text": "Losses",
+          "value": 7
+        },
+        {
+          "answer_text": "A regular occurrence",
+          "value": 7
+        },
+        {
+          "answer_text": "All of the above",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    }
+  ]
+}

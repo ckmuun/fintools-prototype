@@ -1,0 +1,70 @@
+{
+  "description": "Initial Financial Health and Situation",
+  "category": "Time Flexibility",
+  "questions": [
+    {
+      "question_text": "How many hours per week do you work (paid or unpaid)",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "50+ hours",
+          "value": 1
+        },
+        {
+          "answer_text": "40-50 hours",
+          "value": 3
+        },
+        {
+          "answer_text": "30-40 hours",
+          "value": 5
+        },
+        {
+          "answer_text": "20-30 hours",
+          "value": 7
+        },
+        {
+          "answer_text": "Less than 2ß hours",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "metadata": {
+        "question_text": "work schedule",
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "full time",
+          "value": 0
+        },
+        {
+          "answer_text": "part time",
+          "value": 0
+        },
+        {
+          "answer_text": "self-employed -> no fix schedule",
+          "value": 0
+        },
+        {
+          "answer_text": "student -> no fix schedule",
+          "value": 0
+        },
+        {
+          "answer_text": "not employed (retired, unemployed etc.)",
+          "value": 0
+        }
+      ],
+      "chosen_answer_index": -1
+    }
+  ]
+}

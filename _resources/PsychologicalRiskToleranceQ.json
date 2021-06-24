@@ -1,6 +1,6 @@
 {
   "description": "Initial Financial Health and Situation",
-  "category": "skills",
+  "category": "Psychological Risk Tolerance",
   "questions": [
     {
       "metadata": {
@@ -39,32 +39,36 @@
     },
     {
       "metadata": {
-        "question_text": "work schedule",
+        "question_text": "Do you engage in any risk-intensive physical activities (skydiving, motorcycling, other extreme sports)",
         "category": "baseline",
-        "is_absolute_scale": false,
+        "is_absolute_scale": true,
         "tier": 0,
         "scale": 2
       },
       "answers_to_show": [
         {
-          "answer_text": "full time",
-          "value": 0
+          "answer_text": "not at all, never did, never will",
+          "value": 1
         },
         {
-          "answer_text": "part time",
-          "value": 0
+          "answer_text": "not yet, but would like to",
+          "value": 3
         },
         {
-          "answer_text": "self-employed -> no fix schedule",
-          "value": 0
+          "answer_text": "no longer, had to stop with this kind of activity",
+          "value": 3
         },
         {
-          "answer_text": "student -> no fix schedule",
-          "value": 0
+          "answer_text": "occasionally, but not on a regular basis",
+          "value": 5
         },
         {
-          "answer_text": "not employed",
-          "value": 0
+          "answer_text": "regularly, but as a hobbyist",
+          "value": 7
+        },
+        {
+          "answer_text": "regularly, as a profession or primary occupation",
+          "value": 7
         }
       ],
       "chosen_answer_index": -1

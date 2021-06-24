@@ -1,6 +1,6 @@
 {
   "description": "Questionnaire to assess the user's experience with the financial markets",
-  "category": "financial-exp",
+  "category": "Financial Knowledge",
   "questions": [
     {
       "question_text": "Do or did you work as a stock exchange broker, daytrader, investment analyst or similar?",
