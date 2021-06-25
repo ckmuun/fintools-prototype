@@ -17,7 +17,6 @@ type RuleBasedFintoolRecommender struct {
 /*
 	Entrypoint method
 	returns GoodStrategy BadStrategy, Error
-	todo add a random wildcard component
 */
 func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilledQuestionnaires []api.McQuestionnaire) (api.FintoolRecom, api.FintoolRecom, api.ScoreContainer, error) {
 
