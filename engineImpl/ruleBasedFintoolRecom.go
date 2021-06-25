@@ -24,7 +24,8 @@ func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilled
 	if err != nil {
 		panic("error during questionnaires score calculation")
 	}
-	ranking := r.rankByAbsoluteDiff(scores)
+
+	ranking := r.rankGeometrically(scores)
 
 	var goodComps [3]api.StrategyComponent
 	var badComps [3]api.StrategyComponent
@@ -49,6 +50,9 @@ func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilled
 	_ = iter.Prev()
 	badComps[2] = iter.Value().(api.StrategyComponent)
 
+	rankedComponents := convertTreeMapToSlice(ranking)
+	println("component ranking: ", rankedComponents)
+
 	return api.FintoolRecom{
 			RecommendedComponents: goodComps,
 		},
@@ -59,12 +63,48 @@ func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilled
 		nil
 }
 
+func convertTreeMapToSlice(p *treemap.Map) []api.StrategyComponent {
+
+	iter := p.Iterator()
+	iter.First()
+
+	comps := make([]api.StrategyComponent, p.Size())
+
+	index := 0
+	for index < p.Size() {
+		comps[index] = iter.Value().(api.StrategyComponent)
+		index++
+		iter.Next()
+	}
+	return comps
+}
+
 /*
 	Set the pool of strategy components on the recommender instance
 */
 func (r *RuleBasedFintoolRecommender) SetStrategyComponents(components []api.StrategyComponent) {
 
 	r.strategyComponents = components
+}
+
+func (r *RuleBasedFintoolRecommender) rankGeometrically(questionnaireScores api.ScoreContainer) *treemap.Map {
+	rankedStrategies := treemap.NewWithIntComparator()
+
+	for _, comp := range r.strategyComponents {
+
+		var distance int = int(EuclideanDistance(questionnaireScores, comp.ScoreContainer))
+		log.Print("distance for component: ", comp.Description, " is :", distance)
+
+		// tie breaker
+		_, found := rankedStrategies.Get(distance)
+		for found {
+			distance += 1
+			_, found = rankedStrategies.Get(distance)
+		}
+
+		rankedStrategies.Put(distance, comp)
+	}
+	return rankedStrategies
 }
 
 /*
@@ -81,7 +121,7 @@ func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api
 
 		diffs := questionnaireScores.Diff(component.ScoreContainer)
 
-		a := diffs.FinanceKnowledge
+		a := diffs.FinancialKnowledge
 		b := diffs.CogBiasResistance
 		c := diffs.TimeFlexibility
 		d := diffs.FinRiskTolerance

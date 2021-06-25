@@ -5,12 +5,13 @@ import (
 	assert2 "github.com/stretchr/testify/assert"
 	"log"
 	"reccengine/_testUtils"
-	"reccengine/api"
 	"testing"
 )
 
-func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
-
+/*
+	This just tests if the general principle works
+*/
+func TestGenerateRecommendationGenerally(t *testing.T) {
 	strategyComps := _testUtils.LoadRealStrategiesFromJson()
 
 	recommender := RuleBasedFintoolRecommender{
@@ -26,12 +27,12 @@ func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
 	assert2.NotNil(t, goodStrategy, "")
 
 	log.Print("goodStrategy: ", goodStrategy)
-	assert.Equal(t, goodStrategy.RecommendedComponents[0], strategyComps[0])
-	assert.Equal(t, goodStrategy.RecommendedComponents[1], strategyComps[2])
-	assert.Equal(t, goodStrategy.RecommendedComponents[2], strategyComps[1])
 }
 
-func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
+/*
+	This tests the correct assignment of a set of predefined, simple demo strategies, for a 'positive case'
+*/
+func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
 
 	strategyComps := _testUtils.GetTestStrategyComps()
 
@@ -39,9 +40,7 @@ func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
 		strategyComponents: strategyComps,
 	}
 
-	testQuestionnaire := _testUtils.CreateTestQuestionnaire(1)
-	testQArr := make([]api.McQuestionnaire, 1)
-	testQArr[0] = testQuestionnaire
+	testQArr := _testUtils.CreateTestQuestionnaire(0, CATEGORIES)
 
 	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
 
@@ -50,7 +49,32 @@ func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
 	assert2.NotNil(t, goodStrategy, "")
 
 	log.Print("strategy: ", goodStrategy)
-	assert.Equal(t, goodStrategy.RecommendedComponents[0], strategyComps[3])
-	assert.Equal(t, goodStrategy.RecommendedComponents[1], strategyComps[1])
-	assert.Equal(t, goodStrategy.RecommendedComponents[2], strategyComps[2])
+	assert.Equal(t, goodStrategy.RecommendedComponents[0], strategyComps[0])
+	assert.Equal(t, goodStrategy.RecommendedComponents[1], strategyComps[2])
+	assert.Equal(t, goodStrategy.RecommendedComponents[2], strategyComps[1])
+}
+
+/*
+	This tests the correct assignment of predefined simple demo strategies for a 'negative case'
+*/
+func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
+
+	strategyComps := _testUtils.GetTestStrategyComps()
+
+	recommender := RuleBasedFintoolRecommender{
+		strategyComponents: strategyComps,
+	}
+
+	testQArr := _testUtils.CreateTestQuestionnaire(1, CATEGORIES)
+
+	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
+
+	assert2.Nil(t, err, "")
+	assert2.NotNil(t, badStrategy, "")
+	assert2.NotNil(t, goodStrategy, "")
+
+	log.Print("strategy: ", goodStrategy)
+	assert.Equal(t, goodStrategy.RecommendedComponents[0], strategyComps[1])
+	assert.Equal(t, goodStrategy.RecommendedComponents[1], strategyComps[2])
+	assert.Equal(t, goodStrategy.RecommendedComponents[2], strategyComps[3])
 }

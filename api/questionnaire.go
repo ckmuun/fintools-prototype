@@ -78,7 +78,7 @@ func (mcq *McQuestion) GetAnswerText() string {
 	return "question not yet answered"
 }
 
-func (mc *McQuestionnaire) GetAnswersSum() (int, error) {
+func (mc *McQuestionnaire) GetAveragedAnswers() (int, error) {
 
 	if !mc.Finished() {
 		return -1, errors.New("questionnaire not completed, can not extract answer score sum")
@@ -88,6 +88,8 @@ func (mc *McQuestionnaire) GetAnswersSum() (int, error) {
 	for _, question := range mc.Questions {
 		score += question.GetValueOfChosenAnswer()
 	}
+	score /= len(mc.Questions)
+
 	return score, nil
 }
 

@@ -45,23 +45,23 @@
       "answers_to_show": [
         {
           "answer_text": "full time",
-          "value": 0
+          "value": 1
         },
         {
           "answer_text": "part time",
-          "value": 0
+          "value": 3
         },
         {
           "answer_text": "self-employed -> no fix schedule",
-          "value": 0
+          "value": 7
         },
         {
           "answer_text": "student -> no fix schedule",
-          "value": 0
+          "value": 8
         },
         {
           "answer_text": "not employed (retired, unemployed etc.)",
-          "value": 0
+          "value": 7
         }
       ],
       "chosen_answer_index": -1

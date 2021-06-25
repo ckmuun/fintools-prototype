@@ -27,12 +27,6 @@ func FillQuestionnairesFromJson() []api.McQuestionnaire {
 		}
 	}
 
-	//for _, questionnaire := range rawQuestionnaires {
-	//	for _, question := range questionnaire.Questions {
-	//		question.SetAnswerIndex(0)
-	//	}
-	//}
-
 	return rawQuestionnaires
 }
 
@@ -75,42 +69,46 @@ func loadQuestionnairesFromJson() []api.McQuestionnaire {
 	return questionnaires
 }
 
-func CreateTestQuestionnaire(chosenAnswerIndex int) api.McQuestionnaire {
-	questions := make([]api.McQuestion, 1)
+func CreateTestQuestionnaire(chosenAnswerIndex int, categories []string) []api.McQuestionnaire {
+	testQuestionnaires := make([]api.McQuestionnaire, len(categories))
 
-	goodAnswer := api.TextMcAnswer{
-		AnswerText: "yes",
-		Value:      10,
-	}
-	badAnswer := api.TextMcAnswer{
-		AnswerText: "no",
-		Value:      5,
-	}
+	for index := range testQuestionnaires {
 
-	answers := make([]api.TextMcAnswer, 2)
-	answers[0] = goodAnswer
-	answers[1] = badAnswer
+		questions := make([]api.McQuestion, 1)
 
-	metadata := api.QuestionMetadata{
-		Category: "test-category",
-	}
+		goodAnswer := api.TextMcAnswer{
+			AnswerText: "yes",
+			Value:      10,
+		}
+		badAnswer := api.TextMcAnswer{
+			AnswerText: "no",
+			Value:      4,
+		}
 
-	question := api.McQuestion{
-		AnswersToShow:     answers,
-		ChosenAnswerIndex: chosenAnswerIndex,
-		QuestionText:      "Are all your financial needs satisfied already",
-		QuestionMetadata:  metadata,
-	}
-	questions[0] = question
+		answers := make([]api.TextMcAnswer, 2)
+		answers[0] = goodAnswer
+		answers[1] = badAnswer
 
-	/*
-		TODO add multiple questionnaires for testing, at least one for every category
-	*/
-	return api.McQuestionnaire{
-		Description: "test description",
-		Category:    "test",
-		Questions:   questions,
+		metadata := api.QuestionMetadata{
+			Category: "test-question-category",
+		}
+
+		question := api.McQuestion{
+			AnswersToShow:     answers,
+			ChosenAnswerIndex: chosenAnswerIndex,
+			QuestionText:      "Are all your financial needs satisfied already",
+			QuestionMetadata:  metadata,
+		}
+		questions[0] = question
+
+		q := api.McQuestionnaire{
+			Description: "test description",
+			Category:    categories[index],
+			Questions:   questions,
+		}
+		testQuestionnaires[index] = q
 	}
+	return testQuestionnaires
 }
 func GetTestStrategyComps() []api.StrategyComponent {
 	strategyComponents := make([]api.StrategyComponent, 4)
@@ -118,42 +116,42 @@ func GetTestStrategyComps() []api.StrategyComponent {
 	bestComp := api.StrategyComponent{
 		Description: "Just be a billionaire",
 		ScoreContainer: api.ScoreContainer{
-			FinRiskTolerance:  10,
-			PsyRiskTolerance:  10,
-			TimeFlexibility:   10,
-			CogBiasResistance: 10,
-			FinanceKnowledge:  10,
+			FinRiskTolerance:   10,
+			PsyRiskTolerance:   10,
+			TimeFlexibility:    10,
+			CogBiasResistance:  10,
+			FinancialKnowledge: 10,
 		},
 	}
 	mixedComp := api.StrategyComponent{
 		Description: "donate everything and live in a barrel",
 		ScoreContainer: api.ScoreContainer{
-			FinRiskTolerance:  3,
-			PsyRiskTolerance:  3,
-			TimeFlexibility:   3,
-			CogBiasResistance: 3,
-			FinanceKnowledge:  3,
+			FinRiskTolerance:   3,
+			PsyRiskTolerance:   3,
+			TimeFlexibility:    3,
+			CogBiasResistance:  3,
+			FinancialKnowledge: 3,
 		},
 	}
 
 	worstComp := api.StrategyComponent{
 		Description: "collect social security",
 		ScoreContainer: api.ScoreContainer{
-			FinRiskTolerance:  1,
-			PsyRiskTolerance:  1,
-			TimeFlexibility:   1,
-			CogBiasResistance: 1,
-			FinanceKnowledge:  1,
+			FinRiskTolerance:   1,
+			PsyRiskTolerance:   1,
+			TimeFlexibility:    1,
+			CogBiasResistance:  1,
+			FinancialKnowledge: 1,
 		},
 	}
 	mediocreComp := api.StrategyComponent{
 		Description: "Just be a at least a millionaire",
 		ScoreContainer: api.ScoreContainer{
-			FinRiskTolerance:  7,
-			PsyRiskTolerance:  7,
-			TimeFlexibility:   7,
-			CogBiasResistance: 7,
-			FinanceKnowledge:  7,
+			FinRiskTolerance:   7,
+			PsyRiskTolerance:   7,
+			TimeFlexibility:    7,
+			CogBiasResistance:  7,
+			FinancialKnowledge: 7,
 		},
 	}
 	strategyComponents[0] = bestComp
@@ -164,12 +162,12 @@ func GetTestStrategyComps() []api.StrategyComponent {
 	return strategyComponents
 }
 
-func GenerateTestUser(chosenAnswerIndex int) []api.McQuestionnaire {
-
-	questionnaire := CreateTestQuestionnaire(chosenAnswerIndex)
-
-	var qst = make([]api.McQuestionnaire, 1)
-	qst[0] = questionnaire
-
-	return qst
-}
+//func GenerateTestUser(chosenAnswerIndex int) []api.McQuestionnaire {
+//
+//	questionnaire := CreateTestQuestionnaire(chosenAnswerIndex)
+//
+//	var qst = make([]api.McQuestionnaire, 1)
+//	qst[0] = questionnaire
+//
+//	return qst
+//}

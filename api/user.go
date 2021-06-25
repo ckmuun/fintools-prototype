@@ -42,7 +42,7 @@ func (u *User) CalcScores() (*ScoreContainer, error) {
 		case "intellectual":
 			u.CogBiasResistance += score
 		case "financeKnowledge":
-			u.FinanceKnowledge += score
+			u.FinancialKnowledge += score
 		}
 
 	}
