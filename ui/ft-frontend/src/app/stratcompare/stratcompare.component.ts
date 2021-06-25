@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {ChartConfiguration, ChartData, ChartType} from "chart.js";
 import {radarchartLabels} from "../ftconstants";
 
@@ -20,9 +20,9 @@ export class StratcompareComponent implements OnInit {
 
   chartData: ChartData<'radar'>;
 
-  constructor(answers: number[], strategyScores: number[]) {
-    this.answers = answers;
-    this.strategyScores = strategyScores;
+  constructor( answers1: number[], strategyScores: number[]) {
+    this.answers = [];
+    this.strategyScores = []// strategyScores;
 
     this.chartData = this.genData();
   }

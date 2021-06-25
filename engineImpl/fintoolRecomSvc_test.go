@@ -14,11 +14,11 @@ func TestGenerateRecommendation(t *testing.T) {
 func Test_parseScoreContainer(t *testing.T) {
 
 	var jsonString = `{
-      "fin_risk_tolerance": "7",
-      "psy_risk_tolerance": "5",
-      "time_flexibility": "7",
-      "cog_bias_resistance": "4",
-      "finance_knowledge": "5"
+      "fin_risk_tolerance": 7,
+      "psy_risk_tolerance": 5,
+      "time_flexibility": 7,
+      "cog_bias_resistance": 4,
+      "finance_knowledge": 5
 }`
 
 	var sc api.ScoreContainer
