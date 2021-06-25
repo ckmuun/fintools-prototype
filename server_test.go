@@ -9,6 +9,7 @@ import (
 	"net/http/httptest"
 	"reccengine/_testUtils"
 	"reccengine/api"
+	"reccengine/engineImpl"
 	"testing"
 )
 
@@ -24,21 +25,20 @@ func TestPostExample(t *testing.T) {
 
 	assert.Equal(t, 200, w.Code)
 	fmt.Println(w.Body)
-
 }
 
 func TestPostSingleQ(t *testing.T) {
 	router := SetupRouter()
 	w := httptest.NewRecorder()
-	q := _testUtils.CreateTestQuestionnaire(-1)
+	q := _testUtils.CreateTestQuestionnairesForCategories(1, engineImpl.CATEGORIES)
 
-	data, _ := json.Marshal(q)
+	// just take the first questionnaire
+	data, _ := json.Marshal(q[0])
 	req, _ := http.NewRequest("POST", "/api/questionnaires/submit/single", bytes.NewBuffer(data))
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, 200, w.Code)
 	fmt.Println(w.Body)
-
 }
 
 func TestPostQArr(t *testing.T) {
@@ -47,16 +47,17 @@ func TestPostQArr(t *testing.T) {
 
 	w := httptest.NewRecorder()
 
-	qArr := make([]api.McQuestionnaire, 1)
-
-	q := _testUtils.CreateTestQuestionnaire(1)
-
-	qArr[0] = q
+	qArr := _testUtils.CreateTestQuestionnairesForCategories(1, engineImpl.CATEGORIES)
 	data, _ := json.Marshal(qArr)
-
 	req, _ := http.NewRequest("POST", "/api/questionnaires/submit", bytes.NewBuffer(data))
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, 200, w.Code)
-	fmt.Println(w.Body)
+
+	var dto api.FintoolRecomDto
+
+	_ = json.Unmarshal(w.Body.Bytes(), &dto)
+
+	fmt.Println(dto)
+	assert.NotNil(t, dto, "")
 }

@@ -40,7 +40,7 @@ func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
 		strategyComponents: strategyComps,
 	}
 
-	testQArr := _testUtils.CreateTestQuestionnaire(0, CATEGORIES)
+	testQArr := _testUtils.CreateTestQuestionnairesForCategories(0, CATEGORIES)
 
 	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
 
@@ -65,7 +65,7 @@ func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
 		strategyComponents: strategyComps,
 	}
 
-	testQArr := _testUtils.CreateTestQuestionnaire(1, CATEGORIES)
+	testQArr := _testUtils.CreateTestQuestionnairesForCategories(1, CATEGORIES)
 
 	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
 

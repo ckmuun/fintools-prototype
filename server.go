@@ -94,17 +94,7 @@ type Example struct {
 
 func postSingleQuestionnaire(c *gin.Context) {
 	var q api.McQuestionnaire
-	//jsonData, _ := ioutil.ReadAll(c.Request.Body)
-	//jsonString := string(jsonData)
-	//
-	//log.Println("jsonData", jsonData)
-	//log.Println("jsonString", jsonString)
-	//
-	////_ = json.NewDecoder(c.Request.Body).Decode(&q)
-	//
-	//_ = json.Unmarshal(jsonData, &q)
 
-	// if we do ioutil.ReadAll(c.REquest.Body), we get an EOF error
 	if err := c.ShouldBindJSON(&q); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -112,7 +102,6 @@ func postSingleQuestionnaire(c *gin.Context) {
 
 	log.Println(q.Finished())
 	c.JSON(200, uuid.New())
-
 }
 
 /*

@@ -8,7 +8,7 @@ import (
 )
 
 /*
-	Simple, naive rule-based tool recommender
+	Simple tool recommender
 */
 type RuleBasedFintoolRecommender struct {
 	strategyComponents []api.StrategyComponent

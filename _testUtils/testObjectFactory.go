@@ -69,7 +69,7 @@ func loadQuestionnairesFromJson() []api.McQuestionnaire {
 	return questionnaires
 }
 
-func CreateTestQuestionnaire(chosenAnswerIndex int, categories []string) []api.McQuestionnaire {
+func CreateTestQuestionnairesForCategories(chosenAnswerIndex int, categories []string) []api.McQuestionnaire {
 	testQuestionnaires := make([]api.McQuestionnaire, len(categories))
 
 	for index := range testQuestionnaires {
@@ -164,7 +164,7 @@ func GetTestStrategyComps() []api.StrategyComponent {
 
 //func GenerateTestUser(chosenAnswerIndex int) []api.McQuestionnaire {
 //
-//	questionnaire := CreateTestQuestionnaire(chosenAnswerIndex)
+//	questionnaire := CreateTestQuestionnairesForCategories(chosenAnswerIndex)
 //
 //	var qst = make([]api.McQuestionnaire, 1)
 //	qst[0] = questionnaire
