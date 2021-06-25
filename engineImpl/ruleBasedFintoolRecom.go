@@ -3,6 +3,7 @@ package engineImpl
 import (
 	"github.com/emirpasic/gods/maps/treemap"
 	"github.com/rs/zerolog/log"
+	"math/rand"
 	"reccengine/api"
 )
 
@@ -16,6 +17,7 @@ type RuleBasedFintoolRecommender struct {
 /*
 	Entrypoint method
 	returns GoodStrategy BadStrategy, Error
+	todo add a random wildcard component
 */
 func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilledQuestionnaires []api.McQuestionnaire) (api.FintoolRecom, api.FintoolRecom, api.ScoreContainer, error) {
 
@@ -55,12 +57,21 @@ func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilled
 
 	return api.FintoolRecom{
 			RecommendedComponents: goodComps,
+			WildcardComponent:     r.selectRandomWildcardComponent(),
 		},
 		api.FintoolRecom{
 			RecommendedComponents: badComps,
+			WildcardComponent:     r.selectRandomWildcardComponent(),
 		},
 		scores,
 		nil
+}
+
+func (r *RuleBasedFintoolRecommender) selectRandomWildcardComponent() api.StrategyComponent {
+
+	random := rand.Intn(len(r.strategyComponents) - 1)
+
+	return r.strategyComponents[random]
 }
 
 func convertTreeMapToSlice(p *treemap.Map) []api.StrategyComponent {
