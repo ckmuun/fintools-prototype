@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ChartConfiguration, ChartData, ChartType, RadarControllerChartOptions} from "chart.js";
 import {radarchartLabels} from "../ftconstants";
 
@@ -9,18 +9,17 @@ import {radarchartLabels} from "../ftconstants";
 })
 export class SkillradarComponent implements OnInit {
 
-  datapoints: number[]
+  @Input() datapoints: number[] = []
   radarChartData: ChartData<'radar'>
 
 
-  constructor(datapts: number[]) {
-    this.datapoints = datapts;
-
+  constructor() {
     this.radarChartData = this.initRadarChartData();
   }
 
   ngOnInit(): void {
-    this.recolor()
+    this.recolor();
+    this.initRadarChartData();
   }
 
   // Radar

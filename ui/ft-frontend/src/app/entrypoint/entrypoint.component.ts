@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {McQuestionnaire, QuestionnaireService} from "../questionnaire.service";
 import {StrategyService} from "../strategy.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-entrypoint',
@@ -9,15 +10,18 @@ import {StrategyService} from "../strategy.service";
 })
 export class EntrypointComponent implements OnInit {
 
-  questionnaires: McQuestionnaire[];
 
+  // ##### Domain and application imports #####
+  questionnaires: McQuestionnaire[];
   showSubmitModal: boolean = false;
 
   qCategories: string[];
 
-  constructor(private qSvc: QuestionnaireService, private stratSvc: StrategyService ) {
+  constructor(private qSvc: QuestionnaireService, private stratSvc: StrategyService, private route: ActivatedRoute, private router: Router) {
     this.qCategories = [];
     this.questionnaires = [];
+
+
   }
 
   getTitle(): string {
@@ -46,7 +50,7 @@ export class EntrypointComponent implements OnInit {
 
   openSubmitModal() {
 
-    if(this.allQuestionnairesFilled()) {
+    if (this.allQuestionnairesFilled()) {
       this.showSubmitModal = true
     } else {
       // todo display some "not all questionnnaires filled warning"
@@ -55,15 +59,18 @@ export class EntrypointComponent implements OnInit {
     return
   }
 
-  uploadFilledQuestionnaires() {
-
-    return
+  navigateToFindash() {
+    this.router.navigateByUrl('/dashboard')
   }
 
-  get questionnaires$() {
+  uploadFilledQuestionnaires() {
 
-    return this.qSvc.data$.subscribe(
-      questionnaires => questionnaires
+    return this.stratSvc.postFilledQuestionnaires(this.questionnaires).subscribe(
+      response => {
+        console.log("received upload response, routing to dashboard component")
+        console.log("response:"  + response.id)
+        this.navigateToFindash()
+      }
     )
   }
 

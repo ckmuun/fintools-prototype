@@ -14,7 +14,7 @@ export class StrategyService {
 
 
   postFilledQuestionnaires(questionnaires: McQuestionnaire[]): Observable<FintoolRecomDto> {
-    return this.httpClient.post<FintoolRecomDto>("http://localhost:8080/api/questionnaires/", questionnaires)
+    return this.httpClient.post<FintoolRecomDto>("http://localhost:8080/api/questionnaires/submit", questionnaires)
   }
 
 }
@@ -29,27 +29,16 @@ export class FintoolRecomDto {
               user_scores: ScoreContainer
   ) {
 
-    this._recommendation = recommendation;
-    this._id = id;
-    this._user_scores = user_scores
+    this.recommendation = recommendation;
+    this.id = id;
+    this.user_scores = user_scores
   }
 
-  private _id: string
-  private _recommendation: FintoolRecom
-  private _user_scores: ScoreContainer
+  id: string
+  recommendation: FintoolRecom
+  user_scores: ScoreContainer
 
 
-  get id(): string {
-    return this._id;
-  }
-
-  get recommendation(): FintoolRecom {
-    return this._recommendation;
-  }
-
-  get user_scores(): ScoreContainer {
-    return this._user_scores;
-  }
 }
 
 /*
@@ -83,11 +72,11 @@ export class StrategyComponent {
 }
  */
 export class ScoreContainer {
-  private _time_flexibility: number
-  private _fin_risk_tolerance: number
-  private _psy_risk_tolerance: number
-  private _finance_knowledge: number
-  private _cog_bias_resistance: number
+  time_flexibility: number
+  fin_risk_tolerance: number
+  psy_risk_tolerance: number
+  finance_knowledge: number
+  cog_bias_resistance: number
 
 
   constructor(time_flexibility: number,
@@ -95,31 +84,12 @@ export class ScoreContainer {
               psy_risk_tolerance: number,
               finance_knowledge: number,
               cog_bias_resistance: number) {
-    this._time_flexibility = time_flexibility;
-    this._fin_risk_tolerance = fin_risk_tolerance;
-    this._psy_risk_tolerance = psy_risk_tolerance;
-    this._finance_knowledge = finance_knowledge;
-    this._cog_bias_resistance = cog_bias_resistance;
+    this.time_flexibility = time_flexibility;
+    this.fin_risk_tolerance = fin_risk_tolerance;
+    this.psy_risk_tolerance = psy_risk_tolerance;
+    this.finance_knowledge = finance_knowledge;
+    this.cog_bias_resistance = cog_bias_resistance;
   }
 
-  get time_flexibility(): number {
-    return this._time_flexibility;
-  }
-
-  get fin_risk_tolerance(): number {
-    return this._fin_risk_tolerance;
-  }
-
-  get psy_risk_tolerance(): number {
-    return this._psy_risk_tolerance;
-  }
-
-  get finance_knowledge(): number {
-    return this._finance_knowledge;
-  }
-
-  get cog_bias_resistance(): number {
-    return this._cog_bias_resistance;
-  }
 }
 
