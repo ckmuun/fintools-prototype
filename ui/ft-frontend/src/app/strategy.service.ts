@@ -81,7 +81,7 @@ export class StrategyComponent {
   time_flexibility: number
   fin_risk_tolerance: number
   psy_risk_tolerance: number
-  finance_knowledge: number
+  financial_knowledge: number
   cog_bias_resistance: number
 
   score_container: ScoreContainer
@@ -90,7 +90,7 @@ export class StrategyComponent {
               time_flexibility: number,
               fin_risk_tolerance: number,
               psy_risk_tolerance: number,
-              finance_knowledge: number,
+              financial_knowledge: number,
               cog_bias_resistance: number,
   ) {
     this.description = description;
@@ -98,14 +98,14 @@ export class StrategyComponent {
     this.time_flexibility = time_flexibility
     this.fin_risk_tolerance = fin_risk_tolerance
     this.psy_risk_tolerance = psy_risk_tolerance
-    this.finance_knowledge = finance_knowledge
+    this.financial_knowledge = financial_knowledge
     this.cog_bias_resistance = cog_bias_resistance
 
     this.score_container = new ScoreContainer(
       this.time_flexibility,
       this.fin_risk_tolerance,
       this.psy_risk_tolerance,
-      this.finance_knowledge,
+      this.financial_knowledge,
       this.cog_bias_resistance,
     )
   }
@@ -133,12 +133,12 @@ export class ScoreContainer {
   constructor(time_flexibility: number,
               fin_risk_tolerance: number,
               psy_risk_tolerance: number,
-              finance_knowledge: number,
+              financial_knowledge: number,
               cog_bias_resistance: number) {
     this.time_flexibility = time_flexibility;
     this.fin_risk_tolerance = fin_risk_tolerance;
     this.psy_risk_tolerance = psy_risk_tolerance;
-    this.financial_knowledge = finance_knowledge;
+    this.financial_knowledge = financial_knowledge;
     this.cog_bias_resistance = cog_bias_resistance;
   }
 

@@ -43,12 +43,11 @@ export class FindashComponent implements OnInit {
   extractStrategyScores(scs: StrategyComponent[]) {
     scs.forEach(
       strategy => {
-        this.goodStratArrs.push([strategy.time_flexibility, strategy.fin_risk_tolerance, strategy.psy_risk_tolerance, strategy.cog_bias_resistance, strategy.finance_knowledge])
+        this.goodStratArrs.push([strategy.time_flexibility, strategy.fin_risk_tolerance, strategy.psy_risk_tolerance, strategy.cog_bias_resistance, strategy.financial_knowledge])
       }
     )
   }
 
-  testarr = [1, 2, 3, 4, 5]
 
   /*
     Based on: export const radarchartLabels: string[] = ['TimeFlexibility', 'Financial Risk Tolerance', 'Psychological Risk Tolerance', 'Cognitive Bias Resistance', 'Finance Knowledge'];

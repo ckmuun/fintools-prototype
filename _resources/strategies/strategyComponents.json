@@ -5,7 +5,7 @@
       "psy_risk_tolerance": 5,
       "time_flexibility": 7,
       "cog_bias_resistance": 4,
-      "finance_knowledge": 5
+      "financial_knowledge": 5
   },
   {
     "description": "Buy a global, well-diversified ETF",
@@ -13,7 +13,7 @@
     "psy_risk_tolerance": 1,
     "time_flexibility": 1,
     "cog_bias_resistance": 1,
-    "finance_knowledge": 3
+    "financial_knowledge": 3
   },
   {
     "description": "Trade Commodities",
@@ -21,7 +21,7 @@
     "psy_risk_tolerance": 9,
     "time_flexibility": 8,
     "cog_bias_resistance": 8,
-    "finance_knowledge": 8
+    "financial_knowledge": 8
   },
   {
     "description": "Trade FOREX",
@@ -29,7 +29,7 @@
     "psy_risk_tolerance": 6,
     "time_flexibility": 8,
     "cog_bias_resistance": 6,
-    "finance_knowledge": 7
+    "financial_knowledge": 7
   },
   {
     "description": "Buy dividend stocks",
@@ -37,7 +37,7 @@
     "psy_risk_tolerance": 3,
     "time_flexibility": 2,
     "cog_bias_resistance": 5,
-    "finance_knowledge": 4
+    "financial_knowledge": 4
   },
   {
     "description": "create an amazon marketplace shop",
@@ -45,7 +45,7 @@
     "psy_risk_tolerance": 8,
     "time_flexibility": 8,
     "cog_bias_resistance": 5,
-    "finance_knowledge": 4
+    "financial_knowledge": 4
   },
   {
     "description": "Become a Medium.com writer",
@@ -53,7 +53,7 @@
     "psy_risk_tolerance": 5,
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
-    "finance_knowledge": 5
+    "financial_knowledge": 5
   },
   {
     "description": "Trade cryptocurrencies",
@@ -61,7 +61,7 @@
     "psy_risk_tolerance": 5,
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
-    "finance_knowledge": 5
+    "financial_knowledge": 5
   },
   {
     "description": "Setup mirror trading for a well-known trader on a platform like eTORO",
@@ -69,7 +69,7 @@
     "psy_risk_tolerance": 6,
     "time_flexibility": 3,
     "cog_bias_resistance": 6,
-    "finance_knowledge": 5
+    "financial_knowledge": 5
   },
   {
     "description": "Generate online content on various platforms",
@@ -77,6 +77,6 @@
     "psy_risk_tolerance": 8,
     "time_flexibility": 10,
     "cog_bias_resistance": 5,
-    "finance_knowledge": 3
+    "financial_knowledge": 3
   }
 ]
