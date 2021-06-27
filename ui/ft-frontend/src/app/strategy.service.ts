@@ -8,15 +8,27 @@ import {HttpClient} from "@angular/common/http";
 })
 export class StrategyService {
 
+  private _data$: Observable<FintoolRecomDto>;
+
   constructor(private httpClient: HttpClient) {
 
+    this._data$ = new Observable<any>();
   }
 
 
   postFilledQuestionnaires(questionnaires: McQuestionnaire[]): Observable<FintoolRecomDto> {
-    return this.httpClient.post<FintoolRecomDto>("http://localhost:8080/api/questionnaires/submit", questionnaires)
+    this._data$ = this.httpClient.post<FintoolRecomDto>("http://localhost:8080/api/questionnaires/submit", questionnaires)
+    return this._data$
   }
 
+
+  get data$(): Observable<FintoolRecomDto> {
+    return this._data$;
+  }
+
+  set data$(value: Observable<FintoolRecomDto>) {
+    this._data$ = value;
+  }
 }
 
 /*
@@ -90,6 +102,12 @@ export class ScoreContainer {
     this.finance_knowledge = finance_knowledge;
     this.cog_bias_resistance = cog_bias_resistance;
   }
+
+  /*
+    Based on: export const radarchartLabels: string[] = ['TimeFlexibility', 'Financial Risk Tolerance', 'Psychological Risk Tolerance', 'Cognitive Bias Resistance', 'Finance Knowledge'];
+
+   */
+
 
 }
 

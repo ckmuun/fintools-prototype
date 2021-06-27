@@ -1,5 +1,12 @@
 <div>
   <div style="display: block">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Displaying Results for user id: {{data.id}}</mat-card-title>
+        <mat-card-subtitle>Your Results from the Survey you just completed</mat-card-subtitle>
+      </mat-card-header>
+      <app-skillradar [datapoints]="userScoreArr"></app-skillradar>
+    </mat-card>
 
     <mat-grid-list cols="2" rowHeight="2:1">
 
@@ -7,7 +14,7 @@
         <app-skillradar></app-skillradar>
       </mat-grid-tile>
       <mat-grid-tile style="background-color: cornflowerblue">
-      <app-skillradar>radar</app-skillradar>
+        <app-skillradar>radar</app-skillradar>
 
       </mat-grid-tile>
     </mat-grid-list>

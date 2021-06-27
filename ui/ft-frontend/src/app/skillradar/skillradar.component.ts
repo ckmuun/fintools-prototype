@@ -1,25 +1,34 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ChartConfiguration, ChartData, ChartType, RadarControllerChartOptions} from "chart.js";
 import {radarchartLabels} from "../ftconstants";
+import {FintoolRecomDto, ScoreContainer, StrategyService} from "../strategy.service";
 
 @Component({
   selector: 'app-skillradar',
   templateUrl: './skillradar.component.html',
   styleUrls: ['./skillradar.component.css']
 })
-export class SkillradarComponent implements OnInit {
+export class SkillradarComponent implements OnInit, OnChanges {
 
-  @Input() datapoints: number[] = []
-  radarChartData: ChartData<'radar'>
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("on changes ...")
+    this.radarChartData = this.initRadarChartData()
+  }
+
+
+  @Input() datapoints: number[] = [];
+
+  radarChartData: ChartData<'radar'> = {} as any
 
 
   constructor() {
-    this.radarChartData = this.initRadarChartData();
+
   }
 
   ngOnInit(): void {
+    console.log("initializing radar chart data")
+    this.radarChartData = this.initRadarChartData();
     this.recolor();
-    this.initRadarChartData();
   }
 
   // Radar
@@ -54,4 +63,12 @@ export class SkillradarComponent implements OnInit {
   public chartHovered({event, active}: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
+
+
+  getNumberArray(sc: ScoreContainer): number[] {
+
+    return [sc.time_flexibility, sc.fin_risk_tolerance, sc.psy_risk_tolerance, sc.cog_bias_resistance, sc.finance_knowledge]
+  }
+
+
 }

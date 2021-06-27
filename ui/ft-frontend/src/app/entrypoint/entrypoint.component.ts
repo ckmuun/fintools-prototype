@@ -68,7 +68,7 @@ export class EntrypointComponent implements OnInit {
     return this.stratSvc.postFilledQuestionnaires(this.questionnaires).subscribe(
       response => {
         console.log("received upload response, routing to dashboard component")
-        console.log("response:"  + response.id)
+        console.log("response:" + response.id)
         this.navigateToFindash()
       }
     )
@@ -99,6 +99,19 @@ export class EntrypointComponent implements OnInit {
       }
     }
     return true;
+  }
+
+  // DEBUG ONLY
+  fillQuestionnairesWithDefault() {
+    for (let i = 0; i < this.questionnaires.length; i++) {
+      let q = this.questionnaires[i];
+      for (let ii = 0; ii < q.questions.length; ii++) {
+        let qq = q.questions[ii];
+
+        this.questionnaires[i].questions[ii].chosen_answer_index = 1;
+      }
+    }
+    this.uploadFilledQuestionnaires()
   }
 
 }

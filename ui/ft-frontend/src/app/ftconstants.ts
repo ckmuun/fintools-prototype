@@ -10,6 +10,6 @@
 import {ChartData, DefaultDataPoint} from "chart.js";
 import {FintoolRecom, ScoreContainer} from "./strategy.service";
 
-export const radarchartLabels: string[] = ['TimeFlexibility', '', 'Financial Risk Tolerance', 'Psychological Risk Tolerance', 'Cognitive Bias Resistance', 'Finance Knowledge'];
+export const radarchartLabels: string[] = ['TimeFlexibility', 'Financial Risk Tolerance', 'Psychological Risk Tolerance', 'Cognitive Bias Resistance', 'Finance Knowledge'];
 
 
