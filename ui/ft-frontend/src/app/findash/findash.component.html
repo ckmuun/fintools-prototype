@@ -8,7 +8,7 @@
       <app-skillradar [userScores]="userScoreArr"></app-skillradar>
     </mat-card>
 
-    <ul *ngFor="let strategy of this.data.good_recommendation.recommended_components; index as i">}}
+    <ul *ngFor="let strategy of this.goodRecomStrats; index as i">}}
 
       <p> {{ this.data.good_recommendation.recommended_components[i].description}}</p>
       <app-stratcompare [userScores]="userScoreArr" [strategyScores]="this.goodStratArrs[i]">
