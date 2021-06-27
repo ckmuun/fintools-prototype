@@ -67,10 +67,10 @@ export class StratcompareComponent implements OnInit, OnChanges {
       TODO define proper colouring here
    */
   public recolor(): void {
-    this.radarChartData.datasets[0].backgroundColor = '#507783'
+    this.radarChartData.datasets[0].backgroundColor = 'rgba(90, 123, 170, 0.17)'
     this.radarChartData.datasets[0].borderColor = '#507783'
 
-    this.radarChartData.datasets[1].backgroundColor = '#F1E978'
+    this.radarChartData.datasets[1].backgroundColor = 'rgba(231, 243, 11, 0.17)'
     this.radarChartData.datasets[1].borderColor = '#F1E978'
 
 
