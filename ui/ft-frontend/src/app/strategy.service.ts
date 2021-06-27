@@ -126,7 +126,7 @@ export class ScoreContainer {
   time_flexibility: number
   fin_risk_tolerance: number
   psy_risk_tolerance: number
-  finance_knowledge: number
+  financial_knowledge: number
   cog_bias_resistance: number
 
 
@@ -138,7 +138,7 @@ export class ScoreContainer {
     this.time_flexibility = time_flexibility;
     this.fin_risk_tolerance = fin_risk_tolerance;
     this.psy_risk_tolerance = psy_risk_tolerance;
-    this.finance_knowledge = finance_knowledge;
+    this.financial_knowledge = finance_knowledge;
     this.cog_bias_resistance = cog_bias_resistance;
   }
 
