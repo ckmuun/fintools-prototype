@@ -44,9 +44,6 @@ type QuestionnaireSvcImpl struct {
 
 /*
 	Constructor for the questionnaire service
-	TODO finalize the questionnaires to a point where only intra-questionnaire changes
-	are being made. -> Only questions, answers and weightings are changed but not the questionnaires overall.
-
 	TODO currently this is somewhat clumsy. Check out more elgeant ways to setup this service
 */
 func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
@@ -108,7 +105,6 @@ func loadCogBiasQuestionnaire() api.McQuestionnaire {
 }
 
 func loadBasicQuestionnaire() api.McQuestionnaire {
-
 	var questionnaire = api.McQuestionnaire{}
 	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialRiskToleranceQ.json")
 
