@@ -5,19 +5,17 @@
         <mat-card-title>Displaying Results for user id: {{data.id}}</mat-card-title>
         <mat-card-subtitle>Your Results from the Survey you just completed</mat-card-subtitle>
       </mat-card-header>
-      <app-skillradar [datapoints]="userScoreArr"></app-skillradar>
+      <app-skillradar [userScores]="userScoreArr"></app-skillradar>
     </mat-card>
 
-    <mat-grid-list cols="2" rowHeight="2:1">
+    <ul *ngFor="let strategy of this.data.good_recommendation.recommended_components; index as i">}}
 
-      <mat-grid-tile style="background-color: aqua;">
-        <app-skillradar></app-skillradar>
-      </mat-grid-tile>
-      <mat-grid-tile style="background-color: cornflowerblue">
-        <app-skillradar>radar</app-skillradar>
+      <p> {{ this.data.good_recommendation.recommended_components[i].description}}</p>
+      <app-stratcompare [userScores]="userScoreArr" [strategyScores]="this.goodStratArrs[i]">
+                    <!--    [strategyScores]="this.goodStratArrs[i]"> -->
 
-      </mat-grid-tile>
-    </mat-grid-list>
+      </app-stratcompare>
+    </ul>
 
   </div>
 </div>

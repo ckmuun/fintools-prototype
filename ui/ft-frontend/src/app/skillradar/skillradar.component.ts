@@ -14,12 +14,9 @@ export class SkillradarComponent implements OnInit, OnChanges {
     console.log("on changes ...")
     this.radarChartData = this.initRadarChartData()
   }
-
-
-  @Input() datapoints: number[] = [];
+  @Input() userScores: number[] = [];
 
   radarChartData: ChartData<'radar'> = {} as any
-
 
   constructor() {
 
@@ -40,7 +37,7 @@ export class SkillradarComponent implements OnInit, OnChanges {
     return {
       labels: radarchartLabels,
       datasets: [
-        {data: this.datapoints, label: 'Your Answers'},
+        {data: this.userScores, label: 'Your Answers'},
       ]
     };
   }

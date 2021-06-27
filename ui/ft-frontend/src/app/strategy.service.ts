@@ -36,29 +36,41 @@ export class StrategyService {
  */
 export class FintoolRecomDto {
 
-  constructor(recommendation: FintoolRecom,
+  constructor(good_recommendation: FintoolRecom,
+              bad_recommendation: FintoolRecom,
               id: string,
               user_scores: ScoreContainer
   ) {
-
-    this.recommendation = recommendation;
+    this.good_recommendation = good_recommendation;
+    this.bad_recommendation = bad_recommendation;
     this.id = id;
     this.user_scores = user_scores
   }
 
   id: string
-  recommendation: FintoolRecom
+  good_recommendation: FintoolRecom
+  bad_recommendation: FintoolRecom
   user_scores: ScoreContainer
-
-
 }
 
 /*
-    The actual recommendation, encapsulating the components
+    The actual recommendation, encapsulating the components#
+    BAsed on:
+    type FintoolRecom struct {
+	RecommendedComponents [3]StrategyComponent `json:"recommended_components"`
+	WildcardComponent     StrategyComponent    `json:"wildcard_component"`
+}
+
  */
 export class FintoolRecom {
 
+  constructor(recommended_components: StrategyComponent[], wildcard_component: StrategyComponent) {
+    this.recommended_components = recommended_components;
+    this.wildcard_component = wildcard_component;
+  }
 
+  recommended_components: StrategyComponent[]
+  wildcard_component: StrategyComponent
 }
 
 /*
@@ -66,13 +78,40 @@ export class FintoolRecom {
  */
 export class StrategyComponent {
 
-  constructor(description: string) {
+  time_flexibility: number
+  fin_risk_tolerance: number
+  psy_risk_tolerance: number
+  finance_knowledge: number
+  cog_bias_resistance: number
+
+  score_container: ScoreContainer
+
+  constructor(description: string,
+              time_flexibility: number,
+              fin_risk_tolerance: number,
+              psy_risk_tolerance: number,
+              finance_knowledge: number,
+              cog_bias_resistance: number,
+  ) {
     this.description = description;
+
+    this.time_flexibility = time_flexibility
+    this.fin_risk_tolerance = fin_risk_tolerance
+    this.psy_risk_tolerance = psy_risk_tolerance
+    this.finance_knowledge = finance_knowledge
+    this.cog_bias_resistance = cog_bias_resistance
+
+    this.score_container = new ScoreContainer(
+      this.time_flexibility,
+      this.fin_risk_tolerance,
+      this.psy_risk_tolerance,
+      this.finance_knowledge,
+      this.cog_bias_resistance,
+    )
   }
 
   description: string;
 }
-
 
 /*
   type ScoreContainer struct {
@@ -107,7 +146,5 @@ export class ScoreContainer {
     Based on: export const radarchartLabels: string[] = ['TimeFlexibility', 'Financial Risk Tolerance', 'Psychological Risk Tolerance', 'Cognitive Bias Resistance', 'Finance Knowledge'];
 
    */
-
-
 }
 

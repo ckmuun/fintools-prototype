@@ -1,11 +1,12 @@
-  import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-  import {ChartOptions, ChartType, ChartDataset, ChartData} from 'chart.js'
-  import {BaseChartDirective} from "ng2-charts";
-  import DataLabelsPlugin from 'chartjs-plugin-datalabels';
+import {ChartOptions, ChartType, ChartDataset, ChartData} from 'chart.js'
+import {BaseChartDirective} from "ng2-charts";
+import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 
-  import {MatGridTile} from "@angular/material/grid-list";
-  import {FintoolRecomDto, ScoreContainer, StrategyService} from "../strategy.service";
+import {MatGridTile} from "@angular/material/grid-list";
+import {FintoolRecomDto, ScoreContainer, StrategyComponent, StrategyService} from "../strategy.service";
+import {dashCaseToCamelCase} from "@angular/compiler/src/util";
 
 
 @Component({
@@ -20,6 +21,9 @@ export class FindashComponent implements OnInit {
   data: FintoolRecomDto = {} as any
 
   userScoreArr: number[] = []
+  goodRecomStrats: StrategyComponent[] = [];
+  goodStratArrs: number[][] = [];
+
 
   constructor(private strategySvc: StrategyService) {
 
@@ -30,10 +34,21 @@ export class FindashComponent implements OnInit {
       resp => {
         this.data = resp;
         this.userScoreArr = this.getNumberArray(resp.user_scores)
+        this.goodRecomStrats = this.data.good_recommendation.recommended_components
+        this.extractStrategyScores(this.goodRecomStrats)
       }
     )
   }
 
+  extractStrategyScores(scs: StrategyComponent[]) {
+    scs.forEach(
+      strategy => {
+        this.goodStratArrs.push([strategy.time_flexibility, strategy.fin_risk_tolerance, strategy.psy_risk_tolerance, strategy.cog_bias_resistance, strategy.finance_knowledge])
+      }
+    )
+  }
+
+  testarr = [1, 2, 3, 4, 5]
 
   /*
     Based on: export const radarchartLabels: string[] = ['TimeFlexibility', 'Financial Risk Tolerance', 'Psychological Risk Tolerance', 'Cognitive Bias Resistance', 'Finance Knowledge'];
