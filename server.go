@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"log"
@@ -144,6 +145,13 @@ func processQuestionnaires(qs []api.McQuestionnaire) api.FintoolRecomDto {
 	/*
 		TODO log response here
 	*/
+
+	log.Print("returning user scores: ", dto.UserScores)
+	jsonBytes, _ := json.Marshal(dto)
+
+	var jsonDto string = string(jsonBytes)
+
+	log.Print("returning json body", jsonDto)
 
 	return dto
 }
