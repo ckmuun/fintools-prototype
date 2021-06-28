@@ -15,7 +15,7 @@
   <!--List for Questionnaires -- index is i-->
   <div>
     <ol *ngFor="let questionnaire of this.questionnaires; index as i">
-      <mat-card style=margin-bottom:50px;border-color:blue>
+      <mat-card class="questionnaire-card">
         <mat-card-header>
           <mat-card-title>{{questionnaire.category}}</mat-card-title>
           <mat-card-subtitle>{{questionnaire.description}}</mat-card-subtitle>
@@ -26,7 +26,7 @@
         <ol *ngFor="let question of questionnaire.questions; index as ii;">
 
           <!--Display a question of the questionnaire-->
-          <mat-card style=margin-bottom:20px>
+          <mat-card class="question-card" >
 
             <!--The header containing the question text-->
             <mat-card-header>

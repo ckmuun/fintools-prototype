@@ -187,14 +187,19 @@ func CalculateQuestionnaireScores(questionnaires []api.McQuestionnaire) (api.Sco
 		switch questionnaire.Category {
 
 		case TIME_FLEXIBILITY:
+			log.Print("Adding to TIME FLEXIBILITY score")
 			totalScore.TimeFlexibility += questionnaireScore
 		case FINANCIAL_RISK_TOLERANCE:
+			log.Print("Adding to FINANCIAL_RISK_TOLERANCE score")
 			totalScore.FinRiskTolerance += questionnaireScore
 		case PSYCHOLOGICAL_RISK_TOLERANCE:
+			log.Print("Adding to PSYCHOLOGICAL_RISK_TOLERANCE score")
 			totalScore.PsyRiskTolerance += questionnaireScore
 		case FINANCIAL_KNOWLEDGE:
+			log.Print("Adding to FINANCIAL_KNOWLEDGE score")
 			totalScore.FinancialKnowledge += questionnaireScore
 		case COGNITIVE_BIAS_RESISTANCE:
+			log.Print("Adding to COGNITIVE_BIAS_RESISTANCE score")
 			totalScore.CogBiasResistance += questionnaireScore
 		}
 

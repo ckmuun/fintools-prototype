@@ -61,3 +61,36 @@ func TestPostQArr(t *testing.T) {
 	fmt.Println(dto)
 	assert.NotNil(t, dto, "")
 }
+
+func TestDloadQsAndPostThem(t *testing.T) {
+	router := SetupRouter()
+	w := httptest.NewRecorder()
+
+	var questionnaires []api.McQuestionnaire
+	getRequest, _ := http.NewRequest("GET", "/api/questionnaires/all", nil)
+	router.ServeHTTP(w, getRequest)
+
+	assert.Equal(t, 200, w.Code)
+	_ = json.Unmarshal(w.Body.Bytes(), &questionnaires)
+
+	for i, questionnaire := range questionnaires {
+
+		for ii := range questionnaire.Questions {
+			questionnaires[i].Questions[ii].ChosenAnswerIndex = 1
+		}
+	}
+	postRecorder := httptest.NewRecorder()
+	data, _ := json.Marshal(questionnaires)
+	postRequest, _ := http.NewRequest("POST", "/api/questionnaires/submit", bytes.NewBuffer(data))
+	router.ServeHTTP(postRecorder, postRequest)
+
+	assert.Equal(t, 200, postRecorder.Code)
+	var dto api.FintoolRecomDto
+
+	_ = json.Unmarshal(postRecorder.Body.Bytes(), &dto)
+
+	fmt.Println(dto)
+	assert.NotNil(t, dto, "")
+
+	assert.False(t, dto.UserScores.TimeFlexibility == 0)
+}

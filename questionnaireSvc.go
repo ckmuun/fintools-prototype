@@ -38,6 +38,7 @@ type QuestionnaireSvcImpl struct {
 	FinancialExpQuestionnaire api.McQuestionnaire
 	SkillsQuestionnaire       api.McQuestionnaire
 	CogBiasQuestionnaire      api.McQuestionnaire
+	TimeFlexibility           api.McQuestionnaire
 	QstMapping                *hashmap.Map
 	// Feedback questionnaire tODO add this here
 }
@@ -53,6 +54,7 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 		FinancialExpQuestionnaire: loadFinancialExpQuestionnaire(),
 		SkillsQuestionnaire:       loadSkillsQuestionnaire(),
 		CogBiasQuestionnaire:      loadCogBiasQuestionnaire(),
+		TimeFlexibility:           loadTimeFlexibilityQuestionnaire(),
 	}
 
 	names := []string{
@@ -68,6 +70,7 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 	questionnaireMap.Put(svc.FinancialExpQuestionnaire.Category, &svc.FinancialExpQuestionnaire)
 	questionnaireMap.Put(svc.SkillsQuestionnaire.Category, &svc.SkillsQuestionnaire)
 	questionnaireMap.Put(svc.CogBiasQuestionnaire.Category, &svc.CogBiasQuestionnaire)
+	questionnaireMap.Put(svc.TimeFlexibility.Category, &svc.TimeFlexibility)
 
 	svc.QuestionnaireNames = names
 	svc.QstMapping = questionnaireMap
@@ -107,6 +110,15 @@ func loadCogBiasQuestionnaire() api.McQuestionnaire {
 func loadBasicQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
 	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialRiskToleranceQ.json")
+
+	_ = json.Unmarshal([]byte(file), &questionnaire)
+	log.Println(questionnaire)
+	return questionnaire
+}
+
+func loadTimeFlexibilityQuestionnaire() api.McQuestionnaire {
+	var questionnaire = api.McQuestionnaire{}
+	file := utils.LoadJsonFileIntoByteArr("./_resources/TimeFlexibilityQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
