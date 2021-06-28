@@ -1,26 +1,19 @@
-<button mat-button color="primary" [routerLink]="['../survey']">
-
-  <a routerLink="../survey"></a>
-
-  Get Started!
-</button>
-
-<p>Available questionnaires</p>
 <ol *ngFor="let category of this.qCategories">
   <li>
     <p>category:{{category}}</p>
   </li>
 </ol>
+<button (click)="fillQuestionnairesWithDefault()">DEBUG SAMPLE ANSWERS</button>
 
-<mat-card fxLayout="column">
+<mat-card fxLayout="column" fxLayoutAlign="center center">
 
   <mat-card-header>
     <mat-card-title [textContent]="getTitle()"></mat-card-title>
 
-    <button (click)="fillQuestionnairesWithDefault()">DEBUG SAMPLE ANSWERS</button>
   </mat-card-header>
 
-    <!--List for Questionnaires -- index is i-->
+  <!--List for Questionnaires -- index is i-->
+  <div>
     <ol *ngFor="let questionnaire of this.questionnaires; index as i">
       <mat-card style=margin-bottom:50px;border-color:blue>
         <mat-card-header>
@@ -40,23 +33,28 @@
               <mat-card-title [textContent]="question.question_text"></mat-card-title>
             </mat-card-header>
 
-            <!-- List for answers in questions, index is iii-->
-            <ul *ngFor="let answer of question.answers_to_show ;index as iii">
-              <mat-card [style.background]="getSelected(i, ii, iii)?'rgba(79, 221, 79, 0.36)':'white'">
-                <mat-card-header>
-                  <button mat-stroked-button color="primary" (click)="setAnswerIndex(i, ii, iii)">Select this answer
-                  </button>
-                  <mat-card-title [textContent]="answer.answer_text"></mat-card-title>
-                </mat-card-header>
-              </mat-card>
-            </ul>
+            <div fxLayout="column" fxLayoutGap="35px">
+              <!-- List for answers in questions, index is iii-->
+              <ul *ngFor="let answer of question.answers_to_show ;index as iii">
+
+                <!--MAT CARD CONTAINING ONE SINGLE ANSWER-->
+                <mat-card [style.background]="getSelected(i, ii, iii)?'rgba(79, 221, 79, 0.36)':'white'" (click)="setAnswerIndex(i,ii,iii)">
+                  <mat-card-header>
+<!--                    <button mat-stroked-button color="primary" (click)="setAnswerIndex(i, ii, iii)">Select this answer-->
+<!--                    </button>-->
+                    <mat-card-title [textContent]="answer.answer_text"></mat-card-title>
+                  </mat-card-header>
+                </mat-card>
+
+              </ul>
+            </div>
             <!--          <span>Debug: Chosen Answer Index: {{question.chosen_answer_index}} </span>-->
           </mat-card>
         </ol>
       </mat-card>
     </ol>
+  </div>
 
   <button mat-raised-button (click)="uploadFilledQuestionnaires()">Submit Questionnaires</button>
-  <button mat-raised-button (click)="navigateToFindash()">Findash</button>
 </mat-card>
 
