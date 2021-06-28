@@ -85,8 +85,11 @@ export class StrategyComponent {
   cog_bias_resistance: number
 
   score_container: ScoreContainer
+  description: string;
+  name: string;
 
   constructor(description: string,
+              name: string,
               time_flexibility: number,
               fin_risk_tolerance: number,
               psy_risk_tolerance: number,
@@ -95,11 +98,12 @@ export class StrategyComponent {
   ) {
     this.description = description;
 
-    this.time_flexibility = time_flexibility
-    this.fin_risk_tolerance = fin_risk_tolerance
-    this.psy_risk_tolerance = psy_risk_tolerance
-    this.financial_knowledge = financial_knowledge
-    this.cog_bias_resistance = cog_bias_resistance
+    this.time_flexibility = time_flexibility;
+    this.fin_risk_tolerance = fin_risk_tolerance;
+    this.psy_risk_tolerance = psy_risk_tolerance;
+    this.financial_knowledge = financial_knowledge;
+    this.cog_bias_resistance = cog_bias_resistance;
+    this.name = name;
 
     this.score_container = new ScoreContainer(
       this.time_flexibility,
@@ -109,8 +113,6 @@ export class StrategyComponent {
       this.cog_bias_resistance,
     )
   }
-
-  description: string;
 }
 
 /*
@@ -142,9 +144,5 @@ export class ScoreContainer {
     this.cog_bias_resistance = cog_bias_resistance;
   }
 
-  /*
-    Based on: export const radarchartLabels: string[] = ['TimeFlexibility', 'Financial Risk Tolerance', 'Psychological Risk Tolerance', 'Cognitive Bias Resistance', 'Finance Knowledge'];
-
-   */
 }
 

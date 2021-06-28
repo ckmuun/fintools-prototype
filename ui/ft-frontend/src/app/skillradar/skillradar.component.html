@@ -1,9 +1,22 @@
-<p>skillradar</p>
+<div fxLayout="row" fxLayoutGap="32px">
+  <mat-card style="height: 500px; width: 500px">
+    <div>
+      <canvas baseChart [data]="radarChartData" [options]="radarChartOptions" [type]="radarChartType">
+      </canvas>
+    </div>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Your Results:</mat-card-title>
+      <mat-card-subtitle>You scored the following average values in these categories:</mat-card-subtitle>
+    </mat-card-header>
 
-<mat-card style="height: 500px; width: 500px">
-  <div>
-    <canvas baseChart [data]="radarChartData" [options]="radarChartOptions" [type]="radarChartType">
+      <p>Time & Flexibility: {{this.userScores[0]}}</p>
+      <p>Finance Knowledge: {{this.userScores[4]}}</p>
+      <p>Cognitive Bias Resistance: {{this.userScores[3]}}</p>
+      <p>Financial Risk Tolerance: {{this.userScores[1]}}</p>
+      <p>Psychological Risk Tolerance: {{this.userScores[2]}}</p>
 
-    </canvas>
-  </div>
-</mat-card>
+
+  </mat-card>
+</div>

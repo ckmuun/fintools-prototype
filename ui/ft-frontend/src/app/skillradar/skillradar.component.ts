@@ -13,6 +13,7 @@ export class SkillradarComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log("on changes ...")
     this.radarChartData = this.initRadarChartData()
+    this.recolor();
   }
   @Input() userScores: number[] = [];
 
@@ -46,8 +47,8 @@ export class SkillradarComponent implements OnInit, OnChanges {
       TODO define proper colouring here
    */
   public recolor(): void {
-    this.radarChartData.datasets[0].backgroundColor = '#507783'
-    this.radarChartData.datasets[0].borderColor = 'blue'
+    this.radarChartData.datasets[0].backgroundColor = 'rgba(90, 123, 170, 0.17)'
+    this.radarChartData.datasets[0].borderColor = '#507783'
   }
 
   public radarChartType: ChartType = 'radar';

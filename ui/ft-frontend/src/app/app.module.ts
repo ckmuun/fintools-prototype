@@ -12,13 +12,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
-import {MatCard, MatCardModule} from "@angular/material/card";
+import {MatCardModule} from "@angular/material/card";
 import {FindashComponent} from "./findash/findash.component";
 import {ChartsModule} from "ng2-charts";
-import { BaseChartDirective } from "ng2-charts";
-import { SkillradarComponent } from './skillradar/skillradar.component';
+import {SkillradarComponent} from './skillradar/skillradar.component';
 import {MatGridListModule} from "@angular/material/grid-list";
-import { StratcompareComponent } from './stratcompare/stratcompare.component';
+import {StratcompareComponent} from './stratcompare/stratcompare.component';
+import {StratDetailsComponent} from './strat-details/strat-details.component';
+import {FlexLayoutModule} from "@angular/flex-layout";
+import { StratFeedbackComponent } from './strat-feedback/strat-feedback.component';
 
 const routes: Routes = [
   {path: 'get-started', component: EntrypointComponent},
@@ -36,6 +38,8 @@ const routes: Routes = [
     FindashComponent,
     SkillradarComponent,
     StratcompareComponent,
+    StratDetailsComponent,
+    StratFeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ const routes: Routes = [
     MatCardModule,
     RouterModule.forRoot(routes),
     ChartsModule,
-    MatGridListModule
+    MatGridListModule,
+    FlexLayoutModule
   ],
 
   exports: [RouterModule],

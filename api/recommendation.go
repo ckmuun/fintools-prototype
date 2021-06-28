@@ -19,6 +19,7 @@ type FintoolRecomDto struct {
 */
 type StrategyComponent struct {
 	Description string `json:"description"`
+	Name        string `json:"name"`
 	ScoreContainer
 }
 

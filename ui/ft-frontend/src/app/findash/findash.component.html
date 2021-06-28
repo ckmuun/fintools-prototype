@@ -5,18 +5,22 @@
         <mat-card-title>Displaying Results for user id: {{data.id}}</mat-card-title>
         <mat-card-subtitle>Your Results from the Survey you just completed</mat-card-subtitle>
       </mat-card-header>
-      <app-skillradar [userScores]="userScoreArr"></app-skillradar>
+      <div fxLayoutAlign="center center">
+        <app-skillradar [userScores]="userScoreArr"></app-skillradar>
+      </div>
     </mat-card>
 
-    <ul *ngFor="let strategy of this.goodRecomStrats; index as i">}}
+    <ul *ngFor="let strategy of this.goodRecomStrats; index as i">
 
-      <p> {{ this.data.good_recommendation.recommended_components[i].description}}</p>
-      <app-stratcompare [userScores]="userScoreArr" [strategyScores]="this.goodStratArrs[i]">
-                    <!--    [strategyScores]="this.goodStratArrs[i]"> -->
-
-      </app-stratcompare>
+      <!--<p> {{ this.data.good_recommendation.recommended_components[i].name}}</p>-->
+      <mat-card>
+        <div fxLayout="row" fxLayoutGap="32px">
+          <app-stratcompare [userScores]="userScoreArr" [strategyScores]="this.goodStratArrs[i]"></app-stratcompare>
+          <app-strat-details [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-details>
+          <app-strat-feedback [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-feedback>
+        </div>
+      </mat-card>
     </ul>
-
   </div>
 </div>
 
