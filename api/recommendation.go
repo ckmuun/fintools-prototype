@@ -18,8 +18,9 @@ type FintoolRecomDto struct {
 		- Finance Knowledge is straightforward, targeting experience with certain asset classes etc.
 */
 type StrategyComponent struct {
-	Description string `json:"description"`
-	Name        string `json:"name"`
+	Description string   `json:"description"`
+	Name        string   `json:"name"`
+	Links       []string `json:"links"`
 	ScoreContainer
 }
 
