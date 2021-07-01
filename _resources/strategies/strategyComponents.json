@@ -6,16 +6,22 @@
     "psy_risk_tolerance": 5,
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
-    "financial_knowledge": 5
+    "financial_knowledge": 5,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "Buy a global, well-diversified ETF",
     "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
     "fin_risk_tolerance": 1,
-    "psy_risk_tolerance": 1,
-    "time_flexibility": 1,
-    "cog_bias_resistance": 1,
-    "financial_knowledge": 3
+    "psy_risk_tolerance": 2,
+    "time_flexibility": 3,
+    "cog_bias_resistance": 4,
+    "financial_knowledge": 5,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "Trade Commodities",
@@ -24,7 +30,10 @@
     "psy_risk_tolerance": 9,
     "time_flexibility": 8,
     "cog_bias_resistance": 8,
-    "financial_knowledge": 8
+    "financial_knowledge": 8,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "Trade FOREX",
@@ -33,16 +42,22 @@
     "psy_risk_tolerance": 6,
     "time_flexibility": 8,
     "cog_bias_resistance": 6,
-    "financial_knowledge": 7
+    "financial_knowledge": 7,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "Buy dividend stocks",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "description": "Generally speaking, there are two major reasons why people or organizations buy stocks. The first is growth (e.g. they hope the market value of the stock will rise), the second is dividends.",
     "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 3,
     "time_flexibility": 2,
     "cog_bias_resistance": 5,
-    "financial_knowledge": 4
+    "financial_knowledge": 4,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "create an amazon marketplace shop",
@@ -51,7 +66,10 @@
     "psy_risk_tolerance": 8,
     "time_flexibility": 8,
     "cog_bias_resistance": 5,
-    "financial_knowledge": 4
+    "financial_knowledge": 4,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "Become a Medium.com writer",
@@ -60,7 +78,10 @@
     "psy_risk_tolerance": 5,
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
-    "financial_knowledge": 5
+    "financial_knowledge": 5,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "Trade cryptocurrencies",
@@ -69,7 +90,10 @@
     "psy_risk_tolerance": 5,
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
-    "financial_knowledge": 5
+    "financial_knowledge": 5,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "Setup mirror trading for a well-known trader on a platform like eTORO",
@@ -78,7 +102,10 @@
     "psy_risk_tolerance": 6,
     "time_flexibility": 3,
     "cog_bias_resistance": 6,
-    "financial_knowledge": 5
+    "financial_knowledge": 5,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   },
   {
     "name": "Generate online content on various platforms",
@@ -87,6 +114,9 @@
     "psy_risk_tolerance": 8,
     "time_flexibility": 10,
     "cog_bias_resistance": 5,
-    "financial_knowledge": 3
+    "financial_knowledge": 3,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ]
   }
 ]

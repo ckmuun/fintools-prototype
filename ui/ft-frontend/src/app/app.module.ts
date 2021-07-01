@@ -21,6 +21,7 @@ import {StratcompareComponent} from './stratcompare/stratcompare.component';
 import {StratDetailsComponent} from './strat-details/strat-details.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { StratFeedbackComponent } from './strat-feedback/strat-feedback.component';
+import {NgxStarsModule} from "ngx-stars";
 
 const routes: Routes = [
   {path: 'get-started', component: EntrypointComponent},
@@ -53,7 +54,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ChartsModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxStarsModule,
   ],
 
   exports: [RouterModule],
