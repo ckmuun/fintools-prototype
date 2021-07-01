@@ -28,6 +28,7 @@
     "chartjs-plugin-annotation": "^1.0.2",
     "chartjs-plugin-datalabels": "^2.0.0-rc.1",
     "ng2-charts": "^3.0.0-rc.3",
+    "ngx-stars": "^1.5.1",
     "rxjs": "~6.6.0",
     "survey-angular": "^1.8.51",
     "tslib": "^2.0.0",
