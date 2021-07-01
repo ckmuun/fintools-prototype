@@ -1,23 +1,34 @@
-<div>
-  <div style="display: block">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Displaying Results for user id: {{data.id}}</mat-card-title>
-        <mat-card-subtitle>Your Results from the Survey you just completed</mat-card-subtitle>
-      </mat-card-header>
-      <div fxLayoutAlign="center center">
-        <app-skillradar [userScores]="userScoreArr"></app-skillradar>
-      </div>
-    </mat-card>
+<div fxLayout="column">
 
+<div fxLayoutGap="32px" style="margin-bottom: 35px">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Displaying Results for user id: {{data.id}}</mat-card-title>
+      <mat-card-subtitle>Your Results from the Survey you just completed</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
+
+
+  <div fxLayoutAlign="center" fxFlex="25" >
+    <div >
+    <app-skillradar style="height: 600px; width: 1200px"  [userScores]="userScoreArr"></app-skillradar>
+    </div>
+  </div>
+
+  <div fxFlex=75>
     <ul *ngFor="let strategy of this.goodRecomStrats; index as i">
 
       <!--<p> {{ this.data.good_recommendation.recommended_components[i].name}}</p>-->
+
       <mat-card>
-        <div fxLayout="row" fxLayoutGap="32px">
-          <app-stratcompare [userScores]="userScoreArr" [strategyScores]="this.goodStratArrs[i]"></app-stratcompare>
-          <app-strat-details [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-details>
-          <app-strat-feedback [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-feedback>
+        <div fxLayout.xl="row" fxLayoutGap="32px">
+          <app-stratcompare fxFlex="33" [userScores]="userScoreArr"
+                            [strategyScores]="this.goodStratArrs[i]"></app-stratcompare>
+          <app-strat-details fxFlex="33"
+                             [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-details>
+          <app-strat-feedback fxFlex="33"
+                              [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-feedback>
         </div>
       </mat-card>
     </ul>

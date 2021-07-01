@@ -1,7 +1,9 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Your Feedback for {{ strategy.name}}</mat-card-title>
+    <mat-card-title>Your Feedback for the strategy {{ strategy.name}}</mat-card-title>
     <mat-card-subtitle>Please enter your feedback for this recommendation here</mat-card-subtitle>
   </mat-card-header>
   <!--TODO PUT FEEDBACK  COMPONENTS HERE-->
+
+  <ngx-stars [readonly]="false" [size]="4" [initialStars]="2.5" [color]="'#F1E978'" (ratingOutput)="onRatingSet($event)"></ngx-stars>
 </mat-card>

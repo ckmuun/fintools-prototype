@@ -1,22 +1,28 @@
-<div fxLayout="row" fxLayoutGap="32px">
-  <mat-card style="height: 500px; width: 500px">
-    <div>
-      <canvas baseChart [data]="radarChartData" [options]="radarChartOptions" [type]="radarChartType">
-      </canvas>
+<mat-card style="width: 1500px; height: 800px">
+  <div fxLayout="row" fxLayoutGap="50px">
+
+    <div fxFlex="50">
+
+      <mat-card>
+        <canvas baseChart [data]="radarChartData" [options]="radarChartOptions" [type]="radarChartType">
+        </canvas>
+      </mat-card>
     </div>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Your Results:</mat-card-title>
-      <mat-card-subtitle>You scored the following average values in these categories:</mat-card-subtitle>
-    </mat-card-header>
 
-      <p>Time & Flexibility: {{this.userScores[0]}}</p>
-      <p>Finance Knowledge: {{this.userScores[4]}}</p>
-      <p>Cognitive Bias Resistance: {{this.userScores[3]}}</p>
-      <p>Financial Risk Tolerance: {{this.userScores[1]}}</p>
-      <p>Psychological Risk Tolerance: {{this.userScores[2]}}</p>
+    <div fxFlex="50">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Your Results:</mat-card-title>
+          <mat-card-subtitle>You scored the following average values in these categories:</mat-card-subtitle>
+        </mat-card-header>
 
+        <p>Time & Flexibility: {{this.userScores[0]}}</p>
+        <p>Finance Knowledge: {{this.userScores[4]}}</p>
+        <p>Cognitive Bias Resistance: {{this.userScores[3]}}</p>
+        <p>Financial Risk Tolerance: {{this.userScores[1]}}</p>
+        <p>Psychological Risk Tolerance: {{this.userScores[2]}}</p>
+      </mat-card>
+    </div>
+  </div>
 
-  </mat-card>
-</div>
+</mat-card>

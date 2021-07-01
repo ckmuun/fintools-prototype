@@ -10,10 +10,17 @@ export class StratFeedbackComponent implements OnInit {
 
   @Input() strategy: StrategyComponent = {} as any;
 
+  ratingDisplay: number = 2.5;
+  rated: boolean = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  onRatingSet(rating: number): void {
+    this.rated = true;
+    this.ratingDisplay = rating;
+  }
 }

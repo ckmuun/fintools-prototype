@@ -31,7 +31,7 @@ export class SkillradarComponent implements OnInit, OnChanges {
 
   // Radar
   public radarChartOptions: ChartConfiguration['options'] = {
-    responsive: true,
+
   };
 
   public initRadarChartData(): ChartData<'radar'> {
