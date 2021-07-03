@@ -74,6 +74,11 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 	router.GET("/api/questionnaires", getQuestionnaireList)
 	router.GET("/api/questionnaires/:kind", getQst)
 	router.GET("/api/questionnaires/all", getAll)
+	router.POST("/api/feedback", postFeedback)
+
+}
+
+func postFeedback(c *gin.Context) {
 
 }
 
