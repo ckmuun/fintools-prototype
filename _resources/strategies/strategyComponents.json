@@ -1,7 +1,7 @@
 [
   {
     "name": "Create a dropshipping store",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "description": "Dropshipping is an e-commerce technique. The core idea is to create an online shop which basically relays any purchases made through it to other online retailers which then send the product directly to the customer. The dropshipping store owner collects a commission. Its main advantage is that it's not necessary to have a permanent storage of the goods to be sold. The main disadvantage is that you as the store owner have to take liability for deliveries and products from the third-party shops you relay the orders to. This can, theoretically, result in massive financial drawbacks. ",
     "fin_risk_tolerance": 7,
     "psy_risk_tolerance": 5,
     "time_flexibility": 7,
@@ -9,23 +9,31 @@
     "financial_knowledge": 5,
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "linear"
     ]
   },
   {
     "name": "Buy a global, well-diversified ETF",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "description": "ETFs, Exchange Traded Funds are an asset class that was invented in the 1970s. The main idea is to setup a fund that replicates a given index like the S&P 500 or the DAX and participate in the overall development of this index instead of betting on single stocks. Furthermore, due to mimicking an index, an ETF is usually passive, which means that there is no fund manager who actively manages the funds composition. This significantly reduces the cost associated with purchasing and holding the fund over time. Usually, ETF investors also utilize a passive investment strategy, e.g. they buy and hold their assets for longer periods of time (think years up to multiple decades). ",
     "fin_risk_tolerance": 1,
     "psy_risk_tolerance": 2,
     "time_flexibility": 3,
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
     "links": [
-      "https://www.investopedia.com/terms/d/dividend.asp"
+      "https://www.justetf.com"
+    ],
+    "tags": [
+      "passive_investing",
+      "linear"
     ]
   },
   {
     "name": "Trade Commodities",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "description": "Commodities like crude oil, gold, or other precious metals can also be traded on stock exchanges. ",
     "fin_risk_tolerance": 9,
     "psy_risk_tolerance": 9,
     "time_flexibility": 8,
@@ -33,22 +41,63 @@
     "financial_knowledge": 8,
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "active_investing",
+      "linear"
     ]
   },
   {
     "name": "Trade FOREX",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "description": "FOREX, 'Foreign Exchange' trading refers to trading of certain fiat currency pairs. Common pairs include EURO/USD, GBP/USD, USD/JPY. Generally speaking, this is a more advanced type of trying to earn money on the financial markets. However, due to its well-defined assets (currencies backed by states), it offers certain characteristics that may allow exploitation, especially for algorithmic trading.",
     "fin_risk_tolerance": 9,
     "psy_risk_tolerance": 6,
     "time_flexibility": 8,
     "cog_bias_resistance": 6,
     "financial_knowledge": 7,
     "links": [
-      "https://www.investopedia.com/terms/d/dividend.asp"
+      "https://en.wikipedia.org/wiki/Currency_pair",
+      "https://www.plus500.com/Trading/Forex/Most-Popular-Forex-Pairs~6"
+    ],
+    "tags": [
+      "active_investing",
+      "linear"
     ]
   },
   {
     "name": "Buy dividend stocks",
+    "description": "Generally speaking, there are two major reasons why people or organizations buy stocks. The first is growth (e.g. they hope the market value of the stock will rise), the second is dividends. A dividend is a cash payment made by the company to its shareholders, proportionally to their relative share in the company.",
+    "fin_risk_tolerance": 3,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 2,
+    "cog_bias_resistance": 5,
+    "financial_knowledge": 4,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "passive_investing",
+      "linear"
+    ]
+  },
+  {
+    "name": "Buy a dividend-yielding globally diversified ETF",
+    "description": "This strategy points to buying and holding an ETF ",
+    "fin_risk_tolerance": 3,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 2,
+    "cog_bias_resistance": 5,
+    "financial_knowledge": 4,
+    "links": [
+      "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "passive_investing",
+      "linear"
+    ]
+  },
+  {
+    "name": "Utilize a robo-advisor to setup an ETF-based portfolio",
     "description": "Generally speaking, there are two major reasons why people or organizations buy stocks. The first is growth (e.g. they hope the market value of the stock will rise), the second is dividends.",
     "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 3,
@@ -57,6 +106,10 @@
     "financial_knowledge": 4,
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "passive_investing",
+      "linear"
     ]
   },
   {
@@ -69,6 +122,10 @@
     "financial_knowledge": 4,
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "hockey_stick"
     ]
   },
   {
@@ -81,6 +138,11 @@
     "financial_knowledge": 5,
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "creative",
+      "hockey_stick"
     ]
   },
   {
@@ -93,6 +155,11 @@
     "financial_knowledge": 5,
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "active_investing",
+      "exotic",
+      "linear"
     ]
   },
   {
@@ -105,6 +172,11 @@
     "financial_knowledge": 5,
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "passive_investing",
+      "exotic",
+      "linear"
     ]
   },
   {
@@ -117,6 +189,11 @@
     "financial_knowledge": 3,
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "creative",
+      "hockey_stick"
     ]
   }
 ]

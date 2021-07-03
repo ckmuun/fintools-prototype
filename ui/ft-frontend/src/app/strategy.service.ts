@@ -89,6 +89,7 @@ export class StrategyComponent {
   name: string;
 
   links: string[] = []
+  tags: string[] = []
 
   constructor(description: string,
               name: string,
@@ -97,9 +98,11 @@ export class StrategyComponent {
               psy_risk_tolerance: number,
               financial_knowledge: number,
               cog_bias_resistance: number,
-              links: string[]
+              links: string[],
+              tags: string[]
   ) {
     this.description = description;
+
 
     this.time_flexibility = time_flexibility;
     this.fin_risk_tolerance = fin_risk_tolerance;
@@ -108,6 +111,7 @@ export class StrategyComponent {
     this.cog_bias_resistance = cog_bias_resistance;
     this.name = name;
     this.links = links;
+    this.tags = tags;
 
     this.score_container = new ScoreContainer(
       this.time_flexibility,
