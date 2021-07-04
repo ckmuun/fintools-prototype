@@ -72,6 +72,52 @@
         }
       ],
       "chosen_answer_index": -1
+    },{
+      "metadata": {
+        "question_text": "Would you describe your self as risk-seeking?",
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Do not agree at all",
+          "value": 1
+        },
+        {
+          "answer_text": "Partially agree",
+          "value": 3
+        },
+        {
+          "answer_text": "Fully agree",
+          "value": 3
+        }
+      ],
+      "chosen_answer_index": -1
+    },{
+      "metadata": {
+        "question_text": "Have you ever engaged in gambling? (online casino Games, Poker, sports bets, etc.)",
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Never",
+          "value": 1
+        },
+        {
+          "answer_text": "seldom",
+          "value": 3
+        },
+        {
+          "answer_text": "regularly",
+          "value": 3
+        }
+      ],
+      "chosen_answer_index": -1
     }
   ]
 }

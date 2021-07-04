@@ -145,7 +145,8 @@
         }
       ],
       "chosen_answer_index": -1
-    } ,  {
+    },
+    {
       "question_text": "What is your highest finished education?",
       "metadata": {
         "category": "baseline",
@@ -159,16 +160,12 @@
           "value": 3
         },
         {
-          "answer_text": "Master's degree or, in Germany, 'Handwerksmeister'",
+          "answer_text": "Master's degree or, 'Meister'",
           "value": 3
         },
         {
-          "answer_text": "Bachelor's degree or, in Germany, 'Geselle', 'Techniker' etc.",
+          "answer_text": "Bachelor's degree or, apprenticeship, 'Geselle', 'Techniker' etc.",
           "value": 2
-        },
-        {
-          "answer_text": "Apprenticeship, Trade School, 'Berufsausbildung' in Germany",
-          "value": 1
         },
         {
           "answer_text": "Secondary School or, in the U.S., High School diploma",
@@ -176,6 +173,38 @@
         },
         {
           "answer_text": "no school finished",
+          "value": 0
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Which description best fits your job type?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "n/a -- not employed",
+          "value": 3
+        },
+        {
+          "answer_text": "Support role, repetitive assignments",
+          "value": 3
+        },
+        {
+          "answer_text": "Managerial role, operational work",
+          "value": 2
+        },
+        {
+          "answer_text": "Managerial role, project-based work",
+          "value": 2
+        },
+        {
+          "answer_text": "Domain expert role, project-based work",
           "value": 0
         }
       ],
