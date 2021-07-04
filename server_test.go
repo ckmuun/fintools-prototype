@@ -94,3 +94,7 @@ func TestDloadQsAndPostThem(t *testing.T) {
 
 	assert.False(t, dto.UserScores.TimeFlexibility == 0)
 }
+
+func TestPostFeedback(t *testing.T) {
+
+}

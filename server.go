@@ -80,6 +80,15 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 
 func postFeedback(c *gin.Context) {
 
+	var feedback []api.StrategyFeedback
+
+	if err := c.ShouldBindJSON(&feedback); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	}
+	// TODO log user feedback for strategies here
+
+	// return 200 and the user id the feedback was submitted for.
+	c.JSON(200, feedback[0].UserId)
 }
 
 func postExample(c *gin.Context) {
