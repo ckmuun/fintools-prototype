@@ -22,6 +22,8 @@ import {StratDetailsComponent} from './strat-details/strat-details.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { StratFeedbackComponent } from './strat-feedback/strat-feedback.component';
 import {NgxStarsModule} from "ngx-stars";
+import { ExplanationComponent } from './explanation/explanation.component';
+import { DiscoveryComponent } from './discovery/discovery.component';
 
 const routes: Routes = [
   {path: 'get-started', component: EntrypointComponent},
@@ -41,6 +43,8 @@ const routes: Routes = [
     StratcompareComponent,
     StratDetailsComponent,
     StratFeedbackComponent,
+    ExplanationComponent,
+    DiscoveryComponent,
   ],
   imports: [
     BrowserModule,

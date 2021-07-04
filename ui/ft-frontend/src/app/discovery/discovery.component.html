@@ -1,0 +1,35 @@
+<div fxLayout="column">
+
+  <div fxLayoutGap="32px" style="margin-bottom: 35px">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Displaying other strategies for user id: {{data.id}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+
+  <div fxLayoutAlign="center" fxFlex="25" >
+    <div >
+      <app-skillradar style="height: 600px; width: 1200px"  [userScores]="userScoreArr"></app-skillradar>
+    </div>
+  </div>
+
+  <div fxFlex=75>
+    <ul *ngFor="let strategy of this.badRecomStrats; index as i">
+
+      <!--<p> {{ this.data.good_recommendation.recommended_components[i].name}}</p>-->
+
+      <mat-card>
+        <div fxLayout.xl="row" fxLayoutGap="32px">
+          <app-stratcompare fxFlex="33" [userScores]="userScoreArr"
+                            [strategyScores]="this.badStratArrs[i]"></app-stratcompare>
+          <app-strat-details fxFlex="33"
+                             [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-details>
+          <app-strat-feedback fxFlex="33"
+                              [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-feedback>
+        </div>
+      </mat-card>
+    </ul>
+  </div>
+</div>
