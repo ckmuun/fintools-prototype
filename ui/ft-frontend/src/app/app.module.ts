@@ -4,8 +4,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {EntrypointComponent} from './entrypoint/entrypoint.component';
-import {SurveyComponent} from './questionnaire/survey.component';
-import {McQuestionComponent} from './mc-question/mc-question.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
@@ -36,8 +34,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     EntrypointComponent,
-    SurveyComponent,
-    McQuestionComponent,
     FindashComponent,
     SkillradarComponent,
     StratcompareComponent,
