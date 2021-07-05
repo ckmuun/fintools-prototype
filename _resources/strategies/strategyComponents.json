@@ -2,19 +2,27 @@
   {
     "name": "Create a dropshipping store",
     "description": "Dropshipping is an e-commerce technique. The core idea is to create an online shop which basically relays any purchases made through it to other online retailers which then send the product directly to the customer. The dropshipping store owner collects a commission. Its main advantage is that it's not necessary to have a permanent storage of the goods to be sold. The main disadvantage is that you as the store owner have to take liability for deliveries and products from the third-party shops you relay the orders to. This can, theoretically, result in massive financial drawbacks. ",
-    "fin_risk_tolerance": 7,
-    "psy_risk_tolerance": 5,
+    "fin_risk_tolerance": 9,
+    "psy_risk_tolerance": 9,
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Scalable",
+      "low initial capital requirement",
+      "feasible to do from home"
+    ],
+    "major_cons": [
+      "highly leveraged",
+      "long-term liability risks (years)",
+      "high-impact liability risks"
+    ],
     "links": [
-      "https://www.investopedia.com/terms/d/dividend.asp"
     ],
     "tags": [
       "entrepreneurial",
-      "linear"
+      "linear",
+      "e-commerce"
     ]
   },
   {
@@ -25,8 +33,16 @@
     "time_flexibility": 3,
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Very simple to execute and relatively low risk",
+      "Lower taxes on capital gains than work income (in Germany)",
+      "No company setup or lifestyle changes required"
+    ],
+    "major_cons": [
+      "Unspecific, certain users may have opportunity cost",
+      "Long-Term only",
+      "Overall return potential is relatively low"
+    ],
     "links": [
       "https://www.justetf.com"
     ],
@@ -44,8 +60,15 @@
     "time_flexibility": 8,
     "cog_bias_resistance": 8,
     "financial_knowledge": 8,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Higher earnings potential compared to passive investing",
+      "No company setup or massive lifestyle changes required"
+    ],
+    "major_cons": [
+      "Significantly more risky than passive investing",
+      "Active participation required, therefore time-consuming",
+      ""
+    ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -63,8 +86,15 @@
     "time_flexibility": 8,
     "cog_bias_resistance": 6,
     "financial_knowledge": 7,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Higher earnings potential compared to passive investing",
+      "No company setup or massive lifestyle changes required"
+    ],
+    "major_cons": [
+      "Significantly more risky than passive investing",
+      "Active participation required, therefore time-consuming",
+      ""
+    ],
     "links": [
       "https://en.wikipedia.org/wiki/Currency_pair",
       "https://www.plus500.com/Trading/Forex/Most-Popular-Forex-Pairs~6"
@@ -75,15 +105,23 @@
     ]
   },
   {
-    "name": "Buy dividend stocks",
+    "name": "Buy dividend stocks (e.g. so-called 'dividend aristocrats'",
     "description": "Generally speaking, there are two major reasons why people or organizations buy stocks. The first is growth (e.g. they hope the market value of the stock will rise), the second is dividends. A dividend is a cash payment made by the company to its shareholders, proportionally to their relative share in the company.",
     "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 3,
     "time_flexibility": 2,
-    "cog_bias_resistance": 5,
-    "financial_knowledge": 4,
-    "major_pros": [],
-    "major_cons": [],
+    "cog_bias_resistance": 6,
+    "financial_knowledge": 5,
+    "major_pros": [
+      "Very simple to execute and relatively low risk",
+      "Lower taxes on capital gains than work income (in Germany)",
+      "No company setup or lifestyle changes required"
+    ],
+    "major_cons": [
+      "Unspecific, certain users may have opportunity cost",
+      "Long-Term only",
+      "Overall return potential is relatively low"
+    ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -100,8 +138,16 @@
     "time_flexibility": 2,
     "cog_bias_resistance": 5,
     "financial_knowledge": 4,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Very simple to execute and relatively low risk",
+      "Lower taxes on capital gains than work income (in Germany)",
+      "No company setup or lifestyle changes required"
+    ],
+    "major_cons": [
+      "Unspecific, certain users may have opportunity cost",
+      "Long-Term only",
+      "Overall return potential is relatively low"
+    ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -113,14 +159,22 @@
   },
   {
     "name": "Utilize a robo-advisor to setup an ETF-based portfolio",
-    "description": "Generally speaking, there are two major reasons why people or organizations buy stocks. The first is growth (e.g. they hope the market value of the stock will rise), the second is dividends.",
+    "description": "A robo-advisor is essentially an automated form of investing in ETFs and bonds. The core idea is to have active management, not by humans, but by some sort of machine learning model. While the overall idea seems compelling, the associated costs may eat up the advantage over a non-managed index fund.",
     "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 3,
     "time_flexibility": 2,
     "cog_bias_resistance": 5,
     "financial_knowledge": 4,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Very simple to execute and relatively low risk",
+      "Lower taxes on capital gains than work income (in Germany)",
+      "No company setup or lifestyle changes required"
+    ],
+    "major_cons": [
+      "Unspecific, certain users may have opportunity cost",
+      "Long-Term only",
+      "Overall earnings potential is relatively low, robo-advisors are not free"
+    ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -132,14 +186,18 @@
   },
   {
     "name": "create an amazon marketplace, ebay, or shopify shop",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "description": "",
     "fin_risk_tolerance": 8,
     "psy_risk_tolerance": 8,
     "time_flexibility": 8,
     "cog_bias_resistance": 5,
     "financial_knowledge": 4,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Scalable, especially when selling digital products"
+    ],
+    "major_cons": [
+      "Company setup and tax paperwork required"
+    ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -150,14 +208,19 @@
   },
   {
     "name": "Become a Medium.com writer or blogger",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "description": "Medium.com (or similar platforms) allow users to become independent authors / writers. You can write on any topic, but most articles are related to technology, self-improvement, and personal finance. Medium sells a subscription to users and authors get paid for any minute paying users spend reading their articles. If an article 'goes viral' this can result in significant earnings. However, the average author can not live solely off the platform. ",
     "fin_risk_tolerance": 7,
     "psy_risk_tolerance": 5,
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Individual and specific, for talented"
+    ],
+    "major_cons": [
+      "Earnings potential, especially at the beginning very limited",
+      "Medium.com as a platform is probably already saturated"
+    ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -169,16 +232,23 @@
   },
   {
     "name": "Trade cryptocurrencies",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
-    "fin_risk_tolerance": 7,
-    "psy_risk_tolerance": 5,
-    "time_flexibility": 7,
-    "cog_bias_resistance": 4,
+    "description": "Crypto is the new kid on the block in terms of asset classes and made a steep career over the last few years, from an absolute niche to something institutional investors trade. It is, of course, also possible to create crypto as a retail investor and many made significant gains from doing so. However, significant caveats apply: cryptocurrencies have no deep value at all, they aren't backed by anything. Therefore, there is also no interest and no dividends. Additionally, the market is very volatile and influenced by mere opinions of people. Also, unbiased information on the topic is relatively seldom to find.",
+    "fin_risk_tolerance": 8,
+    "psy_risk_tolerance": 8,
+    "time_flexibility": 6,
+    "cog_bias_resistance": 10,
     "financial_knowledge": 5,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Higher earnings potential compared to passive investing",
+      "No company setup or massive lifestyle changes required"
+    ],
+    "major_cons": [
+      "Significantly more risky than passive investing",
+      "Active participation required, therefore time-consuming",
+      ""
+    ],
     "links": [
-      "https://www.investopedia.com/terms/d/dividend.asp"
+      "https://kraken.com"
     ],
     "tags": [
       "active_investing",
@@ -187,15 +257,23 @@
     ]
   },
   {
-    "name": "Setup mirror trading for a well-known trader on a platform like eTORO",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "name": "Setup mirror trading for a well-known trader on a platform like eTORO or Public.com",
+    "description": "So-called social trading platforms like eTORO allow for mirroring (e.g. copying and replicating) the trades of other people. You can do this by hand by watching a social media feed-like stream of events or by completely automating the process. The main advantage is that you can profit from other people's knowledge, the main drawback is you are tying your luck to someone else's knowledge. However, through careful selection of the person to mirror, one may achieve above-market returns in specific areas, where this person may be an expert. The main point is that your invested decision is not removed, but shifted.",
     "fin_risk_tolerance": 6,
     "psy_risk_tolerance": 6,
     "time_flexibility": 3,
-    "cog_bias_resistance": 6,
+    "cog_bias_resistance": 10,
     "financial_knowledge": 5,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Higher earnings potential compared to passive investing",
+      "No company setup or massive lifestyle changes required",
+      "Possibility to profit from other people's knowledge"
+    ],
+    "major_cons": [
+      "Significantly more risky than passive investing",
+      "Careful selection of the person to mirror is required",
+      "You are basically tying your luck to someone else's investing style"
+    ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -207,14 +285,22 @@
   },
   {
     "name": "Generate online content on various platforms",
-    "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
+    "description": "\n\nLorem ipsum dolor sit amet, major_consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque major_consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo major_consectetur eros lacinia rutrum.  ",
     "fin_risk_tolerance": 8,
     "psy_risk_tolerance": 8,
     "time_flexibility": 10,
     "cog_bias_resistance": 5,
     "financial_knowledge": 3,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Slow start possible, low capital requirements",
+      "Relatively scalable",
+      "Individual and specific, for talented users a way to also express themselves"
+    ],
+    "major_cons": [
+      "Earning potential, at least in the beginning is very low",
+      "A lot is learnable, but you need a certain degree of talent",
+      "Paperwork for self-employment, taxation etc. required"
+    ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -232,8 +318,15 @@
     "time_flexibility": 10,
     "cog_bias_resistance": 5,
     "financial_knowledge": 3,
-    "major_pros": [],
-    "major_cons": [],
+    "major_pros": [
+      "Very high impact, especially over longer timeframe",
+      "Very flexible if executed correctly"
+    ],
+    "major_cons": [
+      "Very massive lifestyle changes required",
+      "Your job needs to be feasible remotely",
+      "Generally speaking, probably a not very stable lifestyle model, you really need to want to do this."
+    ],
     "links": [
       "https://millennialmoney.com/geoarbitrage/",
       "https://www.juststartinvesting.com/what-is-geoarbitrage/",
@@ -253,26 +346,15 @@
     "time_flexibility": 8,
     "cog_bias_resistance": 7,
     "financial_knowledge": 4,
-    "major_pros": [],
-    "major_cons": [],
-    "links": [
-      "https://airbnb.com"
+    "major_pros": [
+      "Very profitable if executed correctly",
+      "Scalable, but relatively low initial capital requirement"
     ],
-    "tags": [
-      "entrepreneurial",
-      "leveraged"
-    ]
-  },
-  {
-    "name": "Consulting, Coaching and other types of freelance work ",
-    "description": "It is possible to rent out a flat and host it on AirBnb even if you do not own any property. However, certain laws and regulations apply, so it is required to check beforehand whether it is actually possible to do so. Additionally, you are essentially conducting a leveraged business model and have to carry certain liabilities, which may cause problems should you have AirBnB renters who damaage or destroy property.",
-    "fin_risk_tolerance": 5,
-    "psy_risk_tolerance": 8,
-    "time_flexibility": 8,
-    "cog_bias_resistance": 7,
-    "financial_knowledge": 4,
-    "major_pros": [],
-    "major_cons": [],
+    "major_cons": [
+      "Various liability and legal risks",
+      "company setup most likely required, general paperwork",
+      "You are effectively 'wasting' an apartment people could live in permanently to resell it for personal gain."
+    ],
     "links": [
       "https://airbnb.com"
     ],

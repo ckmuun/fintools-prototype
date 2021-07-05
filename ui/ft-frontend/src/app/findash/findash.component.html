@@ -1,18 +1,18 @@
 <div fxLayout="column">
 
-<div fxLayoutGap="32px" style="margin-bottom: 35px">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Displaying Results for user id: {{data.id}}</mat-card-title>
-      <mat-card-subtitle>Your Results from the Survey you just completed</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
-</div>
+  <div fxLayoutGap="32px" style="margin-bottom: 35px">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Displaying Results for user id: {{data.id}}</mat-card-title>
+        <mat-card-subtitle>Your Results from the Survey you just completed</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
 
 
-  <div fxLayoutAlign="center" fxFlex="25" >
-    <div >
-    <app-skillradar style="height: 600px; width: 1200px"  [userScores]="userScoreArr"></app-skillradar>
+  <div fxLayoutAlign="center" fxFlex="25">
+    <div>
+      <app-skillradar style="height: 600px; width: 1200px" [userScores]="userScoreArr"></app-skillradar>
     </div>
   </div>
 
@@ -32,6 +32,9 @@
         </div>
       </mat-card>
     </ul>
+  </div>
+  <div fxFlex="center center">
+    <button mat-raised-button (click)="navigateToDiscovery()">Next Page</button>
   </div>
 </div>
 

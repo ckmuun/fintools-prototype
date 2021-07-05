@@ -95,6 +95,24 @@ func TestDloadQsAndPostThem(t *testing.T) {
 	assert.False(t, dto.UserScores.TimeFlexibility == 0)
 }
 
+func TestGetRandomSample(t *testing.T) {
+	router := SetupRouter()
+	w := httptest.NewRecorder()
+
+	var sample []api.StrategyComponent
+
+	getRequest, _ := http.NewRequest("GET", "/api/random", nil)
+	router.ServeHTTP(w, getRequest)
+
+	assert.Equal(t, 200, w.Code)
+	_ = json.Unmarshal(w.Body.Bytes(), &sample)
+
+	for _, strategy := range sample {
+		assert.True(t, len(strategy.MajorPros) != 0)
+		assert.True(t, len(strategy.MajorCons) != 0)
+	}
+}
+
 func TestPostFeedback(t *testing.T) {
 
 }

@@ -1,9 +1,23 @@
-<div >
-  <mat-card >
+<div>
+  <mat-card>
     <mat-card-header>
       <mat-card-title>{{ strategy.name}}</mat-card-title>
     </mat-card-header>
+    <h3>Major advantages of this strategy:</h3>
+    <div>
+      <ul *ngFor="let pro of this.strategy.major_pros">
+        <p>- {{ pro }}</p>
+      </ul>
+    </div>
+    <h3>Major drawbacks of this strategy:</h3>
+    <div>
+      <ul *ngFor="let con of this.strategy.major_cons">
+        <p>- {{ con }}</p>
+      </ul>
 
+    </div>
+
+    <h3>Full Description</h3>
     {{ strategy.description }}
   </mat-card>
 </div>
