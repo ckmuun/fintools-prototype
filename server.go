@@ -66,9 +66,13 @@ func setupUserRoutes(router *gin.Engine) *gin.Engine {
 	return router
 }
 
+/*
+	all api endpoints, in no particular order, with the http verb and the corresponding processing function
+*/
 func setupQuestionnaireRoutes(router *gin.Engine) {
 
 	router.POST("/api/test", postExample)
+	router.POST("/api/tripwire", processFinancialSituationForTripwire)
 	router.POST("/api/questionnaires/submit", postFilledQuestionnaires)
 	router.POST("/api/questionnaires/submit/single", postSingleQuestionnaire)
 	router.GET("/api/questionnaires", getQuestionnaireList)
@@ -76,6 +80,24 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 	router.GET("/api/questionnaires/all", getAll)
 	router.POST("/api/feedback", postFeedback)
 	router.GET("/api/random", getRandomSampleOfStrategies)
+
+}
+
+/*
+	The so-called tripwire serves the purpose to weed out people who are massively indebted,
+	and therefore do not need any investment advice.
+*/
+func processFinancialSituationForTripwire(c *gin.Context) {
+	var financialHealthQ api.McQuestionnaire
+
+	if err := c.ShouldBindJSON(&financialHealthQ); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	}
+	if financialHealthQ.Category != "Financial Risk Tolerance" {
+		c.JSON(400, "Your financial situation is too bad for giving out proper investment advice.")
+	}
+
+	c.JSON(200, engineImpl.CalculateTripwireFiring(financialHealthQ))
 
 }
 

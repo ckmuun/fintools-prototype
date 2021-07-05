@@ -32,6 +32,22 @@ func loadStrategyComponents() (comps []api.StrategyComponent) {
 
 }
 
+/*
+	This function calculates whether someone's financial health is too low to give reasonable investment advice.
+*/
+func CalculateTripwireFiring(financialHealthQ api.McQuestionnaire) bool {
+
+	score, err := financialHealthQ.GetAveragedAnswers()
+
+	if err != nil || score <= 2 {
+		return false
+	}
+	return true
+}
+
+/*
+	This function just takes a random sample from all available strategies
+*/
 func GenerateRandomSample() []api.StrategyComponent {
 	return engines[0].GenerateRandomSample()
 }
