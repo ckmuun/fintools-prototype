@@ -1,5 +1,5 @@
 import {Component, Inject, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {ChartConfiguration, ChartData, ChartType} from "chart.js";
+import {ChartConfiguration, ChartData, ChartOptions, ChartType} from "chart.js";
 import {radarchartLabels} from "../ftconstants";
 
 
@@ -39,6 +39,20 @@ export class StratcompareComponent implements OnInit, OnChanges {
     responsive: true,
   };
 
+  public options: ChartOptions = {
+  }
+
+  // public options: ChartOptions = {
+  //   responsive: true,
+  //
+  //   scales: {
+  //     ticks: {
+  //       suggestedMin: 0,
+  //       suggestedMax: 10,
+  //     }
+  //   }
+  // };
+
   /*
     public radarChartData: ChartData<'radar'> = {
       labels: radarchartLabels,
@@ -51,17 +65,22 @@ export class StratcompareComponent implements OnInit, OnChanges {
 
   public initRadarChartData(): ChartData<'radar'> {
 
-    console.log("user scores: "+ this.userScores)
-    console.log("strategy scores: "+ this.strategyScores)
+    console.log("user scores: " + this.userScores)
+    console.log("strategy scores: " + this.strategyScores)
 
     return {
       labels: radarchartLabels,
       datasets: [
-        {data: this.userScores, label: 'User Answers'},
-        {data: this.strategyScores, label: 'Strategy Values'},
+        {data: this.userScores, label: 'User Answers', spanGaps: true},
+        {data: this.strategyScores, label: 'Strategy Values', spanGaps: true},
+        {data: this.refScores, hidden: false, showLine: false, label: 'Theoretical Maximum'},
       ]
     }
   }
+
+  public refScores: number[] = [10,10,10,10,10]
+
+
 
   public recolor(): void {
     this.radarChartData.datasets[0].backgroundColor = 'rgba(90, 123, 170, 0.17)'

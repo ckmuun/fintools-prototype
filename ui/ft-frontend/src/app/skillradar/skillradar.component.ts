@@ -39,13 +39,11 @@ export class SkillradarComponent implements OnInit, OnChanges {
       labels: radarchartLabels,
       datasets: [
         {data: this.userScores, label: 'Your Answers'},
+        {data: [10,10,10,10,10], hidden: false, showLine: false, label: 'Theoretical Maximum'},
       ]
     };
   }
 
-  /*
-      TODO define proper colouring here
-   */
   public recolor(): void {
     this.radarChartData.datasets[0].backgroundColor = 'rgba(90, 123, 170, 0.17)'
     this.radarChartData.datasets[0].borderColor = '#507783'
