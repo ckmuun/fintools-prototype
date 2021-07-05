@@ -284,12 +284,12 @@
     ]
   },
   {
-    "name": "Generate online content on various platforms",
-    "description": "\n\nLorem ipsum dolor sit amet, major_consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque major_consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo major_consectetur eros lacinia rutrum.  ",
-    "fin_risk_tolerance": 8,
+    "name": "Create and monetize online content on various platforms,",
+    "description": "Various (social media) platforms allow for content creation to be monetized. Therefore, at least theoretically, anyone can do so. In practice this requires selecting an appropriate niche, creating blog articles, videos or other posts to cater to it, and after reaching a certain level of range (e.g. followers) monetizing the content. However, this is more easily said than done. Only a few people trying to do so actually can monetize their content and even then only a few can make a living off of it. But if you manage to do so, the scalability is quite high and it may also act as an outlet for self expression.",
+    "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 8,
     "time_flexibility": 10,
-    "cog_bias_resistance": 5,
+    "cog_bias_resistance": 7,
     "financial_knowledge": 3,
     "major_pros": [
       "Slow start possible, low capital requirements",
@@ -390,7 +390,7 @@
   },
   {
     "name": "Create an online course to sell on platforms like Udemy.com",
-    "description": "Due to platforms like udemy, anyone can create a digital course",
+    "description": "Due to platforms like udemy, anyone can create a digital course on basically every possible topic. These courses can then be monetized on such platforms. ",
     "fin_risk_tolerance": 5,
     "psy_risk_tolerance": 8,
     "time_flexibility": 8,
