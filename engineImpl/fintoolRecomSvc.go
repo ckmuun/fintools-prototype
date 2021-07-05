@@ -32,6 +32,10 @@ func loadStrategyComponents() (comps []api.StrategyComponent) {
 
 }
 
+func GenerateRandomSample() []api.StrategyComponent {
+	return engines[0].GenerateRandomSample()
+}
+
 /*
 	Generate GoodRecommendation from filled questionnaires
 */

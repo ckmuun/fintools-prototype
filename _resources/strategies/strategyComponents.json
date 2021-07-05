@@ -7,6 +7,8 @@
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -16,19 +18,22 @@
     ]
   },
   {
-    "name": "Buy a global, well-diversified ETF",
+    "name": "Buy an accumulating, globally diversified ETF",
     "description": "ETFs, Exchange Traded Funds are an asset class that was invented in the 1970s. The main idea is to setup a fund that replicates a given index like the S&P 500 or the DAX and participate in the overall development of this index instead of betting on single stocks. Furthermore, due to mimicking an index, an ETF is usually passive, which means that there is no fund manager who actively manages the funds composition. This significantly reduces the cost associated with purchasing and holding the fund over time. Usually, ETF investors also utilize a passive investment strategy, e.g. they buy and hold their assets for longer periods of time (think years up to multiple decades). ",
     "fin_risk_tolerance": 1,
     "psy_risk_tolerance": 2,
     "time_flexibility": 3,
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.justetf.com"
     ],
     "tags": [
       "passive_investing",
-      "linear"
+      "linear",
+      "purely_financial"
     ]
   },
   {
@@ -39,12 +44,15 @@
     "time_flexibility": 8,
     "cog_bias_resistance": 8,
     "financial_knowledge": 8,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
     "tags": [
       "active_investing",
-      "linear"
+      "linear",
+      "purely_financial"
     ]
   },
   {
@@ -55,6 +63,8 @@
     "time_flexibility": 8,
     "cog_bias_resistance": 6,
     "financial_knowledge": 7,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://en.wikipedia.org/wiki/Currency_pair",
       "https://www.plus500.com/Trading/Forex/Most-Popular-Forex-Pairs~6"
@@ -72,6 +82,8 @@
     "time_flexibility": 2,
     "cog_bias_resistance": 5,
     "financial_knowledge": 4,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -88,12 +100,15 @@
     "time_flexibility": 2,
     "cog_bias_resistance": 5,
     "financial_knowledge": 4,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
     "tags": [
       "passive_investing",
-      "linear"
+      "linear",
+      "purely_financial"
     ]
   },
   {
@@ -104,22 +119,27 @@
     "time_flexibility": 2,
     "cog_bias_resistance": 5,
     "financial_knowledge": 4,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
     "tags": [
       "passive_investing",
-      "linear"
+      "linear",
+      "purely_financial"
     ]
   },
   {
-    "name": "create an amazon marketplace shop",
+    "name": "create an amazon marketplace, ebay, or shopify shop",
     "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
     "fin_risk_tolerance": 8,
     "psy_risk_tolerance": 8,
     "time_flexibility": 8,
     "cog_bias_resistance": 5,
     "financial_knowledge": 4,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -129,13 +149,15 @@
     ]
   },
   {
-    "name": "Become a Medium.com writer",
+    "name": "Become a Medium.com writer or blogger",
     "description": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis pretium ex, sed laoreet neque consectetur sit amet. Ut dignissim velit quis nulla vulputate pretium. Nullam nec purus erat. Phasellus non bibendum nulla. Donec non mauris velit. Sed molestie eget augue sit amet tincidunt. Aenean eleifend lacus sit amet ornare imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec leo ligula, bibendum sit amet ultricies non, faucibus sed justo. Suspendisse potenti. Proin viverra elit vitae dolor ornare, non porta leo ultricies. Cras a maximus quam. Suspendisse congue sed orci at posuere. Aliquam sapien enim, euismod porta porttitor sit amet, pulvinar eu nulla.\n\nSed pulvinar vulputate ipsum, ut tincidunt dolor dignissim quis. Praesent magna leo, varius et lectus non, tincidunt rhoncus erat. Sed suscipit est leo, lacinia maximus ipsum ornare sit amet. Nullam dapibus enim non dictum faucibus. Cras volutpat porta lectus non volutpat. Sed felis odio, mattis quis dui vel, facilisis vestibulum dui. Curabitur vel volutpat metus.\n\nCurabitur viverra scelerisque volutpat. Maecenas ullamcorper semper elit, vel gravida mauris. Fusce fermentum lectus ut leo iaculis, sit amet gravida tellus congue. Etiam id nibh non elit molestie ornare. Donec et gravida ligula. Quisque placerat dolor urna, a faucibus magna faucibus quis. Cras ac mi in lacus maximus faucibus nec eget mauris. Vestibulum sed pellentesque orci. Nunc nec elit sed nibh molestie sodales. Maecenas ornare justo consectetur eros lacinia rutrum.  ",
     "fin_risk_tolerance": 7,
     "psy_risk_tolerance": 5,
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -153,6 +175,8 @@
     "time_flexibility": 7,
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -170,6 +194,8 @@
     "time_flexibility": 3,
     "cog_bias_resistance": 6,
     "financial_knowledge": 5,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -187,6 +213,8 @@
     "time_flexibility": 10,
     "cog_bias_resistance": 5,
     "financial_knowledge": 3,
+    "major_pros": [],
+    "major_cons": [],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
     ],
@@ -194,6 +222,140 @@
       "entrepreneurial",
       "creative",
       "hockey_stick"
+    ]
+  },
+  {
+    "name": "Get into remote, freelancing or self-employed work, then move to a country / location with significantly lower cost of living ('also known under the term of geo-arbitrage') ",
+    "description": "The core idea of this strategy is that in today's digital economy, it is possible to do full-remote work, therefore rendering the exact location where people work from irrelevant. Accordingly, it is possible to move to a country or area with lower cost of living (and possibly taxes), to save money in the long run. Technically, this is both possible for salaried an self-employed work. However, the increased flexibility of self-employed or entrepreneurial work types may come in handy. The main drawback is the massive lifestyle change required.",
+    "fin_risk_tolerance": 8,
+    "psy_risk_tolerance": 8,
+    "time_flexibility": 10,
+    "cog_bias_resistance": 5,
+    "financial_knowledge": 3,
+    "major_pros": [],
+    "major_cons": [],
+    "links": [
+      "https://millennialmoney.com/geoarbitrage/",
+      "https://www.juststartinvesting.com/what-is-geoarbitrage/",
+      "https://safetywing.com/nomad-insurance"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "creative",
+      "hockey_stick"
+    ]
+  },
+  {
+    "name": "AirBnB Hosting ",
+    "description": "It is possible to rent out a flat and host it on AirBnb even if you do not own any property. However, certain laws and regulations apply, so it is required to check beforehand whether it is actually possible to do so. Additionally, you are essentially conducting a leveraged business model and have to carry certain liabilities, which may cause problems should you have AirBnB renters who damaage or destroy property.",
+    "fin_risk_tolerance": 5,
+    "psy_risk_tolerance": 8,
+    "time_flexibility": 8,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 4,
+    "major_pros": [],
+    "major_cons": [],
+    "links": [
+      "https://airbnb.com"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "leveraged"
+    ]
+  },
+  {
+    "name": "Consulting, Coaching and other types of freelance work ",
+    "description": "It is possible to rent out a flat and host it on AirBnb even if you do not own any property. However, certain laws and regulations apply, so it is required to check beforehand whether it is actually possible to do so. Additionally, you are essentially conducting a leveraged business model and have to carry certain liabilities, which may cause problems should you have AirBnB renters who damaage or destroy property.",
+    "fin_risk_tolerance": 5,
+    "psy_risk_tolerance": 8,
+    "time_flexibility": 8,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 4,
+    "major_pros": [],
+    "major_cons": [],
+    "links": [
+      "https://airbnb.com"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "leveraged"
+    ]
+  },
+  {
+    "name": "Consulting, Coaching and other types of freelancing work",
+    "description": "Depending on your job and previous experience you may have some specific skills other people may be willing to buy as a service from you. This can include a wide range of topics, including but not limited to marketing, IT / Software, content authoring, proofreading, nutrition, sports.",
+    "fin_risk_tolerance": 5,
+    "psy_risk_tolerance": 8,
+    "time_flexibility": 8,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 4,
+    "major_pros": [
+      "Flexible",
+      "Can monetize existing skills"
+    ],
+    "major_cons": [
+      "not infinitely scalable",
+      "lifestyle changes required",
+      "specific knowledge and marketing / sales talent required"
+    ],
+    "links": [
+      "https://airbnb.com"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "leveraged"
+    ]
+  },
+  {
+    "name": "Create an online course to sell on platforms like Udemy.com",
+    "description": "Due to platforms like udemy, anyone can create a digital course",
+    "fin_risk_tolerance": 5,
+    "psy_risk_tolerance": 8,
+    "time_flexibility": 8,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 4,
+    "major_pros": [
+      "Theoretically infinitely scalable",
+      "Level of commitment is relatively low",
+      "No significant lifestyle changes required",
+      "can monetize existing skills"
+    ],
+    "major_cons": [
+      "You actually need specific skills on the topic to make a reasonable course",
+      "The topic needs to be in demand, or can fall out of it over time"
+    ],
+    "links": [
+      "https://airbnb.com"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "leveraged"
+    ]
+  },
+  {
+    "name": "Create a print-on-demand-shop with your designes",
+    "description": "Print-on-demand-shops ",
+    "fin_risk_tolerance": 5,
+    "psy_risk_tolerance": 8,
+    "time_flexibility": 8,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 4,
+    "major_pros": [
+      "Theoretically infinitely scalable",
+      "Level of commitment is relatively low",
+      "No significant lifestyle changes required",
+      "can monetize existing skills"
+    ],
+    "major_cons": [
+      "You actually need specific skills on the topic to make a reasonable course",
+      "The topic needs to be in demand, or can fall out of it over time"
+    ],
+    "links": [
+      "https://airbnb.com"
+    ],
+    "tags": [
+      "entrepreneurial",
+      "leveraged"
     ]
   }
 ]

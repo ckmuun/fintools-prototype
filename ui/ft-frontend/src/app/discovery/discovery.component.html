@@ -7,14 +7,6 @@
       </mat-card-header>
     </mat-card>
   </div>
-
-
-  <div fxLayoutAlign="center" fxFlex="25" >
-    <div >
-      <app-skillradar style="height: 600px; width: 1200px"  [userScores]="userScoreArr"></app-skillradar>
-    </div>
-  </div>
-
   <div fxFlex=75>
     <ul *ngFor="let strategy of this.badRecomStrats; index as i">
 
@@ -25,9 +17,9 @@
           <app-stratcompare fxFlex="33" [userScores]="userScoreArr"
                             [strategyScores]="this.badStratArrs[i]"></app-stratcompare>
           <app-strat-details fxFlex="33"
-                             [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-details>
+                             [strategy]="this.data.bad_recommendation.recommended_components[i]"></app-strat-details>
           <app-strat-feedback fxFlex="33"
-                              [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-feedback>
+                              [strategy]="this.data.bad_recommendation.recommended_components[i]"></app-strat-feedback>
         </div>
       </mat-card>
     </ul>

@@ -17,11 +17,12 @@ export class EntrypointComponent implements OnInit {
 
   qCategories: string[];
 
-  constructor(private qSvc: QuestionnaireService, private stratSvc: StrategyService, private route: ActivatedRoute, private router: Router) {
+  constructor(private qSvc: QuestionnaireService,
+              private stratSvc: StrategyService,
+              private route: ActivatedRoute,
+              private router: Router) {
     this.qCategories = [];
     this.questionnaires = [];
-
-
   }
 
   getTitle(): string {
@@ -38,7 +39,6 @@ export class EntrypointComponent implements OnInit {
     console.log("init entrypoint component")
     this.qSvc.getQuestionnaires().subscribe(
       q => {
-        //  console.log(JSON.stringify(q))
         this.questionnaires = q
       }
     )

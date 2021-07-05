@@ -15,6 +15,17 @@ type RuleBasedFintoolRecommender struct {
 	strategyComponents []api.StrategyComponent
 }
 
+func (r *RuleBasedFintoolRecommender) GenerateRandomSample() []api.StrategyComponent {
+	sample := make([]api.StrategyComponent, 5)
+
+	random := rand.Intn(len(r.strategyComponents) - 5)
+
+	for i := range sample {
+		sample[i] = r.strategyComponents[random+i]
+	}
+	return sample
+}
+
 /*
 	Entrypoint method
 	returns GoodStrategy BadStrategy, Error

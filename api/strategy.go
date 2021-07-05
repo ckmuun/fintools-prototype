@@ -13,5 +13,7 @@ type StrategyComponent struct {
 	Name        string   `json:"name"`
 	Links       []string `json:"links"`
 	Tags        []string `json:"tags"`
+	MajorPros   []string `json:"major_pros"`
+	MajorCons   []string `json:"major_cons"`
 	ScoreContainer
 }

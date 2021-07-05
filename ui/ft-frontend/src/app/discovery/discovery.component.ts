@@ -17,6 +17,7 @@ export class DiscoveryComponent implements OnInit {
   badRecomStrats: StrategyComponent[] = [];
   badStratArrs: number[][] = [];
 
+  randomSample: StrategyComponent[] = [];
 
   ngOnInit(): void {
     this.strategySvc.data$.subscribe(
@@ -25,6 +26,13 @@ export class DiscoveryComponent implements OnInit {
         this.userScoreArr = this.getNumberArray(resp.user_scores)
         this.badRecomStrats = this.data.good_recommendation.recommended_components
         this.extractStrategyScores(this.badRecomStrats)
+      }
+    )
+
+    this.strategySvc.stratSampleData$.subscribe(
+      resp => {
+        this.randomSample = resp;
+        // todo extract data here more fine-grained.
       }
     )
   }

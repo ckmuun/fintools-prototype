@@ -75,7 +75,13 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 	router.GET("/api/questionnaires/:kind", getQst)
 	router.GET("/api/questionnaires/all", getAll)
 	router.POST("/api/feedback", postFeedback)
+	router.GET("/api/random", getRandomSampleOfStrategies)
 
+}
+
+func getRandomSampleOfStrategies(c *gin.Context) {
+
+	c.JSON(200, engineImpl.GenerateRandomSample())
 }
 
 func postFeedback(c *gin.Context) {

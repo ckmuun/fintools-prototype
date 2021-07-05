@@ -10,17 +10,23 @@ export class StrategyService {
 
   private _data$: Observable<FintoolRecomDto>;
 
+  private _stratSampleData$: Observable<StrategyComponent[]>
+
   constructor(private httpClient: HttpClient) {
 
     this._data$ = new Observable<any>();
+    this._stratSampleData$ = new Observable<any>();
   }
-
 
   postFilledQuestionnaires(questionnaires: McQuestionnaire[]): Observable<FintoolRecomDto> {
     this._data$ = this.httpClient.post<FintoolRecomDto>("http://localhost:8080/api/questionnaires/submit", questionnaires)
     return this._data$
   }
 
+  getRandomStrategySample(): Observable<StrategyComponent[]> {
+    this._stratSampleData$ = this.httpClient.get<StrategyComponent[]>("http://localhost:8080/api/random")
+    return this._stratSampleData$
+  }
 
   get data$(): Observable<FintoolRecomDto> {
     return this._data$;
@@ -28,6 +34,15 @@ export class StrategyService {
 
   set data$(value: Observable<FintoolRecomDto>) {
     this._data$ = value;
+  }
+
+
+  get stratSampleData$(): Observable<StrategyComponent[]> {
+    return this._stratSampleData$;
+  }
+
+  set stratSampleData$(value: Observable<StrategyComponent[]>) {
+    this._stratSampleData$ = value;
   }
 }
 
@@ -88,8 +103,10 @@ export class StrategyComponent {
   description: string;
   name: string;
 
-  links: string[] = []
-  tags: string[] = []
+  links: string[] = [];
+  tags: string[] = [];
+  major_pros: string[] = [];
+  major_cons: string[] = [];
 
   constructor(description: string,
               name: string,
@@ -99,7 +116,9 @@ export class StrategyComponent {
               financial_knowledge: number,
               cog_bias_resistance: number,
               links: string[],
-              tags: string[]
+              tags: string[],
+              major_pros: string[],
+              major_cons: string[],
   ) {
     this.description = description;
 
@@ -112,6 +131,8 @@ export class StrategyComponent {
     this.name = name;
     this.links = links;
     this.tags = tags;
+    this.major_cons = major_cons;
+    this.major_pros = major_pros;
 
     this.score_container = new ScoreContainer(
       this.time_flexibility,

@@ -18,15 +18,16 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {StratcompareComponent} from './stratcompare/stratcompare.component';
 import {StratDetailsComponent} from './strat-details/strat-details.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
-import { StratFeedbackComponent } from './strat-feedback/strat-feedback.component';
+import {StratFeedbackComponent} from './strat-feedback/strat-feedback.component';
 import {NgxStarsModule} from "ngx-stars";
-import { ExplanationComponent } from './explanation/explanation.component';
-import { DiscoveryComponent } from './discovery/discovery.component';
+import {ExplanationComponent} from './explanation/explanation.component';
+import {DiscoveryComponent} from './discovery/discovery.component';
 
 const routes: Routes = [
   {path: 'get-started', component: EntrypointComponent},
   {path: 'dashboard', component: FindashComponent},
   {path: 'radar', component: SkillradarComponent},
+  {path: 'discover', component: DiscoveryComponent},
 ];
 
 
