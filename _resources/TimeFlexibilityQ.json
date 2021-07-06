@@ -1,5 +1,5 @@
 {
-  "description": "Initial Financial Health and Situation",
+  "description": "time an flexibility",
   "category": "Time Flexibility",
   "questions": [
     {
@@ -35,8 +35,8 @@
       "chosen_answer_index": -1
     },
     {
+      "question_text": "What is your work schedule?",
       "metadata": {
-        "question_text": "work schedule",
         "category": "baseline",
         "is_absolute_scale": false,
         "tier": 0,
@@ -62,6 +62,38 @@
         {
           "answer_text": "not employed (retired, unemployed etc.)",
           "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "How much time do you spend per week on non-work, but obligatory things (e.g. care work)",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "40+ hours",
+          "value": 1
+        },
+        {
+          "answer_text": "30-40 hours",
+          "value": 1
+        },
+        {
+          "answer_text": "20-30 hours",
+          "value": 1
+        },
+        {
+          "answer_text": "10-20 hours",
+          "value": 3
+        },
+        {
+          "answer_text": "less than 10 hours",
+          "value": 8
         }
       ],
       "chosen_answer_index": -1
