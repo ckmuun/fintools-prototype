@@ -123,7 +123,9 @@
       "Overall return potential is relatively low"
     ],
     "links": [
-      "https://www.investopedia.com/terms/d/dividend.asp"
+      "https://www.investopedia.com/terms/d/dividend.asp",
+      "https://www.fool.com/investing/stock-market/types-of-stocks/dividend-stocks/dividend-aristocrats/",
+      "https://en.wikipedia.org/wiki/S%26P_500_Dividend_Aristocrats"
     ],
     "tags": [
       "passive_investing",
@@ -131,8 +133,8 @@
     ]
   },
   {
-    "name": "Buy a dividend-yielding globally diversified ETF",
-    "description": "This strategy points to buying and holding an ETF ",
+    "name": "Buy a distributing globally diversified ETF",
+    "description": "This strategy points to buying and holding an ETF like depicted in other strategies. However, the idea is to explicitly buy an ETF that distributes the earnings (dividends) from the included companies to holders of the ETF. The main advantage is the resulting cash flow from dividends, however tax considerations need to be taken into account. For example, in Germany there exists the so-called 'Sparerpauschbetrag', which allows a person to have 801€ of tax-free capital gains per year. It therefore can make sense to use a distributing fund to automatically make use of this sum every year.",
     "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 3,
     "time_flexibility": 2,
@@ -159,7 +161,7 @@
   },
   {
     "name": "Utilize a robo-advisor to setup an ETF-based portfolio",
-    "description": "A robo-advisor is essentially an automated form of investing in ETFs and bonds. The core idea is to have active management, not by humans, but by some sort of machine learning model. While the overall idea seems compelling, the associated costs may eat up the advantage over a non-managed index fund.",
+    "description": "A robo-advisor is essentially an automated form of investing in ETFs and bonds. The core idea is to have active management, not by humans, but by some sort of machine learning model. This is, generally speaking, easier for inexperienced retail investors. While the overall idea seems compelling, the associated costs may eat up the advantage over a non-managed index fund.",
     "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 3,
     "time_flexibility": 2,
@@ -186,20 +188,26 @@
   },
   {
     "name": "create an amazon marketplace, ebay, or shopify shop",
-    "description": "",
+    "description": "Platforms like amazon, ebay or shopify (as well as self-hosted shops) allows users to commence e-commerce sales operations. Although the mentioned platforms are different, they are all similar in the sense that they provide infrastructure to users. Apart from that, of course, an appropriate niche is required and in contrast to dropshipping you have to do the full operational work (storage, shipping) yourself.",
     "fin_risk_tolerance": 8,
     "psy_risk_tolerance": 8,
     "time_flexibility": 8,
     "cog_bias_resistance": 5,
     "financial_knowledge": 4,
     "major_pros": [
-      "Scalable, especially when selling digital products"
+      "Scalable, especially when selling digital products",
+      "Tried-and-Tested, relatively predictable if the product is good"
     ],
     "major_cons": [
+      "Originality is key, you need a good idea of what to actually sell",
+      "At least in the ramp-up period, a significant time investment is required",
       "Company setup and tax paperwork required"
     ],
     "links": [
-      "https://www.investopedia.com/terms/d/dividend.asp"
+      "https://www.shopify.com/about",
+      "https://www.amazon.com/Marketplace/s?k=Marketplace",
+      "https://en.wikipedia.org/wiki/Shopify",
+      "https://en.wikipedia.org/wiki/Amazon_Marketplace"
     ],
     "tags": [
       "entrepreneurial",
@@ -215,11 +223,13 @@
     "cog_bias_resistance": 4,
     "financial_knowledge": 5,
     "major_pros": [
-      "Individual and specific, for talented"
+      "Individual and specific, for talented users also a way of self-expression",
+      "Audience gained through writing can be monetized in other ways too",
     ],
     "major_cons": [
       "Earnings potential, especially at the beginning very limited",
-      "Medium.com as a platform is probably already saturated"
+      "Medium.com as a platform and the overall market for self-improvement authors is probably already saturated"
+      "Paperwork for self-employment and taxes required"
     ],
     "links": [
       "https://www.investopedia.com/terms/d/dividend.asp"
@@ -293,11 +303,11 @@
     "financial_knowledge": 3,
     "major_pros": [
       "Slow start possible, low capital requirements",
-      "Relatively scalable",
+      "Relatively scalable, huge earning potential after ramp-up",
       "Individual and specific, for talented users a way to also express themselves"
     ],
     "major_cons": [
-      "Earning potential, at least in the beginning is very low",
+      "Earning potential and predictability in the beginning is very low, long ramp-up required",
       "A lot is learnable, but you need a certain degree of talent",
       "Paperwork for self-employment, taxation etc. required"
     ],
@@ -373,7 +383,8 @@
     "financial_knowledge": 4,
     "major_pros": [
       "Flexible",
-      "Can monetize existing skills"
+      "Can monetize existing skills",
+      "High earnings potential through adjacent revenue sources (selling books, product advertising, etc.)"
     ],
     "major_cons": [
       "not infinitely scalable",
@@ -404,10 +415,11 @@
     ],
     "major_cons": [
       "You actually need specific skills on the topic to make a reasonable course",
-      "The topic needs to be in demand, or can fall out of it over time"
+      "The topic needs to be in demand, or can fall out of it over time",
+      "At this point there is quite a lot of competition, a first mover advantage probably only exists for emerging or absolute niche topics"
     ],
     "links": [
-      "https://airbnb.com"
+      "https://www.udemy.com/"
     ],
     "tags": [
       "entrepreneurial",
@@ -415,8 +427,8 @@
     ]
   },
   {
-    "name": "Create a print-on-demand-shop with your designes",
-    "description": "Print-on-demand-shops ",
+    "name": "Create a print-on-demand-shop with your designs",
+    "description": "Print-on-demand-shops are a relatively new form of e-commerce and are related to dropshipping. The core idea is to sell various items (shirts, mugs, etc.) with printed-on designs via the web. The main difference to other forms of e-commerce is that one established company handles the production, storage and shipping in exchange for a commission, while the user creates the designs to be printed on the items. ",
     "fin_risk_tolerance": 5,
     "psy_risk_tolerance": 8,
     "time_flexibility": 8,
@@ -424,16 +436,17 @@
     "financial_knowledge": 4,
     "major_pros": [
       "Theoretically infinitely scalable",
-      "Level of commitment is relatively low",
-      "No significant lifestyle changes required",
+      "Level of commitment is relatively low, no significant lifestyle changes required",
       "can monetize existing skills"
     ],
     "major_cons": [
-      "You actually need specific skills on the topic to make a reasonable course",
-      "The topic needs to be in demand, or can fall out of it over time"
+      "You need a certain level of talent / ingenuity to create selling designs",
+      "Designs may fall out of favor over time",
+      "You are essentially yet another person on the internet selling stuff no one really needs."
     ],
     "links": [
-      "https://airbnb.com"
+      "https://www.shirt-king.de/dropshipping-t-shirts",
+      "www.redbubble.com"
     ],
     "tags": [
       "entrepreneurial",
