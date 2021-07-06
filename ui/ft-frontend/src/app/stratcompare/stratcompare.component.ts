@@ -40,6 +40,18 @@ export class StratcompareComponent implements OnInit, OnChanges {
   };
 
   public options: ChartOptions = {
+    responsive: true,
+    scales: {
+      radial: {
+        beginAtZero: true,
+        max: 10,
+        min: 0,
+        ticks: {
+          stepSize: 1
+
+        }
+      }
+    }
   }
 
   // public options: ChartOptions = {
@@ -64,7 +76,6 @@ export class StratcompareComponent implements OnInit, OnChanges {
    */
 
   public initRadarChartData(): ChartData<'radar'> {
-
     console.log("user scores: " + this.userScores)
     console.log("strategy scores: " + this.strategyScores)
 
@@ -73,13 +84,12 @@ export class StratcompareComponent implements OnInit, OnChanges {
       datasets: [
         {data: this.userScores, label: 'User Answers', spanGaps: true},
         {data: this.strategyScores, label: 'Strategy Values', spanGaps: true},
-        {data: this.refScores, hidden: false, showLine: false, label: 'Theoretical Maximum'},
+    //    {data: this.refScores, hidden: false, showLine: false, label: 'Theoretical Maximum'},
       ]
     }
   }
 
-  public refScores: number[] = [10,10,10,10,10]
-
+  public refScores: number[] = [10, 10, 10, 10, 10]
 
 
   public recolor(): void {

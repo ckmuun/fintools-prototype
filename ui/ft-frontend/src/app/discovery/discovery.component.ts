@@ -24,8 +24,16 @@ export class DiscoveryComponent implements OnInit {
       resp => {
         this.data = resp;
         this.userScoreArr = this.getNumberArray(resp.user_scores)
-        this.badRecomStrats = this.data.good_recommendation.recommended_components
+        this.badRecomStrats = this.data.bad_recommendation.recommended_components
         this.extractStrategyScores(this.badRecomStrats)
+
+
+        console.log("DEBUG OUTPUT")
+        this.badRecomStrats.forEach(
+          strat => {
+            console.log("strategy: " + strat.name)
+            console.log("has scores: " + this.getNumberArrayFromStrategy(strat));
+          });
       }
     )
 
@@ -50,5 +58,9 @@ export class DiscoveryComponent implements OnInit {
    */
   getNumberArray(sc: ScoreContainer): number[] {
     return [sc.time_flexibility, sc.fin_risk_tolerance, sc.psy_risk_tolerance, sc.cog_bias_resistance, sc.financial_knowledge]
+  }
+  getNumberArrayFromStrategy(strat: StrategyComponent): number[] {
+
+    return [strat.time_flexibility, strat.fin_risk_tolerance, strat.psy_risk_tolerance, strat.cog_bias_resistance, strat.financial_knowledge]
   }
 }

@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {ChartConfiguration, ChartData, ChartType, RadarControllerChartOptions} from "chart.js";
+import {ChartConfiguration, ChartData, ChartOptions, ChartType, RadarControllerChartOptions} from "chart.js";
 import {radarchartLabels} from "../ftconstants";
 import {FintoolRecomDto, ScoreContainer, StrategyService} from "../strategy.service";
 
@@ -29,17 +29,27 @@ export class SkillradarComponent implements OnInit, OnChanges {
     this.recolor();
   }
 
-  // Radar
-  public radarChartOptions: ChartConfiguration['options'] = {
+  public options: ChartOptions = {
+    responsive: true,
+    scales: {
+      radial: {
+        beginAtZero: true,
+        max: 10,
+        min: 0,
+        ticks: {
+          stepSize: 1
 
-  };
+        }
+      }
+    }
+  }
 
   public initRadarChartData(): ChartData<'radar'> {
     return {
       labels: radarchartLabels,
       datasets: [
         {data: this.userScores, label: 'Your Answers'},
-        {data: [10,10,10,10,10], hidden: false, showLine: false, label: 'Theoretical Maximum'},
+       // {data: [10,10,10,10,10], hidden: false, showLine: false, label: 'Theoretical Maximum'},
       ]
     };
   }

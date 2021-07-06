@@ -105,7 +105,7 @@
     ]
   },
   {
-    "name": "Buy dividend stocks (e.g. so-called 'dividend aristocrats'",
+    "name": "Buy dividend stocks (e.g. so-called 'dividend aristocrats')",
     "description": "Generally speaking, there are two major reasons why people or organizations buy stocks. The first is growth (e.g. they hope the market value of the stock will rise), the second is dividends. A dividend is a cash payment made by the company to its shareholders, proportionally to their relative share in the company.",
     "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 3,
@@ -164,9 +164,9 @@
     "description": "A robo-advisor is essentially an automated form of investing in ETFs and bonds. The core idea is to have active management, not by humans, but by some sort of machine learning model. This is, generally speaking, easier for inexperienced retail investors. While the overall idea seems compelling, the associated costs may eat up the advantage over a non-managed index fund.",
     "fin_risk_tolerance": 3,
     "psy_risk_tolerance": 3,
-    "time_flexibility": 2,
-    "cog_bias_resistance": 5,
-    "financial_knowledge": 4,
+    "time_flexibility": 1,
+    "cog_bias_resistance": 3,
+    "financial_knowledge": 2,
     "major_pros": [
       "Very simple to execute and relatively low risk",
       "Lower taxes on capital gains than work income (in Germany)",
@@ -178,7 +178,8 @@
       "Overall earnings potential is relatively low, robo-advisors are not free"
     ],
     "links": [
-      "https://www.investopedia.com/terms/d/dividend.asp"
+      "https://www.investopedia.com/terms/d/dividend.asp",
+      "https://www.investopedia.com/terms/r/roboadvisor-roboadviser.asp"
     ],
     "tags": [
       "passive_investing",
@@ -401,9 +402,9 @@
   },
   {
     "name": "Create an online course to sell on platforms like Udemy.com",
-    "description": "Due to platforms like udemy, anyone can create a digital course on basically every possible topic. These courses can then be monetized on such platforms. ",
+    "description": "Due to platforms like udemy, anyone can create a digital course on basically every possible topic. These courses can then be monetized on the platform. The core idea is that more or less everyone can, given the skills, create a long-lasting digital product which can be sold to a nearly infinite amount of people ",
     "fin_risk_tolerance": 5,
-    "psy_risk_tolerance": 8,
+    "psy_risk_tolerance": 5,
     "time_flexibility": 8,
     "cog_bias_resistance": 7,
     "financial_knowledge": 4,

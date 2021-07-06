@@ -37,6 +37,17 @@ export class FindashComponent implements OnInit {
         this.userScoreArr = this.getNumberArray(resp.user_scores)
         this.goodRecomStrats = this.data.good_recommendation.recommended_components
         this.extractStrategyScores(this.goodRecomStrats)
+
+        /*
+            DEBUG LOG OUTPUT
+         */
+
+       this.goodRecomStrats.forEach(
+         strat => {
+           console.log("strategy: " + strat.name)
+           console.log("has scores: " + this.getNumberArrayFromStrategy(strat));
+         }
+       )
       }
     );
   }
@@ -60,5 +71,9 @@ export class FindashComponent implements OnInit {
   getNumberArray(sc: ScoreContainer): number[] {
 
     return [sc.time_flexibility, sc.fin_risk_tolerance, sc.psy_risk_tolerance, sc.cog_bias_resistance, sc.financial_knowledge]
+  }
+  getNumberArrayFromStrategy(strat: StrategyComponent): number[] {
+
+    return [strat.time_flexibility, strat.fin_risk_tolerance, strat.psy_risk_tolerance, strat.cog_bias_resistance, strat.financial_knowledge]
   }
 }
