@@ -3,8 +3,8 @@
   "category": "Psychological Risk Tolerance",
   "questions": [
     {
+      "question_text": "What is your employment type?",
       "metadata": {
-        "question_text": "What is your employment type?",
         "category": "baseline",
         "is_absolute_scale": true,
         "tier": 0,
@@ -38,8 +38,8 @@
       "chosen_answer_index": -1
     },
     {
+      "question_text": "Do you engage in any risk-intensive physical activities (skydiving, motorcycling, other extreme sports)",
       "metadata": {
-        "question_text": "Do you engage in any risk-intensive physical activities (skydiving, motorcycling, other extreme sports)",
         "category": "baseline",
         "is_absolute_scale": true,
         "tier": 0,
@@ -73,8 +73,8 @@
       ],
       "chosen_answer_index": -1
     },{
+      "question_text": "Would you describe your self as risk-seeking?",
       "metadata": {
-        "question_text": "Would you describe your self as risk-seeking?",
         "category": "baseline",
         "is_absolute_scale": true,
         "tier": 0,
@@ -96,8 +96,8 @@
       ],
       "chosen_answer_index": -1
     },{
+      "question_text": "Have you ever engaged in gambling? (online casino Games, Poker, sports bets, etc.)",
       "metadata": {
-        "question_text": "Have you ever engaged in gambling? (online casino Games, Poker, sports bets, etc.)",
         "category": "baseline",
         "is_absolute_scale": true,
         "tier": 0,
