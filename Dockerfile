@@ -8,30 +8,29 @@ ENV GO111MODULE=on \
     GOARCH=amd64
 
 # Move to workdir /build
-WORKDIR /build
+WORKDIR /fintools-prototype
 
 # Copy and download dependency using go mod
+COPY _resources ./_resources
+# CMD ["ls --all | cat" , "cd engineImpl", "ls --all | cat", "cd ..", "cd _resources" , "ls --all | cat", "cd .. "]
+COPY ui/ft-frontend/dist ./ui/ft-frontend/dist
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
 
+
 # Copy the code into the container
 COPY . .
-
+RUN pwd && ls -a
 # OMITTED Run test
 #RUN go test ./...
 
 # Build the application
 RUN go build -o main .
-
-# Move to /dist directory as the place for resulting binary folder
-WORKDIR /dist
-
-# Copy binary from build to main folder
-RUN cp /build/main .
+RUN pwd && ls -a
 
 # expose the required port
-EXPOSE 7079
+EXPOSE 8080
 
 # Command to run the executable
-CMD ["/dist/main"]
+CMD ["./main"]

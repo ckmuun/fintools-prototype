@@ -1,0 +1,319 @@
+{
+  "description": "Questionnaire to assess the user's experience with the financial markets",
+  "category": "Financial Knowledge",
+  "questions": [
+    {
+      "question_text": "Do or did you work as a stock exchange broker, daytrader, investment analyst or similar?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 9
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you work a knowledge-intensive, continuous learning job? (researcher, engineer, statistician, etc.)",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you trade ETFs and / or mutual funds ?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you trade individual stocks?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "flexibility": 10,
+          "time": 10,
+          "intellectual": 8,
+          "execution_complexity": 8,
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you trade cryptocurrencies?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+
+    {
+      "question_text": "Do you trade commodities like gold or crude oil??",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you trade other alternative investments? ?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you trade futures, options or other derivatives?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you have a life insurance that invests in the stock market?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you track your monthly expenses in written form?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, less than two years",
+          "value": 7
+        },
+        {
+          "answer_text": "yes, less than five years",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "How do you rate your previous investment experiences?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "not applicable",
+          "value": 0
+        },
+        {
+          "answer_text": "unhappy with previous investments",
+          "value": 0
+        },
+        {
+          "answer_text": "happy with previous investments",
+          "value": 7
+        },
+        {
+          "answer_text": "very happy with previous investments",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-package main
+package questionnaireImpl
 
 import (
 	"encoding/json"
@@ -82,7 +82,7 @@ func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 */
 func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialKnowledgeQ.json")
+	file := utils.LoadJsonFileIntoByteArr("questionnaireImpl/FinancialKnowledgeQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -91,7 +91,7 @@ func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 
 func loadSkillsQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/PsychologicalRiskToleranceQ.json")
+	file := utils.LoadJsonFileIntoByteArr("questionnaireImpl/PsychologicalRiskToleranceQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -100,7 +100,7 @@ func loadSkillsQuestionnaire() api.McQuestionnaire {
 
 func loadCogBiasQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/CogBiasResistanceQ.json")
+	file := utils.LoadJsonFileIntoByteArr("questionnaireImpl/CogBiasResistanceQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -109,7 +109,7 @@ func loadCogBiasQuestionnaire() api.McQuestionnaire {
 
 func loadBasicQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialRiskToleranceQ.json")
+	file := utils.LoadJsonFileIntoByteArr("questionnaireImpl/FinancialRiskToleranceQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -118,7 +118,7 @@ func loadBasicQuestionnaire() api.McQuestionnaire {
 
 func loadTimeFlexibilityQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/TimeFlexibilityQ.json")
+	file := utils.LoadJsonFileIntoByteArr("questionnaireImpl/TimeFlexibilityQ.json")
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)

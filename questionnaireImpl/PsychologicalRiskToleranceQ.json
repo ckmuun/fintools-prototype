@@ -1,0 +1,123 @@
+{
+  "description": "Initial Financial Health and Situation",
+  "category": "Psychological Risk Tolerance",
+  "questions": [
+    {
+      "question_text": "What is your employment type?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "unemployed"
+        },
+        {
+          "answer_text": "salaried",
+          "value": 3
+        },
+        {
+          "answer_text": "hourly rate",
+          "value": 5
+        },
+        {
+          "answer_text": "self-employed contractor",
+          "value": 7
+        },
+        {
+          "answer_text": "entrepreneur, less than 10 employees ",
+          "value": 7
+        },
+        {
+          "answer_text": "entrepreneur, more than 10 employees ",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you engage in any risk-intensive physical activities (skydiving, motorcycling, other extreme sports)",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "not at all, never did, never will",
+          "value": 1
+        },
+        {
+          "answer_text": "not yet, but would like to",
+          "value": 3
+        },
+        {
+          "answer_text": "no longer, had to stop with this kind of activity",
+          "value": 3
+        },
+        {
+          "answer_text": "occasionally, but not on a regular basis",
+          "value": 5
+        },
+        {
+          "answer_text": "regularly, but as a hobbyist",
+          "value": 7
+        },
+        {
+          "answer_text": "regularly, as a profession or primary occupation",
+          "value": 7
+        }
+      ],
+      "chosen_answer_index": -1
+    },{
+      "question_text": "Would you describe your self as risk-seeking?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Do not agree at all",
+          "value": 1
+        },
+        {
+          "answer_text": "Partially agree",
+          "value": 3
+        },
+        {
+          "answer_text": "Fully agree",
+          "value": 3
+        }
+      ],
+      "chosen_answer_index": -1
+    },{
+      "question_text": "Have you ever engaged in gambling? (online casino Games, Poker, sports bets, etc.)",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "Never",
+          "value": 1
+        },
+        {
+          "answer_text": "seldom",
+          "value": 3
+        },
+        {
+          "answer_text": "regularly",
+          "value": 3
+        }
+      ],
+      "chosen_answer_index": -1
+    }
+  ]
+}

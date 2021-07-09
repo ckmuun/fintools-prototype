@@ -1,4 +1,4 @@
-package main
+package questionnaireImpl
 
 import (
 	assert2 "github.com/stretchr/testify/assert"

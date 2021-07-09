@@ -10,6 +10,7 @@ import (
 	"path/filepath"
 	"reccengine/api"
 	"reccengine/engineImpl"
+	"reccengine/questionnaireImpl"
 )
 
 func CORSMiddleware() gin.HandlerFunc {
@@ -200,14 +201,14 @@ func processQuestionnaires(qs []api.McQuestionnaire) api.FintoolRecomDto {
 
 func getQuestionnaireList(c *gin.Context) {
 
-	svc := GetQuestionnaireService()
+	svc := questionnaireImpl.GetQuestionnaireService()
 	list := svc.QstMapping.Keys()
 
 	c.JSON(200, list)
 }
 
 func getAll(c *gin.Context) {
-	svc := GetQuestionnaireService()
+	svc := questionnaireImpl.GetQuestionnaireService()
 
 	all := svc.QstMapping.Values()
 	c.JSON(200, all)
@@ -215,7 +216,7 @@ func getAll(c *gin.Context) {
 
 func getQst(c *gin.Context) {
 	kind := c.Param("kind")
-	svc := GetQuestionnaireService()
+	svc := questionnaireImpl.GetQuestionnaireService()
 	log.Println("getting getQst", kind)
 
 	q, found := svc.QstMapping.Get(kind)
