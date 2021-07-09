@@ -28,8 +28,6 @@ RUN pwd && ls -a
 # expose the required port
 EXPOSE 8080
 
-# rm node_modules bloat
-RUN rmdir --ignore-fail-on-non-empty ui/ft-frontend/node_modules
 
 # Command to run the executable
 CMD ["./main"]
