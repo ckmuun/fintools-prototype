@@ -32,6 +32,8 @@ jobs:
       - name: move to frontend dir
         run: cd ui/ft-frontend && pwd && ls -a
          
+      - name: npm install
+        run: npm install
       - name: npm build
-        run: npm ci && npm run build
-
+        run: npm run build
+        
