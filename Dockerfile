@@ -10,10 +10,6 @@ ENV GO111MODULE=on \
 # Move to workdir /build
 WORKDIR /fintools-prototype
 
-# Copy and download dependency using go mod
-COPY _resources ./_resources
-# CMD ["ls --all | cat" , "cd engineImpl", "ls --all | cat", "cd ..", "cd _resources" , "ls --all | cat", "cd .. "]
-COPY ui/ft-frontend/dist ./ui/ft-frontend/dist
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
@@ -25,12 +21,15 @@ RUN pwd && ls -a
 # OMITTED Run test
 #RUN go test ./...
 
-# Build the application
+# Build backend application
 RUN go build -o main .
 RUN pwd && ls -a
 
 # expose the required port
 EXPOSE 8080
+
+# rm node_modules bloat
+RUN rmdir --ignore-fail-on-non-empty ui/ft-frontend/node_modules
 
 # Command to run the executable
 CMD ["./main"]

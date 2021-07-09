@@ -24,7 +24,7 @@ func init() {
 }
 
 func loadStrategyComponents() (comps []api.StrategyComponent) {
-	file := utils.LoadJsonFileIntoByteArr("engineImpl/strategyComponents.json")
+	file := utils.LoadJsonFileIntoByteArr("./_resources/strategies/strategyComponents.json")
 
 	_ = json.Unmarshal([]byte(file), &comps)
 	log.Println(comps)
