@@ -30,8 +30,11 @@ jobs:
         run: npm version
         
       - name: move to frontend dir
-        run: cd ui/ft-frontend
+        run: cd ui/ft-frontend && pwd && ls -a
         
       - name: run npm build
         run: npm run build
+        
+      - name: probe angular cli
+        run:  ng version 
 
