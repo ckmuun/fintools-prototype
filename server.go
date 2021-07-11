@@ -53,15 +53,15 @@ func SetupRouter() *gin.Engine {
 	router.GET("/api/ping", pong)
 
 	// setup functional endpoints
-	setupUserRoutes(router)
+	setupAdminRoutes(router)
 	setupQuestionnaireRoutes(router)
 
 	return router
 }
 
-func setupUserRoutes(router *gin.Engine) *gin.Engine {
-	router.POST("/api/users/new", func(c *gin.Context) {
-		// todo add call to user creation service
+func setupAdminRoutes(router *gin.Engine) *gin.Engine {
+	router.GET("/api/admin/results", func(c *gin.Context) {
+
 	})
 
 	return router
