@@ -2,7 +2,6 @@ package results
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/spf13/viper"
 	"io/ioutil"
 	"os"
@@ -42,18 +41,21 @@ func init() {
 			resultsFilepath:  resultsFilepath,
 			feedbackFilepath: feedbackFilepath,
 		}
-		// prepend the json
-		file, err := os.OpenFile(resultsFilepath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
+		// prepend the json resultFile for results
+		resultFile, err := os.OpenFile(resultsFilepath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 777)
 		if err != nil {
 			panic(err)
 		}
-		defer file.Close()
-		prepareResultsFileForInit(file)
+		defer resultFile.Close()
+		prepareResultsFileForInit(resultFile)
 
-		content, _ := ioutil.ReadFile(file.Name())
-		contentString := string(content)
+		feedbackFile, err := os.OpenFile(feedbackFilepath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 777)
+		if err != nil {
+			panic(err)
+		}
+		defer feedbackFile.Close()
+		prepareResultsFileForInit(feedbackFile)
 
-		fmt.Println("initial file: " + contentString)
 	})
 }
 
@@ -71,14 +73,9 @@ func getSerializedString(v interface{}) (string, error) {
 
 }
 
-func removeTrailingComma() {
-
-}
-
 // https://stackoverflow.com/questions/13514184/how-can-i-read-a-whole-file-into-a-string-variable
 func (f *FileResultSvc) GetFeedback() string {
-	file, _ := os.OpenFile(f.resultsFilepath, os.O_APPEND|os.O_WRONLY, 777)
-	buf, _ := ioutil.ReadFile(file.Name())
+	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
 
 	jsonString := string(buf)
 
@@ -101,9 +98,18 @@ func (f *FileResultSvc) PersistResult(dto api.FintoolRecomDto) (bool, error) {
 	return true, nil
 }
 
+func (f *FileResultSvc) GetResults() string {
+	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
+
+	jsonString := string(buf)
+
+	jsonString = strings.TrimSuffix(jsonString, ",")
+	return jsonString + "]"
+}
+
 // flatten array and persist items to file
 func (f *FileResultSvc) PersistFeedbackArr(feedbackArr []api.StrategyFeedback) (bool, error) {
-	file, err := os.OpenFile(f.resultsFilepath, os.O_APPEND|os.O_WRONLY, 777)
+	file, err := os.OpenFile(f.feedbackFilepath, os.O_APPEND|os.O_WRONLY, 777)
 
 	if err != nil {
 		return false, err
