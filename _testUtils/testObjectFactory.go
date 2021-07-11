@@ -2,6 +2,7 @@ package _testUtils
 
 import (
 	"encoding/json"
+	"github.com/google/uuid"
 	"reccengine/api"
 	"reccengine/utils"
 )
@@ -11,6 +12,86 @@ func LoadRealStrategiesFromJson() (comps []api.StrategyComponent) {
 	data := utils.LoadJsonFileIntoByteArr("./_resources/strategies/strategyComponents.json")
 	_ = json.Unmarshal(data, &comps)
 	return comps
+}
+
+func GetDefaultUserScoreContainer() api.ScoreContainer {
+
+	return api.ScoreContainer{
+		FinRiskTolerance:   1,
+		PsyRiskTolerance:   2,
+		TimeFlexibility:    3,
+		CogBiasResistance:  4,
+		FinancialKnowledge: 5,
+	}
+}
+
+func GetDefaultGoodRecom() api.FintoolRecom {
+	var comps [3]api.StrategyComponent
+
+	allComps := LoadRealStrategiesFromJson()
+	comps[0] = allComps[0]
+	comps[1] = allComps[1]
+	comps[2] = allComps[2]
+
+	recom := api.FintoolRecom{
+		RecommendedComponents: comps,
+		WildcardComponent:     allComps[len(allComps)-1],
+	}
+
+	return recom
+}
+
+func GetDefaultBadRecom() api.FintoolRecom {
+
+	var comps [3]api.StrategyComponent
+
+	allComps := LoadRealStrategiesFromJson()
+	comps[0] = allComps[len(allComps)-1]
+	comps[1] = allComps[len(allComps)-2]
+	comps[2] = allComps[len(allComps)-3]
+
+	recom := api.FintoolRecom{
+		RecommendedComponents: comps,
+		WildcardComponent:     allComps[0],
+	}
+
+	return recom
+}
+
+func GetExampleFintoolRecomDto() api.FintoolRecomDto {
+
+	dto := api.FintoolRecomDto{
+		Id:                 uuid.UUID{},
+		GoodRecommendation: GetDefaultGoodRecom(),
+		BadRecommendation:  GetDefaultBadRecom(),
+		UserScores:         GetDefaultUserScoreContainer(),
+	}
+	return dto
+}
+
+func GetExampleFeedbackArray() []api.StrategyFeedback {
+	feedback := make([]api.StrategyFeedback, 3)
+
+	feedback0 := api.StrategyFeedback{
+		Rating:       5,
+		StrategyName: "Strategy A",
+		UserId:       uuid.UUID{},
+	}
+	feedback1 := api.StrategyFeedback{
+		Rating:       3,
+		StrategyName: "Strategy B",
+		UserId:       uuid.UUID{},
+	}
+	feedback2 := api.StrategyFeedback{
+		Rating:       2,
+		StrategyName: "Strategy C",
+		UserId:       uuid.UUID{},
+	}
+	feedback[0] = feedback0
+	feedback[1] = feedback1
+	feedback[2] = feedback2
+
+	return feedback
 }
 
 /*
