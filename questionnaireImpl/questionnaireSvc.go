@@ -91,7 +91,8 @@ func loadFinancialExpQuestionnaire() api.McQuestionnaire {
 
 func loadSkillsQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/PsychologicalRiskToleranceQ.json")
+	filepath := "./_resources/PsychologicalRiskToleranceQ.json"
+	file := utils.LoadJsonFileIntoByteArr(filepath)
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -100,7 +101,8 @@ func loadSkillsQuestionnaire() api.McQuestionnaire {
 
 func loadCogBiasQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/CogBiasResistanceQ.json")
+	filepath := "./_resources/CogBiasResistanceQ.json"
+	file := utils.LoadJsonFileIntoByteArr(filepath)
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -109,7 +111,8 @@ func loadCogBiasQuestionnaire() api.McQuestionnaire {
 
 func loadBasicQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/FinancialRiskToleranceQ.json")
+	filepath := "./_resources/FinancialRiskToleranceQ.json"
+	file := utils.LoadJsonFileIntoByteArr(filepath)
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
@@ -118,7 +121,8 @@ func loadBasicQuestionnaire() api.McQuestionnaire {
 
 func loadTimeFlexibilityQuestionnaire() api.McQuestionnaire {
 	var questionnaire = api.McQuestionnaire{}
-	file := utils.LoadJsonFileIntoByteArr("./_resources/TimeFlexibilityQ.json")
+	filepath := "./_resources/TimeFlexibilityQ.json"
+	file := utils.LoadJsonFileIntoByteArr(filepath)
 
 	_ = json.Unmarshal([]byte(file), &questionnaire)
 	log.Println(questionnaire)
