@@ -1,0 +1,112 @@
+[
+  {
+    "name": "FIRE-Frugality-STEM-Guy",
+    "description": "A usually young male with an educational and/or occupational background in STEM. ",
+    "tags": [
+      "young",
+      "male",
+      "stem",
+      "white",
+      "mint",
+      "fire",
+      "frugal",
+      "overconfident",
+      "medium experience"
+    ],
+    "reason": "I want to retire as early as possible. I am also willing to sacrifice significant spending in order to achieve this goal. "
+  },
+  {
+    "name": "Privateer",
+    "description": "Usually a middle-aged or older person who acquired a certain level of wealth throughout their life and career. Often times has a high-education, well-paid job outside the finance industry. Better off that at least 90% of the population, but (by far) not rich enough for family offices or private banking. These people mostly look to conserve their wealth and may also require guidelines on tax and inheritance models",
+    "tags": [
+      ""
+    ],
+    "reason": "I primarily want to preserve my wealth while receiving small gains over time."
+  },
+  {
+    "name": "WSB Gambler",
+    "description": "",
+    "tags": [
+      "white",
+      "young",
+      "male",
+      "risk",
+      "stocks",
+      "options",
+      "derivatives",
+      "fast",
+      "leverage",
+      "libertarian"
+    ],
+    "reason": "I would like to make some quick bucks"
+  },
+  {
+    "name": "Crypto Bro",
+    "description": "Basically the same as the WSB Gambler, but with cryptocurrencies. Wants to make a quick buck or 'make it' in general. Risk-seeking, leverage-seeking. Usually brings at least very basic investment knowledge to the table.",
+    "tags": [
+      "white",
+      "young",
+      "male",
+      "risk",
+      "crypto",
+      "fast",
+      "leverage",
+      "libertarian"
+    ],
+    "reason": "Crypto is the future. "
+  },
+  {
+    "name": "Pure-Necessity",
+    "description": "public retirement plans just do make ends meet. this person realized this and now figured the need to act upon this realization. Prefers low-risk, long-term investments. ",
+    "tags": [
+      "below-average-wealth",
+      "mixed gender",
+      "average-education"
+    ],
+    "reason": "I want to improve my personal finance situation in order to improve my standard of living."
+  },
+  {
+    "name": "Curious (pseudo) anti-capitalist",
+    "description": "This person technically is not too fond of the whole finance world. But probably they realized that they should take a peek into this whole 'investing thing', because after all, who doesn't want to get rich. Jokes aside, they usually resemble the people acting out of necessity as the realization hit that public retirement (ponzi) schemes probably won't allow them to hold their standard of living. Usually educated, but relatively low finance skill",
+    "tags": [
+      "necessity",
+      "high-education-low-finance-skill",
+      "skepticism",
+      "low-risk-preference",
+      "mixed-gender"
+    ],
+    "reason": "I don't really want to be associated with the finance world, but I am curious and/or realized that I will probably die poor if I keep my personal finances like this."
+  },
+  {
+    "name": "Driven-By-Negative-Interest-Rates",
+    "description": "These people usually hoarded a significant amount of cash in a bank account and are now hit by negative interest rates, so they decided to take a look at investing. Usually well-educated, but low finance skill.",
+    "tags": [
+      ""
+    ],
+    "reason": "My bank sent me a letter that I now have to pay negative interest rates on my cash savings. So I now want to look into this whole investment thing to avoid these payments..."
+  },
+  {
+    "name": "Next-Level-Seeker",
+    "description": "",
+    "tags": [
+      ""
+    ],
+    "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
+  },
+  {
+    "name": "Investment Pro",
+    "description": "",
+    "tags": [
+      ""
+    ],
+    "reason": "I am an investment professional and would like to see what you guys got."
+  },
+  {
+    "name": "Rando",
+    "description": "",
+    "tags": [
+      ""
+    ],
+    "reason": "I randomly got to this website and have no particular interest, just show me general information."
+  }
+]
