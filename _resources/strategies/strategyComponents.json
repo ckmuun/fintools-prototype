@@ -101,7 +101,8 @@
     ],
     "tags": [
       "active_investing",
-      "linear"
+      "linear",
+      "purely_financial"
     ]
   },
   {
@@ -397,7 +398,9 @@
     ],
     "tags": [
       "entrepreneurial",
-      "leveraged"
+      "creative",
+      "leveraged",
+      "linear"
     ]
   },
   {
@@ -452,7 +455,8 @@
     ],
     "tags": [
       "entrepreneurial",
-      "leveraged"
+      "leveraged",
+      "creative"
     ]
   }
 ]
