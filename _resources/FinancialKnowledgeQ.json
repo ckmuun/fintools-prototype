@@ -101,10 +101,6 @@
         },
         {
           "answer_text": "yes, less than two years",
-          "flexibility": 10,
-          "time": 10,
-          "intellectual": 8,
-          "execution_complexity": 8,
           "value": 7
         },
         {
@@ -113,6 +109,34 @@
         },
         {
           "answer_text": "yes, for more than five years ",
+          "value": 8
+        }
+      ],
+      "chosen_answer_index": -1
+    },
+    {
+      "question_text": "Do you have any relevant formal education regarding economics and/or finance (e.g. University Degree or apprenticeship in finance, insurance or tax?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": false,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 0
+        },
+        {
+          "answer_text": "yes, but not finished",
+          "value": 5
+        },
+        {
+          "answer_text": "yes, completed, but never worked a corresponding job",
+          "value": 6
+        },
+        {
+          "answer_text": "yes, completed and working in a corresponding job ",
           "value": 8
         }
       ],
@@ -198,7 +222,7 @@
         },
         {
           "answer_text": "yes, for more than five years ",
-          "value": 8
+          "value": 10
         }
       ],
       "chosen_answer_index": -1
@@ -226,7 +250,7 @@
         },
         {
           "answer_text": "yes, for more than five years ",
-          "value": 8
+          "value": 10
         }
       ],
       "chosen_answer_index": -1
@@ -282,7 +306,7 @@
         },
         {
           "answer_text": "yes, for more than five years ",
-          "value": 8
+          "value": 9
         }
       ],
       "chosen_answer_index": -1
@@ -297,12 +321,16 @@
       },
       "answers_to_show": [
         {
-          "answer_text": "not applicable",
+          "answer_text": "not applicable - never invested",
           "value": 0
         },
         {
           "answer_text": "unhappy with previous investments",
           "value": 0
+        },
+        {
+          "answer_text": "slightly happy with previous investments",
+          "value": 3
         },
         {
           "answer_text": "happy with previous investments",

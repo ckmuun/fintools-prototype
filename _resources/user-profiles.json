@@ -103,10 +103,10 @@
   },
   {
     "name": "Rando",
-    "description": "",
+    "description": "This person just randomly got to the website without any specific interest",
     "tags": [
       ""
     ],
-    "reason": "I randomly got to this website and have no particular interest, just show me general information."
+    "reason": "I randomly got to this website and have no particular interest, just show me some general information."
   }
 ]

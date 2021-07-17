@@ -22,8 +22,11 @@ import {StratFeedbackComponent} from './strat-feedback/strat-feedback.component'
 import {NgxStarsModule} from "ngx-stars";
 import {ExplanationComponent} from './explanation/explanation.component';
 import {DiscoveryComponent} from './discovery/discovery.component';
+import {LandingpageComponent} from './landingpage/landingpage.component';
 
 const routes: Routes = [
+  {path: '', component: LandingpageComponent},
+  {path: 'home', component: LandingpageComponent},
   {path: 'get-started', component: EntrypointComponent},
   {path: 'dashboard', component: FindashComponent},
   {path: 'radar', component: SkillradarComponent},
@@ -42,6 +45,7 @@ const routes: Routes = [
     StratFeedbackComponent,
     ExplanationComponent,
     DiscoveryComponent,
+    LandingpageComponent,
   ],
   imports: [
     BrowserModule,
