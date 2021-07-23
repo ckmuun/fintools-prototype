@@ -1,11 +1,19 @@
+<!-- MAIN CENTERED LAYOUT DIV-->
 <div fxLayout="column" fxLayoutAlign="center center">
-  <p>Which of these archetypes best describes why you are viewing this page?</p>
-  <div>
-    <ul *ngFor="let profile of this.profiles ; index as i">
-      <mat-card>
-        {{this.profiles[i].name}}
-      </mat-card>
-    </ul>
 
-  </div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Which of these statements best describes why you are viewing this page?</mat-card-title>
+    </mat-card-header>
+    <div>
+      <ul *ngFor="let profile of this.profiles ; index as i">
+        <mat-card (click)="redirect()">
+          {{this.profiles[i].reason}}
+        </mat-card>
+      </ul>
+
+    </div>
+
+  </mat-card>
+  <!-- MAIN CENTERED LAYOUT DIV END-->
 </div>

@@ -21,6 +21,10 @@ export class LandingpageComponent implements OnInit {
     )
   }
 
+  redirect() {
+    console.log("implement me")
+  }
+
 }
 
 

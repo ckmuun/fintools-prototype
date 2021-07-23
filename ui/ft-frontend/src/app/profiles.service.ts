@@ -8,13 +8,28 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ProfilesService {
 
+  chosenProfile: UserProfile;
+
   constructor(private httpClient: HttpClient) {
+    this.chosenProfile = new UserProfile(
+      "default",
+      "default",
+      ["default"],
+      "default",
+    )
   }
 
   getQuestionnaires(): Observable<UserProfile[]> {
     return this.httpClient.get<UserProfile[]>("http://localhost:8080/api/profiles")
   }
 
+  cacheChosenProfile(profile: UserProfile) {
+    this.chosenProfile = profile;
+  }
+
+  getChosenProfile() {
+    return this.chosenProfile
+  }
 
   /*
   GO STRUCT
