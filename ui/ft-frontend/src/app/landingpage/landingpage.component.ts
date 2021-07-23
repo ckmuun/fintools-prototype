@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {ProfilesService, UserProfile} from "../profiles.service";
 
 @Component({
   selector: 'app-landingpage',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingpageComponent implements OnInit {
 
-  constructor() { }
+  profiles: UserProfile[] =  []
+
+  constructor(private profilesService: ProfilesService) {
+  }
 
   ngOnInit(): void {
+    this.profilesService.getQuestionnaires().subscribe(
+      profiles => {
+        this.profiles = profiles;
+      }
+    )
   }
 
 }
+
+
+

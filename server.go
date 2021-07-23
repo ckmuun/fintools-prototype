@@ -10,6 +10,7 @@ import (
 	"path/filepath"
 	"reccengine/api"
 	"reccengine/engineImpl"
+	"reccengine/profiles"
 	"reccengine/questionnaireImpl"
 )
 
@@ -77,11 +78,19 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 	router.POST("/api/questionnaires/submit", postFilledQuestionnaires)
 	router.POST("/api/questionnaires/submit/single", postSingleQuestionnaire)
 	router.GET("/api/questionnaires", getQuestionnaireList)
+	router.GET("/api/profiles", getUserProfiles)
 	router.GET("/api/questionnaires/:kind", getQst)
 	router.GET("/api/questionnaires/all", getAll)
 	router.POST("/api/feedback", postFeedback)
 	router.GET("/api/random", getRandomSampleOfStrategies)
 
+}
+
+/*
+	This endpoint handler function returns the predefined user profiles.
+*/
+func getUserProfiles(c *gin.Context) {
+	c.JSON(200, profiles.GetProfileService().GetProfiles())
 }
 
 /*

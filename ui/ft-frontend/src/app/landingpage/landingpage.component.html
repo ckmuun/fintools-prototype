@@ -1,1 +1,11 @@
-<p>landingpage works!</p>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <p>Which of these archetypes best describes why you are viewing this page?</p>
+  <div>
+    <ul *ngFor="let profile of this.profiles ; index as i">
+      <mat-card>
+        {{this.profiles[i].name}}
+      </mat-card>
+    </ul>
+
+  </div>
+</div>
