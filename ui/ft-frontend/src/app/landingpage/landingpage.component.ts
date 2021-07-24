@@ -1,5 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {ProfilesService, UserProfile} from "../profiles.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-landingpage',
@@ -8,9 +9,9 @@ import {ProfilesService, UserProfile} from "../profiles.service";
 })
 export class LandingpageComponent implements OnInit {
 
-  profiles: UserProfile[] =  []
+  profiles: UserProfile[] = []
 
-  constructor(private profilesService: ProfilesService) {
+  constructor(private profilesService: ProfilesService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -21,8 +22,10 @@ export class LandingpageComponent implements OnInit {
     )
   }
 
-  redirect() {
-    console.log("implement me")
+  redirect(profile: UserProfile) {
+    this.profilesService.cacheChosenProfile(profile);
+    this.router.navigateByUrl("/get-started")
+
   }
 
 }

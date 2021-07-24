@@ -7,7 +7,7 @@
     </mat-card-header>
     <div>
       <ul *ngFor="let profile of this.profiles ; index as i">
-        <mat-card (click)="redirect()">
+        <mat-card (click)="redirect(profiles[i])">
           {{this.profiles[i].reason}}
         </mat-card>
       </ul>
