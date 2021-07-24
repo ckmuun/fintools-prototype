@@ -104,7 +104,7 @@ func processFinancialSituationForTripwire(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
 	if financialHealthQ.Category != "Financial Risk Tolerance" {
-		c.JSON(400, "Your financial situation is too bad for giving out proper investment advice.")
+		c.JSON(400, "Unfortunately, your financial situation is apparently too bad for giving out proper investment advice. Please look into ways to improve your income, and savings, as well as reduce debt")
 	}
 
 	c.JSON(200, engineImpl.CalculateTripwireFiring(financialHealthQ))

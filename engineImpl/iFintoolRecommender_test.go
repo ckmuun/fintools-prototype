@@ -5,6 +5,7 @@ import (
 	assert2 "github.com/stretchr/testify/assert"
 	"log"
 	"reccengine/_testUtils"
+	"reccengine/api"
 	"testing"
 )
 
@@ -20,7 +21,7 @@ func TestGenerateRecommendationGenerally(t *testing.T) {
 
 	testQArr := _testUtils.FillQuestionnairesFromJson()
 
-	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
+	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr, api.DefaultUserProfile())
 
 	assert2.Nil(t, err, "")
 	assert2.NotNil(t, badStrategy, "")
@@ -42,7 +43,7 @@ func TestGenerateStrategyRecommendationsPosCase(t *testing.T) {
 
 	testQArr := _testUtils.CreateTestQuestionnairesForCategories(0, CATEGORIES)
 
-	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
+	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr, api.DefaultUserProfile())
 
 	assert2.Nil(t, err, "")
 	assert2.NotNil(t, badStrategy, "")
@@ -67,7 +68,7 @@ func TestGenerateStrategyRecommendationsNegCase(t *testing.T) {
 
 	testQArr := _testUtils.CreateTestQuestionnairesForCategories(1, CATEGORIES)
 
-	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr)
+	goodStrategy, badStrategy, _, err := recommender.GenerateStrategyRecommendations(testQArr, api.DefaultUserProfile())
 
 	assert2.Nil(t, err, "")
 	assert2.NotNil(t, badStrategy, "")

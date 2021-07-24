@@ -30,7 +30,7 @@ func (r *RuleBasedFintoolRecommender) GenerateRandomSample() []api.StrategyCompo
 	Entrypoint method
 	returns GoodStrategy BadStrategy, Error
 */
-func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilledQuestionnaires []api.McQuestionnaire) (api.FintoolRecom, api.FintoolRecom, api.ScoreContainer, error) {
+func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilledQuestionnaires []api.McQuestionnaire, profile api.UserProfile) (api.FintoolRecom, api.FintoolRecom, api.ScoreContainer, error) {
 
 	scores, err := CalculateQuestionnaireScores(userFilledQuestionnaires)
 
@@ -38,7 +38,13 @@ func (r *RuleBasedFintoolRecommender) GenerateStrategyRecommendations(userFilled
 		panic("error during questionnaires score calculation")
 	}
 
-	ranking := r.rankGeometrically(scores)
+	var ranking *treemap.Map
+
+	if "default" == profile.Name {
+		ranking = r.rankGeometrically(scores)
+	} else {
+		ranking = r.rankGeometricallyProfileBased(scores, profile)
+	}
 
 	var goodComps [3]api.StrategyComponent
 	var badComps [3]api.StrategyComponent
@@ -101,12 +107,55 @@ func convertTreeMapToSlice(p *treemap.Map) []api.StrategyComponent {
 	return comps
 }
 
+func (r *RuleBasedFintoolRecommender) rankGeometricallyProfileBased(score api.ScoreContainer, profile api.UserProfile) *treemap.Map {
+	return rankGeometricallyFlex(
+		score,
+		filterStrategies(profile.Tags, r.strategyComponents))
+}
+
+/*
+	filters components to only those that the profile allows
+	Three for loops because we have multiple components, with multiple tags getting matched to one profiles multiple tags
+*/
+func filterStrategies(profileTags []string, comps []api.StrategyComponent) (filteredComps []api.StrategyComponent) {
+
+	for _, comp := range comps {
+		for _, compTag := range comp.Tags {
+			for _, profileTag := range profileTags {
+				if compTag == profileTag {
+					filteredComps = append(filteredComps, comp)
+				}
+			}
+		}
+	}
+	return filteredComps
+}
+
 /*
 	Set the pool of strategy components on the recommender instance
 */
 func (r *RuleBasedFintoolRecommender) SetStrategyComponents(components []api.StrategyComponent) {
 
 	r.strategyComponents = components
+}
+func rankGeometricallyFlex(questionnaireScores api.ScoreContainer, comps []api.StrategyComponent) *treemap.Map {
+	rankedStrategies := treemap.NewWithIntComparator()
+
+	for _, comp := range comps {
+
+		var distance int = int(EuclideanDistance(questionnaireScores, comp.ScoreContainer))
+		log.Print("distance for component: ", comp.Description, " is :", distance)
+
+		// tie breaker
+		_, found := rankedStrategies.Get(distance)
+		for found {
+			distance += 1
+			_, found = rankedStrategies.Get(distance)
+		}
+
+		rankedStrategies.Put(distance, comp)
+	}
+	return rankedStrategies
 }
 
 func (r *RuleBasedFintoolRecommender) rankGeometrically(questionnaireScores api.ScoreContainer) *treemap.Map {
@@ -126,53 +175,6 @@ func (r *RuleBasedFintoolRecommender) rankGeometrically(questionnaireScores api.
 
 		rankedStrategies.Put(distance, comp)
 	}
-	return rankedStrategies
-}
-
-/*
-	Naive Ranking Algorithm that just calculates the difference between the average scores
-	from the questionnaire and the individual strategy component scores.
-	This mostly servers as a poc
-	// TODO implement a more sophisticated ranking algorithm here.
-*/
-func (r *RuleBasedFintoolRecommender) rankByAbsoluteDiff(questionnaireScores api.ScoreContainer) *treemap.Map {
-	rankedStrategies := treemap.NewWithIntComparator()
-
-	for index, component := range r.strategyComponents {
-		log.Print("calculating score for component: ", component)
-
-		diffs := questionnaireScores.Diff(component.ScoreContainer)
-
-		a := diffs.FinancialKnowledge
-		b := diffs.CogBiasResistance
-		c := diffs.TimeFlexibility
-		d := diffs.FinRiskTolerance
-		e := diffs.PsyRiskTolerance
-
-		/*
-				Bei 10 AnswerScore und 10 Component Score muss hier 0 rauskommen
-				Allgemein gilt -> 0 ist der optimal Wert, weil damit Fragebogen und Strategie kongruent sind!
-
-			-> VERWENDE BETRAG DES SCORES, NICHT DEN ABSOLUTEN SCORE!
-		*/
-
-		// to be minimized
-		naiveScoreForStratComp := a + b + c + d + e
-
-		if naiveScoreForStratComp < 0 {
-			naiveScoreForStratComp *= -1
-		}
-
-		log.Print("naive score for component: ", naiveScoreForStratComp)
-		_, found := rankedStrategies.Get(naiveScoreForStratComp)
-
-		for found {
-			naiveScoreForStratComp += 1
-			_, found = rankedStrategies.Get(naiveScoreForStratComp)
-		}
-		rankedStrategies.Put(naiveScoreForStratComp, r.strategyComponents[index])
-	}
-
 	return rankedStrategies
 }
 
