@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {McQuestionnaire, QuestionnaireService} from "../questionnaire.service";
 import {StrategyService} from "../strategy.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ProfilesService} from "../profiles.service";
 
 @Component({
   selector: 'app-entrypoint',
@@ -19,6 +20,7 @@ export class EntrypointComponent implements OnInit {
 
   constructor(private qSvc: QuestionnaireService,
               private stratSvc: StrategyService,
+              private profilesSvc: ProfilesService,
               private route: ActivatedRoute,
               private router: Router) {
     this.qCategories = [];
@@ -65,7 +67,7 @@ export class EntrypointComponent implements OnInit {
 
   uploadFilledQuestionnaires() {
 
-    return this.stratSvc.postFilledQuestionnaires(this.questionnaires).subscribe(
+    return this.stratSvc.postFilledQuestionnaires(this.questionnaires, this.profilesSvc.chosenProfile).subscribe(
       response => {
         console.log("received upload response, routing to dashboard component")
         console.log("response:" + response.id)

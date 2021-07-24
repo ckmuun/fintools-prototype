@@ -162,18 +162,18 @@ func postSingleQuestionnaire(c *gin.Context) {
 */
 func postFilledQuestionnaires(c *gin.Context) {
 
-	var questionnaires []api.McQuestionnaire
+	var submitDto api.SubmitDto
 
 	// first step, syntactically validate if input is parseable
-	if err := c.ShouldBindJSON(&questionnaires); err != nil {
+	if err := c.ShouldBindJSON(&submitDto); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
 	// second step, semantically validate if the input is prcessable
-	for index := range questionnaires {
+	for index := range submitDto.Questionnaires {
 
-		q := questionnaires[index]
+		q := submitDto.Questionnaires[index]
 
 		if !q.Finished() {
 			c.JSON(http.StatusBadRequest, "at least one questionnaire is not completed")
@@ -183,15 +183,15 @@ func postFilledQuestionnaires(c *gin.Context) {
 
 	// TODO save the questionnaire here, log the answers, do further middlwware processing
 
-	c.JSON(200, processQuestionnaires(questionnaires))
+	c.JSON(200, processQuestionnaires(submitDto.Questionnaires, submitDto.Profile))
 }
 
 /*
 	Process
 */
-func processQuestionnaires(qs []api.McQuestionnaire) api.FintoolRecomDto {
+func processQuestionnaires(qs []api.McQuestionnaire, profile api.UserProfile) api.FintoolRecomDto {
 
-	dto := engineImpl.GenerateRecommendation(qs)
+	dto := engineImpl.GenerateRecommendation(qs, profile)
 	dto.Id = uuid.New()
 
 	/*

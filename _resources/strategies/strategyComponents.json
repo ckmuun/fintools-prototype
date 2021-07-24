@@ -15,7 +15,8 @@
     "major_cons": [
       "highly leveraged",
       "long-term liability risks (years)",
-      "high-impact liability risks"
+      "high-impact liability risks",
+      "medium_complexity"
     ],
     "links": [
     ],
@@ -49,7 +50,8 @@
     "tags": [
       "passive_investing",
       "linear",
-      "purely_financial"
+      "purely_financial",
+      "low_complexity"
     ]
   },
   {
@@ -75,7 +77,8 @@
     "tags": [
       "active_investing",
       "linear",
-      "purely_financial"
+      "purely_financial",
+      "medium_complexity"
     ]
   },
   {
@@ -102,7 +105,10 @@
     "tags": [
       "active_investing",
       "linear",
-      "purely_financial"
+      "purely_financial",
+      "medium_complexity",
+      "medium_risk",
+      "high_risk"
     ]
   },
   {
@@ -130,7 +136,9 @@
     ],
     "tags": [
       "passive_investing",
-      "linear"
+      "linear",
+      "low_risk",
+      "low_complexity"
     ]
   },
   {
@@ -157,7 +165,9 @@
     "tags": [
       "passive_investing",
       "linear",
-      "purely_financial"
+      "purely_financial",
+      "low_risk",
+      "low_complexity"
     ]
   },
   {
@@ -485,8 +495,35 @@
       "high_skill"
     ]
   }, {
-    "name": "Momentum Trading on a trading platform",
-    "description": "This is an advanced trading strategy. ",
+    "name": "Momentum Trading",
+    "description": "This is an advanced trading strategy exploiting a stock market pricing anomaly. The latter consists of the tendency of past winners ot outperform past losers. However, there are a few caveats to this. Firstly, the anomaly is well-known which may have a negative impact on its value. Secondly, one needs to be cautious the interval used and volatility. ",
+    "fin_risk_tolerance": 8,
+    "psy_risk_tolerance": 9,
+    "time_flexibility": 8,
+    "cog_bias_resistance": 8,
+    "financial_knowledge": 8,
+    "major_pros": [
+      "Theoretically infinitely scalable",
+      "Relatively simple compared to other advanced finance strategies",
+      "intellectually stimulating, offers progression"
+    ],
+    "major_cons": [
+      "Exploits a common stock market pricing anomaly, therefore the informational advantage and therefore returns may be limited",
+      "High level of commitment, assets, risk tolerance and financial skill required.",
+      "Susceptible to trend chasing and volatility spikes, users need to incorporate these biases"
+    ],
+    "links": [
+      "www.quantconnect.com"
+    ],
+    "tags": [
+      "purely_financial",
+      "leveraged",
+      "high_complexity",
+      "high_skill"
+    ]
+  }, {
+    "name": "Small Cap ETFs, possibly leveraged",
+    "description": "This is an advanced trading strategy exploiting a stock market pricing anomaly. The latter consists of the tendency of past winners ot outperform past losers. However, there are a few caveats to this. Firstly, the anomaly is well-known which may have a negative impact on its value. Secondly, one needs to be cautious the interval used and volatility. ",
     "fin_risk_tolerance": 8,
     "psy_risk_tolerance": 9,
     "time_flexibility": 8,

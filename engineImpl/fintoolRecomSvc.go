@@ -55,10 +55,9 @@ func GenerateRandomSample() []api.StrategyComponent {
 /*
 	Generate GoodRecommendation from filled questionnaires
 */
-func GenerateRecommendation(qs []api.McQuestionnaire) api.FintoolRecomDto {
+func GenerateRecommendation(qs []api.McQuestionnaire, profile api.UserProfile) api.FintoolRecomDto {
 
-	// TODO currently only one engine available -> decide whether an addtional one wil be required
-	goodRecom, badRecom, userScores, err := engines[0].GenerateStrategyRecommendations(qs)
+	goodRecom, badRecom, userScores, err := engines[0].GenerateStrategyRecommendations(qs, profile)
 
 	if err != nil {
 		panic("error during strategy recommendation")

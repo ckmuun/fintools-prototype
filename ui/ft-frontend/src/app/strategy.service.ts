@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {McQuestionnaire} from "./questionnaire.service";
 import {HttpClient} from "@angular/common/http";
+import {UserProfile} from "./profiles.service";
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,14 @@ export class StrategyService {
     this._stratSampleData$ = new Observable<any>();
   }
 
-  postFilledQuestionnaires(questionnaires: McQuestionnaire[]): Observable<FintoolRecomDto> {
-    this._data$ = this.httpClient.post<FintoolRecomDto>("http://localhost:8080/api/questionnaires/submit", questionnaires)
+  postFilledQuestionnaires(questionnaires: McQuestionnaire[], profile: UserProfile): Observable<FintoolRecomDto> {
+
+    this._data$ = this.httpClient.post<FintoolRecomDto>(
+      "http://localhost:8080/api/questionnaires/submit",
+      new SubmitDto(
+        questionnaires,
+        profile
+      ))
     return this._data$
   }
 
@@ -66,6 +73,22 @@ export class FintoolRecomDto {
   good_recommendation: FintoolRecom
   bad_recommendation: FintoolRecom
   user_scores: ScoreContainer
+}
+
+/*
+
+ */
+
+export class SubmitDto {
+
+  questionnaires: McQuestionnaire[]
+  profile: UserProfile
+
+
+  constructor(questionnaires: McQuestionnaire[], profile: UserProfile) {
+    this.questionnaires = questionnaires;
+    this.profile = profile;
+  }
 }
 
 /*

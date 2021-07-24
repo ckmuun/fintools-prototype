@@ -1,6 +1,7 @@
 package engineImpl
 
 import (
+	"github.com/emirpasic/gods/maps/hashmap"
 	"github.com/emirpasic/gods/maps/treemap"
 	"github.com/rs/zerolog/log"
 	"math"
@@ -116,17 +117,26 @@ func (r *RuleBasedFintoolRecommender) rankGeometricallyProfileBased(score api.Sc
 /*
 	filters components to only those that the profile allows
 	Three for loops because we have multiple components, with multiple tags getting matched to one profiles multiple tags
+	FIXME: do this with a hashmap, we have doubles in the resulting strategies.
 */
 func filterStrategies(profileTags []string, comps []api.StrategyComponent) (filteredComps []api.StrategyComponent) {
 
-	for _, comp := range comps {
+	compMap := hashmap.New()
+
+	for index, comp := range comps {
 		for _, compTag := range comp.Tags {
 			for _, profileTag := range profileTags {
 				if compTag == profileTag {
-					filteredComps = append(filteredComps, comp)
+					compMap.Put(index, comp)
+					//		filteredComps = append(filteredComps, comp)
+					continue
 				}
 			}
 		}
+	}
+
+	for _, comp := range compMap.Values() {
+		filteredComps = append(filteredComps, comp.(api.StrategyComponent))
 	}
 	return filteredComps
 }

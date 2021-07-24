@@ -16,7 +16,8 @@
       "low_risk",
       "crypto",
       "low_complexity",
-      "medium_complexity"
+      "medium_complexity",
+      "passive_investing"
     ],
     "reason": "I want to retire as early as possible. I am also willing to sacrifice significant spending in order to achieve this goal. "
   },
@@ -29,7 +30,8 @@
       "low_risk",
       "stocks",
       "low_complexity",
-      "medium_complexity"
+      "medium_complexity",
+      "passive_investing"
     ],
     "reason": "I primarily want to preserve my wealth while receiving small gains over time."
   },
@@ -49,7 +51,8 @@
       "libertarian",
       "high_risk",
       "medium_complexity",
-      "high_complexity"
+      "high_complexity",
+      "active_investing"
     ],
     "reason": "I would like to make some quick bucks"
   },
@@ -67,7 +70,8 @@
       "libertarian",
       "high_risk",
       "medium_complexity",
-      "high_complexity"
+      "high_complexity",
+      "active_investing"
     ],
     "reason": "Crypto is the future. "
   },
@@ -84,9 +88,10 @@
       "leverage",
       "libertarian",
       "high_risk",
-      "medium_complexity"
+      "medium_complexity",
+      "active_investing"
     ],
-    "reason": "I would like to explore investment opportunities outside . "
+    "reason": "I would like to explore investment opportunities outside traditional assets. "
   },
   {
     "name": "Pure-Necessity",
@@ -94,7 +99,9 @@
     "tags": [
       "below_average_wealth",
       "mixed gender",
-      "average_education"
+      "average_education",
+      "passive_investing",
+      "low_risk"
     ],
     "reason": "I want to improve my personal finance situation in order to improve my standard of living."
   },
@@ -106,7 +113,10 @@
       "high-education-low-finance-skill",
       "skepticism",
       "low-risk-preference",
-      "mixed-gender"
+      "mixed-gender",
+      "low_risk",
+      "passive_investing",
+      "low_complexity"
     ],
     "reason": "I don't really want to be associated with the finance world, but I am curious and/or realized that I will probably die poor if I keep my personal finances like this."
   },
@@ -116,7 +126,9 @@
     "tags": [
       "low_experience",
       "etf",
-      "low_risk"
+      "low_complexity",
+      "low_risk",
+      "passive_investing"
     ],
     "reason": "My bank sent me a letter that I now have to pay negative interest rates on my cash savings. So I now want to look into this whole investment thing to avoid these payments..."
   },
@@ -124,7 +136,10 @@
     "name": "Next-Level-Seeker",
     "description": "",
     "tags": [
-      "medium_experience"
+      "medium_experience",
+      "passive_investing",
+      "active_investing",
+      "medium_complexity"
     ],
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
@@ -135,7 +150,8 @@
       "medium_experience",
       "self-employed",
       "entrepreneurial",
-      "etf"
+      "etf",
+      "active_investing"
     ],
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
@@ -160,7 +176,9 @@
       "options",
       "derivatives",
       "complex_finance_strategies",
-      "advanced_strategies"
+      "advanced_strategies",
+      "high_risk",
+      "high_complexity"
     ],
     "reason": "I am an investment professional and would like to see what you guys got."
   },
@@ -170,7 +188,8 @@
     "tags": [
       "etf",
       "low_risk",
-      "low_experience"
+      "low_experience",
+      "low_complexity"
     ],
     "reason": "I randomly got to this website and have no particular interest, just show me some general information."
   }
