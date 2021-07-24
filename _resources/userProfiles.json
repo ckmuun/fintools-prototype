@@ -11,7 +11,12 @@
       "fire",
       "frugal",
       "overconfident",
-      "medium experience"
+      "medium_experience",
+      "etf",
+      "low_risk",
+      "crypto",
+      "low_complexity",
+      "medium_complexity"
     ],
     "reason": "I want to retire as early as possible. I am also willing to sacrifice significant spending in order to achieve this goal. "
   },
@@ -19,7 +24,12 @@
     "name": "Privateer",
     "description": "Usually a middle-aged or older person who acquired a certain level of wealth throughout their life and career. Often times has a high-education, well-paid job outside the finance industry. Better off that at least 90% of the population, but (by far) not rich enough for family offices or private banking. These people mostly look to conserve their wealth and may also require guidelines on tax and inheritance models",
     "tags": [
-      ""
+      "etf",
+      "conservative",
+      "low_risk",
+      "stocks",
+      "low_complexity",
+      "medium_complexity"
     ],
     "reason": "I primarily want to preserve my wealth while receiving small gains over time."
   },
@@ -36,7 +46,10 @@
       "derivatives",
       "fast",
       "leverage",
-      "libertarian"
+      "libertarian",
+      "high_risk",
+      "medium_complexity",
+      "high_complexity"
     ],
     "reason": "I would like to make some quick bucks"
   },
@@ -51,17 +64,37 @@
       "crypto",
       "fast",
       "leverage",
-      "libertarian"
+      "libertarian",
+      "high_risk",
+      "medium_complexity",
+      "high_complexity"
     ],
     "reason": "Crypto is the future. "
+  },
+  {
+    "name": "Alternative Investment Gambler",
+    "description": "Basically the same as the WSB Gambler, but with alternative (crypto) investments. Wants to make a quick buck or 'make it' in general. Risk-seeking, leverage-seeking. Usually brings at least very basic investment knowledge to the table.",
+    "tags": [
+      "white",
+      "young",
+      "male",
+      "risk",
+      "crypto",
+      "fast",
+      "leverage",
+      "libertarian",
+      "high_risk",
+      "medium_complexity"
+    ],
+    "reason": "I would like to explore investment opportunities outside . "
   },
   {
     "name": "Pure-Necessity",
     "description": "public retirement plans just do make ends meet. this person realized this and now figured the need to act upon this realization. Prefers low-risk, long-term investments. ",
     "tags": [
-      "below-average-wealth",
+      "below_average_wealth",
       "mixed gender",
-      "average-education"
+      "average_education"
     ],
     "reason": "I want to improve my personal finance situation in order to improve my standard of living."
   },
@@ -81,7 +114,9 @@
     "name": "Driven-By-Negative-Interest-Rates",
     "description": "These people usually hoarded a significant amount of cash in a bank account and are now hit by negative interest rates, so they decided to take a look at investing. Usually well-educated, but low finance skill.",
     "tags": [
-      ""
+      "low_experience",
+      "etf",
+      "low_risk"
     ],
     "reason": "My bank sent me a letter that I now have to pay negative interest rates on my cash savings. So I now want to look into this whole investment thing to avoid these payments..."
   },
@@ -89,7 +124,30 @@
     "name": "Next-Level-Seeker",
     "description": "",
     "tags": [
-      ""
+      "medium_experience"
+    ],
+    "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
+  },
+  {
+    "name": "Self-employed Person",
+    "description": "",
+    "tags": [
+      "medium_experience",
+      "self-employed",
+      "entrepreneurial",
+      "etf"
+    ],
+    "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
+  },
+  {
+    "name": "Digital Nomad",
+    "description": "",
+    "tags": [
+      "medium_experience",
+      "self-employed",
+      "entrepreneurial",
+      "flexible",
+      "medium_complexity"
     ],
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
@@ -97,7 +155,12 @@
     "name": "Investment Pro",
     "description": "",
     "tags": [
-      ""
+      "high_risk",
+      "leverage",
+      "options",
+      "derivatives",
+      "complex_finance_strategies",
+      "advanced_strategies"
     ],
     "reason": "I am an investment professional and would like to see what you guys got."
   },
@@ -105,7 +168,9 @@
     "name": "Rando",
     "description": "This person just randomly got to the website without any specific interest",
     "tags": [
-      ""
+      "etf",
+      "low_risk",
+      "low_experience"
     ],
     "reason": "I randomly got to this website and have no particular interest, just show me some general information."
   }

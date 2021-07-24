@@ -458,5 +458,58 @@
       "leveraged",
       "creative"
     ]
+  }, {
+    "name": "Betting against beta",
+    "description": "This is an advanced trading strategy. ",
+    "fin_risk_tolerance": 8,
+    "psy_risk_tolerance": 9,
+    "time_flexibility": 8,
+    "cog_bias_resistance": 8,
+    "financial_knowledge": 10,
+    "major_pros": [
+      "Theoretically infinitely scalable",
+      "can reap very good returns",
+      "intellectually stimulating, offers progression"
+    ],
+    "major_cons": [
+      "Multi-Stage process, stocks to long and stocks to short need to be determined, leverage needs to be defined and maintained and the overall time-horizon is rather long.",
+      "High level of commitment, assets, risk tolerance and financial skill required.",
+      "Very susceptible to certain cognitive biases such as overconfidence due to the requirement to define which stocks to go long and which to short."
+    ],
+    "links": [
+    ],
+    "tags": [
+      "purely_financial",
+      "leveraged",
+      "high_complexity",
+      "high_skill"
+    ]
+  }, {
+    "name": "Momentum Trading on a trading platform",
+    "description": "This is an advanced trading strategy. ",
+    "fin_risk_tolerance": 8,
+    "psy_risk_tolerance": 9,
+    "time_flexibility": 8,
+    "cog_bias_resistance": 8,
+    "financial_knowledge": 8,
+    "major_pros": [
+      "Theoretically infinitely scalable",
+      "Relatively simple compared to other advanced finance strategies",
+      "intellectually stimulating, offers progression"
+    ],
+    "major_cons": [
+      "Exploits a common stock market pricing anomaly, therefore the informational advantage and therefore returns may be limited",
+      "High level of commitment, assets, risk tolerance and financial skill required.",
+      "Susceptible to trend chasing and volatility spikes, users need to incorporate these biases"
+    ],
+    "links": [
+      "www.quantconnect.com"
+    ],
+    "tags": [
+      "purely_financial",
+      "leveraged",
+      "high_complexity",
+      "high_skill"
+    ]
   }
 ]
