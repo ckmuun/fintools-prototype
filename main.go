@@ -21,11 +21,6 @@ func main() {
 
 }
 
-func instantiateSingletonServices() {
-
-	// todo instantiate user db service
-}
-
 func setupViper() {
 	viper.SetEnvPrefix("FINTOOLS")
 	// TODO do BindEnv calls here. Currently not known which are necessary

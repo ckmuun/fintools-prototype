@@ -19,6 +19,11 @@
       "medium_complexity",
       "passive_investing"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I want to retire as early as possible. I am also willing to sacrifice significant spending in order to achieve this goal. "
   },
   {
@@ -33,6 +38,11 @@
       "medium_complexity",
       "passive_investing"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I primarily want to preserve my wealth while receiving small gains over time."
   },
   {
@@ -54,6 +64,11 @@
       "high_complexity",
       "active_investing"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I would like to make some quick bucks"
   },
   {
@@ -73,6 +88,11 @@
       "high_complexity",
       "active_investing"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "Crypto is the future. "
   },
   {
@@ -91,6 +111,11 @@
       "medium_complexity",
       "active_investing"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I would like to explore investment opportunities outside traditional assets. "
   },
   {
@@ -101,8 +126,14 @@
       "mixed gender",
       "average_education",
       "passive_investing",
-      "low_risk"
+      "low_risk",
+      "low_complexity"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I want to improve my personal finance situation in order to improve my standard of living."
   },
   {
@@ -118,6 +149,11 @@
       "passive_investing",
       "low_complexity"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I don't really want to be associated with the finance world, but I am curious and/or realized that I will probably die poor if I keep my personal finances like this."
   },
   {
@@ -130,6 +166,11 @@
       "low_risk",
       "passive_investing"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "My bank sent me a letter that I now have to pay negative interest rates on my cash savings. So I now want to look into this whole investment thing to avoid these payments..."
   },
   {
@@ -141,6 +182,11 @@
       "active_investing",
       "medium_complexity"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
   {
@@ -151,8 +197,14 @@
       "self-employed",
       "entrepreneurial",
       "etf",
-      "active_investing"
+      "active_investing",
+      "medium_complexity"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
   {
@@ -165,6 +217,11 @@
       "flexible",
       "medium_complexity"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
   {
@@ -180,6 +237,11 @@
       "high_risk",
       "high_complexity"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I am an investment professional and would like to see what you guys got."
   },
   {
@@ -191,6 +253,11 @@
       "low_experience",
       "low_complexity"
     ],
+    "fin_risk_tolerance": 2,
+    "psy_risk_tolerance": 3,
+    "time_flexibility": 4,
+    "cog_bias_resistance": 7,
+    "financial_knowledge": 6,
     "reason": "I randomly got to this website and have no particular interest, just show me some general information."
   }
 ]

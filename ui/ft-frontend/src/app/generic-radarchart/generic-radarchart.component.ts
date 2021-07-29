@@ -1,15 +1,15 @@
-
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {ChartConfiguration, ChartData, ChartOptions, ChartType, RadarControllerChartOptions} from "chart.js";
+import {ChartData, ChartOptions, ChartType} from "chart.js";
 import {radarchartLabels} from "../ftconstants";
-import {FintoolRecomDto, ScoreContainer, StrategyService} from "../strategy.service";
+import {ScoreContainer} from "../strategy.service";
 
 @Component({
-  selector: 'app-skillradar',
-  templateUrl: './skillradar.component.html',
-  styleUrls: ['./skillradar.component.css']
+  selector: 'app-generic-radarchart',
+  templateUrl: './generic-radarchart.component.html',
+  styleUrls: ['./generic-radarchart.component.css']
 })
-export class SkillradarComponent implements OnInit, OnChanges {
+
+export class GenericRadarchartComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log("on changes ...")

@@ -14,7 +14,6 @@ var once sync.Once
 var questionnaireSvc *QuestionnaireSvcImpl
 
 func init() {
-
 	once.Do(func() {
 		log.Println("initializing Questionnaire service")
 		questionnaireSvc = NewQuestionnaireSvcImpl()
@@ -26,12 +25,6 @@ func GetQuestionnaireService() *QuestionnaireSvcImpl {
 	return questionnaireSvc
 }
 
-type QuestionnaireService interface {
-	GetBasicMcQuestionnaire() api.McQuestionnaire
-	GetSpecificMcQuestionnaire() api.McQuestionnaire
-	PersistFilledQuestionnaire()
-}
-
 type QuestionnaireSvcImpl struct {
 	QuestionnaireNames        []string
 	BasicQuestionnaire        api.McQuestionnaire
@@ -40,12 +33,10 @@ type QuestionnaireSvcImpl struct {
 	CogBiasQuestionnaire      api.McQuestionnaire
 	TimeFlexibility           api.McQuestionnaire
 	QstMapping                *hashmap.Map
-	// Feedback questionnaire tODO add this here
 }
 
 /*
-	Constructor for the questionnaire service
-	TODO currently this is somewhat clumsy. Check out more elgeant ways to setup this service
+	Constructor for the questionnaire service, not really elegant, though.
 */
 func NewQuestionnaireSvcImpl() *QuestionnaireSvcImpl {
 

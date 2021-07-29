@@ -94,9 +94,10 @@ func GetExampleFeedbackArray() []api.StrategyFeedback {
 	return feedback
 }
 
-/*
-	TODO add a function attribute that allows to randomize the results
-*/
+func GetExampleSubmitDto() {
+
+}
+
 func FillQuestionnairesFromJson() []api.McQuestionnaire {
 
 	rawQuestionnaires := loadQuestionnairesFromJson()

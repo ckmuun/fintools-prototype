@@ -1,19 +1,39 @@
 <!-- MAIN CENTERED LAYOUT DIV-->
-<div fxLayout="column" fxLayoutAlign="center center">
+<div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 150px">
+  <div style="height: 1100px; width: 800px; margin-bottom: 50px; margin-top: 50px;">
 
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Which of these statements best describes why you are viewing this page?</mat-card-title>
-    </mat-card-header>
+    <div>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Which of these statements best describes why you are viewing this page? (Scroll down to view
+            all)
+          </mat-card-title>
+          <mat-card-subtitle>These profiles act as a starting point for your recommendation so please choose carefully
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
     <div>
       <ul *ngFor="let profile of this.profiles ; index as i">
-        <mat-card (click)="redirect(profiles[i])">
-          {{this.profiles[i].reason}}
+
+        <mat-card (click)="redirect(profiles[i])" style="margin-top: 50px; margin-bottom: 50px">
+          <div fxLayout="row" fxLayoutAlign="space-between none">
+            <mat-card>
+              <p>{{this.profiles[i].reason}}</p>
+            </mat-card>
+
+
+            <mat-card>
+              <app-generic-radarchart [userScoreContainer]="profiles[i].score_container"
+                                      label="Profile Stats"></app-generic-radarchart>
+            </mat-card>
+
+          </div>
         </mat-card>
       </ul>
-
     </div>
 
-  </mat-card>
+  </div>
+
   <!-- MAIN CENTERED LAYOUT DIV END-->
 </div>

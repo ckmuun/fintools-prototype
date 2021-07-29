@@ -19,10 +19,11 @@ var (
 	A simple result service that writes feedback and recommendations in JSON format into a file.
 */
 type FileResultSvc struct {
-	resultsFilepath        string
-	feedbackFilepath       string
-	firstResultPersisted   sync.Once
-	firstFeedbackPersisted sync.Once
+	recommendationResultsFilepath string
+	feedbackFilepath              string
+	qSubmitFilepath               string
+	firstResultPersisted          sync.Once
+	firstFeedbackPersisted        sync.Once
 }
 
 func GetFileResultSvc() *FileResultSvc {
@@ -30,19 +31,27 @@ func GetFileResultSvc() *FileResultSvc {
 }
 
 func init() {
+	viper.SetDefault("RESULTS_FILEPATH", "/results.json")
+	viper.SetDefault("FEEDBACK_FILEPATH", "/feedback.json")
+	viper.SetDefault("QSUBMIT_FILEPATH", "/qsubmit.json")
+
 	_ = viper.BindEnv("RESULTS_FILEPATH")
 	_ = viper.BindEnv("FEEDBACK_FILEPATH")
-	resultsFilepath := viper.GetString("RESULTS_FILEPATH")
+	_ = viper.BindEnv("QSUBMIT_FILEPATH")
+	recommendationResultsFilepath := viper.GetString("RESULTS_FILEPATH")
 	feedbackFilepath := viper.GetString("FEEDBACK_FILEPATH")
+	qSubmitFilepath := viper.GetString("QSUBMIT_FILEPATH")
 
 	once.Do(func() {
 		// Instantiate the service singleton
 		instance = FileResultSvc{
-			resultsFilepath:  resultsFilepath,
-			feedbackFilepath: feedbackFilepath,
+			recommendationResultsFilepath: recommendationResultsFilepath,
+			feedbackFilepath:              feedbackFilepath,
+			qSubmitFilepath:               qSubmitFilepath,
 		}
+
 		// prepend the json resultFile for results
-		resultFile, err := os.OpenFile(resultsFilepath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 777)
+		resultFile, err := os.OpenFile(recommendationResultsFilepath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 777)
 		if err != nil {
 			panic(err)
 		}
@@ -56,6 +65,12 @@ func init() {
 		defer feedbackFile.Close()
 		prepareResultsFileForInit(feedbackFile)
 
+		qsubmitFile, err := os.OpenFile(qSubmitFilepath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 777)
+		if err != nil {
+			panic(err)
+		}
+		defer qsubmitFile.Close()
+		prepareResultsFileForInit(qsubmitFile)
 	})
 }
 
@@ -86,11 +101,11 @@ func (f *FileResultSvc) GetFeedback() string {
 /*
 	Persist resulting dto to disk
 */
-func (f *FileResultSvc) PersistResult(dto api.FintoolRecomDto) (bool, error) {
+func (f *FileResultSvc) PersistRecommendationResult(dto api.FintoolRecomDto) (bool, error) {
 
 	serializedString, err := getSerializedString(dto)
 
-	file, _ := os.OpenFile(f.resultsFilepath, os.O_APPEND|os.O_WRONLY, 777)
+	file, _ := os.OpenFile(f.recommendationResultsFilepath, os.O_APPEND|os.O_WRONLY, 777)
 
 	if _, err = file.WriteString("\n" + serializedString + ","); err != nil {
 		return false, err
@@ -98,13 +113,33 @@ func (f *FileResultSvc) PersistResult(dto api.FintoolRecomDto) (bool, error) {
 	return true, nil
 }
 
-func (f *FileResultSvc) GetResults() string {
+func (f *FileResultSvc) GetRecommendationResults() string {
 	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
 
 	jsonString := string(buf)
 
 	jsonString = strings.TrimSuffix(jsonString, ",")
 	return jsonString + "]"
+}
+
+func (f *FileResultSvc) PersistQSubmit(dto api.SubmitDto) (bool, error) {
+	serializedString, err := getSerializedString(dto)
+	qsubmitFile, err := os.OpenFile(f.qSubmitFilepath, os.O_APPEND|os.O_WRONLY, 777)
+	if _, err = qsubmitFile.WriteString("\n" + serializedString + ","); err != nil {
+		return false, err
+	}
+	return true, nil
+
+}
+
+func (f *FileResultSvc) GetQSubmits() string {
+	buf, _ := ioutil.ReadFile(f.qSubmitFilepath)
+
+	jsonString := string(buf)
+
+	jsonString = strings.TrimSuffix(jsonString, ",")
+	return jsonString + "]"
+
 }
 
 // flatten array and persist items to file
@@ -129,5 +164,6 @@ func (f *FileResultSvc) PersistFeedbackArr(feedbackArr []api.StrategyFeedback) (
 
 func (f *FileResultSvc) PersistFeedback(feedback api.StrategyFeedback) (bool, error) {
 
+	// todo implement me
 	return true, nil
 }

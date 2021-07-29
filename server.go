@@ -12,6 +12,7 @@ import (
 	"reccengine/engineImpl"
 	"reccengine/profiles"
 	"reccengine/questionnaireImpl"
+	"reccengine/results"
 )
 
 func CORSMiddleware() gin.HandlerFunc {
@@ -37,7 +38,6 @@ func SetupRouter() *gin.Engine {
 
 	// This will ensure that the angular files are served correctly
 	// It basically points GinGonic to the output of "ng build" command
-	// TODO currently this works kinda "automagic" figure out what the exact mechanism here is. Bc. .NoRoute is acutlly for 404s
 	router.NoRoute(func(c *gin.Context) {
 		dir, file := path.Split(c.Request.RequestURI)
 		ext := filepath.Ext(file)
@@ -61,11 +61,18 @@ func SetupRouter() *gin.Engine {
 }
 
 func setupAdminRoutes(router *gin.Engine) *gin.Engine {
-	router.GET("/api/admin/results", func(c *gin.Context) {
 
-	})
+	adminEndpoints := router.Group("/admin", gin.BasicAuth(gin.Accounts{
+		"admin": "super-secret-pwd",
+	}))
+	adminEndpoints.GET("", getResults)
 
 	return router
+}
+
+func getResults(c *gin.Context) {
+
+	c.JSON(200, results.GetFileResultSvc().GetRecommendationResults())
 }
 
 /*
@@ -181,8 +188,6 @@ func postFilledQuestionnaires(c *gin.Context) {
 		}
 	}
 
-	// TODO save the questionnaire here, log the answers, do further middlwware processing
-
 	c.JSON(200, processQuestionnaires(submitDto.Questionnaires, submitDto.Profile))
 }
 
@@ -193,10 +198,6 @@ func processQuestionnaires(qs []api.McQuestionnaire, profile api.UserProfile) ap
 
 	dto := engineImpl.GenerateRecommendation(qs, profile)
 	dto.Id = uuid.New()
-
-	/*
-		TODO log response here
-	*/
 
 	log.Print("returning user scores: ", dto.UserScores)
 	jsonBytes, _ := json.Marshal(dto)

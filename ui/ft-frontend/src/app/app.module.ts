@@ -1,4 +1,5 @@
-import {NgModule} from '@angular/core';
+import
+{NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -23,6 +24,7 @@ import {NgxStarsModule} from "ngx-stars";
 import {ExplanationComponent} from './explanation/explanation.component';
 import {DiscoveryComponent} from './discovery/discovery.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
+import { GenericRadarchartComponent } from './generic-radarchart/generic-radarchart.component';
 
 const routes: Routes = [
   {path: '', component: LandingpageComponent},
@@ -46,6 +48,7 @@ const routes: Routes = [
     ExplanationComponent,
     DiscoveryComponent,
     LandingpageComponent,
+    GenericRadarchartComponent,
   ],
   imports: [
     BrowserModule,

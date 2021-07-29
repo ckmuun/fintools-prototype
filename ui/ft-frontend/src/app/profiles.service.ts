@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {McQuestionnaire} from "./questionnaire.service";
 import {HttpClient} from "@angular/common/http";
+import {ScoreContainer} from "./strategy.service";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,9 @@ export class ProfilesService {
       "default",
       ["default"],
       "default",
+      new ScoreContainer(
+        0, 0, 0, 0, 0
+      )
     )
   }
 
@@ -48,12 +52,13 @@ export class UserProfile {
   description: string
   tags: string[]
   reason: string
+  score_container: ScoreContainer
 
-
-  constructor(name: string, description: string, tags: string[], reason: string) {
+  constructor(name: string, description: string, tags: string[], reason: string, score_container: ScoreContainer) {
     this.name = name;
     this.description = description;
     this.tags = tags;
     this.reason = reason;
+    this.score_container = score_container
   }
 }

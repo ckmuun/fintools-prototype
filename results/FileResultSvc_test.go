@@ -41,7 +41,7 @@ func TestFileResultSvc_PersistResult(t *testing.T) {
 
 	fileResultSvc := GetFileResultSvc()
 
-	success, err := fileResultSvc.PersistResult(recomDto)
+	success, err := fileResultSvc.PersistRecommendationResult(recomDto)
 	assert2.Nil(t, err)
 	assert2.True(t, success)
 
@@ -60,5 +60,19 @@ func TestFileResultSvc_PersistFeedback(t *testing.T) {
 	assert2.True(t, success)
 	_ = os.Remove("test.json")
 	_ = os.Remove("feedback.json")
+}
 
+func TestFileResultSvc_PersistQSubmit(t *testing.T) {
+
+	feedback := _testUtils.GetExampleFeedbackArray()
+	fileResultSvc := GetFileResultSvc()
+
+	success, err := fileResultSvc.PersistFeedbackArr(feedback)
+
+	fmt.Println("result", fileResultSvc.GetFeedback())
+
+	assert2.Nil(t, err)
+	assert2.True(t, success)
+	_ = os.Remove("test.json")
+	_ = os.Remove("feedback.json")
 }

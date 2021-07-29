@@ -117,7 +117,6 @@ func (r *RuleBasedFintoolRecommender) rankGeometricallyProfileBased(score api.Sc
 /*
 	filters components to only those that the profile allows
 	Three for loops because we have multiple components, with multiple tags getting matched to one profiles multiple tags
-	FIXME: do this with a hashmap, we have doubles in the resulting strategies.
 */
 func filterStrategies(profileTags []string, comps []api.StrategyComponent) (filteredComps []api.StrategyComponent) {
 
