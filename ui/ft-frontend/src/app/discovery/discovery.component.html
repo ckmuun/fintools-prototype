@@ -19,7 +19,10 @@
           <app-strat-details fxFlex="33"
                              [strategy]="this.strats[i]"></app-strat-details>
           <app-strat-feedback fxFlex="33"
-                              [strategy]="this.strats[i]"></app-strat-feedback>
+                              [strategy]="this.strats[i]"
+                              [strategyIndex]="i"
+                              (stratRatedEmitter)="this.collectFeedback($event)"
+          ></app-strat-feedback>
         </div>
       </mat-card>
     </ul>

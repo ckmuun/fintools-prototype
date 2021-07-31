@@ -28,6 +28,7 @@ import { GenericRadarchartComponent } from './generic-radarchart/generic-radarch
 import { ExplanationDialogComponent } from './explanation-dialog/explanation-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { NextPageDialogComponent } from './next-page-dialog/next-page-dialog.component';
+import { FinishComponent } from './finish/finish.component';
 
 const routes: Routes = [
   {path: '', component: LandingpageComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'dashboard', component: FindashComponent},
   {path: 'radar', component: SkillradarComponent},
   {path: 'discover', component: DiscoveryComponent},
+  {path: 'finish', component: FinishComponent},
 ];
 
 
@@ -54,6 +56,7 @@ const routes: Routes = [
     GenericRadarchartComponent,
     ExplanationDialogComponent,
     NextPageDialogComponent,
+    FinishComponent,
   ],
   imports: [
     BrowserModule,

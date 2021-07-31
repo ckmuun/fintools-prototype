@@ -25,6 +25,7 @@ export class FindashComponent implements OnInit {
   allRated: boolean = false;
 
   constructor(private strategySvc: StrategyService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog) {
+    this.feedback = [-1,-1,-1];
 
   }
 
@@ -34,6 +35,22 @@ export class FindashComponent implements OnInit {
     this.feedback[tuple[1]] = tuple[0];
 
     console.log("strategy nr. " + tuple[1] + " got rating: " + tuple[0]);
+
+    this.allRated = this.checkIfFeedbackComplete();
+
+    if (this.allRated) {
+      this.openNextPageDialog()
+    }
+
+  }
+
+  checkIfFeedbackComplete(): boolean {
+    for (let i = 0; i < this.feedback.length; i++) {
+      if (this.feedback[i] === -1) {
+        return false;
+      }
+    }
+    return true
   }
 
   ngOnInit(): void {
@@ -43,7 +60,6 @@ export class FindashComponent implements OnInit {
         this.userScoreArr = this.getNumberArray(resp.user_scores)
         this.goodRecomStrats = this.data.good_recommendation.recommended_components
         this.extractStrategyScores(this.goodRecomStrats)
-        this.feedback.push(-1);
 
         /*
             DEBUG LOG OUTPUT
