@@ -17,9 +17,9 @@ type RuleBasedFintoolRecommender struct {
 }
 
 func (r *RuleBasedFintoolRecommender) GenerateRandomSample() []api.StrategyComponent {
-	sample := make([]api.StrategyComponent, 5)
+	sample := make([]api.StrategyComponent, 3)
 
-	random := rand.Intn(len(r.strategyComponents) - 5)
+	random := rand.Intn(len(r.strategyComponents) - 3)
 
 	for i := range sample {
 		sample[i] = r.strategyComponents[random+i]

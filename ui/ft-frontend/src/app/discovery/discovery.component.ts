@@ -13,23 +13,20 @@ export class DiscoveryComponent implements OnInit {
   // dirty initializer hack
   data: FintoolRecomDto = {} as any
 
-  userScoreArr: number[] = []
-  badRecomStrats: StrategyComponent[] = [];
-  badStratArrs: number[][] = [];
+  strats: StrategyComponent[] = [];
+  stratArrs: number[][] = [];
 
-  randomSample: StrategyComponent[] = [];
+  userScoreArr: number[] = []
 
   ngOnInit(): void {
+
+
     this.strategySvc.data$.subscribe(
       resp => {
-        this.data = resp;
         this.userScoreArr = this.getNumberArray(resp.user_scores)
-        this.badRecomStrats = this.data.bad_recommendation.recommended_components
-        this.extractStrategyScores(this.badRecomStrats)
-
 
         console.log("DEBUG OUTPUT")
-        this.badRecomStrats.forEach(
+        this.strats.forEach(
           strat => {
             console.log("strategy: " + strat.name)
             console.log("has scores: " + this.getNumberArrayFromStrategy(strat));
@@ -37,18 +34,19 @@ export class DiscoveryComponent implements OnInit {
       }
     )
 
-    this.strategySvc.stratSampleData$.subscribe(
+    this.strategySvc.getRandomStrategySample().subscribe(
       resp => {
-        this.randomSample = resp;
-        // todo extract data here more fine-grained.
+        this.strats = resp;
+        this.extractStrategyScores(this.strats)
       }
     )
   }
 
+
   extractStrategyScores(scs: StrategyComponent[]) {
     scs.forEach(
       strategy => {
-        this.badStratArrs.push([strategy.time_flexibility, strategy.fin_risk_tolerance, strategy.psy_risk_tolerance, strategy.cog_bias_resistance, strategy.financial_knowledge])
+        this.stratArrs.push([strategy.time_flexibility, strategy.fin_risk_tolerance, strategy.psy_risk_tolerance, strategy.cog_bias_resistance, strategy.financial_knowledge])
       }
     )
   }

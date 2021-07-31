@@ -11,12 +11,10 @@ export class StrategyService {
 
   private _data$: Observable<FintoolRecomDto>;
 
-  private _stratSampleData$: Observable<StrategyComponent[]>
 
   constructor(private httpClient: HttpClient) {
 
     this._data$ = new Observable<any>();
-    this._stratSampleData$ = new Observable<any>();
   }
 
   postFilledQuestionnaires(questionnaires: McQuestionnaire[], profile: UserProfile): Observable<FintoolRecomDto> {
@@ -31,8 +29,7 @@ export class StrategyService {
   }
 
   getRandomStrategySample(): Observable<StrategyComponent[]> {
-    this._stratSampleData$ = this.httpClient.get<StrategyComponent[]>("http://localhost:8080/api/random")
-    return this._stratSampleData$
+    return  this.httpClient.get<StrategyComponent[]>("http://localhost:8080/api/random")
   }
 
   get data$(): Observable<FintoolRecomDto> {
@@ -44,13 +41,6 @@ export class StrategyService {
   }
 
 
-  get stratSampleData$(): Observable<StrategyComponent[]> {
-    return this._stratSampleData$;
-  }
-
-  set stratSampleData$(value: Observable<StrategyComponent[]>) {
-    this._stratSampleData$ = value;
-  }
 }
 
 /*

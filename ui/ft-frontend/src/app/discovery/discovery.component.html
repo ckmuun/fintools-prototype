@@ -8,18 +8,18 @@
     </mat-card>
   </div>
   <div fxFlex=75>
-    <ul *ngFor="let strategy of this.badRecomStrats; index as i">
+    <ul *ngFor="let strategy of this.strats; index as i">
 
       <!--<p> {{ this.data.good_recommendation.recommended_components[i].name}}</p>-->
 
       <mat-card>
         <div fxLayout.xl="row" fxLayoutGap="32px">
           <app-stratcompare fxFlex="33" [userScores]="userScoreArr"
-                            [strategyScores]="this.badStratArrs[i]"></app-stratcompare>
+                            [strategyScores]="this.stratArrs[i]"></app-stratcompare>
           <app-strat-details fxFlex="33"
-                             [strategy]="this.data.bad_recommendation.recommended_components[i]"></app-strat-details>
+                             [strategy]="this.strats[i]"></app-strat-details>
           <app-strat-feedback fxFlex="33"
-                              [strategy]="this.data.bad_recommendation.recommended_components[i]"></app-strat-feedback>
+                              [strategy]="this.strats[i]"></app-strat-feedback>
         </div>
       </mat-card>
     </ul>
