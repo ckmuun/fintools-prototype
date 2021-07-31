@@ -19,9 +19,14 @@
         <mat-card (click)="redirect(profiles[i])" style="margin-top: 50px; margin-bottom: 50px">
           <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-between none">
 
-            <div fxFlex="50">
+            <div fxFlex="50" >
               <mat-card>
-                <p>{{this.profiles[i].reason}}</p>
+                <h3>{{this.profiles[i].reason}}</h3>
+                <br/>
+                <p>Attributes this profile is associated with:</p>
+                <ul *ngFor="let tag of this.profiles[i].tags">
+                  <p>{{prettifyProfileTag(tag)}}</p>
+                </ul>
               </mat-card>
             </div>
 

@@ -22,6 +22,16 @@ export class LandingpageComponent implements OnInit {
     )
   }
 
+  prettifyProfileTag(tag: string): string {
+    if (tag === "etf") {
+      return tag.toUpperCase()
+    }
+
+    let dashReplaceRegex = /[_\-]/gi;
+
+    return tag.replace(dashReplaceRegex, " ")
+  }
+
   redirect(profile: UserProfile) {
     this.profilesService.cacheChosenProfile(profile);
     this.router.navigateByUrl("/get-started")
