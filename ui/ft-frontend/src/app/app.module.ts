@@ -21,7 +21,6 @@ import {StratDetailsComponent} from './strat-details/strat-details.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {StratFeedbackComponent} from './strat-feedback/strat-feedback.component';
 import {NgxStarsModule} from "ngx-stars";
-import {ExplanationComponent} from './explanation/explanation.component';
 import {DiscoveryComponent} from './discovery/discovery.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
 import { GenericRadarchartComponent } from './generic-radarchart/generic-radarchart.component';
@@ -50,7 +49,6 @@ const routes: Routes = [
     StratcompareComponent,
     StratDetailsComponent,
     StratFeedbackComponent,
-    ExplanationComponent,
     DiscoveryComponent,
     LandingpageComponent,
     GenericRadarchartComponent,
