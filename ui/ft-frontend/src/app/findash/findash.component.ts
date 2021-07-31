@@ -8,6 +8,8 @@ import {MatGridTile} from "@angular/material/grid-list";
 import {FintoolRecomDto, ScoreContainer, StrategyComponent, StrategyService} from "../strategy.service";
 import {dashCaseToCamelCase} from "@angular/compiler/src/util";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ExplanationDialogComponent} from "../explanation-dialog/explanation-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 
 @Component({
@@ -26,7 +28,7 @@ export class FindashComponent implements OnInit {
   goodStratArrs: number[][] = [];
 
 
-  constructor(private strategySvc: StrategyService, private route: ActivatedRoute, private router: Router) {
+  constructor(private strategySvc: StrategyService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog) {
 
   }
 
@@ -42,14 +44,15 @@ export class FindashComponent implements OnInit {
             DEBUG LOG OUTPUT
          */
 
-       this.goodRecomStrats.forEach(
-         strat => {
-           console.log("strategy: " + strat.name)
-           console.log("has scores: " + this.getNumberArrayFromStrategy(strat));
-         }
-       )
+        this.goodRecomStrats.forEach(
+          strat => {
+            console.log("strategy: " + strat.name)
+            console.log("has scores: " + this.getNumberArrayFromStrategy(strat));
+          }
+        )
       }
     );
+    this.openDialog();
   }
 
   extractStrategyScores(scs: StrategyComponent[]) {
@@ -58,6 +61,19 @@ export class FindashComponent implements OnInit {
         this.goodStratArrs.push([strategy.time_flexibility, strategy.fin_risk_tolerance, strategy.psy_risk_tolerance, strategy.cog_bias_resistance, strategy.financial_knowledge])
       }
     );
+  }
+
+  openDialog() {
+    this.dialog.open(ExplanationDialogComponent, {
+      data: {
+        text: "This page displays personal finance strategies which were  selected based on your questionnaire answers for you." +
+          " \n Please also rate these strategies. by clicking on the stars on the right"
+      }
+    });
+  }
+
+  openNextPageDialog() {
+
   }
 
 
@@ -72,6 +88,7 @@ export class FindashComponent implements OnInit {
 
     return [sc.time_flexibility, sc.fin_risk_tolerance, sc.psy_risk_tolerance, sc.cog_bias_resistance, sc.financial_knowledge]
   }
+
   getNumberArrayFromStrategy(strat: StrategyComponent): number[] {
 
     return [strat.time_flexibility, strat.fin_risk_tolerance, strat.psy_risk_tolerance, strat.cog_bias_resistance, strat.financial_knowledge]

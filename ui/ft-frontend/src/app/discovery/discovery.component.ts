@@ -1,5 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FintoolRecomDto, ScoreContainer, StrategyComponent, StrategyService} from "../strategy.service";
+import {ExplanationDialogComponent} from "../explanation-dialog/explanation-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-discovery',
@@ -8,7 +10,8 @@ import {FintoolRecomDto, ScoreContainer, StrategyComponent, StrategyService} fro
 })
 export class DiscoveryComponent implements OnInit {
 
-  constructor(private strategySvc: StrategyService) { }
+  constructor(private strategySvc: StrategyService, public dialog: MatDialog) {
+  }
 
   // dirty initializer hack
   data: FintoolRecomDto = {} as any
@@ -40,6 +43,16 @@ export class DiscoveryComponent implements OnInit {
         this.extractStrategyScores(this.strats)
       }
     )
+    this.openDialog();
+  }
+
+  openDialog() {
+    this.dialog.open(ExplanationDialogComponent, {
+      data: {
+        text: "This page displays random strategies which were not explicitly selected for you. These serve as a contrast" +
+          "to the recommendations you just saw. \n Please also rate these strategies."
+      }
+    });
   }
 
 
@@ -57,6 +70,7 @@ export class DiscoveryComponent implements OnInit {
   getNumberArray(sc: ScoreContainer): number[] {
     return [sc.time_flexibility, sc.fin_risk_tolerance, sc.psy_risk_tolerance, sc.cog_bias_resistance, sc.financial_knowledge]
   }
+
   getNumberArrayFromStrategy(strat: StrategyComponent): number[] {
 
     return [strat.time_flexibility, strat.fin_risk_tolerance, strat.psy_risk_tolerance, strat.cog_bias_resistance, strat.financial_knowledge]

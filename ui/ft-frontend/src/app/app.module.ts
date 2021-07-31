@@ -25,6 +25,9 @@ import {ExplanationComponent} from './explanation/explanation.component';
 import {DiscoveryComponent} from './discovery/discovery.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
 import { GenericRadarchartComponent } from './generic-radarchart/generic-radarchart.component';
+import { ExplanationDialogComponent } from './explanation-dialog/explanation-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { NextPageDialogComponent } from './next-page-dialog/next-page-dialog.component';
 
 const routes: Routes = [
   {path: '', component: LandingpageComponent},
@@ -49,6 +52,8 @@ const routes: Routes = [
     DiscoveryComponent,
     LandingpageComponent,
     GenericRadarchartComponent,
+    ExplanationDialogComponent,
+    NextPageDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +69,7 @@ const routes: Routes = [
     MatGridListModule,
     FlexLayoutModule,
     NgxStarsModule,
+    MatDialogModule
   ],
 
   exports: [RouterModule],

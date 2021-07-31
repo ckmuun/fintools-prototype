@@ -16,10 +16,10 @@
     <div>
       <ul *ngFor="let profile of this.profiles ; index as i">
 
-        <mat-card (click)="redirect(profiles[i])" style="margin-top: 50px; margin-bottom: 50px">
+        <mat-card (click)="selectProfile(i, profiles[i])" style="margin-top: 50px; margin-bottom: 50px">
           <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-between none">
 
-            <div fxFlex="50" >
+            <div fxFlex="50">
               <mat-card>
                 <h3>{{this.profiles[i].reason}}</h3>
                 <br/>
@@ -46,4 +46,5 @@
   </div>
 
   <!-- MAIN CENTERED LAYOUT DIV END-->
+  <button mat-button (click)="redirect()">Go to next page!</button>
 </div>

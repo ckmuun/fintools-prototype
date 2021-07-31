@@ -3,6 +3,8 @@ import {McQuestionnaire, QuestionnaireService} from "../questionnaire.service";
 import {StrategyService} from "../strategy.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProfilesService} from "../profiles.service";
+import {ExplanationDialogComponent} from "../explanation-dialog/explanation-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-entrypoint',
@@ -22,7 +24,8 @@ export class EntrypointComponent implements OnInit {
               private stratSvc: StrategyService,
               private profilesSvc: ProfilesService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              public dialog: MatDialog) {
     this.qCategories = [];
     this.questionnaires = [];
   }
@@ -43,11 +46,23 @@ export class EntrypointComponent implements OnInit {
       q => {
         this.questionnaires = q
       }
-    )
+  )
 
     this.qSvc.getQuestionnaireList().subscribe(
       categories => this.qCategories = categories
     )
+    this.openDialog();
+
+  }
+
+  openDialog() {
+    this.dialog.open(ExplanationDialogComponent, {
+      data: {
+        text: "This page displays various questions which we use to further narrow down recommendations for you." +
+          "Please answer them correctly to optimize your results. You may be surprised at the 'non-financial' questions. " +
+          "This is on purpose and a major aspect of why this recommendation site is different from other, sales-driven ones."
+      }
+    });
   }
 
   openSubmitModal() {
