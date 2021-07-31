@@ -9,7 +9,8 @@ import {UserProfile} from "./profiles.service";
 })
 export class StrategyService {
 
-  private _data$: Observable<FintoolRecomDto>;
+
+  private _data$: Observable<FintoolRecomDto> ;
 
 
   constructor(private httpClient: HttpClient) {
@@ -29,7 +30,7 @@ export class StrategyService {
   }
 
   getRandomStrategySample(): Observable<StrategyComponent[]> {
-    return  this.httpClient.get<StrategyComponent[]>("http://localhost:8080/api/random")
+    return this.httpClient.get<StrategyComponent[]>("http://localhost:8080/api/random")
   }
 
   get data$(): Observable<FintoolRecomDto> {
