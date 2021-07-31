@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ProfilesService} from "../profiles.service";
 import {ExplanationDialogComponent} from "../explanation-dialog/explanation-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {NextPageDialogComponent} from "../next-page-dialog/next-page-dialog.component";
 
 @Component({
   selector: 'app-entrypoint',
@@ -65,17 +66,25 @@ export class EntrypointComponent implements OnInit {
     });
   }
 
-  openSubmitModal() {
+  openNextPageDialog(): void {
+    let matDialogRef = this.dialog.open(NextPageDialogComponent, {
+      data: {
+        text: "",
+        redirectUri: "/dashboard"
+      }
+    })
 
-    if (this.allQuestionnairesFilled()) {
-      this.showSubmitModal = true
-    } else {
-      // todo display some "not all questionnnaires filled warning"
-    }
-    // todo open submit modal here
-    return
+    const sub = matDialogRef.componentInstance.buttonClicked.subscribe(
+      () =>{
+        this.uploadFilledQuestionnaires();
+      }
+    )
+
+    matDialogRef.afterClosed().subscribe(
+      sub.unsubscribe
+    )
+
   }
-
   navigateToFindash() {
     this.router.navigateByUrl('/dashboard')
   }
@@ -97,6 +106,10 @@ export class EntrypointComponent implements OnInit {
     this.questionnaires[questionnaireIndex]
       .questions[questionIndex]
       .chosen_answer_index = answerIndex
+
+    if(this.allQuestionnairesFilled()) {
+      this.openNextPageDialog()
+    }
   }
 
   allQuestionnairesFilled(): boolean {
@@ -128,7 +141,10 @@ export class EntrypointComponent implements OnInit {
         this.questionnaires[i].questions[ii].chosen_answer_index = 1;
       }
     }
-    this.uploadFilledQuestionnaires()
+    if(this.allQuestionnairesFilled()) {
+      this.openNextPageDialog()
+    }
+   // this.uploadFilledQuestionnaires()
   }
 
 }

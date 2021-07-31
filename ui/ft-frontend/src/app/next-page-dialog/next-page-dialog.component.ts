@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, EventEmitter} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 
@@ -9,6 +9,8 @@ import {Router} from "@angular/router";
 })
 export class NextPageDialogComponent implements OnInit {
 
+  buttonClicked = new EventEmitter();
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: { text: string, redirectUri: string }, private router: Router, private dialogRef: MatDialogRef<NextPageDialogComponent>) {
   }
 
@@ -17,6 +19,7 @@ export class NextPageDialogComponent implements OnInit {
 
   redirect(): void {
     this.router.navigateByUrl(this.data.redirectUri)
+    this.buttonClicked.emit();
     this.dialogRef.close();
   }
 
