@@ -1,15 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
-import {ChartOptions, ChartType, ChartDataset, ChartData} from 'chart.js'
-import {BaseChartDirective} from "ng2-charts";
-import DataLabelsPlugin from 'chartjs-plugin-datalabels';
-
-import {MatGridTile} from "@angular/material/grid-list";
 import {FintoolRecomDto, ScoreContainer, StrategyComponent, StrategyService} from "../strategy.service";
-import {dashCaseToCamelCase} from "@angular/compiler/src/util";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ExplanationDialogComponent} from "../explanation-dialog/explanation-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {NextPageDialogComponent} from "../next-page-dialog/next-page-dialog.component";
 
 
 @Component({
@@ -26,10 +21,19 @@ export class FindashComponent implements OnInit {
   userScoreArr: number[] = []
   goodRecomStrats: StrategyComponent[] = [];
   goodStratArrs: number[][] = [];
-
+  feedback: number[] = [];
+  allRated: boolean = false;
 
   constructor(private strategySvc: StrategyService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog) {
 
+  }
+
+  // abusing array with two slots as a tuplem, 0 is the rating, 1 is the strategy index
+  collectFeedback(tuple: number[]) {
+    console.log("saving feedback")
+    this.feedback[tuple[1]] = tuple[0];
+
+    console.log("strategy nr. " + tuple[1] + " got rating: " + tuple[0]);
   }
 
   ngOnInit(): void {
@@ -39,6 +43,7 @@ export class FindashComponent implements OnInit {
         this.userScoreArr = this.getNumberArray(resp.user_scores)
         this.goodRecomStrats = this.data.good_recommendation.recommended_components
         this.extractStrategyScores(this.goodRecomStrats)
+        this.feedback.push(-1);
 
         /*
             DEBUG LOG OUTPUT
@@ -48,6 +53,7 @@ export class FindashComponent implements OnInit {
           strat => {
             console.log("strategy: " + strat.name)
             console.log("has scores: " + this.getNumberArrayFromStrategy(strat));
+            // init feedback array
           }
         )
       }
@@ -72,10 +78,14 @@ export class FindashComponent implements OnInit {
     });
   }
 
-  openNextPageDialog() {
-
+  openNextPageDialog(): void {
+    this.dialog.open(NextPageDialogComponent, {
+      data: {
+        text: "",
+        redirectUri: "/discover"
+      }
+    })
   }
-
 
   navigateToDiscovery() {
     this.router.navigateByUrl('/discover')

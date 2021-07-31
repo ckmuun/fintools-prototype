@@ -9,12 +9,13 @@ import {Router} from "@angular/router";
 })
 export class NextPageDialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {text: string, redirectUri: string}, private router: Router, private dialogRef: MatDialogRef<NextPageDialogComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { text: string, redirectUri: string }, private router: Router, private dialogRef: MatDialogRef<NextPageDialogComponent>) {
+  }
 
   ngOnInit(): void {
   }
 
-  redirect() {
+  redirect(): void {
     this.router.navigateByUrl(this.data.redirectUri)
     this.dialogRef.close();
   }

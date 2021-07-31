@@ -28,7 +28,11 @@
           <app-strat-details fxFlex="33"
                              [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-details>
           <app-strat-feedback fxFlex="33"
-                              [strategy]="this.data.good_recommendation.recommended_components[i]"></app-strat-feedback>
+                              [strategy]="this.data.good_recommendation.recommended_components[i]"
+                              [strategyIndex]="i"
+          (stratRatedEmitter)="this.collectFeedback($event)"
+                              
+          ></app-strat-feedback>
         </div>
       </mat-card>
     </ul>

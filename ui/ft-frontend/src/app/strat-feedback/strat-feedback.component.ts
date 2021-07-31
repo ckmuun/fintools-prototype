@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {StrategyComponent} from "../strategy.service";
 
 @Component({
@@ -9,9 +9,13 @@ import {StrategyComponent} from "../strategy.service";
 export class StratFeedbackComponent implements OnInit {
 
   @Input() strategy: StrategyComponent = {} as any;
+  @Input() strategyIndex: number = -1;
 
-  ratingDisplay: number = 2.5;
+
+  rating: number = 2.5;
   rated: boolean = false;
+
+  @Output() stratRatedEmitter: EventEmitter<number[]> = new EventEmitter<number[]>();
 
   constructor() {
   }
@@ -19,8 +23,9 @@ export class StratFeedbackComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRatingSet(rating: number): void {
+  onRatingSet(rating: number) {
     this.rated = true;
-    this.ratingDisplay = rating;
+    this.rating = rating;
+    this.stratRatedEmitter.emit([this.rating, this.strategyIndex])
   }
 }
