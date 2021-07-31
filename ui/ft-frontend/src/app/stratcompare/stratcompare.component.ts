@@ -18,6 +18,7 @@ export class StratcompareComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log("on changes ...")
     this.radarChartData = this.initRadarChartData()
+    this.recolor()
   }
 
   @Input() userScores: number[] = [];
@@ -93,6 +94,7 @@ export class StratcompareComponent implements OnInit, OnChanges {
 
 
   public recolor(): void {
+    console.log("recoloring radar chart")
     this.radarChartData.datasets[0].backgroundColor = 'rgba(90, 123, 170, 0.17)'
     this.radarChartData.datasets[0].borderColor = '#507783'
 
