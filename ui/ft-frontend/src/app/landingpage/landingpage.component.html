@@ -33,7 +33,13 @@
             <div fxFlex="50">
 
               <mat-card>
-                <app-generic-radarchart [userScoreContainer]="profiles[i].score_container"
+                <app-generic-radarchart [userScores]=" [
+                profiles[i].time_flexibility,
+                profiles[i].fin_risk_tolerance,
+                profiles[i].psy_risk_tolerance,
+                profiles[i].cog_bias_resistance,
+                profiles[i].financial_knowledge,
+                ]"
                                         label="Profile Stats"></app-generic-radarchart>
               </mat-card>
             </div>

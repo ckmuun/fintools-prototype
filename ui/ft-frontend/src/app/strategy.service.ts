@@ -179,6 +179,11 @@ export class ScoreContainer {
   financial_knowledge: number
   cog_bias_resistance: number
 
+  getAsNumberArr() :number[] {
+    return [this.time_flexibility, this.fin_risk_tolerance, this.psy_risk_tolerance, this.cog_bias_resistance, this.financial_knowledge]
+
+  }
+
 
   constructor(time_flexibility: number,
               fin_risk_tolerance: number,

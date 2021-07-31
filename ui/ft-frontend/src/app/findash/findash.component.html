@@ -12,7 +12,17 @@
 
   <div fxLayoutAlign="center" fxFlex="25">
     <div>
-      <app-skillradar style="height: 600px; width: 1200px" [userScores]="userScoreArr" [profileScores]="[1,2,3,4,5]"></app-skillradar>
+      <app-skillradar style="height: 600px; width: 1200px" [userScores]="userScoreArr" [profileScores]="
+              [
+                profilesService.chosenProfile.time_flexibility,
+                profilesService.chosenProfile.fin_risk_tolerance,
+                profilesService.chosenProfile.psy_risk_tolerance,
+                profilesService.chosenProfile.cog_bias_resistance,
+                profilesService.chosenProfile.financial_knowledge,
+
+          ]">
+
+      </app-skillradar>
     </div>
   </div>
 
@@ -30,7 +40,7 @@
           <app-strat-feedback fxFlex="33"
                               [strategy]="this.data.good_recommendation.recommended_components[i]"
                               [strategyIndex]="i"
-          (stratRatedEmitter)="this.collectFeedback($event)"
+                              (stratRatedEmitter)="this.collectFeedback($event)"
 
           ></app-strat-feedback>
         </div>

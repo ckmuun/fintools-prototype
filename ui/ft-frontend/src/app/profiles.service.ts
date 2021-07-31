@@ -17,9 +17,7 @@ export class ProfilesService {
       "default",
       ["default"],
       "default",
-      new ScoreContainer(
-        0, 0, 0, 0, 0
-      )
+      0, 0, 0, 0, 0
     )
   }
 
@@ -54,11 +52,47 @@ export class UserProfile {
   reason: string
   score_container: ScoreContainer
 
-  constructor(name: string, description: string, tags: string[], reason: string, score_container: ScoreContainer) {
+  time_flexibility: number
+  fin_risk_tolerance: number
+  psy_risk_tolerance: number
+  financial_knowledge: number
+  cog_bias_resistance: number
+
+
+  constructor(name: string,
+              description: string,
+              tags: string[],
+              reason: string,
+              time_flexibility: number,
+              fin_risk_tolerance: number,
+              psy_risk_tolerance: number,
+              financial_knowledge: number,
+              cog_bias_resistance: number,
+  ) {
     this.name = name;
     this.description = description;
     this.tags = tags;
     this.reason = reason;
-    this.score_container = score_container
+    this.time_flexibility = time_flexibility;
+    this.fin_risk_tolerance = fin_risk_tolerance;
+    this.psy_risk_tolerance = psy_risk_tolerance;
+    this.financial_knowledge = financial_knowledge;
+    this.cog_bias_resistance = cog_bias_resistance;
+
+    this.score_container = new ScoreContainer(
+      this.time_flexibility,
+      this.fin_risk_tolerance,
+      this.psy_risk_tolerance,
+      this.financial_knowledge,
+      this.cog_bias_resistance,
+    )
+
+
+
   }
+  getAsNumberArr() :number[] {
+    return [this.time_flexibility, this.fin_risk_tolerance, this.psy_risk_tolerance, this.cog_bias_resistance, this.financial_knowledge]
+
+  }
+
 }

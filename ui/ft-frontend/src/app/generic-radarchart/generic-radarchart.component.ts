@@ -21,8 +21,6 @@ export class GenericRadarchartComponent implements OnInit, OnChanges {
 
   @Input() label: string = "Your Answers"; // default value
 
-  // @ts-ignore
-  @Input() userScoreContainer: ScoreContainer;
 
   radarChartData: ChartData<'radar'> = {} as any
 
@@ -52,18 +50,10 @@ export class GenericRadarchartComponent implements OnInit, OnChanges {
   }
 
   public initRadarChartData(): ChartData<'radar'> {
-    if (null === this.userScoreContainer || undefined === this.userScoreContainer) {
-      return {
-        labels: radarchartLabels,
-        datasets: [
-          {data: this.userScores, label: this.label},
-        ]
-      };
-    }
     return {
       labels: radarchartLabels,
-      datasets :[
-        {data : this.getNumberArray(this.userScoreContainer), label: this.label}
+      datasets: [
+        {data: this.userScores, label: this.label},
       ]
     };
   }

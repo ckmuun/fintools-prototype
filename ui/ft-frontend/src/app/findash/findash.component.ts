@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ExplanationDialogComponent} from "../explanation-dialog/explanation-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {NextPageDialogComponent} from "../next-page-dialog/next-page-dialog.component";
+import {ProfilesService} from "../profiles.service";
 
 
 @Component({
@@ -24,8 +25,11 @@ export class FindashComponent implements OnInit {
   feedback: number[] = [];
   allRated: boolean = false;
 
-  constructor(private strategySvc: StrategyService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog) {
-    this.feedback = [-1,-1,-1];
+  constructor(private strategySvc: StrategyService, private route: ActivatedRoute,
+              private router: Router,
+              public dialog: MatDialog,
+              public profilesService: ProfilesService) {
+    this.feedback = [-1, -1, -1];
 
   }
 
