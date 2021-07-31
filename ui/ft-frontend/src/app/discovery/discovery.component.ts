@@ -31,6 +31,7 @@ export class DiscoveryComponent implements OnInit {
       resp => {
         this.userScoreArr = this.getNumberArray(resp.user_scores)
 
+        this.data = resp
         console.log("DEBUG OUTPUT")
         this.strats.forEach(
           strat => {
