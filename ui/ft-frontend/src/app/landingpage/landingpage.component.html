@@ -1,6 +1,6 @@
 <!-- MAIN CENTERED LAYOUT DIV-->
 <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 150px">
-  <div style="height: 1100px; width: 800px; margin-bottom: 50px; margin-top: 50px;">
+  <div style="height: 1200px; width: 1100px; margin-bottom: 50px; margin-top: 50px;">
 
     <div>
       <mat-card>
@@ -17,16 +17,21 @@
       <ul *ngFor="let profile of this.profiles ; index as i">
 
         <mat-card (click)="redirect(profiles[i])" style="margin-top: 50px; margin-bottom: 50px">
-          <div fxLayout="row" fxLayoutAlign="space-between none">
-            <mat-card>
-              <p>{{this.profiles[i].reason}}</p>
-            </mat-card>
+          <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-between none">
 
+            <div fxFlex="50">
+              <mat-card>
+                <p>{{this.profiles[i].reason}}</p>
+              </mat-card>
+            </div>
 
-            <mat-card>
-              <app-generic-radarchart [userScoreContainer]="profiles[i].score_container"
-                                      label="Profile Stats"></app-generic-radarchart>
-            </mat-card>
+            <div fxFlex="50">
+
+              <mat-card>
+                <app-generic-radarchart [userScoreContainer]="profiles[i].score_container"
+                                        label="Profile Stats"></app-generic-radarchart>
+              </mat-card>
+            </div>
 
           </div>
         </mat-card>
