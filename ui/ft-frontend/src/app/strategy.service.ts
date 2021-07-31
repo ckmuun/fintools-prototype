@@ -20,6 +20,8 @@ export class StrategyService {
 
   postFilledQuestionnaires(questionnaires: McQuestionnaire[], profile: UserProfile): Observable<FintoolRecomDto> {
 
+
+
     this._data$ = this.httpClient.post<FintoolRecomDto>(
       "http://localhost:8080/api/questionnaires/submit",
       new SubmitDto(
@@ -34,6 +36,9 @@ export class StrategyService {
   }
 
   get data$(): Observable<FintoolRecomDto> {
+    /*
+
+     */
     return this._data$;
   }
 

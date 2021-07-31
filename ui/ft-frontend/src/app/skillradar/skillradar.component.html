@@ -1,4 +1,4 @@
-<mat-card style="width: 1500px; height: 800px">
+<div style="width: 1500px; height: 800px">
   <div fxLayout="row" fxLayoutGap="50px">
 
     <div fxFlex="50">
@@ -22,7 +22,31 @@
         <p>Financial Risk Tolerance: {{this.userScores[1]}}</p>
         <p>Psychological Risk Tolerance: {{this.userScores[2]}}</p>
       </mat-card>
+      <mat-card style="margin-top: 75px">
+        <mat-card-header>
+          <mat-card-title>How to read the radar chart on the left:</mat-card-title>
+        </mat-card-header>
+
+        <p>The red area is the representation of the profile you picked on the first page. </p>
+        <p>The blue area is the area created from your answers to the questions you just completed
+        </p>
+        <p>The bigger the overlap, the better your self-description is.</p>
+      </mat-card>
+
+  <mat-card style="margin-top: 75px">
+        <mat-card-header>
+          <mat-card-title>How to read the Strategy Cards below:</mat-card-title>
+        </mat-card-header>
+
+        <p>The yellow area is the representation of the strategy that's been selected for you. </p>
+        <p>The blue area is the area created from your answers to the questions you just completed
+        </p>
+        <p>The bigger the overlap, the better fitting the strategy should be for you.</p>
+      <p>Please indicate the degree to which you like the strategy by clicking on the star ribbon on the right of each card</p>
+      </mat-card>
+
+
     </div>
   </div>
 
-</mat-card>
+</div>

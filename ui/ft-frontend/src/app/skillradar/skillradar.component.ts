@@ -19,6 +19,8 @@ export class SkillradarComponent implements OnInit, OnChanges {
 
   @Input() userScores: number[] = [];
 
+  @Input() profileScores: number[]  = [];
+
   @Input() label: string = "Your Answers"; // default value
 
   // @ts-ignore
@@ -57,6 +59,7 @@ export class SkillradarComponent implements OnInit, OnChanges {
         labels: radarchartLabels,
         datasets: [
           {data: this.userScores, label: this.label},
+          {data: this.profileScores, label: "Profile You Selected"},
         ]
       };
     }
@@ -71,6 +74,10 @@ export class SkillradarComponent implements OnInit, OnChanges {
   public recolor(): void {
     this.radarChartData.datasets[0].backgroundColor = 'rgba(90, 123, 170, 0.17)'
     this.radarChartData.datasets[0].borderColor = '#507783'
+
+    this.radarChartData.datasets[1].backgroundColor = 'rgba(255, 102, 0, 0.17)'
+    this.radarChartData.datasets[1].borderColor = '#ff6600'
+
   }
 
   public radarChartType: ChartType = 'radar';
