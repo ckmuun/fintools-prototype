@@ -80,7 +80,6 @@ func getResults(c *gin.Context) {
 */
 func setupQuestionnaireRoutes(router *gin.Engine) {
 
-	router.POST("/api/test", postExample)
 	router.POST("/api/tripwire", processFinancialSituationForTripwire)
 	router.POST("/api/questionnaires/submit", postFilledQuestionnaires)
 	router.POST("/api/questionnaires/submit/single", postSingleQuestionnaire)
@@ -134,22 +133,6 @@ func postFeedback(c *gin.Context) {
 
 	// return 200 and the user id the feedback was submitted for.
 	c.JSON(200, feedback[0].UserId)
-}
-
-func postExample(c *gin.Context) {
-	var e Example
-
-	if err := c.ShouldBindJSON(&e); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
-
-	log.Println("value: ", e.Value)
-	c.JSON(200, uuid.New())
-}
-
-type Example struct {
-	Value string `json:"value"`
 }
 
 func postSingleQuestionnaire(c *gin.Context) {
