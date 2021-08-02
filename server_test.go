@@ -13,20 +13,6 @@ import (
 	"testing"
 )
 
-func TestPostExample(t *testing.T) {
-	router := SetupRouter()
-	w := httptest.NewRecorder()
-
-	e := Example{Value: "oioioioi"}
-	data, _ := json.Marshal(e)
-
-	req, _ := http.NewRequest("POST", "/api/test", bytes.NewBuffer(data))
-	router.ServeHTTP(w, req)
-
-	assert.Equal(t, 200, w.Code)
-	fmt.Println(w.Body)
-}
-
 func TestPostSingleQ(t *testing.T) {
 	router := SetupRouter()
 	w := httptest.NewRecorder()

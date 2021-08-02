@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"github.com/spf13/viper"
 	"io/ioutil"
+	"log"
 	"os"
 	"reccengine/api"
 	"strings"
@@ -31,9 +32,10 @@ func GetFileResultSvc() *FileResultSvc {
 }
 
 func init() {
-	viper.SetDefault("RESULTS_FILEPATH", "/results.json")
-	viper.SetDefault("FEEDBACK_FILEPATH", "/feedback.json")
-	viper.SetDefault("QSUBMIT_FILEPATH", "/qsubmit.json")
+	log.Print("initializing result file writer service")
+	viper.SetDefault("RESULTS_FILEPATH", "./results.json")
+	viper.SetDefault("FEEDBACK_FILEPATH", "./feedback.json")
+	viper.SetDefault("QSUBMIT_FILEPATH", "./qsubmit.json")
 
 	_ = viper.BindEnv("RESULTS_FILEPATH")
 	_ = viper.BindEnv("FEEDBACK_FILEPATH")
@@ -76,6 +78,11 @@ func init() {
 
 // add initial chars
 func prepareResultsFileForInit(file *os.File) {
+	current, _ := ioutil.ReadFile(file.Name())
+
+	if current[0:1][0] == '[' {
+		return
+	}
 	_, _ = file.WriteString("[")
 }
 
@@ -123,22 +130,28 @@ func (f *FileResultSvc) GetRecommendationResults() string {
 }
 
 func (f *FileResultSvc) PersistQSubmit(dto api.SubmitDto) (bool, error) {
+	log.Print("writing submitted results to file")
+
 	serializedString, err := getSerializedString(dto)
+	serializedString = strings.ReplaceAll(serializedString, "\\", "")
 	qsubmitFile, err := os.OpenFile(f.qSubmitFilepath, os.O_APPEND|os.O_WRONLY, 777)
-	if _, err = qsubmitFile.WriteString("\n" + serializedString + ","); err != nil {
+	if _, err = qsubmitFile.WriteString(serializedString + ","); err != nil {
 		return false, err
 	}
 	return true, nil
-
 }
 
+/*
+	FIXME we need to parse and re-serialize this stuff. the string-based processing does not work properly with gin
+*/
 func (f *FileResultSvc) GetQSubmits() string {
+
 	buf, _ := ioutil.ReadFile(f.qSubmitFilepath)
 
 	jsonString := string(buf)
 
 	jsonString = strings.TrimSuffix(jsonString, ",")
-	return jsonString + "]"
+	return jsonString + ""
 
 }
 

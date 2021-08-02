@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"log"
@@ -82,6 +81,7 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 
 	router.POST("/api/tripwire", processFinancialSituationForTripwire)
 	router.POST("/api/questionnaires/submit", postFilledQuestionnaires)
+	router.GET("/api/submitted-results", loadSubmittedResults)
 	router.POST("/api/questionnaires/submit/single", postSingleQuestionnaire)
 	router.GET("/api/questionnaires", getQuestionnaireList)
 	router.GET("/api/profiles", getUserProfiles)
@@ -90,6 +90,15 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 	router.POST("/api/feedback", postFeedback)
 	router.GET("/api/random", getRandomSampleOfStrategies)
 
+}
+
+func loadSubmittedResults(c *gin.Context) {
+	resp := results.GetFileResultSvc().GetQSubmits()
+
+	if "" != resp {
+		c.JSON(200, resp)
+	}
+	c.JSON(500, "could not load submitted results from disk")
 }
 
 /*
@@ -124,15 +133,22 @@ func getRandomSampleOfStrategies(c *gin.Context) {
 
 func postFeedback(c *gin.Context) {
 
-	var feedback []api.StrategyFeedback
+	var feedbackArr []api.StrategyFeedback
 
-	if err := c.ShouldBindJSON(&feedback); err != nil {
+	if err := c.ShouldBindJSON(&feedbackArr); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
-	// TODO log user feedback for strategies here
+
+	for _, feedback := range feedbackArr {
+		persisted, err := results.GetFileResultSvc().PersistFeedback(feedback)
+
+		if nil != err || !persisted {
+			c.JSON(500, feedbackArr[0].UserId)
+		}
+	}
 
 	// return 200 and the user id the feedback was submitted for.
-	c.JSON(200, feedback[0].UserId)
+	c.JSON(200, feedbackArr[0].UserId)
 }
 
 func postSingleQuestionnaire(c *gin.Context) {
@@ -171,6 +187,12 @@ func postFilledQuestionnaires(c *gin.Context) {
 		}
 	}
 
+	persisted, err := results.GetFileResultSvc().PersistQSubmit(submitDto)
+
+	if nil != err || !persisted {
+		c.JSON(500, "could not persist submitted results")
+	}
+
 	c.JSON(200, processQuestionnaires(submitDto.Questionnaires, submitDto.Profile))
 }
 
@@ -183,11 +205,9 @@ func processQuestionnaires(qs []api.McQuestionnaire, profile api.UserProfile) ap
 	dto.Id = uuid.New()
 
 	log.Print("returning user scores: ", dto.UserScores)
-	jsonBytes, _ := json.Marshal(dto)
-
-	var jsonDto string = string(jsonBytes)
-
-	log.Print("returning json body", jsonDto)
+	//	jsonBytes, _ := json.Marshal(dto)
+	//	var jsonDto string = string(jsonBytes)
+	//	log.Print("returning json body", jsonDto)
 
 	return dto
 }
