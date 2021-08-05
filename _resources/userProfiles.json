@@ -6,7 +6,6 @@
       "young",
       "male",
       "stem",
-      "white",
       "mint",
       "fire",
       "frugal",
@@ -49,7 +48,6 @@
     "name": "WSB Gambler",
     "description": "",
     "tags": [
-      "white",
       "young",
       "male",
       "risk",
@@ -75,7 +73,6 @@
     "name": "Crypto Bro",
     "description": "Basically the same as the WSB Gambler, but with cryptocurrencies. Wants to make a quick buck or 'make it' in general. Risk-seeking, leverage-seeking. Usually brings at least very basic investment knowledge to the table.",
     "tags": [
-      "white",
       "young",
       "male",
       "risk",
@@ -99,7 +96,6 @@
     "name": "Alternative Investment Gambler",
     "description": "Basically the same as the WSB Gambler, but with alternative (crypto) investments. Wants to make a quick buck or 'make it' in general. Risk-seeking, leverage-seeking. Usually brings at least very basic investment knowledge to the table.",
     "tags": [
-      "white",
       "young",
       "male",
       "risk",
