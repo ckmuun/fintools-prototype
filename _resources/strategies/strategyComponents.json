@@ -470,7 +470,7 @@
     ]
   }, {
     "name": "Betting against beta",
-    "description": "This is an advanced trading strategy. ",
+    "description": "This is an advanced trading strategy which relies on a combination of long and short positions on multiple assets. One of the main premises is that, in the long run, value stocks tend to outperform glamour/growth stocks. Simply  put, this strategy relies on identifying cheap value stocks (profitable, good book-to-market ratio etc.) going long on these while shorting glamour stocks.",
     "fin_risk_tolerance": 8,
     "psy_risk_tolerance": 9,
     "time_flexibility": 8,

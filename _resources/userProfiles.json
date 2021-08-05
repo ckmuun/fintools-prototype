@@ -18,9 +18,9 @@
       "medium_complexity",
       "passive_investing"
     ],
-    "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
-    "time_flexibility": 4,
+    "fin_risk_tolerance": 4,
+    "psy_risk_tolerance": 4,
+    "time_flexibility": 2,
     "cog_bias_resistance": 7,
     "financial_knowledge": 6,
     "reason": "I want to retire as early as possible. I am also willing to sacrifice significant spending in order to achieve this goal. "
@@ -62,12 +62,12 @@
       "high_complexity",
       "active_investing"
     ],
-    "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
-    "time_flexibility": 4,
-    "cog_bias_resistance": 7,
-    "financial_knowledge": 6,
-    "reason": "I would like to make some quick bucks"
+    "fin_risk_tolerance": 9,
+    "psy_risk_tolerance": 9,
+    "time_flexibility": 5,
+    "cog_bias_resistance": 4,
+    "financial_knowledge": 5,
+    "reason": "I would like to make some quick bucks with stocks and seek leverage to do so."
   },
   {
     "name": "Crypto Bro",
@@ -104,7 +104,6 @@
       "leverage",
       "libertarian",
       "high_risk",
-      "medium_complexity",
       "active_investing"
     ],
     "fin_risk_tolerance": 2,
@@ -126,10 +125,10 @@
       "low_complexity"
     ],
     "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
-    "time_flexibility": 4,
-    "cog_bias_resistance": 7,
-    "financial_knowledge": 6,
+    "psy_risk_tolerance": 2,
+    "time_flexibility": 3,
+    "cog_bias_resistance": 4,
+    "financial_knowledge": 3,
     "reason": "I want to improve my personal finance situation in order to improve my standard of living."
   },
   {
@@ -147,9 +146,9 @@
     ],
     "fin_risk_tolerance": 2,
     "psy_risk_tolerance": 3,
-    "time_flexibility": 4,
-    "cog_bias_resistance": 7,
-    "financial_knowledge": 6,
+    "time_flexibility": 6,
+    "cog_bias_resistance": 5,
+    "financial_knowledge": 2,
     "reason": "I don't really want to be associated with the finance world, but I am curious and/or realized that I will probably die poor if I keep my personal finances like this."
   },
   {
