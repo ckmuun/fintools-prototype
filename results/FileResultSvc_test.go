@@ -2,7 +2,6 @@ package results
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/spf13/viper"
 	assert2 "github.com/stretchr/testify/assert"
 	"log"
@@ -35,6 +34,7 @@ func TestJsonFileAppending(t *testing.T) {
 }
 
 func TestFileResultSvc_PersistResult(t *testing.T) {
+	log.Print("testing recommendation result persistence to file")
 	recomDto := _testUtils.GetExampleFintoolRecomDto()
 
 	viper.Set("RESULTS_FILEPATH", "test.json")
@@ -46,6 +46,30 @@ func TestFileResultSvc_PersistResult(t *testing.T) {
 	assert2.True(t, success)
 
 }
+func TestFileResultSvc_QSubmitPesist(t *testing.T) {
+	log.Print("testing submitted questiionnaires persistence to file")
+	qSubmit := _testUtils.GetDefaultQSubmitDto()
+
+	fileResultSvc := GetFileResultSvc()
+
+	_, _ = fileResultSvc.PersistQSubmit(qSubmit)
+
+	qSubmitFromPers := fileResultSvc.GetQSubmits()[0]
+
+	assert2.True(t, qSubmit.Profile.Name == qSubmitFromPers.Profile.Name)
+}
+
+func TestFileResultSvc_FeedbackPersist(t *testing.T) {
+	log.Print("testing feedback  persistence to file")
+	feedback := _testUtils.GetExampleFeedbackArray()[0]
+	fileResultSvc := GetFileResultSvc()
+
+	_, _ = fileResultSvc.PersistFeedback(feedback)
+	feedbackPers := fileResultSvc.GetFeedback()[0]
+	assert2.True(t, feedback.StrategyName == feedbackPers.StrategyName)
+}
+
+/*
 
 func TestFileResultSvc_PersistFeedback(t *testing.T) {
 
@@ -76,3 +100,4 @@ func TestFileResultSvc_PersistQSubmit(t *testing.T) {
 	_ = os.Remove("test.json")
 	_ = os.Remove("feedback.json")
 }
+*/

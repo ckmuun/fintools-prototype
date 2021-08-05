@@ -7,7 +7,6 @@ import (
 	"log"
 	"os"
 	"reccengine/api"
-	"strings"
 	"sync"
 )
 
@@ -78,12 +77,11 @@ func init() {
 
 // add initial chars
 func prepareResultsFileForInit(file *os.File) {
-	current, _ := ioutil.ReadFile(file.Name())
+	emptyArr := make([]interface{}, 1)
 
-	if current[0:1][0] == '[' {
-		return
-	}
-	_, _ = file.WriteString("[")
+	serializedEmptyArr, _ := json.Marshal(emptyArr)
+
+	_, _ = file.WriteString(string(serializedEmptyArr))
 }
 
 func getSerializedString(v interface{}) (string, error) {
@@ -96,65 +94,83 @@ func getSerializedString(v interface{}) (string, error) {
 }
 
 // https://stackoverflow.com/questions/13514184/how-can-i-read-a-whole-file-into-a-string-variable
-func (f *FileResultSvc) GetFeedback() string {
+func (f *FileResultSvc) GetFeedback() []api.StrategyFeedback {
+	var feeedbackDtos []api.StrategyFeedback
 	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
+	_ = json.Unmarshal(buf, &feeedbackDtos)
 
-	jsonString := string(buf)
+	return feeedbackDtos
 
-	jsonString = strings.TrimSuffix(jsonString, ",")
-	return jsonString + "]"
 }
 
 /*
 	Persist resulting dto to disk
 */
 func (f *FileResultSvc) PersistRecommendationResult(dto api.FintoolRecomDto) (bool, error) {
+	log.Print("writing recommendation to file")
+	var recomDtos []api.FintoolRecomDto
 
-	serializedString, err := getSerializedString(dto)
+	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
 
-	file, _ := os.OpenFile(f.recommendationResultsFilepath, os.O_APPEND|os.O_WRONLY, 777)
+	_ = json.Unmarshal(buf, &recomDtos)
 
-	if _, err = file.WriteString("\n" + serializedString + ","); err != nil {
-		return false, err
-	}
+	recomDtos = append(recomDtos, dto)
+
+	serialized, _ := json.Marshal(recomDtos)
+
+	_ = os.Remove(f.feedbackFilepath)
+	_ = os.WriteFile(f.feedbackFilepath, serialized, os.FileMode(777))
+
 	return true, nil
 }
 
-func (f *FileResultSvc) GetRecommendationResults() string {
+func (f *FileResultSvc) GetRecommendationResults() []api.FintoolRecomDto {
+	var recomDtos []api.FintoolRecomDto
 	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
+	_ = json.Unmarshal(buf, &recomDtos)
 
-	jsonString := string(buf)
+	return recomDtos
 
-	jsonString = strings.TrimSuffix(jsonString, ",")
-	return jsonString + "]"
 }
 
+/*
+	Blunt and inefficient file-based persistence. We load the json into an array, append the new item in-mem
+	then delete and rewrite the source file.
+	Json-String append does not work properly because Gin Gonic interprets it and inserts escape chars \
+*/
 func (f *FileResultSvc) PersistQSubmit(dto api.SubmitDto) (bool, error) {
 	log.Print("writing submitted results to file")
+	var submitDtos []api.SubmitDto
 
-	serializedString, err := getSerializedString(dto)
-	serializedString = strings.ReplaceAll(serializedString, "\\", "")
-	qsubmitFile, err := os.OpenFile(f.qSubmitFilepath, os.O_APPEND|os.O_WRONLY, 777)
-	if _, err = qsubmitFile.WriteString(serializedString + ","); err != nil {
-		return false, err
-	}
+	buf, _ := ioutil.ReadFile(f.qSubmitFilepath)
+
+	_ = json.Unmarshal(buf, &submitDtos)
+
+	submitDtos = append(submitDtos, dto)
+
+	serialized, _ := json.Marshal(submitDtos)
+
+	_ = os.Remove(f.qSubmitFilepath)
+	_ = os.WriteFile(f.qSubmitFilepath, serialized, os.FileMode(777))
+
 	return true, nil
 }
 
 /*
-	FIXME we need to parse and re-serialize this stuff. the string-based processing does not work properly with gin
+	Load json string from file, deserialize in to object arr/slice and return it to Gin
+	Just returning the json does not work properly because Gin Gonic applies some magic to it.
 */
-func (f *FileResultSvc) GetQSubmits() string {
+func (f *FileResultSvc) GetQSubmits() []api.SubmitDto {
 
+	var submittedDtos []api.SubmitDto
 	buf, _ := ioutil.ReadFile(f.qSubmitFilepath)
+	_ = json.Unmarshal(buf, &submittedDtos)
 
-	jsonString := string(buf)
-
-	jsonString = strings.TrimSuffix(jsonString, ",")
-	return jsonString + ""
+	return submittedDtos
 
 }
 
+/*
 // flatten array and persist items to file
 func (f *FileResultSvc) PersistFeedbackArr(feedbackArr []api.StrategyFeedback) (bool, error) {
 	file, err := os.OpenFile(f.feedbackFilepath, os.O_APPEND|os.O_WRONLY, 777)
@@ -174,9 +190,22 @@ func (f *FileResultSvc) PersistFeedbackArr(feedbackArr []api.StrategyFeedback) (
 
 	return true, nil
 }
+*/
 
 func (f *FileResultSvc) PersistFeedback(feedback api.StrategyFeedback) (bool, error) {
+	log.Print("writing submitted feedback to file")
+	var feedbackDtos []api.StrategyFeedback
 
-	// todo implement me
+	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
+
+	_ = json.Unmarshal(buf, &feedbackDtos)
+
+	feedbackDtos = append(feedbackDtos, feedback)
+
+	serialized, _ := json.Marshal(feedbackDtos)
+
+	_ = os.Remove(f.feedbackFilepath)
+	_ = os.WriteFile(f.feedbackFilepath, serialized, os.FileMode(777))
+
 	return true, nil
 }

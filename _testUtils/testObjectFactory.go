@@ -14,6 +14,16 @@ func LoadRealStrategiesFromJson() (comps []api.StrategyComponent) {
 	return comps
 }
 
+func GetDefaultQSubmitDto() api.SubmitDto {
+	categories := make([]string, 1)
+	categories[0] = "test"
+
+	return api.SubmitDto{
+		CreateTestQuestionnairesForCategories(1, categories),
+		api.DefaultUserProfile(),
+	}
+}
+
 func GetDefaultUserScoreContainer() api.ScoreContainer {
 
 	return api.ScoreContainer{
@@ -92,10 +102,6 @@ func GetExampleFeedbackArray() []api.StrategyFeedback {
 	feedback[2] = feedback2
 
 	return feedback
-}
-
-func GetExampleSubmitDto() {
-
 }
 
 func FillQuestionnairesFromJson() []api.McQuestionnaire {

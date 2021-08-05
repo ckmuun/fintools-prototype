@@ -95,8 +95,9 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 func loadSubmittedResults(c *gin.Context) {
 	resp := results.GetFileResultSvc().GetQSubmits()
 
-	if "" != resp {
+	if nil != resp {
 		c.JSON(200, resp)
+		return
 	}
 	c.JSON(500, "could not load submitted results from disk")
 }
@@ -127,7 +128,6 @@ func processFinancialSituationForTripwire(c *gin.Context) {
 }
 
 func getRandomSampleOfStrategies(c *gin.Context) {
-
 	c.JSON(200, engineImpl.GenerateRandomSample())
 }
 
@@ -137,6 +137,7 @@ func postFeedback(c *gin.Context) {
 
 	if err := c.ShouldBindJSON(&feedbackArr); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	for _, feedback := range feedbackArr {
@@ -144,6 +145,7 @@ func postFeedback(c *gin.Context) {
 
 		if nil != err || !persisted {
 			c.JSON(500, feedbackArr[0].UserId)
+			return
 		}
 	}
 
@@ -191,6 +193,7 @@ func postFilledQuestionnaires(c *gin.Context) {
 
 	if nil != err || !persisted {
 		c.JSON(500, "could not persist submitted results")
+		return
 	}
 
 	c.JSON(200, processQuestionnaires(submitDto.Questionnaires, submitDto.Profile))
