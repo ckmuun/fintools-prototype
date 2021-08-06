@@ -18,6 +18,7 @@ export class LandingpageComponent implements OnInit {
 
   showRedirectDialog: boolean = false;
 
+
   constructor(private profilesService: ProfilesService, private router: Router, public dialog: MatDialog) {
   }
 
@@ -42,6 +43,10 @@ export class LandingpageComponent implements OnInit {
     });
   }
 
+  getIfSelectedProfile(index: number): boolean {
+    return index === this.selectedProfileIndex;
+  }
+
   openNextPageDialog(): void {
     this.dialog.open(NextPageDialogComponent, {
       data: {
@@ -61,7 +66,7 @@ export class LandingpageComponent implements OnInit {
     return tag.replace(dashReplaceRegex, " ")
   }
 
-  selectProfile(index: number,profile: UserProfile ): void {
+  selectProfile(index: number, profile: UserProfile): void {
     console.log("profile selected")
     this.selectedProfileIndex = index;
     this.profilesService.cacheChosenProfile(profile);

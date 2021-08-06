@@ -16,7 +16,7 @@
     <div>
       <ul *ngFor="let profile of this.profiles ; index as i">
 
-        <mat-card (click)="selectProfile(i, profiles[i])" style="margin-top: 50px; margin-bottom: 50px">
+        <mat-card [style.background]="getIfSelectedProfile(i)?'rgba(79, 221, 79, 0.36)':'white'" (click)="selectProfile(i, profiles[i])" style="margin-top: 50px; margin-bottom: 50px">
           <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-between none">
 
             <div fxFlex="50">
