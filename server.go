@@ -136,6 +136,7 @@ func postFeedback(c *gin.Context) {
 	var feedbackArr []api.StrategyFeedback
 
 	if err := c.ShouldBindJSON(&feedbackArr); err != nil {
+		log.Print("could not bind feedback arr to json")
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -148,7 +149,7 @@ func postFeedback(c *gin.Context) {
 			return
 		}
 	}
-
+	log.Print("successfully persisted feedback to file, return 200")
 	// return 200 and the user id the feedback was submitted for.
 	c.JSON(200, feedbackArr[0].UserId)
 }

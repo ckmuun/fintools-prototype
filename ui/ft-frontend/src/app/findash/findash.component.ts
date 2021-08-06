@@ -6,6 +6,7 @@ import {ExplanationDialogComponent} from "../explanation-dialog/explanation-dial
 import {MatDialog} from "@angular/material/dialog";
 import {NextPageDialogComponent} from "../next-page-dialog/next-page-dialog.component";
 import {ProfilesService} from "../profiles.service";
+import {FeedbackService, StrategyFeedbackDto} from "../feedback.service";
 
 
 @Component({
@@ -22,21 +23,21 @@ export class FindashComponent implements OnInit {
   userScoreArr: number[] = []
   goodRecomStrats: StrategyComponent[] = [];
   goodStratArrs: number[][] = [];
-  feedback: number[] = [];
+  rawFeedback: number[] = [-1, -1, -1];
   allRated: boolean = false;
 
   constructor(private strategySvc: StrategyService, private route: ActivatedRoute,
               private router: Router,
               public dialog: MatDialog,
-              public profilesService: ProfilesService) {
-    this.feedback = [-1, -1, -1];
-
+              public profilesService: ProfilesService,
+              public feedbackService: FeedbackService
+  ) {
   }
 
   // abusing array with two slots as a tuplem, 0 is the rating, 1 is the strategy index
   collectFeedback(tuple: number[]) {
     console.log("saving feedback")
-    this.feedback[tuple[1]] = tuple[0];
+    this.rawFeedback[tuple[1]] = tuple[0];
 
     console.log("strategy nr. " + tuple[1] + " got rating: " + tuple[0]);
 
@@ -45,12 +46,26 @@ export class FindashComponent implements OnInit {
     if (this.allRated) {
       this.openNextPageDialog()
     }
+  }
 
+  convertRawFeedbackToDto(): StrategyFeedbackDto[] {
+
+    let feedback: StrategyFeedbackDto[] = []
+
+    for (let i = 0; i < 3; i++) {
+      feedback[i] = new StrategyFeedbackDto(
+        this.rawFeedback[i],
+        this.goodRecomStrats[i].name,
+        this.data.id
+      )
+    }
+
+    return feedback
   }
 
   checkIfFeedbackComplete(): boolean {
-    for (let i = 0; i < this.feedback.length; i++) {
-      if (this.feedback[i] === -1) {
+    for (let i = 0; i < this.rawFeedback.length; i++) {
+      if (this.rawFeedback[i] === -1) {
         return false;
       }
     }
@@ -99,16 +114,26 @@ export class FindashComponent implements OnInit {
   }
 
   openNextPageDialog(): void {
-    this.dialog.open(NextPageDialogComponent, {
-      data: {
-        text: "",
-        redirectUri: "/discover"
-      }
-    })
+    this.feedbackService.persistFeedback(
+      this.convertRawFeedbackToDto()
+    )
+
+      .subscribe(resp => {
+        this.dialog.open(NextPageDialogComponent, {
+          data: {
+            text: "",
+            redirectUri: "/discover"
+          }
+        })
+      })
   }
 
   navigateToDiscovery() {
-    this.router.navigateByUrl('/discover')
+    this.feedbackService.persistFeedback(this.convertRawFeedbackToDto()).subscribe(
+      resp => {
+        console.log("navigating to discover")
+        return this.router.navigateByUrl('/discover');
+      })
   }
 
   /*
