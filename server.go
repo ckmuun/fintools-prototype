@@ -89,6 +89,7 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 	router.GET("/api/questionnaires/all", getAll)
 	router.POST("/api/feedback", postFeedback)
 	router.GET("/api/random", getRandomSampleOfStrategies)
+	router.GET("/api/submitted-feedback", loadSubmittedFeedback)
 
 }
 
@@ -100,6 +101,17 @@ func loadSubmittedResults(c *gin.Context) {
 		return
 	}
 	c.JSON(500, "could not load submitted results from disk")
+}
+
+func loadSubmittedFeedback(c *gin.Context) {
+	resp := results.GetFileResultSvc().GetFeedback()
+
+	if nil != resp {
+		c.JSON(200, resp)
+		return
+	}
+	c.JSON(500, "could not load submitted feedback from disk")
+
 }
 
 /*
