@@ -90,6 +90,17 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 	router.POST("/api/feedback", postFeedback)
 	router.GET("/api/random", getRandomSampleOfStrategies)
 	router.GET("/api/submitted-feedback", loadSubmittedFeedback)
+	router.GET("/api/given-recommendations", loadRecoms)
+
+}
+func loadRecoms(c *gin.Context) {
+	resp := results.GetFileResultSvc().GetRecommendationResults()
+
+	if nil != resp {
+		c.JSON(200, resp)
+		return
+	}
+	c.JSON(500, "could not load given reccomendations from disk")
 
 }
 
@@ -111,7 +122,6 @@ func loadSubmittedFeedback(c *gin.Context) {
 		return
 	}
 	c.JSON(500, "could not load submitted feedback from disk")
-
 }
 
 /*
@@ -221,10 +231,9 @@ func processQuestionnaires(qs []api.McQuestionnaire, profile api.UserProfile) ap
 	dto.Id = uuid.New()
 
 	log.Print("returning user scores: ", dto.UserScores)
-	//	jsonBytes, _ := json.Marshal(dto)
-	//	var jsonDto string = string(jsonBytes)
-	//	log.Print("returning json body", jsonDto)
 
+	_, _ = results.GetFileResultSvc().PersistRecommendationResult(dto)
+	dto.Profile = profile
 	return dto
 }
 

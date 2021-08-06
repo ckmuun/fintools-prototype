@@ -3,6 +3,7 @@ import {FintoolRecomDto, ScoreContainer, StrategyComponent, StrategyService} fro
 import {ExplanationDialogComponent} from "../explanation-dialog/explanation-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {NextPageDialogComponent} from "../next-page-dialog/next-page-dialog.component";
+import {FeedbackService} from "../feedback.service";
 
 @Component({
   selector: 'app-discovery',
@@ -11,7 +12,7 @@ import {NextPageDialogComponent} from "../next-page-dialog/next-page-dialog.comp
 })
 export class DiscoveryComponent implements OnInit {
 
-  constructor(private strategySvc: StrategyService, public dialog: MatDialog) {
+  constructor(private strategySvc: StrategyService, public dialog: MatDialog, private feedbackService: FeedbackService) {
   }
 
   // dirty initializer hack
@@ -21,7 +22,7 @@ export class DiscoveryComponent implements OnInit {
   stratArrs: number[][] = [];
 
   userScoreArr: number[] = []
-  feedback: number[] = [-1,-1,-1]
+  feedback: number[] = [-1, -1, -1]
   allRated: boolean = false;
 
   ngOnInit(): void {
@@ -74,6 +75,7 @@ export class DiscoveryComponent implements OnInit {
     }
 
   }
+
   checkIfFeedbackComplete(): boolean {
     for (let i = 0; i < this.feedback.length; i++) {
       if (this.feedback[i] === -1) {

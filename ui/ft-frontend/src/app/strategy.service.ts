@@ -10,7 +10,7 @@ import {UserProfile} from "./profiles.service";
 export class StrategyService {
 
 
-  private _data$: Observable<FintoolRecomDto> ;
+  private _data$: Observable<FintoolRecomDto>;
 
 
   constructor(private httpClient: HttpClient) {
@@ -19,7 +19,6 @@ export class StrategyService {
   }
 
   postFilledQuestionnaires(questionnaires: McQuestionnaire[], profile: UserProfile): Observable<FintoolRecomDto> {
-
 
 
     this._data$ = this.httpClient.post<FintoolRecomDto>(
@@ -57,18 +56,21 @@ export class FintoolRecomDto {
   constructor(good_recommendation: FintoolRecom,
               bad_recommendation: FintoolRecom,
               id: string,
-              user_scores: ScoreContainer
+              user_scores: ScoreContainer,
+              profile: UserProfile
   ) {
     this.good_recommendation = good_recommendation;
     this.bad_recommendation = bad_recommendation;
     this.id = id;
     this.user_scores = user_scores
+    this.profile = profile
   }
 
   id: string
   good_recommendation: FintoolRecom
   bad_recommendation: FintoolRecom
   user_scores: ScoreContainer
+  profile: UserProfile
 }
 
 /*
@@ -179,7 +181,7 @@ export class ScoreContainer {
   financial_knowledge: number
   cog_bias_resistance: number
 
-  getAsNumberArr() :number[] {
+  getAsNumberArr(): number[] {
     return [this.time_flexibility, this.fin_risk_tolerance, this.psy_risk_tolerance, this.cog_bias_resistance, this.financial_knowledge]
 
   }

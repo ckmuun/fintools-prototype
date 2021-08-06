@@ -110,7 +110,7 @@ func (f *FileResultSvc) PersistRecommendationResult(dto api.FintoolRecomDto) (bo
 	log.Print("writing recommendation to file")
 	var recomDtos []api.FintoolRecomDto
 
-	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
+	buf, _ := ioutil.ReadFile(f.recommendationResultsFilepath)
 
 	_ = json.Unmarshal(buf, &recomDtos)
 
@@ -118,19 +118,18 @@ func (f *FileResultSvc) PersistRecommendationResult(dto api.FintoolRecomDto) (bo
 
 	serialized, _ := json.Marshal(recomDtos)
 
-	_ = os.Remove(f.feedbackFilepath)
-	_ = os.WriteFile(f.feedbackFilepath, serialized, os.FileMode(777))
+	_ = os.Remove(f.recommendationResultsFilepath)
+	_ = os.WriteFile(f.recommendationResultsFilepath, serialized, os.FileMode(777))
 
 	return true, nil
 }
 
 func (f *FileResultSvc) GetRecommendationResults() []api.FintoolRecomDto {
 	var recomDtos []api.FintoolRecomDto
-	buf, _ := ioutil.ReadFile(f.feedbackFilepath)
+	buf, _ := ioutil.ReadFile(f.recommendationResultsFilepath)
 	_ = json.Unmarshal(buf, &recomDtos)
 
 	return recomDtos
-
 }
 
 /*

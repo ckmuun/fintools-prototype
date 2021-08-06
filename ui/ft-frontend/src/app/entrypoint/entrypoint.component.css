@@ -1,12 +1,10 @@
 .question-card {
   max-width: 800px;
   border-color: aqua;
-  background-color: rgba(63, 63, 191, 0.19) ;
   margin-bottom: 50px;
 }
 
 .questionnaire-card {
   max-width: 1000px;
-  background-color: rgba(63, 63, 191, 0.38);
   margin-bottom: 50px;
 }

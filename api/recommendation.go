@@ -7,6 +7,7 @@ type FintoolRecomDto struct {
 	GoodRecommendation FintoolRecom   `json:"good_recommendation"`
 	BadRecommendation  FintoolRecom   `json:"bad_recommendation"`
 	UserScores         ScoreContainer `json:"user_scores"`
+	Profile            UserProfile    `json:"profile"`
 }
 
 /*
