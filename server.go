@@ -81,7 +81,7 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 
 	router.POST("/api/tripwire", processFinancialSituationForTripwire)
 	router.POST("/api/questionnaires/submit", postFilledQuestionnaires)
-	router.GET("/api/submitted-results", loadSubmittedResults)
+	router.GET("/api/submitted-questionnaires", loadQSubmits)
 	router.POST("/api/questionnaires/submit/single", postSingleQuestionnaire)
 	router.GET("/api/questionnaires", getQuestionnaireList)
 	router.GET("/api/profiles", getUserProfiles)
@@ -93,7 +93,7 @@ func setupQuestionnaireRoutes(router *gin.Engine) {
 
 }
 
-func loadSubmittedResults(c *gin.Context) {
+func loadQSubmits(c *gin.Context) {
 	resp := results.GetFileResultSvc().GetQSubmits()
 
 	if nil != resp {
