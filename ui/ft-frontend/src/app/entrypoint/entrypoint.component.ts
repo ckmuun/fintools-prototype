@@ -47,7 +47,7 @@ export class EntrypointComponent implements OnInit {
       q => {
         this.questionnaires = q
       }
-  )
+    )
 
     this.qSvc.getQuestionnaireList().subscribe(
       categories => this.qCategories = categories
@@ -75,7 +75,7 @@ export class EntrypointComponent implements OnInit {
     })
 
     const sub = matDialogRef.componentInstance.buttonClicked.subscribe(
-      () =>{
+      () => {
         this.uploadFilledQuestionnaires();
       }
     )
@@ -85,6 +85,7 @@ export class EntrypointComponent implements OnInit {
     )
 
   }
+
   navigateToFindash() {
     this.router.navigateByUrl('/dashboard')
   }
@@ -95,6 +96,7 @@ export class EntrypointComponent implements OnInit {
       response => {
         console.log("received upload response, routing to dashboard component")
         console.log("response:" + response.id)
+        this.stratSvc.currentUserId = response.id
         this.navigateToFindash()
       }
     )
@@ -107,7 +109,7 @@ export class EntrypointComponent implements OnInit {
       .questions[questionIndex]
       .chosen_answer_index = answerIndex
 
-    if(this.allQuestionnairesFilled()) {
+    if (this.allQuestionnairesFilled()) {
       this.openNextPageDialog()
     }
   }
@@ -141,10 +143,10 @@ export class EntrypointComponent implements OnInit {
         this.questionnaires[i].questions[ii].chosen_answer_index = 1;
       }
     }
-    if(this.allQuestionnairesFilled()) {
+    if (this.allQuestionnairesFilled()) {
       this.openNextPageDialog()
     }
-   // this.uploadFilledQuestionnaires()
+    // this.uploadFilledQuestionnaires()
   }
 
 }

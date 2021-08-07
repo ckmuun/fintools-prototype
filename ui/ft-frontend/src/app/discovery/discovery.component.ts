@@ -33,6 +33,7 @@ export class DiscoveryComponent implements OnInit {
         this.userScoreArr = this.getNumberArray(resp.user_scores)
 
         this.data = resp
+        this.data.id = this.strategySvc.currentUserId
         console.log("DEBUG OUTPUT")
         this.strats.forEach(
           strat => {

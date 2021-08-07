@@ -76,6 +76,7 @@ export class FindashComponent implements OnInit {
     this.strategySvc.data$.subscribe(
       resp => {
         this.data = resp;
+        this.data.id = this.strategySvc.currentUserId
         this.userScoreArr = this.getNumberArray(resp.user_scores)
         this.goodRecomStrats = this.data.good_recommendation.recommended_components
         this.extractStrategyScores(this.goodRecomStrats)
@@ -83,7 +84,6 @@ export class FindashComponent implements OnInit {
         /*
             DEBUG LOG OUTPUT
          */
-
         this.goodRecomStrats.forEach(
           strat => {
             console.log("strategy: " + strat.name)

@@ -11,6 +11,7 @@ export class StrategyService {
 
 
   private _data$: Observable<FintoolRecomDto>;
+  private _currentUserId: string = ""
 
 
   constructor(private httpClient: HttpClient) {
@@ -19,7 +20,6 @@ export class StrategyService {
   }
 
   postFilledQuestionnaires(questionnaires: McQuestionnaire[], profile: UserProfile): Observable<FintoolRecomDto> {
-
 
     this._data$ = this.httpClient.post<FintoolRecomDto>(
       "http://localhost:8080/api/questionnaires/submit",
@@ -45,8 +45,16 @@ export class StrategyService {
     this._data$ = value;
   }
 
+  get currentUserId(): string {
+    return this._currentUserId;
+  }
 
+  set currentUserId(value: string) {
+    this._currentUserId = value;
+  }
 }
+
+
 
 /*
     The DTO that is returned from backend, it encapsulates a recommendation and an id
