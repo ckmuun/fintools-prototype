@@ -38,7 +38,7 @@
       "chosen_answer_index": -1
     },
     {
-      "question_text": "Do you engage in any risk-intensive physical activities (skydiving, motorcycling, other extreme sports)",
+      "question_text": "Do you engage in any risk-intensive physical activities? (skydiving, motorcycling, other extreme sports)",
       "metadata": {
         "category": "baseline",
         "is_absolute_scale": true,
@@ -72,6 +72,33 @@
         }
       ],
       "chosen_answer_index": -1
+    }, {
+      "question_text": "Have you ever lost a significant amount of money on the financial markets?",
+      "metadata": {
+        "category": "baseline",
+        "is_absolute_scale": true,
+        "tier": 0,
+        "scale": 2
+      },
+      "answers_to_show": [
+        {
+          "answer_text": "no",
+          "value": 8
+        },
+        {
+          "answer_text": "yes, but a long time ago",
+          "value": 5
+        },
+        {
+          "answer_text": "yes, less than a year ago",
+          "value": 2
+        },
+        {
+          "answer_text": "yes, very recently, weeks ago",
+          "value": 1
+        }
+      ],
+      "chosen_answer_index": -1
     },{
       "question_text": "Would you describe your self as risk-seeking?",
       "metadata": {
@@ -96,7 +123,7 @@
       ],
       "chosen_answer_index": -1
     },{
-      "question_text": "Have you ever engaged in gambling? (online casino Games, Poker, sports bets, etc.)",
+      "question_text": "Have you ever engaged in any form of gambling, except state lotteries? (casino games, poker, sports bets, slot machines etc.)",
       "metadata": {
         "category": "baseline",
         "is_absolute_scale": true,
@@ -109,12 +136,16 @@
           "value": 1
         },
         {
-          "answer_text": "seldom",
+          "answer_text": "Seldom",
           "value": 3
         },
         {
-          "answer_text": "regularly",
-          "value": 3
+          "answer_text": "Regularly",
+          "value": 5
+        },
+        {
+          "answer_text": "In the past, but stopped doing so",
+          "value": 5
         }
       ],
       "chosen_answer_index": -1

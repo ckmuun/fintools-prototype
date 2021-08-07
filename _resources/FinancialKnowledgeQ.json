@@ -31,7 +31,7 @@
       "chosen_answer_index": -1
     },
     {
-      "question_text": "Do you work a knowledge-intensive, continuous learning job? (researcher, engineer, statistician, etc.)",
+      "question_text": "Do you work a knowledge-intensive, continuous learning job? (researcher, engineer, statistician etc.)",
       "metadata": {
         "category": "baseline",
         "is_absolute_scale": false,
@@ -59,7 +59,7 @@
       "chosen_answer_index": -1
     },
     {
-      "question_text": "Do you trade ETFs and / or mutual funds ?",
+      "question_text": "Do you trade ETFs and / or mutual funds?",
       "metadata": {
         "category": "baseline",
         "is_absolute_scale": false,
@@ -172,7 +172,7 @@
     },
 
     {
-      "question_text": "Do you trade commodities like gold or crude oil??",
+      "question_text": "Do you trade commodities like gold or crude oil?",
       "metadata": {
         "category": "baseline",
         "is_absolute_scale": false,
@@ -200,7 +200,7 @@
       "chosen_answer_index": -1
     },
     {
-      "question_text": "Do you trade other alternative investments? ?",
+      "question_text": "Do you trade other alternative investments?",
       "metadata": {
         "category": "baseline",
         "is_absolute_scale": false,

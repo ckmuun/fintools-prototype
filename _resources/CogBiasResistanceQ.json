@@ -31,7 +31,7 @@
       "chosen_answer_index": -1
     },
     {
-      "question_text": "Which of these would you prefer",
+      "question_text": "Which of these would you prefer?",
       "metadata": {
         "category": "baseline",
         "is_absolute_scale": true,
