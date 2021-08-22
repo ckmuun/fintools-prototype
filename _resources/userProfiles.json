@@ -46,7 +46,7 @@
   },
   {
     "name": "WSB Gambler",
-    "description": "",
+    "description": "Wallstreetbets-inspired, usually male person aged below 35 ",
     "tags": [
       "young",
       "male",
@@ -62,7 +62,7 @@
       "high_complexity",
       "active_investing"
     ],
-    "fin_risk_tolerance": 9,
+    "fin_risk_tolerance": 7,
     "psy_risk_tolerance": 9,
     "time_flexibility": 5,
     "cog_bias_resistance": 4,
@@ -85,10 +85,10 @@
       "high_complexity",
       "active_investing"
     ],
-    "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
+    "fin_risk_tolerance": 7,
+    "psy_risk_tolerance": 8,
     "time_flexibility": 4,
-    "cog_bias_resistance": 7,
+    "cog_bias_resistance": 5,
     "financial_knowledge": 6,
     "reason": "Crypto is the future. "
   },
@@ -106,10 +106,10 @@
       "high_risk",
       "active_investing"
     ],
-    "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
+    "fin_risk_tolerance": 6,
+    "psy_risk_tolerance": 8,
     "time_flexibility": 4,
-    "cog_bias_resistance": 7,
+    "cog_bias_resistance": 5,
     "financial_knowledge": 6,
     "reason": "I would like to explore investment opportunities outside traditional assets. "
   },
@@ -126,7 +126,7 @@
     ],
     "fin_risk_tolerance": 2,
     "psy_risk_tolerance": 2,
-    "time_flexibility": 3,
+    "time_flexibility": 2,
     "cog_bias_resistance": 4,
     "financial_knowledge": 3,
     "reason": "I want to improve my personal finance situation in order to improve my standard of living."
@@ -148,7 +148,7 @@
     "psy_risk_tolerance": 3,
     "time_flexibility": 6,
     "cog_bias_resistance": 5,
-    "financial_knowledge": 2,
+    "financial_knowledge": 1,
     "reason": "I don't really want to be associated with the finance world, but I am curious and/or realized that I will probably die poor if I keep my personal finances like this."
   },
   {
@@ -162,10 +162,10 @@
       "passive_investing"
     ],
     "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
-    "time_flexibility": 4,
-    "cog_bias_resistance": 7,
-    "financial_knowledge": 6,
+    "psy_risk_tolerance": 2,
+    "time_flexibility": 2,
+    "cog_bias_resistance": 3,
+    "financial_knowledge": 3,
     "reason": "My bank sent me a letter that I now have to pay negative interest rates on my cash savings. So I now want to look into this whole investment thing to avoid these payments..."
   },
   {
@@ -177,11 +177,11 @@
       "active_investing",
       "medium_complexity"
     ],
-    "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
-    "time_flexibility": 4,
+    "fin_risk_tolerance": 7,
+    "psy_risk_tolerance": 7,
+    "time_flexibility": 5,
     "cog_bias_resistance": 7,
-    "financial_knowledge": 6,
+    "financial_knowledge": 8,
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
   {
@@ -195,11 +195,11 @@
       "active_investing",
       "medium_complexity"
     ],
-    "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
-    "time_flexibility": 4,
-    "cog_bias_resistance": 7,
-    "financial_knowledge": 6,
+    "fin_risk_tolerance": 5,
+    "psy_risk_tolerance": 7,
+    "time_flexibility": 6,
+    "cog_bias_resistance": 4,
+    "financial_knowledge": 5,
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
   {
@@ -212,11 +212,11 @@
       "flexible",
       "medium_complexity"
     ],
-    "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
-    "time_flexibility": 4,
-    "cog_bias_resistance": 7,
-    "financial_knowledge": 6,
+    "fin_risk_tolerance": 5,
+    "psy_risk_tolerance": 6,
+    "time_flexibility": 7,
+    "cog_bias_resistance": 4,
+    "financial_knowledge": 4,
     "reason": "I already invested profitably in the past. Now that I know the ropes, I would like to get some inspiration on what to do in order to achieve the next level of personal finance management."
   },
   {
@@ -232,11 +232,11 @@
       "high_risk",
       "high_complexity"
     ],
-    "fin_risk_tolerance": 2,
-    "psy_risk_tolerance": 3,
+    "fin_risk_tolerance": 8,
+    "psy_risk_tolerance": 8,
     "time_flexibility": 4,
     "cog_bias_resistance": 7,
-    "financial_knowledge": 6,
+    "financial_knowledge": 10,
     "reason": "I am an investment professional and would like to see what you guys got."
   },
   {
