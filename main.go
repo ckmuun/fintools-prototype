@@ -22,6 +22,6 @@ func main() {
 }
 
 func setupViper() {
-	viper.SetEnvPrefix("FINTOOLS")
-	// TODO do BindEnv calls here. Currently not known which are necessary
+	viper.SetEnvPrefix("FT")
+	_ = viper.BindEnv("ADMIN_PWD")
 }

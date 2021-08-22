@@ -14,6 +14,10 @@ import (
 	"reccengine/results"
 )
 
+func init() {
+	setupViper()
+}
+
 func CORSMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
@@ -61,17 +65,15 @@ func SetupRouter() *gin.Engine {
 
 func setupAdminRoutes(router *gin.Engine) *gin.Engine {
 
+	// password checked in on purpose because it's just a demo app.
 	adminEndpoints := router.Group("/admin", gin.BasicAuth(gin.Accounts{
-		"admin": "super-secret-pwd",
+		"admin": "superSecret",
 	}))
-	adminEndpoints.GET("", getResults)
+	adminEndpoints.GET("/given-recommendations", loadRecoms)
+	router.GET("/submitted-feedback", loadSubmittedFeedback)
+	router.GET("/submitted-questionnaires", loadQSubmits)
 
 	return router
-}
-
-func getResults(c *gin.Context) {
-
-	c.JSON(200, results.GetFileResultSvc().GetRecommendationResults())
 }
 
 /*
@@ -79,18 +81,18 @@ func getResults(c *gin.Context) {
 */
 func setupQuestionnaireRoutes(router *gin.Engine) {
 
+	// POST
 	router.POST("/api/tripwire", processFinancialSituationForTripwire)
 	router.POST("/api/questionnaires/submit", postFilledQuestionnaires)
-	router.GET("/api/submitted-questionnaires", loadQSubmits)
 	router.POST("/api/questionnaires/submit/single", postSingleQuestionnaire)
+	router.POST("/api/feedback", postFeedback)
+
+	// GET
 	router.GET("/api/questionnaires", getQuestionnaireList)
 	router.GET("/api/profiles", getUserProfiles)
 	router.GET("/api/questionnaires/:kind", getQst)
 	router.GET("/api/questionnaires/all", getAll)
-	router.POST("/api/feedback", postFeedback)
 	router.GET("/api/random", getRandomSampleOfStrategies)
-	router.GET("/api/submitted-feedback", loadSubmittedFeedback)
-	router.GET("/api/given-recommendations", loadRecoms)
 
 }
 func loadRecoms(c *gin.Context) {
@@ -100,7 +102,7 @@ func loadRecoms(c *gin.Context) {
 		c.JSON(200, resp)
 		return
 	}
-	c.JSON(500, "could not load given reccomendations from disk")
+	c.JSON(500, "could not load given recommendations from disk")
 
 }
 
