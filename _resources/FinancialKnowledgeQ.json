@@ -115,7 +115,7 @@
       "chosen_answer_index": -1
     },
     {
-      "question_text": "Do you have any relevant formal education regarding economics and/or finance (e.g. University Degree or apprenticeship in finance, insurance or tax?",
+      "question_text": "Do you have any relevant formal education regarding economics and/or finance? (e.g. university degree or apprenticeship in finance, insurance or tax)",
       "metadata": {
         "category": "baseline",
         "is_absolute_scale": false,
