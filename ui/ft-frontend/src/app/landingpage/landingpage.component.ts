@@ -40,7 +40,11 @@ export class LandingpageComponent implements OnInit {
           "The page will then redirect to our questionnaire site which will display the next help text." +
           "\n A note on data collection: The application does not in any way identify you. No information like IP, " +
           "session, device type, operating system or other browser data is stored. However, the questionnaire results are " +
-          "saved under a randomly generated anonymous technical key."
+          "saved under a randomly generated anonymous technical key." +
+          "\n" +
+          "\n This prototype was created by Lars von Fromberg & Cornelius Koller, both M.Sc. students at the " +
+          "Technical University of Munich" +
+          "\n Please note that this is an experimental prototype."
 
       }
     });
