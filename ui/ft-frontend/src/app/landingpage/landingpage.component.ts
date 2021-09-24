@@ -79,13 +79,6 @@ export class LandingpageComponent implements OnInit {
     this.profilesService.cacheChosenProfile(profile);
     this.openNextPageDialog();
   }
-
-
-  redirect(): void {
-    this.router.navigateByUrl("/get-started")
-
-  }
-
 }
 
 
