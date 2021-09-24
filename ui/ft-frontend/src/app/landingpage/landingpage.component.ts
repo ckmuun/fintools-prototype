@@ -43,7 +43,7 @@ export class LandingpageComponent implements OnInit {
           "saved under a randomly generated anonymous technical key." +
           "\n" +
           "\n This prototype was created by Lars von Fromberg & Cornelius Koller, both M.Sc. students at the " +
-          "Technical University of Munich" +
+          "Technical University of Munich." +
           "\n Please note that this is an experimental prototype."
 
       }
