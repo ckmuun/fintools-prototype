@@ -1131,7 +1131,14 @@ class LandingpageComponent {
                 text: "This is the entrypoint page to our personal finance strategy recommendation and exploration tool.\n" +
                     "Before we can look at actual strategies, we need some input first.\n" +
                     "On this page, please read through the list of predefined profiles and select one  you find most fitting for yourself by clicking on it.\n" +
-                    "The page will then redirect to our questionnaire site which will display the next help text."
+                    "The page will then redirect to our questionnaire site which will display the next help text." +
+                    "\n A note on data collection: The application does not in any way identify you. No information like IP, " +
+                    "session, device type, operating system or other browser data is stored. However, the questionnaire results are " +
+                    "saved under a randomly generated anonymous technical key." +
+                    "\n" +
+                    "\n This prototype was created by Lars von Fromberg & Cornelius Koller, both M.Sc. students at the " +
+                    "Technical University of Munich." +
+                    "\n Please note that this is an experimental prototype."
             }
         });
     }
